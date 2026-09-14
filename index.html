@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <title>Karieson Creative Hub</title>
 
   <style>
     :root {
@@ -63,8 +63,8 @@
     }
 
     .logo img {
-      height: auto;
-      width: 10rem;
+      height: 8rem;
+      width: auto;
       display: block;
     }
 
@@ -168,44 +168,46 @@
       background: var(--dark-red);
     }
 
-    /* =========================
-       HERO
-    ========================= */
+/* =========================
+   HERO
+========================= */
 
-    .hero {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 5rem 5%;
-    }
+.hero {
+  background: var(--white);
+  color: #222222;
+  text-align: center;
+  padding: 5rem 5%;
+}
 
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #222222;
+}
 
-    .hero h1 span {
-      color: var(--red);
-    }
+.hero h1 span {
+  color: var(--red);
+}
 
-    .hero p {
-      max-width: 45rem;
-      margin: auto;
-      color: #ddd;
-    }
+.hero p {
+  max-width: 45rem;
+  margin: auto;
+  color: #555555;
+}
 
-    .hero-btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.85rem 1.5rem;
-      background: var(--red);
-      color: var(--white);
-      border-radius: 0.3rem;
-    }
+.hero-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.5rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-weight: 700;
+}
 
-    .hero-btn:hover {
-      background: var(--dark-red);
-    }
+.hero-btn:hover {
+  background: var(--dark-red);
+}
 
     /* =========================
        GENERAL SECTION HEADING
@@ -539,14 +541,17 @@
     /* EXISTING BOOK COVER DESIGN PRESERVED */
 
     .book-cover {
-      height: 16rem;
-      background: linear-gradient(145deg, #c00000, #080808);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1.5rem;
-    }
+  height: 16rem;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
     .book-cover h3 {
       color: var(--white);
@@ -629,7 +634,7 @@
       }
 
       .logo img {
-        height: auto;
+        height: 6rem;
       }
 
       .hero {
@@ -721,8 +726,8 @@
 
     <div class="logo">
       <img
-        src="karieson_logo.png"
-        alt="karieson Creative Hub"
+        src="Karieson_logo.png"
+        alt="Karieson Creative Hub"
       >
     </div>
 
@@ -764,6 +769,33 @@
     <a href="#ebooks">eBook Novels</a>
 
   </nav>
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section
+    class="hero"
+    id="home"
+  >
+
+    <h1>
+      Welcome to
+      <span>Karieson Creative Hub</span>
+    </h1>
+
+    <p>
+      A professional platform for research projects,
+      grant proposals and creative eBook novels.
+    </p>
+
+    <a
+      href="#research-projects"
+      class="hero-btn"
+    >
+      Explore Research
+    </a>
+
+  </section>
 
 
   <!-- =========================
@@ -793,33 +825,7 @@
   </section>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section
-    class="hero"
-    id="home"
-  >
-
-    <h1>
-      Welcome to
-      <span>Karieson Creative Hub</span>
-    </h1>
-
-    <p>
-      A professional platform for research projects,
-      grant proposals and creative eBook novels.
-    </p>
-
-    <a
-      href="#research-projects"
-      class="hero-btn"
-    >
-      Explore Research
-    </a>
-
-  </section>
+  
 
 
   <!-- =========================
@@ -1566,97 +1572,119 @@
 
         <article class="ebook-card">
 
-          <div class="book-cover">
-            <h3>
-              The Journey
-            </h3>
-          </div>
+  <!-- BOOK COVER -->
+  <div class="book-cover">
 
-          <div class="ebook-content">
+    <img
+      src="the-journey.png"
+      alt="The Journey book cover"
+      loading="lazy"
+    >
 
-            <h3>
-              The Journey
-            </h3>
+  </div>
 
-            <p>
-              A fictional story about ambition,
-              challenges, friendship and personal growth.
-            </p>
 
-            <a
-              href="ebooks/the-journey.html"
-              class="ebook-view-btn"
-            >
-              View eBook
-            </a>
+  <!-- BOOK INFORMATION -->
+  <div class="ebook-content">
 
-          </div>
+    <h3>
+      The Journey
+    </h3>
 
-        </article>
+    <p>
+  An inspirational story about ambition, friendship
+  and personal growth. Follow a young dreamer through
+  challenges, difficult choices and unexpected
+  experiences as they discover the courage and
+  resilience needed to pursue their dreams.
+</p>
+    <a
+      href="ebooks/the-journey.html"
+      class="ebook-view-btn"
+      aria-label="Read The Journey eBook"
+    >
+      View eBook
+    </a>
+
+  </div>
+
+</article>
+
+ <article class="ebook-card">
+
+  <!-- BOOK COVER -->
+  <div class="book-cover">
+
+    <img
+      src="beyond-the-horizon.png"
+      alt="Beyond the Horizon book cover"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <!-- BOOK INFORMATION -->
+  <div class="ebook-content">
+
+    <h3>
+      Beyond the Horizon
+    </h3>
+
+    <p>
+      A powerful inspirational story about dreams,
+      determination and the courage to pursue new
+      possibilities. Follow a young dreamer as
+      challenges test their confidence, resilience
+      and willingness to keep moving forward.
+      Through unexpected experiences and meaningful
+      friendships, the journey reveals that the
+      greatest opportunities often lie beyond
+      what we can see.
+    </p>
+
+    <a
+      href="ebooks/beyond-the-horizon.html"
+      class="ebook-view-btn"
+      aria-label="Read Beyond the Horizon eBook"
+    >
+      View eBook
+    </a>
+
+  </div>
+
+</article>
 
 
         <article class="ebook-card">
 
-          <div class="book-cover">
-            <h3>
-              Beyond the Horizon
-            </h3>
-          </div>
+  <div class="book-cover">
+    <img
+      src="echoes-of-hope.png"
+      alt="Echoes of Hope book cover"
+    >
+  </div>
 
-          <div class="ebook-content">
+  <div class="ebook-content">
 
-            <h3>
-              Beyond the Horizon
-            </h3>
+    <h3>
+      Echoes of Hope
+    </h3>
 
-            <p>
-              A creative story about dreams,
-              determination and discovering new possibilities.
-            </p>
+    <p>
+      When three young friends face unexpected challenges that threaten their dreams, they must learn to stand together and believe in themselves. Their journey takes them through moments of doubt, difficult choices and new discoveries. Along the way, they discover the true meaning of courage, friendship and hope—and learn that a brighter future can begin with one small step.
+    </p>
 
-            <a
-              href="ebooks/beyond-the-horizon.html"
-              class="ebook-view-btn"
-            >
-              View eBook
-            </a>
+    <a
+      href="ebooks/echoes-of-hope.html"
+      class="ebook-view-btn"
+    >
+      View eBook
+    </a>
 
-          </div>
+  </div>
 
-        </article>
-
-
-        <article class="ebook-card">
-
-          <div class="book-cover">
-            <h3>
-              Echoes of Hope
-            </h3>
-          </div>
-
-          <div class="ebook-content">
-
-            <h3>
-              Echoes of Hope
-            </h3>
-
-            <p>
-              An inspirational fictional story exploring
-              courage, friendship and hope.
-            </p>
-
-            <a
-              href="ebooks/echoes-of-hope.html"
-              class="ebook-view-btn"
-            >
-              View eBook
-            </a>
-
-          </div>
-
-        </article>
-
-      </div>
+</article>
 
 
       <div class="ebooks-link">
