@@ -63,7 +63,7 @@
     }
 
     .logo img {
-      height: 8rem;
+      height: 12rem;
       width: auto;
       display: block;
     }
@@ -359,6 +359,280 @@
     .no-results.show {
       display: block;
     }
+    /* =========================
+   RESEARCH TOPIC LINKS
+========================= */
+
+.research-topic {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--black);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.research-topic:hover {
+  color: var(--red);
+}
+
+
+/* =========================
+   TOPIC DETAILS
+========================= */
+
+.topic-details {
+  display: none;
+  background: var(--white);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.topic-details.show {
+  display: block;
+}
+
+
+/* =========================
+   COVER IMAGE
+========================= */
+
+.topic-cover img {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 0.3rem;
+}
+
+
+/* =========================
+   TOPIC TITLE
+========================= */
+
+.topic-details h4 {
+  color: var(--red);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+
+/* =========================
+   SYNOPSIS
+========================= */
+
+.topic-synopsis {
+  max-width: 55rem;
+  margin: 0 auto 1.5rem;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+.topic-buy-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.topic-buy-btn:hover {
+  background: var(--dark-red);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .topic-cover img {
+    max-width: 100%;
+  }
+
+  .topic-details {
+    padding: 1.2rem 0;
+  }
+
+  .topic-details h4 {
+    font-size: 1.2rem;
+  }
+
+  .topic-synopsis {
+    font-size: 0.9rem;
+  }
+
+  .topic-buy-btn {
+    width: 80%;
+    max-width: 18rem;
+  }
+
+}
+/* =========================
+   RESEARCH ACCORDIONS
+========================= */
+
+.research-item {
+  display: none;
+  padding: 1.5rem 0;
+  background: var(--white);
+  border-top: 3px solid var(--red);
+  border-radius: 0;
+}
+
+.research-item.show {
+  display: block;
+}
+
+.research-accordion {
+  border-bottom: 1px solid var(--border);
+}
+
+.research-accordion summary {
+  display: block;
+  padding: 1rem 0.5rem;
+  color: var(--black);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.research-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.research-accordion summary::after {
+  content: "+";
+  float: right;
+  color: var(--red);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.research-accordion[open] summary {
+  color: var(--red);
+}
+
+.research-accordion[open] summary::after {
+  content: "−";
+}
+
+
+/* =========================
+   RESEARCH TOPIC CONTENT
+========================= */
+
+.research-topic-content {
+  padding: 1.5rem 0 2rem;
+  text-align: center;
+  background: var(--white);
+}
+
+.research-cover-image {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 0.35rem;
+  object-fit: cover;
+}
+
+.research-topic-content h4 {
+  margin: 0 auto 1rem;
+  max-width: 55rem;
+  color: var(--red);
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.research-topic-content p {
+  max-width: 55rem;
+  margin: 0 auto;
+  color: var(--gray);
+  line-height: 1.8;
+  text-align: left;
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+.research-buy {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.buy-now-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.buy-now-btn:hover {
+  background: var(--dark-red);
+  color: var(--white);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .research-item {
+    padding: 1.2rem 0;
+  }
+
+  .research-accordion summary {
+    padding: 1rem 0.2rem;
+    padding-right: 2rem;
+    line-height: 1.5;
+  }
+
+  .research-topic-content {
+    padding: 1.2rem 0 1.8rem;
+  }
+
+  .research-cover-image {
+    max-width: 100%;
+    margin-bottom: 1.3rem;
+  }
+
+  .research-topic-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .research-topic-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+}
 
     /* =========================
        GRANT PROPOSALS
@@ -641,6 +915,26 @@
   color: var(--white);
 }
 
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .research-accordion summary {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .research-cover-image {
+    width: 100%;
+  }
+
+  .research-topic-content p {
+    font-size: 0.9rem;
+  }
+
+}
+
     /* =========================
        FOOTER
     ========================= */
@@ -788,7 +1082,7 @@
 
     <div class="logo">
       <img
-        src="Karieson_logo.png"
+        src="karieson_logo.png"
         alt="Karieson Creative Hub"
       >
     </div>
@@ -1041,284 +1335,1814 @@
 
 
         <!-- =========================
-             RESEARCH RESULTS
-        ========================= -->
+     RESEARCH RESULTS
+========================= -->
 
-        <div class="research-results">
+<div class="research-results">
 
-          <div
-            class="research-item"
-            data-field="education"
+
+  <!-- =========================
+       EDUCATION RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="education"
+  >
+
+    <h3>Education Research</h3>
+
+
+    <!-- TOPIC 1 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        The Impact of Educational Technology on Student Performance
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/educational-technology.png"
+          alt="Cover of The Impact of Educational Technology on Student Performance"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          The Impact of Educational Technology on Student Performance
+        </h4>
+
+        <p>
+          This research examines how educational technology
+          influences student performance, engagement and
+          learning outcomes. It explores the use of digital
+          learning platforms, interactive learning tools and
+          other technologies in modern education. The study
+          also considers challenges related to access,
+          teacher preparedness and effective technology
+          integration.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/educational-technology.html"
+            class="buy-now-btn"
           >
-
-            <h3>Education Research</h3>
-
-            <a href="#" class="research-topic">
-              The Impact of Educational Technology on Student Performance
-            </a>
-
-            <a href="#" class="research-topic">
-              Challenges Facing Access to Quality Education
-            </a>
-
-            <a href="#" class="research-topic">
-              Effects of Teacher Training on Academic Performance
-            </a>
-
-            <a href="#" class="research-topic">
-              Digital Learning and Student Engagement
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="technology"
-          >
-
-            <h3>Technology Research</h3>
-
-            <a href="#" class="research-topic">
-              Artificial Intelligence and Business Development
-            </a>
-
-            <a href="#" class="research-topic">
-              The Impact of ICT on Modern Education
-            </a>
-
-            <a href="#" class="research-topic">
-              Cybersecurity Awareness Among Young People
-            </a>
-
-            <a href="#" class="research-topic">
-              Digital Transformation in Small Businesses
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="agriculture"
-          >
-
-            <h3>Agriculture Research</h3>
-
-            <a href="#" class="research-topic">
-              Climate-Smart Agriculture and Food Security
-            </a>
-
-            <a href="#" class="research-topic">
-              The Impact of Irrigation on Agricultural Productivity
-            </a>
-
-            <a href="#" class="research-topic">
-              Youth Participation in Modern Agriculture
-            </a>
-
-            <a href="#" class="research-topic">
-              Drought and Agricultural Production
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="health"
-          >
-
-            <h3>Health Research</h3>
-
-            <a href="#" class="research-topic">
-              Access to Healthcare Services in Rural Communities
-            </a>
-
-            <a href="#" class="research-topic">
-              Community Health and Disease Prevention
-            </a>
-
-            <a href="#" class="research-topic">
-              Nutrition and Public Health
-            </a>
-
-            <a href="#" class="research-topic">
-              Digital Technology in Healthcare Delivery
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="social"
-          >
-
-            <h3>Social Sciences Research</h3>
-
-            <a href="#" class="research-topic">
-              Youth Unemployment and Community Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Poverty and Social Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Gender and Community Participation
-            </a>
-
-            <a href="#" class="research-topic">
-              Social Media and Youth Behaviour
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="economics"
-          >
-
-            <h3>Economics Research</h3>
-
-            <a href="#" class="research-topic">
-              Youth Unemployment and Economic Growth
-            </a>
-
-            <a href="#" class="research-topic">
-              Financial Inclusion and Poverty Reduction
-            </a>
-
-            <a href="#" class="research-topic">
-              Small Businesses and Economic Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Inflation and Household Welfare
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="political"
-          >
-
-            <h3>Political Science Research</h3>
-
-            <a href="#" class="research-topic">
-              Youth Participation in Democratic Processes
-            </a>
-
-            <a href="#" class="research-topic">
-              Good Governance and Public Service Delivery
-            </a>
-
-            <a href="#" class="research-topic">
-              The Role of Elections in Democratic Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Political Leadership and Community Development
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="environment"
-          >
-
-            <h3>Environmental Research</h3>
-
-            <a href="#" class="research-topic">
-              Climate Change and Community Livelihoods
-            </a>
-
-            <a href="#" class="research-topic">
-              Water Resource Management and Sustainability
-            </a>
-
-            <a href="#" class="research-topic">
-              Drought and Environmental Conservation
-            </a>
-
-            <a href="#" class="research-topic">
-              Waste Management and Environmental Protection
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="business"
-          >
-
-            <h3>Business Research</h3>
-
-            <a href="#" class="research-topic">
-              Youth Entrepreneurship and Job Creation
-            </a>
-
-            <a href="#" class="research-topic">
-              Marketing Strategies for Small Businesses
-            </a>
-
-            <a href="#" class="research-topic">
-              Innovation and Business Growth
-            </a>
-
-            <a href="#" class="research-topic">
-              Small and Medium Enterprises Development
-            </a>
-
-          </div>
-
-
-          <div
-            class="research-item"
-            data-field="engineering"
-          >
-
-            <h3>Engineering Research</h3>
-
-            <a href="#" class="research-topic">
-              Renewable Energy and Sustainable Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Water Engineering and Community Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Sustainable Infrastructure Development
-            </a>
-
-            <a href="#" class="research-topic">
-              Solar Energy Adoption in Rural Communities
-            </a>
-
-          </div>
-
-
-          <div
-            class="no-results"
-            id="noResults"
-          >
-            No research topics found.
-          </div>
-
+            Buy Now
+          </a>
         </div>
 
       </div>
 
-    </section>
+    </details>
 
+
+    <!-- TOPIC 2 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        Challenges Facing Access to Quality Education
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/quality-education.png"
+          alt="Cover of Challenges Facing Access to Quality Education"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Challenges Facing Access to Quality Education
+        </h4>
+
+        <p>
+          This research explores the major challenges that
+          affect access to quality education. It examines
+          factors such as poverty, inadequate learning
+          facilities, geographical barriers, limited
+          educational resources and social inequalities.
+          The study also considers practical approaches
+          for improving educational access and creating
+          more inclusive learning opportunities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/quality-education.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <!-- TOPIC 3 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        Effects of Teacher Training on Academic Performance
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/teacher-training.png"
+          alt="Cover of Effects of Teacher Training on Academic Performance"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Effects of Teacher Training on Academic Performance
+        </h4>
+
+        <p>
+          This research investigates how teacher training
+          and professional development influence teaching
+          effectiveness and student academic performance.
+          It examines teaching methods, classroom management,
+          professional skills and the importance of continuous
+          teacher development.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/teacher-training.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <!-- TOPIC 4 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        Digital Learning and Student Engagement
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/digital-learning.png"
+          alt="Cover of Digital Learning and Student Engagement"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Digital Learning and Student Engagement
+        </h4>
+
+        <p>
+          This research examines how digital learning tools
+          and online educational platforms influence student
+          participation and engagement. It explores the
+          benefits and challenges of digital learning and
+          considers how technology can support meaningful
+          educational experiences.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/digital-learning.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       TECHNOLOGY RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="technology"
+  >
+
+    <h3>Technology Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Artificial Intelligence and Business Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/artificial-intelligence.png"
+          alt="Cover of Artificial Intelligence and Business Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Artificial Intelligence and Business Development
+        </h4>
+
+        <p>
+          This research examines the role of artificial
+          intelligence in improving business operations,
+          decision-making, innovation and competitiveness.
+          It explores opportunities and challenges associated
+          with the adoption of AI in modern businesses.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/artificial-intelligence.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        The Impact of ICT on Modern Education
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/ict-education.png"
+          alt="Cover of The Impact of ICT on Modern Education"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          The Impact of ICT on Modern Education
+        </h4>
+
+        <p>
+          This research explores how information and
+          communication technologies are transforming
+          teaching and learning. It examines digital tools,
+          access to information and the challenges involved
+          in integrating ICT into education.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/ict-education.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Cybersecurity Awareness Among Young People
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/cybersecurity-awareness.png"
+          alt="Cover of Cybersecurity Awareness Among Young People"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Cybersecurity Awareness Among Young People
+        </h4>
+
+        <p>
+          This study examines awareness of online security,
+          privacy and responsible digital behaviour among
+          young people. It explores common cybersecurity
+          challenges and approaches for improving awareness
+          of safe and responsible digital practices.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/cybersecurity-awareness.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Digital Transformation in Small Businesses
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/digital-transformation.png"
+          alt="Cover of Digital Transformation in Small Businesses"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Digital Transformation in Small Businesses
+        </h4>
+
+        <p>
+          This research investigates how small businesses
+          can use digital technologies to improve efficiency,
+          customer service, marketing and business growth.
+          It considers opportunities for businesses to adapt
+          to changing digital markets.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/digital-transformation.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       AGRICULTURE RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="agriculture"
+  >
+
+    <h3>Agriculture Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Climate-Smart Agriculture and Food Security
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/climate-smart-agriculture.png"
+          alt="Cover of Climate-Smart Agriculture and Food Security"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Climate-Smart Agriculture and Food Security
+        </h4>
+
+        <p>
+          This research examines climate-smart agricultural
+          practices and their potential contribution to food
+          security, resilience and sustainable agricultural
+          production. It explores approaches that can help
+          farmers respond to changing climate conditions.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/climate-smart-agriculture.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        The Impact of Irrigation on Agricultural Productivity
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/irrigation-productivity.png"
+          alt="Cover of The Impact of Irrigation on Agricultural Productivity"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          The Impact of Irrigation on Agricultural Productivity
+        </h4>
+
+        <p>
+          This study examines how irrigation can influence
+          agricultural productivity, crop production and
+          farmer livelihoods, particularly in areas affected
+          by unreliable rainfall. It also considers the role
+          of efficient water management in agricultural
+          development.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/irrigation-productivity.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Participation in Modern Agriculture
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-agriculture.png"
+          alt="Cover of Youth Participation in Modern Agriculture"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Participation in Modern Agriculture
+        </h4>
+
+        <p>
+          This research explores opportunities and barriers
+          affecting youth participation in modern agriculture,
+          entrepreneurship and agricultural innovation. It
+          examines ways to encourage young people to participate
+          in productive and sustainable agricultural activities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-agriculture.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Drought and Agricultural Production
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/drought-agriculture.png"
+          alt="Cover of Drought and Agricultural Production"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Drought and Agricultural Production
+        </h4>
+
+        <p>
+          This research examines the effects of drought on
+          agricultural production and explores strategies
+          that farmers and communities can use to strengthen
+          resilience, protect livelihoods and improve food
+          security.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/drought-agriculture.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       HEALTH RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="health"
+  >
+
+    <h3>Health Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Access to Healthcare Services in Rural Communities
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/rural-healthcare.png"
+          alt="Cover of Access to Healthcare Services in Rural Communities"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Access to Healthcare Services in Rural Communities
+        </h4>
+
+        <p>
+          This research examines factors affecting access
+          to healthcare services in rural communities,
+          including distance, availability of facilities,
+          resources and healthcare personnel. It explores
+          possible approaches for improving access to
+          essential healthcare services.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/rural-healthcare.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Community Health and Disease Prevention
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/community-health.png"
+          alt="Cover of Community Health and Disease Prevention"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Community Health and Disease Prevention
+        </h4>
+
+        <p>
+          This research explores community-based approaches
+          to health promotion and disease prevention. It
+          examines the role of health awareness, preventive
+          practices and community participation in improving
+          public health outcomes.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/community-health.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Nutrition and Public Health
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/nutrition-public-health.png"
+          alt="Cover of Nutrition and Public Health"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Nutrition and Public Health
+        </h4>
+
+        <p>
+          This research examines the relationship between
+          nutrition, healthy lifestyles and public health.
+          It considers factors that influence community
+          nutrition outcomes and explores approaches for
+          supporting healthier communities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/nutrition-public-health.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Digital Technology in Healthcare Delivery
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/digital-healthcare.png"
+          alt="Cover of Digital Technology in Healthcare Delivery"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Digital Technology in Healthcare Delivery
+        </h4>
+
+        <p>
+          This study explores how digital technologies can
+          support healthcare delivery, communication,
+          information management and access to services.
+          It considers the potential benefits and challenges
+          of digital solutions in healthcare.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/digital-healthcare.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       SOCIAL SCIENCES
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="social"
+  >
+
+    <h3>Social Sciences Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Unemployment and Community Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-unemployment.png"
+          alt="Cover of Youth Unemployment and Community Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Unemployment and Community Development
+        </h4>
+
+        <p>
+          This research examines the relationship between
+          youth unemployment, livelihoods and community
+          development. It explores approaches for expanding
+          employment opportunities and supporting young
+          people to participate in community development.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-unemployment.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Poverty and Social Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/poverty-social-development.png"
+          alt="Cover of Poverty and Social Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Poverty and Social Development
+        </h4>
+
+        <p>
+          This research explores the causes and effects of
+          poverty and examines strategies that can contribute
+          to inclusive social and economic development. It
+          considers factors that influence household and
+          community wellbeing.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/poverty-social-development.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Gender and Community Participation
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/gender-community.png"
+          alt="Cover of Gender and Community Participation"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Gender and Community Participation
+        </h4>
+
+        <p>
+          This research examines participation in community
+          development and considers factors that influence
+          inclusive involvement in local decision-making,
+          community programmes and development activities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/gender-community.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Social Media and Youth Behaviour
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/social-media-youth.png"
+          alt="Cover of Social Media and Youth Behaviour"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Social Media and Youth Behaviour
+        </h4>
+
+        <p>
+          This study examines how social media use can
+          influence communication, interaction and behaviour
+          among young people. It considers both opportunities
+          and challenges associated with social media use.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/social-media-youth.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       ECONOMICS
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="economics"
+  >
+
+    <h3>Economics Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Unemployment and Economic Growth
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-economic-growth.png"
+          alt="Cover of Youth Unemployment and Economic Growth"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Unemployment and Economic Growth
+        </h4>
+
+        <p>
+          This research examines how youth unemployment
+          affects economic growth and explores policies and
+          opportunities that can support youth employment,
+          entrepreneurship and economic participation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-economic-growth.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Financial Inclusion and Poverty Reduction
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/financial-inclusion.png"
+          alt="Cover of Financial Inclusion and Poverty Reduction"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Financial Inclusion and Poverty Reduction
+        </h4>
+
+        <p>
+          This research explores how access to financial
+          services can support household economic
+          opportunities, entrepreneurship and poverty
+          reduction. It considers the role of financial
+          inclusion in strengthening economic participation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/financial-inclusion.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Small Businesses and Economic Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/small-businesses.png"
+          alt="Cover of Small Businesses and Economic Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Small Businesses and Economic Development
+        </h4>
+
+        <p>
+          This research examines the contribution of small
+          businesses to employment, household income,
+          innovation and local economic development. It
+          explores factors that can influence small-business
+          growth and sustainability.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/small-businesses.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Inflation and Household Welfare
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/inflation-household.png"
+          alt="Cover of Inflation and Household Welfare"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Inflation and Household Welfare
+        </h4>
+
+        <p>
+          This research examines how changes in prices can
+          affect household purchasing power, consumption
+          patterns and economic wellbeing. It considers how
+          inflation can influence different household needs
+          and economic decisions.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/inflation-household.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       POLITICAL SCIENCE
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="political"
+  >
+
+    <h3>Political Science Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Participation in Democratic Processes
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-democracy.png"
+          alt="Cover of Youth Participation in Democratic Processes"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Participation in Democratic Processes
+        </h4>
+
+        <p>
+          This research examines the participation of young
+          people in democratic processes and explores factors
+          that influence civic engagement, political awareness
+          and participation in public affairs.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-democracy.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Good Governance and Public Service Delivery
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/good-governance.png"
+          alt="Cover of Good Governance and Public Service Delivery"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Good Governance and Public Service Delivery
+        </h4>
+
+        <p>
+          This research examines principles of good governance
+          and their relationship with effective, accountable
+          and responsive public service delivery. It explores
+          factors that can contribute to better governance
+          and improved public services.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/good-governance.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        The Role of Elections in Democratic Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/elections-democracy.png"
+          alt="Cover of The Role of Elections in Democratic Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          The Role of Elections in Democratic Development
+        </h4>
+
+        <p>
+          This study examines the importance of elections
+          in democratic development, political participation
+          and representation. It considers how credible
+          electoral processes can contribute to democratic
+          institutions and public participation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/elections-democracy.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Political Leadership and Community Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/political-leadership.png"
+          alt="Cover of Political Leadership and Community Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Political Leadership and Community Development
+        </h4>
+
+        <p>
+          This research explores the relationship between
+          political leadership, community priorities and
+          local development. It examines how leadership can
+          influence community programmes and development
+          outcomes.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/political-leadership.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       ENVIRONMENT
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="environment"
+  >
+
+    <h3>Environmental Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Climate Change and Community Livelihoods
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/climate-livelihoods.png"
+          alt="Cover of Climate Change and Community Livelihoods"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Climate Change and Community Livelihoods
+        </h4>
+
+        <p>
+          This research examines how climate change can
+          affect community livelihoods and explores approaches
+          for strengthening resilience, adaptation and
+          sustainable development in vulnerable communities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/climate-livelihoods.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Water Resource Management and Sustainability
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/water-management.png"
+          alt="Cover of Water Resource Management and Sustainability"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Water Resource Management and Sustainability
+        </h4>
+
+        <p>
+          This research explores sustainable approaches to
+          managing water resources and the importance of
+          responsible water use for communities, agriculture
+          and ecosystems.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/water-management.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Drought and Environmental Conservation
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/drought-conservation.png"
+          alt="Cover of Drought and Environmental Conservation"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Drought and Environmental Conservation
+        </h4>
+
+        <p>
+          This research examines drought-related environmental
+          challenges and explores conservation approaches
+          that can support ecosystem resilience, sustainable
+          resource use and community adaptation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/drought-conservation.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Waste Management and Environmental Protection
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/waste-management.png"
+          alt="Cover of Waste Management and Environmental Protection"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Waste Management and Environmental Protection
+        </h4>
+
+        <p>
+          This research examines waste management practices
+          and their role in protecting the environment and
+          promoting healthier communities. It considers
+          approaches for improving waste handling and
+          environmental awareness.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/waste-management.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       BUSINESS
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="business"
+  >
+
+    <h3>Business Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Entrepreneurship and Job Creation
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-entrepreneurship.png"
+          alt="Cover of Youth Entrepreneurship and Job Creation"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Entrepreneurship and Job Creation
+        </h4>
+
+        <p>
+          This research explores how youth entrepreneurship
+          can contribute to employment creation, innovation,
+          income generation and local economic development.
+          It examines opportunities and challenges affecting
+          young entrepreneurs.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-entrepreneurship.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Marketing Strategies for Small Businesses
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/small-business-marketing.png"
+          alt="Cover of Marketing Strategies for Small Businesses"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Marketing Strategies for Small Businesses
+        </h4>
+
+        <p>
+          This research examines marketing strategies that
+          small businesses can use to attract customers,
+          improve visibility and strengthen competitiveness.
+          It considers traditional and digital approaches
+          to reaching target customers.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/small-business-marketing.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Innovation and Business Growth
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/business-innovation.png"
+          alt="Cover of Innovation and Business Growth"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Innovation and Business Growth
+        </h4>
+
+        <p>
+          This study examines how innovation can help
+          businesses improve products, services and processes.
+          It explores how innovative approaches can support
+          competitiveness, efficiency and long-term growth.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/business-innovation.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Small and Medium Enterprises Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/sme-development.png"
+          alt="Cover of Small and Medium Enterprises Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Small and Medium Enterprises Development
+        </h4>
+
+        <p>
+          This research examines the role of small and
+          medium enterprises in employment, innovation,
+          income generation and economic development.
+          It considers factors that influence SME growth
+          and sustainability.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/sme-development.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       ENGINEERING
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="engineering"
+  >
+
+    <h3>Engineering Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Renewable Energy and Sustainable Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/renewable-energy.png"
+          alt="Cover of Renewable Energy and Sustainable Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Renewable Energy and Sustainable Development
+        </h4>
+
+        <p>
+          This research explores the contribution of renewable
+          energy technologies to sustainable development,
+          energy access and environmental protection. It
+          examines opportunities for increasing the use of
+          cleaner and sustainable energy solutions.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/renewable-energy.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Water Engineering and Community Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/water-engineering.png"
+          alt="Cover of Water Engineering and Community Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Water Engineering and Community Development
+        </h4>
+
+        <p>
+          This research examines how water engineering
+          solutions can support reliable water access,
+          community development and sustainable resource
+          management. It considers engineering approaches
+          suitable for community needs.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/water-engineering.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Sustainable Infrastructure Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/sustainable-infrastructure.png"
+          alt="Cover of Sustainable Infrastructure Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Sustainable Infrastructure Development
+        </h4>
+
+        <p>
+          This research explores approaches to developing
+          infrastructure that supports economic growth,
+          community needs and long-term environmental
+          sustainability. It considers principles for
+          resilient and responsible infrastructure planning.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/sustainable-infrastructure.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Solar Energy Adoption in Rural Communities
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/solar-rural-communities.png"
+          alt="Cover of Solar Energy Adoption in Rural Communities"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Solar Energy Adoption in Rural Communities
+        </h4>
+
+        <p>
+          This research examines factors influencing the
+          adoption of solar energy in rural communities and
+          explores its potential contribution to reliable,
+          affordable and sustainable energy access.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/solar-rural-communities.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       NO RESULTS
+  ========================= -->
+
+  <div
+    class="no-results"
+    id="noResults"
+  >
+    No research topics found.
+  </div>
+
+
+</div>
 
     <!-- =========================
          02 GRANT PROPOSALS
