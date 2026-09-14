@@ -510,101 +510,136 @@
     }
 
     /* =========================
-       EBOOKS
-    ========================= */
+   EBOOKS
+========================= */
 
-    .ebooks {
-      padding: 4rem 5%;
-      background: var(--black);
-      color: var(--white);
-    }
+.ebooks {
+  padding: 4rem 5%;
+  background: var(--white);
+  color: var(--black);
+}
 
-    .ebooks .main-section-heading p {
-      color: #ccc;
-    }
+.ebooks .main-section-heading p {
+  color: var(--gray);
+}
 
-    .ebook-grid {
-      max-width: 70rem;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
 
-    .ebook-card {
-      background: #151515;
-      border: 1px solid #333;
-      border-radius: 0.4rem;
-      overflow: hidden;
-    }
+/* EBOOK GRID */
 
-    /* EXISTING BOOK COVER DESIGN PRESERVED */
+.ebook-grid {
+  max-width: 70rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
 
-    .book-cover {
-  height: 16rem;
-  background: var(--black);
+
+/* EBOOK CARD */
+
+.ebook-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+
+
+/* =========================
+   BOOK COVER
+========================= */
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  background: #eeeeee;
   overflow: hidden;
 }
 
 .book-cover img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: contain;
+  object-position: center top;
 }
 
-    .book-cover h3 {
-      color: var(--white);
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-    }
 
-    .ebook-content {
-      padding: 1.3rem;
-    }
+/* EBOOK CONTENT */
 
-    .ebook-content h3 {
-      color: var(--red);
-      margin-bottom: 0.5rem;
-    }
+.ebook-content {
+  padding: 1.4rem;
+  background: var(--white);
+}
 
-    .ebook-content p {
-      color: #ccc;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
+.ebook-content h3 {
+  color: var(--red);
+  margin-bottom: 0.7rem;
+  font-size: 1.25rem;
+}
 
-    .ebook-view-btn,
-    .see-all-btn {
-      display: inline-block;
-      padding: 0.6rem 1rem;
-      border-radius: 0.25rem;
-    }
+.ebook-content p {
+  color: #555555;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
 
-    .ebook-view-btn {
-      background: var(--red);
-      color: var(--white);
-    }
 
-    .ebook-view-btn:hover {
-      background: var(--dark-red);
-    }
+/* VIEW EBOOK BUTTON */
 
-    .ebooks-link {
-      text-align: center;
-      margin-top: 2.5rem;
-    }
+.ebook-view-btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.25rem;
+  margin-right: 0.4rem;
+}
 
-    .see-all-btn {
-      border: 1px solid var(--white);
-      color: var(--white);
-    }
+.ebook-view-btn:hover {
+  background: var(--dark-red);
+}
 
-    .see-all-btn:hover {
-      background: var(--white);
-      color: var(--black);
-    }
+
+/* BUY NOW BUTTON */
+
+.buy-now-btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+
+.buy-now-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+
+/* SEE ALL */
+
+.ebooks-link {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.see-all-btn {
+  display: inline-block;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid var(--red);
+  color: var(--red);
+  border-radius: 0.25rem;
+}
+
+.see-all-btn:hover {
+  background: var(--red);
+  color: var(--white);
+}
 
     /* =========================
        FOOTER
@@ -622,97 +657,124 @@
     footer strong {
       color: var(--white);
     }
+/* =========================
+   MOBILE
+========================= */
 
-    /* =========================
-       MOBILE
-    ========================= */
+@media (max-width: 768px) {
 
-    @media (max-width: 768px) {
+  header {
+    height: 6rem;
+  }
 
-      header {
-        height: 6rem;
-      }
+  .logo img {
+    height: 6rem;
+  }
 
-      .logo img {
-        height: 6rem;
-      }
+  .hero {
+    padding: 4rem 5%;
+  }
 
-      .hero {
-        padding: 4rem 5%;
-      }
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-      .hero h1 {
-        font-size: 2rem;
-      }
+  .main-section-heading {
+    gap: 0.8rem;
+  }
 
-      .main-section-heading {
-        gap: 0.8rem;
-      }
+  .section-number {
+    flex-basis: 3rem;
+    width: 3rem;
+    height: 3rem;
+  }
 
-      .section-number {
-        flex-basis: 3rem;
-        width: 3rem;
-        height: 3rem;
-      }
+  .main-section-heading h2 {
+    font-size: 1.45rem;
+  }
 
-      .main-section-heading h2 {
-        font-size: 1.45rem;
-      }
+  .research-links {
+    justify-content: flex-start;
+    gap: 0.3rem 1rem;
+  }
 
-      .research-links {
-        justify-content: flex-start;
-        gap: 0.3rem 1rem;
-      }
+  .field-link {
+    font-size: 0.85rem;
+  }
 
-      .field-link {
-        font-size: 0.85rem;
-      }
+  .grant-grid,
+  .ebook-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .grant-grid,
-      .ebook-grid {
-        grid-template-columns: 1fr;
-      }
+  .search-container button {
+    padding: 0 1rem;
+  }
 
-      .search-container button {
-        padding: 0 1rem;
-      }
+  .request-form {
+    padding: 1.3rem;
+  }
 
-      .request-form {
-        padding: 1.3rem;
-      }
 
-      .book-cover {
-        height: 14rem;
-      }
-    }
+  /* =========================
+     FULL BOOK COVER
+  ========================= */
 
-    @media (max-width: 480px) {
+  .book-cover {
+    width: 100%;
+    height: auto;
+    background: #eeeeee;
+    overflow: hidden;
+  }
 
-      header {
-        padding: 0 4%;
-      }
+  .book-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center top;
+  }
 
-      .logo img {
-        max-width: 12rem;
-        height: auto;
-      }
+  .ebook-content p {
+    font-size: 0.95rem;
+  }
 
-      .search-section,
-      .hub,
-      .grants,
-      .ebooks {
-        padding-left: 4%;
-        padding-right: 4%;
-      }
+}
 
-      .search-container {
-        flex-direction: column;
-      }
 
-      .search-container button {
-        min-height: 2.8rem;
-      }
-    }
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+  header {
+    padding: 0 4%;
+  }
+
+  .logo img {
+    max-width: 12rem;
+    height: auto;
+  }
+
+  .search-section,
+  .hub,
+  .grants,
+  .ebooks {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container button {
+    min-height: 2.8rem;
+  }
+
+}
+    
   </style>
 </head>
 
@@ -1539,167 +1601,223 @@
     </section>
 
 
+<!-- =========================
+     03 NOVELS / EBOOKS
+========================= -->
+
+<section
+  class="ebooks"
+  id="ebooks"
+>
+
+  <div class="main-section-heading">
+
+    <div class="section-number">
+      03
+    </div>
+
+    <div>
+      <h2>Novels / eBooks</h2>
+
+      <p>
+        Explore original digital novels and creative
+        storytelling projects.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="ebook-grid">
+
+
     <!-- =========================
-         03 NOVELS / EBOOKS
+         THE JOURNEY
     ========================= -->
 
-    <section
-      class="ebooks"
-      id="ebooks"
-    >
+    <article class="ebook-card">
 
-      <div class="main-section-heading">
+      <div class="book-cover">
 
-        <div class="section-number">
-          03
-        </div>
-
-        <div>
-
-          <h2>Novels / eBooks</h2>
-
-          <p>
-            Explore original digital novels and creative
-            storytelling projects.
-          </p>
-
-        </div>
+        <img
+          src="the-journey.png"
+          alt="The Journey book cover"
+          loading="lazy"
+        >
 
       </div>
 
 
-      <div class="ebook-grid">
+      <div class="ebook-content">
 
-        <article class="ebook-card">
+        <h3>
+          The Journey
+        </h3>
 
-  <!-- BOOK COVER -->
-  <div class="book-cover">
+        <p>
+          An inspirational story about ambition,
+          friendship and personal growth. Follow a
+          young dreamer through challenges, difficult
+          choices and unexpected experiences as they
+          discover the courage and resilience needed
+          to pursue their dreams.
+        </p>
 
-    <img
-      src="the-journey.png"
-      alt="The Journey book cover"
-      loading="lazy"
-    >
-
-  </div>
-
-
-  <!-- BOOK INFORMATION -->
-  <div class="ebook-content">
-
-    <h3>
-      The Journey
-    </h3>
-
-    <p>
-  An inspirational story about ambition, friendship
-  and personal growth. Follow a young dreamer through
-  challenges, difficult choices and unexpected
-  experiences as they discover the courage and
-  resilience needed to pursue their dreams.
-</p>
-    <a
-      href="ebooks/the-journey.html"
-      class="ebook-view-btn"
-      aria-label="Read The Journey eBook"
-    >
-      View eBook
-    </a>
-
-  </div>
-
-</article>
-
- <article class="ebook-card">
-
-  <!-- BOOK COVER -->
-  <div class="book-cover">
-
-    <img
-      src="beyond-the-horizon.png"
-      alt="Beyond the Horizon book cover"
-      loading="lazy"
-    >
-
-  </div>
-
-
-  <!-- BOOK INFORMATION -->
-  <div class="ebook-content">
-
-    <h3>
-      Beyond the Horizon
-    </h3>
-
-    <p>
-      A powerful inspirational story about dreams,
-      determination and the courage to pursue new
-      possibilities. Follow a young dreamer as
-      challenges test their confidence, resilience
-      and willingness to keep moving forward.
-      Through unexpected experiences and meaningful
-      friendships, the journey reveals that the
-      greatest opportunities often lie beyond
-      what we can see.
-    </p>
-
-    <a
-      href="ebooks/beyond-the-horizon.html"
-      class="ebook-view-btn"
-      aria-label="Read Beyond the Horizon eBook"
-    >
-      View eBook
-    </a>
-
-  </div>
-
-</article>
-
-
-        <article class="ebook-card">
-
-  <div class="book-cover">
-    <img
-      src="echoes-of-hope.png"
-      alt="Echoes of Hope book cover"
-    >
-  </div>
-
-  <div class="ebook-content">
-
-    <h3>
-      Echoes of Hope
-    </h3>
-
-    <p>
-      When three young friends face unexpected challenges that threaten their dreams, they must learn to stand together and believe in themselves. Their journey takes them through moments of doubt, difficult choices and new discoveries. Along the way, they discover the true meaning of courage, friendship and hope—and learn that a brighter future can begin with one small step.
-    </p>
-
-    <a
-      href="ebooks/echoes-of-hope.html"
-      class="ebook-view-btn"
-    >
-      View eBook
-    </a>
-
-  </div>
-
-</article>
-
-
-      <div class="ebooks-link">
 
         <a
-          href="ebooks.html"
-          class="see-all-btn"
+          href="ebooks/the-journey.html"
+          class="ebook-view-btn"
+          aria-label="Read The Journey eBook"
         >
-          See All eBooks
+          View eBook
+        </a>
+
+
+        <a
+          href="buy/the-journey.html"
+          class="buy-now-btn"
+          aria-label="Buy The Journey eBook"
+        >
+          Buy Now
         </a>
 
       </div>
 
-    </section>
+    </article>
 
+
+
+    <!-- =========================
+         BEYOND THE HORIZON
+    ========================= -->
+
+    <article class="ebook-card">
+
+      <div class="book-cover">
+
+        <img
+          src="beyond-the-horizon.png"
+          alt="Beyond the Horizon book cover"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="ebook-content">
+
+        <h3>
+          Beyond the Horizon
+        </h3>
+
+        <p>
+          A powerful inspirational story about dreams,
+          determination and the courage to pursue new
+          possibilities. Follow a young dreamer as
+          challenges test their confidence, resilience
+          and willingness to keep moving forward.
+          Through unexpected experiences and meaningful
+          friendships, the journey reveals that the
+          greatest opportunities often lie beyond
+          what we can see.
+        </p>
+
+
+        <a
+          href="ebooks/beyond-the-horizon.html"
+          class="ebook-view-btn"
+          aria-label="Read Beyond the Horizon eBook"
+        >
+          View eBook
+        </a>
+
+
+        <a
+          href="buy/beyond-the-horizon.html"
+          class="buy-now-btn"
+          aria-label="Buy Beyond the Horizon eBook"
+        >
+          Buy Now
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =========================
+         ECHOES OF HOPE
+    ========================= -->
+
+    <article class="ebook-card">
+
+      <div class="book-cover">
+
+        <img
+          src="echoes-of-hope.png"
+          alt="Echoes of Hope book cover"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="ebook-content">
+
+        <h3>
+          Echoes of Hope
+        </h3>
+
+        <p>
+          When three young friends face unexpected
+          challenges that threaten their dreams, they
+          must learn to stand together and believe in
+          themselves. Their journey takes them through
+          moments of doubt, difficult choices and new
+          discoveries. Along the way, they discover the
+          true meaning of courage, friendship and hope.
+        </p>
+
+
+        <a
+          href="ebooks/echoes-of-hope.html"
+          class="ebook-view-btn"
+          aria-label="Read Echoes of Hope eBook"
+        >
+          View eBook
+        </a>
+
+
+        <a
+          href="buy/echoes-of-hope.html"
+          class="buy-now-btn"
+          aria-label="Buy Echoes of Hope eBook"
+        >
+          Buy Now
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- SEE ALL -->
+
+  <div class="ebooks-link">
+
+    <a
+      href="ebooks.html"
+      class="see-all-btn"
+    >
+      See All eBooks
+    </a>
+
+  </div>
+
+</section>
   </main>
 
 
