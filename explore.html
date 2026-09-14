@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Research Topics</title>
+<style>
+  :root{
+    --corporate-red:#c1121f;
+    --black:#111111;
+    --black-2222:#222222;
+    --white:#ffffff;
+    --text:#111111;
+    --muted:#555555;
+    --border:#dddddd;
+  }
+
+  *{box-sizing:border-box}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+header{
+  padding:28px 6vw 42px;
+  background:var(--black);
+  border-bottom:1px solid var(--border);
+}
+
+.header-brand{
+  display:block;
+}
+
+.header-logo{
+  display:block;
+  width:110px;
+  height:auto;
+  object-fit:contain;
+  margin:0;
+}
+
+.header-content{
+  text-align:center;
+  padding-top:35px;
+}
+
+h1{
+  margin:0 0 10px;
+  color:var(--corporate-red);
+  font-size:clamp(30px,4vw,48px);
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-.5px;
+}
+
+header p{
+  margin:0 auto;
+  max-width:780px;
+  color:var(--muted);
+  line-height:1.75;
+}
+  
+
+  main{
+    width:min(1180px,88vw);
+    margin:34px auto 70px;
+  }
+
+  .filters{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    margin-bottom:34px;
+  }
+
+  label{
+    display:block;
+    margin-bottom:9px;
+    color:var(--black);
+    font-weight:800;
+  }
+
+  select{
+    width:100%;
+    min-height:52px;
+    padding:13px 16px;
+    border:1px solid #bdbdbd;
+    border-radius:0;
+    outline:none;
+    background:var(--white);
+    color:var(--black);
+    font:inherit;
+    cursor:pointer;
+    transition:border-color .2s ease,box-shadow .2s ease;
+  }
+
+  select:focus{
+    border-color:var(--corporate-red);
+    box-shadow:0 0 0 2px rgba(193,18,31,.12);
+  }
+
+  select:disabled{
+    background:#f7f7f7;
+    color:#777;
+    cursor:not-allowed;
+  }
+
+  select:invalid{color:#666}
+
+  #results{
+    border-top:1px solid var(--border);
+  }
+
+  .programme{
+    border-bottom:1px solid var(--border);
+  }
+
+  .programme-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    width:100%;
+    padding:22px 4px;
+    color:var(--black);
+    cursor:pointer;
+    font-size:20px;
+    font-weight:800;
+    line-height:1.4;
+  }
+
+  .programme-title:hover{
+    color:var(--corporate-red);
+  }
+.sign{
+  flex:0 0 auto;
+  width:28px;
+  color:var(--corporate-red);
+  font-size:30px;
+  font-weight:400;
+  line-height:1;
+  text-align:center;
+}
+  
+
+  .topic-list{
+    display:none;
+    padding:0 4px 25px;
+  }
+
+  .programme.open .topic-list{display:block}
+
+  .topic{
+    padding:17px 0;
+    border-top:1px solid #eeeeee;
+  }
+
+  .topic-link{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    width:100%;
+    color:var(--black);
+    text-decoration:none;
+    font-size:17px;
+    font-weight:800;
+    line-height:1.5;
+    cursor:pointer;
+    transition:color .2s ease;
+  }
+
+  .topic-link:hover{
+    color:var(--corporate-red);
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+.topic-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+}
+
+.topic-link:after{
+  content:"+";
+  margin-left:auto;
+  color:var(--corporate-red);
+  font-size:30px;
+  font-weight:400;
+  line-height:1;
+}
+
+.topic.expanded .topic-link:after{
+  content:"−";
+}
+
+  .topic-details{
+    display:none;
+    margin-top:20px;
+  }
+
+  .topic.expanded .topic-details{
+    display:grid;
+    grid-template-columns:minmax(220px,320px) 1fr;
+    gap:28px;
+    align-items:start;
+  }
+
+  .cover{
+  display:block;
+  width:100%;
+  aspect-ratio:210/297;
+  object-fit:cover;
+  border:1px solid #d5d5d5;
+  background:#f5f5f5;
+}
+.synopsis{
+  color:#444;
+  font-size:1rem;
+  line-height:1.8;
+  text-align:left;
+}
+
+.synopsis h3{
+  margin:0 0 11px;
+  color:var(--black);
+  font-size:1.5rem;
+  font-weight:800;
+  line-height:1.3;
+  text-align:left;
+}
+
+.synopsis p{
+  margin:0 0 14px;
+}
+
+.synopsis strong{
+  color:var(--black);
+}
+
+
+.actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.btn{
+  display:inline-block;
+  padding:11px 20px;
+  border-radius:0;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:800;
+  line-height:1.3;
+  border:1px solid var(--corporate-red);
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+
+  .view{
+    color:var(--corporate-red);
+    background:var(--white);
+  }
+
+  .view:hover{
+    color:var(--white);
+    background:var(--corporate-red);
+  }
+
+  .buy{
+    color:var(--white);
+    background:var(--corporate-red);
+  }
+
+  .buy:hover{
+    color:var(--white);
+    background:var(--black);
+    border-color:var(--black);
+  }
+
+  .empty{
+    padding:48px 4px;
+    color:#666;
+    text-align:center;
+  }
+
+  footer{
+    margin-top:70px;
+    padding:24px 6vw;
+    background:var(--black-2222);
+    color:var(--white);
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+  }
+
+  @media(max-width:700px){
+    header{padding:36px 6vw 24px}
+
+    main{
+      width:88vw;
+      margin-top:28px;
+    }
+
+    .filters{
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+
+    .programme-title{
+      font-size:18px;
+    }
+
+    .topic.expanded .topic-details{
+      grid-template-columns:1fr;
+    }
+
+    .cover{
+      max-width:320px;
+    }
+
+    .synopsis h3{
+      font-size:21px;
+    }
+
+    .actions{
+      width:100%;
+    }
+
+    .btn{
+      text-align:center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <img src="karieson_logo.png"
+         alt="Karieson Creative Hub logo"
+         class="header-logo">
+
+    <div class="header-content">
+      <h1>Explore Research</h1>
+      <p>
+        Find research topics by academic level and programme.
+        Select an academic level first, then choose a programme
+        to populate the available research topics.
+      </p>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="filters">
+    <div>
+      <label for="level">Academic level <span aria-hidden="true">*</span></label>
+      <select id="level" required>
+        <option value="" selected disabled>Select academic level</option>
+        <option value="diploma">Diploma</option>
+        <option value="degree">Degree</option>
+        <option value="masters">Master's</option>
+      </select>
+    </div>
+    <div>
+      <label for="programme">Academic programme <span aria-hidden="true">*</span></label>
+      <select id="programme" required disabled>
+        <option value="" selected disabled>Select academic level first</option>
+      </select>
+    </div>
+  </div>
+  <section id="results" aria-live="polite">
+    <div class="empty">Select an academic level and programme to explore research topics.</div>
+  </section>
+</main>
+
+<script>
+const IMG = "research-cover.png";
+
+/* Add or edit topics here. Each programme has 5+ topics for every level. */
+const data = {
+  diploma: {
+    "Education": [
+      "Impact of Digital Learning Tools on Student Engagement",
+      "Factors Affecting Academic Performance among Secondary School Students",
+      "Role of Guidance and Counselling in Student Discipline",
+      "Influence of Teacher Motivation on Classroom Performance",
+      "Challenges Facing Inclusive Education in Public Schools"
+    ],
+    "Information Technology": [
+      "Adoption of Cloud Computing among Small Businesses",
+      "Cybersecurity Awareness among College Students",
+      "Impact of Mobile Applications on Service Delivery",
+      "Factors Affecting E-Learning Platform Adoption",
+      "Role of Information Systems in Small Business Management"
+    ],
+    "Agriculture": [
+      "Adoption of Modern Farming Practices among Smallholder Farmers",
+      "Effects of Climate Variability on Crop Production",
+      "Role of Agricultural Extension Services in Farm Productivity",
+      "Post-Harvest Losses and Food Security among Smallholder Farmers",
+      "Use of Organic Manure in Improving Soil Fertility"
+    ],
+    "Environmental Science": [
+      "Household Waste Management Practices in Urban Communities",
+      "Effects of Plastic Waste on the Local Environment",
+      "Community Participation in Environmental Conservation",
+      "Assessment of Water Pollution Sources in Urban Areas",
+      "Effects of Deforestation on Local Ecosystems"
+    ],
+    "Sociology and Social Sciences": [
+      "Social Media Use and Youth Social Interaction",
+      "Factors Influencing School Dropout among Young People",
+      "Effects of Urbanization on Family Relationships",
+      "Community Networks and Social Support among Youth",
+      "Gender Roles and Household Decision-Making"
+    ],
+    "Health Sciences": [
+      "Factors Influencing Health-Seeking Behaviour among Young Adults",
+      "Knowledge and Practices of Hand Hygiene among Students",
+      "Barriers to Accessing Primary Healthcare Services",
+      "Nutrition Awareness among College Students",
+      "Community Awareness of Preventive Healthcare Practices"
+    ],
+    "Business Administration": [
+      "Customer Service Quality and Customer Satisfaction",
+      "Influence of Employee Motivation on Organizational Performance",
+      "Inventory Management Practices in Small Businesses",
+      "Digital Marketing and Business Growth",
+      "Challenges Facing Entrepreneurship among Youth"
+    ],
+    "Economics": [
+      "Effects of Inflation on Household Consumption",
+      "Youth Unemployment and Household Welfare",
+      "Small Businesses and Local Economic Development",
+      "Factors Influencing Household Saving Behaviour",
+      "Effects of Rising Food Prices on Low-Income Households"
+    ],
+    "Criminology and Criminal Justice": [
+      "Factors Contributing to Youth Involvement in Crime",
+      "Community Policing and Crime Prevention",
+      "Effects of Substance Abuse on Criminal Behaviour",
+      "Public Perception of Police Effectiveness",
+      "Rehabilitation and Reintegration of Offenders"
+    ],
+    "Community Development": [
+      "Community Participation in Local Development Projects",
+      "Role of Youth Groups in Community Development",
+      "Women Empowerment and Household Economic Welfare",
+      "Challenges Affecting Community-Based Organizations",
+      "Social Entrepreneurship and Community Development"
+    ],
+    "Public Administration": [
+      "Citizen Satisfaction with Public Service Delivery",
+      "Challenges Affecting Effective Public Administration",
+      "Role of Digital Services in Public Service Delivery",
+      "Employee Performance in Public Institutions",
+      "Transparency and Accountability in Local Government"
+    ],
+    "Commerce": [
+      "Consumer Buying Behaviour in Retail Businesses",
+      "Effects of E-Commerce on Traditional Retailing",
+      "Customer Relationship Management and Business Performance",
+      "Factors Influencing Retail Store Location",
+      "Pricing Strategies and Customer Purchase Decisions"
+    ]
+  },
+  degree: {
+    "Education": [
+      "Influence of Competency-Based Learning on Academic Achievement",
+      "Teacher Professional Development and Teaching Effectiveness",
+      "Technology Integration and Learning Outcomes",
+      "School Leadership and Teacher Job Satisfaction",
+      "Inclusive Education and Learning Participation among Students"
+    ],
+    "Computer Science and Technology": [
+      "Artificial Intelligence Adoption in Higher Education",
+      "Cybersecurity Risk Management in Small and Medium Enterprises",
+      "Machine Learning Applications in Business Decision-Making",
+      "Cloud Computing Adoption and Organizational Performance",
+      "Mobile Technology and Digital Transformation"
+    ],
+    "Agricultural Science": [
+      "Climate-Smart Agriculture and Smallholder Farm Productivity",
+      "Agricultural Value Chains and Farmer Income",
+      "Digital Agriculture and Access to Market Information",
+      "Sustainable Irrigation Practices and Crop Productivity",
+      "Agricultural Cooperatives and Smallholder Farmer Welfare"
+    ],
+    "Environmental Science": [
+      "Urban Waste Management and Environmental Sustainability",
+      "Climate Change Adaptation Strategies among Local Communities",
+      "Water Quality Assessment and Public Health",
+      "Renewable Energy Adoption and Environmental Sustainability",
+      "Urbanization and Loss of Biodiversity"
+    ],
+    "Sociology and Social Sciences": [
+      "Social Inequality and Access to Educational Opportunities",
+      "Social Media, Identity and Youth Behaviour",
+      "Migration and Household Socioeconomic Outcomes",
+      "Gender Inequality and Economic Participation",
+      "Changing Family Structures in Urban Communities"
+    ],
+    "Public Health": [
+      "Determinants of Healthcare Utilization in Underserved Communities",
+      "Health Education and Preventive Health Behaviour",
+      "Maternal Health Service Utilization and Associated Factors",
+      "Mental Health Awareness among University Students",
+      "Community-Based Interventions and Health Outcomes"
+    ],
+    "Business Administration": [
+      "Strategic Management Practices and Organizational Performance",
+      "Employee Engagement and Organizational Productivity",
+      "Entrepreneurship Education and Youth Enterprise Development",
+      "Customer Experience Management and Business Performance",
+      "Digital Transformation and Competitive Advantage"
+    ],
+    "Economics": [
+      "Unemployment and Economic Growth",
+      "Inflation and Household Welfare",
+      "Financial Inclusion and Economic Development",
+      "Public Expenditure and Economic Development",
+      "Exchange Rate Volatility and Import Prices"
+    ],
+    "Criminology and Criminal Justice": [
+      "Predictors of Juvenile Delinquency in Urban Communities",
+      "Effectiveness of Community Policing in Crime Reduction",
+      "Cybercrime Awareness and Victimization among Young Adults",
+      "Correctional Rehabilitation and Recidivism",
+      "Police Accountability and Public Trust"
+    ],
+    "Community Development": [
+      "Participatory Development and Sustainability of Community Projects",
+      "Youth Empowerment Programmes and Livelihood Outcomes",
+      "Women-Led Enterprises and Community Economic Development",
+      "NGOs and Sustainable Community Development",
+      "Social Capital and Community Resilience"
+    ],
+    "Public Administration": [
+      "E-Government and Public Service Delivery",
+      "Decentralization and Local Government Performance",
+      "Public Participation in Policy-Making",
+      "Performance Management in Public Institutions",
+      "Public Procurement Practices and Service Delivery"
+    ],
+    "Commerce": [
+      "E-Commerce Adoption and Retail Business Performance",
+      "Supply Chain Management and Organizational Competitiveness",
+      "Consumer Behaviour in Digital Marketplaces",
+      "Brand Loyalty and Customer Retention",
+      "Market Orientation and Small Business Performance"
+    ]
+  },
+  masters: {
+    "Education": [
+      "Artificial Intelligence, Pedagogy and the Future of Higher Education",
+      "Educational Leadership and Institutional Performance",
+      "Equity in Digital Learning Access and Student Outcomes",
+      "Teacher Wellbeing, Burnout and Professional Retention",
+      "Policy Implementation and Quality of Education"
+    ],
+    "Information Systems and Technology": [
+      "AI Governance and Responsible Adoption in Organizations",
+      "Cybersecurity Governance and Enterprise Risk Management",
+      "Digital Transformation Maturity in Public Institutions",
+      "Data Analytics Capability and Strategic Decision-Making",
+      "Information Systems Success and Organizational Performance"
+    ],
+    "Agriculture and Agribusiness": [
+      "Climate-Smart Agriculture and Food System Resilience",
+      "Agricultural Finance and Smallholder Commercialization",
+      "Digital Market Platforms and Farmer Market Access",
+      "Sustainable Value Chains and Rural Livelihoods",
+      "Agricultural Innovation Adoption and Productivity"
+    ],
+    "Environmental Management": [
+      "Climate Adaptation Governance and Community Resilience",
+      "Circular Economy Strategies for Urban Waste Reduction",
+      "Environmental Policy Implementation and Compliance",
+      "Sustainable Urban Development and Ecosystem Services",
+      "Renewable Energy Transition and Environmental Outcomes"
+    ],
+    "Sociology and Social Policy": [
+      "Social Protection and Poverty Reduction Outcomes",
+      "Digital Inequality and Social Exclusion",
+      "Migration, Remittances and Household Welfare",
+      "Gender, Work and Changing Household Economies",
+      "Social Cohesion and Community Resilience"
+    ],
+    "Public Health and Health Systems": [
+      "Health Systems Resilience and Access to Essential Services",
+      "Universal Health Coverage and Health Equity",
+      "Digital Health Interventions and Patient Outcomes",
+      "Health Policy Implementation and Service Quality",
+      "Social Determinants of Health and Health Inequalities"
+    ],
+    "Business and Management": [
+      "Strategic Innovation and Sustainable Competitive Advantage",
+      "Organizational Culture and Digital Transformation",
+      "Leadership Styles and Employee Innovation Behaviour",
+      "Corporate Governance and Organizational Performance",
+      "Sustainable Business Models and Long-Term Firm Performance"
+    ],
+    "Economics and Development Economics": [
+      "Fiscal Policy and Inclusive Economic Growth",
+      "Financial Inclusion and Household Economic Resilience",
+      "Labour Market Transformation and Youth Employment",
+      "Trade Policy and Domestic Industrial Development",
+      "Economic Inequality and Social Mobility"
+    ],
+    "Criminology and Criminal Justice": [
+      "Predictive Policing, Ethics and Criminal Justice Governance",
+      "Cybercrime Governance and Digital Evidence Challenges",
+      "Criminal Justice Reform and Recidivism Reduction",
+      "Community Safety Strategies and Crime Prevention",
+      "Police Legitimacy, Accountability and Public Trust"
+    ],
+    "Community Development": [
+      "Community Resilience and Sustainable Livelihoods",
+      "Participatory Governance and Local Development Outcomes",
+      "Youth Entrepreneurship and Inclusive Community Development",
+      "Social Innovation and Poverty Reduction",
+      "Community-Based Organizations and Sustainable Development"
+    ],
+    "Public Administration and Governance": [
+      "Public Sector Digital Transformation and Service Quality",
+      "Governance, Accountability and Public Sector Performance",
+      "Policy Implementation Gaps in Public Institutions",
+      "Citizen Participation and Democratic Local Governance",
+      "Public Financial Management and Service Delivery"
+    ],
+    "Commerce and Marketing": [
+      "Omnichannel Retailing and Consumer Purchase Behaviour",
+      "Digital Marketing Analytics and Customer Lifetime Value",
+      "Supply Chain Resilience and Firm Performance",
+      "Consumer Trust in AI-Enabled Commerce",
+      "Sustainable Consumption and Green Marketing"
+    ]
+  }
+};
+
+const level = document.getElementById("level");
+const programme = document.getElementById("programme");
+const results = document.getElementById("results");
+
+level.addEventListener("change", () => {
+  const programmes = Object.keys(data[level.value] || {});
+  programme.innerHTML = '<option value="" selected disabled>Select programme</option>';
+  programmes.forEach(p => {
+    const o = document.createElement("option");
+    o.value = p; o.textContent = p;
+    programme.appendChild(o);
+  });
+  programme.disabled = programmes.length === 0;
+  results.innerHTML = '<div class="empty">Select a programme to explore research topics.</div>';
+});
+
+programme.addEventListener("change", render);
+
+function render(){
+  const topics = data[level.value]?.[programme.value] || [];
+  if(!topics.length){
+    results.innerHTML = '<div class="empty">No research topics available.</div>';
+    return;
+  }
+
+  results.innerHTML = "";
+  const group = document.createElement("div");
+  group.className = "programme open";
+
+  const title = document.createElement("div");
+  title.className = "programme-title";
+  title.innerHTML = `<span>${programme.value} — ${level.options[level.selectedIndex].text}</span><span class="sign">−</span>`;
+  title.onclick = () => {
+    group.classList.toggle("open");
+    title.querySelector(".sign").textContent = group.classList.contains("open") ? "−" : "+";
+  };
+
+  const list = document.createElement("div");
+  list.className = "topic-list";
+
+  topics.forEach((name, i) => {
+    const topic = document.createElement("article");
+    topic.className = "topic";
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+
+    topic.innerHTML = `
+      <a class="topic-link" href="#${slug}" aria-expanded="false">${name}</a>
+      <div class="topic-details">
+        <img class="cover" src="${IMG}" alt="A4 research cover for ${name}" onerror="this.style.visibility='hidden';this.alt='Place research-cover.png in the same folder as explore.html';">
+        <div class="synopsis">
+          <h3>${name}</h3>
+          <p>This research topic examines <strong>${name.toLowerCase()}</strong>. The study can investigate the background of the problem, key variables, relevant stakeholders, existing evidence, methodological approaches, findings and practical recommendations. It is structured as a starting point for an academic research project and can be adapted to the institution's approved research format.</p>
+          <p><strong>Academic level:</strong> ${level.options[level.selectedIndex].text}<br>
+          <strong>Programme:</strong> ${programme.value}</p>
+          <div class="actions">
+            <a class="btn view" href="research.html?topic=${encodeURIComponent(name)}&level=${encodeURIComponent(level.value)}&programme=${encodeURIComponent(programme.value)}">View</a>
+            <a class="btn buy" href="buy.html?topic=${encodeURIComponent(name)}">Buy now</a>
+          </div>
+        </div>
+      </div>`;
+
+    topic.querySelector(".topic-link").addEventListener("click", e => {
+      e.preventDefault();
+      topic.classList.toggle("expanded");
+      e.currentTarget.setAttribute("aria-expanded", topic.classList.contains("expanded"));
+    });
+    list.appendChild(topic);
+  });
+
+  group.append(title, list);
+  results.appendChild(group);
+}
+</script>
+<footer>Karieson Creative Hub All Rights Reserved</footer>
+</body>
+</html>

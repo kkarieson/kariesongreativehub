@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Karieson — a Kenyan technology professional, author, project practitioner and community development enthusiast based in Garissa County.">
+  <title>About Me | Karieson</title>
+
+  <style>
+    :root {
+      --corporate-red: #b30000;
+      --black: #111111;
+      --white: #ffffff;
+      --soft-black: #333333;
+      --light-gray: #f5f5f5;
+      --border: #e5e5e5;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 14px;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+.site-header {
+  background: #222222;
+  color: #ffffff;
+  border-bottom: 3px solid var(--corporate-red);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.logo {
+  display: inline-flex;
+  margin-bottom: 2.2rem;
+}
+
+.logo img {
+  height: 42px;
+  width: auto;
+  max-width: 180px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: var(--corporate-red);
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hero-content h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+}
+
+.hero-content h1 span {
+  color: var(--corporate-red);
+}
+
+.hero-lead {
+  color: #eeeeee;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+    main {
+      background: var(--white);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 1.35rem;
+      background: var(--corporate-red);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      color: var(--soft-black);
+      margin-bottom: 0.85rem;
+    }
+
+    .intro {
+      font-size: 1rem;
+      color: var(--black);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .credentials {
+      border-left: 2px solid var(--corporate-red);
+      padding-left: 1.2rem;
+    }
+
+    .credential {
+      margin-bottom: 1.15rem;
+    }
+
+    .credential:last-child {
+      margin-bottom: 0;
+    }
+
+    .credential strong {
+      display: block;
+      color: var(--black);
+    }
+
+    .credential small {
+      color: #666666;
+      font-size: 0.78rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      background: var(--white);
+    }
+
+    .card .number {
+      color: var(--corporate-red);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.45rem;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      font-size: 0.87rem;
+    }
+
+    .highlight {
+      background: var(--light-gray);
+      border-left: 4px solid var(--corporate-red);
+      padding: 1.4rem;
+    }
+
+    .highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem 1.5rem;
+    }
+
+    .profile-list li {
+      position: relative;
+      padding-left: 1rem;
+      color: var(--soft-black);
+      font-size: 0.88rem;
+    }
+
+    .profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72rem;
+      width: 5px;
+      height: 5px;
+      background: var(--corporate-red);
+    }
+
+    .location-box {
+      background: var(--black);
+      color: var(--white);
+      padding: 1.5rem;
+    }
+
+    .location-box p {
+      color: #eeeeee;
+      margin-bottom: 0;
+    }
+footer {
+  border-top: 1px solid var(--border);
+  background: #222222;
+  color: #ffffff;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+.red {
+  color: var(--corporate-red);
+}
+    
+
+    @media (max-width: 760px) {
+      .profile-grid,
+      .cards,
+      .profile-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .container {
+        padding-top: 2.2rem;
+        padding-bottom: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a class="logo" href="index.html" aria-label="Karieson home">
+      <img src="karieson_logo.png" alt="Karieson logo">
+    </a>
+
+    <div class="hero-content">
+      <div class="eyebrow">ABOUT ME</div>
+
+      <h1>
+        Technology by Profession.
+        <span>Creativity by Passion.</span>
+      </h1>
+
+      <p class="hero-lead">
+        I am a Kenyan technology professional, author, project practitioner and
+        community-focused innovator with interests spanning information technology,
+        leadership, project management, monitoring and evaluation, research,
+        agriculture and digital empowerment.
+      </p>
+    </div>
+
+  </div>
+</header>
+
+  <main>
+    <div class="container">
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Who I Am</h2>
+        </div>
+
+        <div class="profile-grid">
+          <div>
+            <p class="intro">
+              I am a <strong>Kenyan technology professional by profession and an author by creativity</strong>,
+              with a strong interest in using technology, knowledge and creativity to contribute to
+              practical solutions and meaningful community development.
+            </p>
+
+            <p>
+              My professional interests extend beyond technology. I have developed knowledge and
+              practical skills in <strong>project management, leadership, monitoring and evaluation,
+              research, networking and digital technology</strong>. I am particularly interested in
+              connecting technical knowledge with projects that create opportunities, strengthen
+              communities and support sustainable development.
+            </p>
+
+            <p>
+              I also value continuous learning, professional development and exposure to different
+              communities and environments. My experiences across parts of <strong>East and Central Africa</strong>
+              have broadened my perspective and strengthened my appreciation of diverse people,
+              cultures, challenges and opportunities.
+            </p>
+          </div>
+
+          <aside class="credentials" aria-label="Professional credentials">
+            <div class="credential">
+              <strong>Information Technology &amp; Information Science</strong>
+              <small>Academic and professional technology background</small>
+            </div>
+
+            <div class="credential">
+              <strong>Cybersecurity</strong>
+              <small>Technology and information security interests</small>
+            </div>
+
+            <div class="credential">
+              <strong>CCNA 1 &amp; CCNA 2</strong>
+              <small>Networking knowledge and training</small>
+            </div>
+
+            <div class="credential">
+              <strong>CNNP</strong>
+              <small>Professional networking qualification/training</small>
+            </div>
+
+            <div class="credential">
+              <strong>Project Management &amp; Leadership</strong>
+              <small>Skills developed through YALI</small>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Professional &amp; Technical Interests</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="number">01</div>
+            <h3>Information Technology</h3>
+            <p>
+              Exploring technology, information systems, digital solutions and the practical use
+              of ICT to address real-world challenges.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Cybersecurity &amp; Networking</h3>
+            <p>
+              Building knowledge in cybersecurity, computer networking and related technologies,
+              supported by CCNA 1, CCNA 2 and networking-focused training.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">03</div>
+            <h3>Project Management</h3>
+            <p>
+              Applying planning, coordination, leadership and implementation principles to
+              projects and community-oriented initiatives.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="number">04</div>
+            <h3>Monitoring &amp; Evaluation</h3>
+            <p>
+              Interested in measuring progress, learning from implementation and strengthening
+              accountability and project performance.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Education &amp; Professional Development</h2>
+        </div>
+
+        <p>
+          My educational and professional development journey combines technology, networking,
+          cybersecurity, leadership and project-oriented learning.
+        </p>
+
+        <ul class="profile-list">
+          <li><strong>Information Technology / Information Science</strong> — technology-focused academic background.</li>
+          <li><strong>Cybersecurity</strong> — professional area of interest and technical development.</li>
+          <li><strong>CCNA 1 &amp; CCNA 2</strong> — networking knowledge and training.</li>
+          <li><strong>CNNP</strong> — networking-focused professional training.</li>
+          <li><strong>Project Management &amp; Leadership</strong> — skills developed through YALI.</li>
+        </ul>
+
+        <p style="margin-top: 1rem;">
+          My training has helped me develop a multidisciplinary perspective that brings together
+          technology, leadership, project implementation and community development.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Community Leadership &amp; Innovation</h2>
+        </div>
+
+        <div class="highlight">
+          <h3>Founder — Garissa Agro-Digital Empowerment Hub</h3>
+          <p>
+            I am the founder of <strong>Garissa Agro-Digital Empowerment Hub</strong>, a community-focused
+            initiative based in Garissa County, Kenya.
+          </p>
+          <p>
+            The initiative reflects my interest in bringing together <strong>agriculture, technology,
+            digital skills and community empowerment</strong> to support practical opportunities
+            and development at the local level.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Creativity &amp; Authorship</h2>
+        </div>
+
+        <p>
+          While technology is my profession, <strong>writing is an important part of my creativity</strong>.
+          Through authorship and digital storytelling, I explore themes of ambition, resilience,
+          friendship, personal growth, hope and the pursuit of better possibilities.
+        </p>
+
+        <p>
+          Karieson provides a space where my professional interests and creative work can exist
+          together — from technology and project development to research, ideas, stories and
+          digital publications.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Regional Exposure</h2>
+        </div>
+
+        <p>
+          I have travelled across parts of <strong>East and Central Africa</strong>. Exposure to
+          different environments and communities has contributed to my understanding of the
+          region and continues to influence my professional interests, creativity and approach
+          to community-focused work.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Based in Northeastern Kenya</h2>
+        </div>
+
+        <div class="location-box">
+          <p>
+            I am based in <strong>Garissa County, Township Sub-County, Northeastern Kenya</strong>.
+            From this base, I continue to pursue professional development, technology-related
+            interests, creative writing, project initiatives and community empowerment.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>My Approach</h2>
+        </div>
+
+        <p class="intro">
+          <strong>Knowledge. Technology. Creativity. Leadership. Impact.</strong>
+        </p>
+
+        <p>
+          I believe that knowledge becomes more valuable when it is applied, technology becomes
+          more meaningful when it solves real problems, and creativity becomes powerful when it
+          inspires people and opens new possibilities.
+        </p>
+
+        <p>
+          My goal is to continue learning, creating and building initiatives that connect
+          professional expertise with practical opportunities and positive community impact.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      &copy; 2026 Karieson. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
