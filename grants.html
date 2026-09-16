@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Karieson Creative Hub | Grant Proposals</title>
+
+<style>
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #eeeeee;
+    --border: #d6d6d6;
+    --text-grey: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: var(--black);
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 25px 15px 28px;
+}
+
+.logo {
+    width: 150px;
+    max-width: 45%;
+    height: auto;
+    display: block;
+    margin: 0 0 18px;
+}
+
+.header-title {
+    font-size: clamp(23px, 4vw, 35px);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.red-line {
+    width: 55px;
+    height: 4px;
+    background: var(--red);
+    margin: 12px auto 0;
+}
+
+/* MAIN */
+
+.container {
+    width: min(850px, 92%);
+    margin: 50px auto 70px;
+}
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro h1 {
+    font-size: clamp(20px, 3vw, 28px);
+    margin-bottom: 10px;
+    color: var(--red);
+}
+
+.intro p {
+    color: var(--text-grey);
+    text-align: left;
+}
+
+/* SELECTION */
+
+.selection-box {
+    border: 1px solid var(--border);
+    padding: 28px;
+    background: white;
+}
+
+.selection-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #bbb;
+    background: white;
+    color: var(--black);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--red);
+}
+
+/* TOPICS */
+
+.topics-area {
+    display: none;
+    margin-top: 30px;
+}
+
+.topics-area.show {
+    display: block;
+}
+
+.topics-title {
+    background: var(--black);
+    color: white;
+    padding: 16px 20px;
+    border-left: 5px solid var(--red);
+    font-weight: bold;
+}
+
+.topic-list {
+    border: 1px solid var(--border);
+    border-top: none;
+}
+
+.topic {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 18px;
+    border-bottom: 1px solid var(--border);
+    background: white;
+}
+
+.topic:last-child {
+    border-bottom: none;
+}
+
+.topic:hover {
+    background: #fafafa;
+}
+
+.topic-name {
+    font-size: 15px;
+}
+
+.plus {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--red);
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.plus:hover {
+    background: var(--black);
+}
+
+/* DETAIL */
+
+.detail {
+    display: none;
+    background: var(--grey);
+    padding: 30px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail.show {
+    display: block;
+}
+
+.detail-content {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.detail h2 {
+    margin-bottom: 22px;
+    font-size: 25px;
+}
+
+/* A4 COVER */
+
+.cover {
+    width: min(100%, 450px);
+    aspect-ratio: 210 / 297;
+    margin: auto;
+    background: #ddd;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* SYNOPSIS */
+
+.synopsis {
+    text-align: center;
+    margin: 25px auto;
+    color: #444;
+    line-height: 1.7;
+}
+
+/* CENTERED ACTION BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px auto 5px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid;
+    transition: 0.2s ease;
+}
+
+/* BLACK VIEW BUTTON */
+
+.view {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+/* RED BUY NOW BUTTON */
+
+.buy {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+}
+
+/* HOVER */
+
+.view:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--white);
+}
+
+.buy:hover {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+/* INSTRUCTIONS */
+
+.instructions {
+    margin-top: 60px;
+    background: var(--black);
+    color: white;
+    padding: 15px 18px;
+    border-left: 4px solid var(--red);
+    font-size: 14px;
+}
+
+.instructions h2 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.instructions ol {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.instructions li {
+    margin: 3px 0;
+    line-height: 1.4;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+    color: #aaa;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+footer span {
+    color: var(--red);
+}
+/* ================= PROPOSAL SUMMARY ================= */
+
+.proposal-preview {
+    margin-top: 25px;
+}
+
+.proposal-summary {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--red);
+    padding: 25px;
+    text-align: left;
+}
+
+.proposal-summary h3 {
+    color: var(--red);
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.proposal-summary h4 {
+    color: var(--black);
+    font-size: 15px;
+    margin: 18px 0 7px;
+}
+
+.proposal-summary p,
+.proposal-summary li {
+    color: var(--text-grey);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.proposal-summary ul {
+    padding-left: 20px;
+}
+
+.proposal-summary li {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+
+    .proposal-summary {
+        padding: 20px 16px;
+    }
+
+    .proposal-summary h3 {
+        font-size: 18px;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .container {
+        width: 94%;
+        margin-top: 30px;
+    }
+
+    .selection-box {
+        padding: 20px;
+    }
+
+    .topic {
+        padding: 14px;
+    }
+
+    .topic-name {
+        padding-right: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <img src="karieson_logo.png"
+         alt="karieson Creative Hub"
+         class="logo">
+
+    <div class="header-title">
+        Grant Proposals
+    </div>
+
+    <div class="red-line"></div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <section class="intro">
+
+        <h1>Grant Proposal Guidance</h1>
+
+<p>
+    Grants provide financial support for projects that address community,
+    research, development, education, environmental, and social needs.
+    Explore the available grant areas to find proposal topics that best
+    match your project, organization, or intended impact.
+</p>
+
+    </section>
+
+
+    <!-- GRANT TYPE SELECTION -->
+
+    <div class="selection-box">
+
+        <label for="grantType">
+            Grant Type
+        </label>
+
+        <select id="grantType" onchange="showTopics()">
+
+            <option value="">
+                — Select Grant Type —
+            </option>
+
+            <option value="research">
+                Research & Academic Grants
+            </option>
+
+            <option value="education">
+                Education Grants
+            </option>
+
+            <option value="business">
+                Business & Entrepreneurship
+            </option>
+
+            <option value="community">
+                Community & Social Development
+            </option>
+
+            <option value="health">
+                Health & Public Health
+            </option>
+
+            <option value="agriculture">
+                Agriculture & Food Security
+            </option>
+
+            <option value="environment">
+                Environment & Climate
+            </option>
+
+            <option value="arts">
+                Arts, Culture & Creative Industries
+            </option>
+
+            <option value="youth">
+                Youth Development
+            </option>
+
+            <option value="women">
+                Women & Gender
+            </option>
+
+            <option value="infrastructure">
+                Infrastructure & Capital
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ================= TOPICS ================= -->
+
+    <div id="topicsArea" class="topics-area">
+
+        <div class="topics-title" id="topicsTitle">
+            Grant Topics
+        </div>
+
+        <div class="topic-list" id="topicList"></div>
+
+    </div>
+
+
+    <!-- INSTRUCTIONS -->
+
+    <section class="instructions">
+
+        <h2>Instructions</h2>
+
+        <ol>
+            <li>Select your preferred grant type.</li>
+            <li>Choose a grant topic from the list that appears.</li>
+            <li>Click the <strong>+</strong> button to view the proposal.</li>
+            <li>Review the cover and synopsis.</li>
+            <li>Click <strong>View</strong> or <strong>Buy Now</strong>.</li>
+        </ol>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Karieson Creative Hub
+    <span>•</span>
+    Grant Proposals
+    <span>•</span>
+    All Rights Reserved
+</footer>
+
+
+<script>
+
+/* ================= GRANT DATA ================= */
+
+const grants = {
+
+    research: {
+        title: "Research & Academic Grants",
+        topics: [
+            {
+                name: "Research Projects & Academic Development",
+                image: "grants/research-academic.jpg",
+                synopsis: "Research, academic development, innovation and knowledge-generation initiatives."
+            },
+            {
+                name: "Research Capacity Building",
+                image: "grants/research-capacity.jpg",
+                synopsis: "Supporting institutions and researchers to strengthen research capacity, skills and infrastructure."
+            },
+            {
+                name: "Innovation & Research Training",
+                image: "grants/research-training.jpg",
+                synopsis: "Supporting innovation, research training, skills development and knowledge transfer."
+            },
+            {
+                name: "Digital Transformation in Education",
+                image: "grants/digital-education.jpg",
+                synopsis: "Research and innovation initiatives focused on digital learning and educational technology."
+            },
+            {
+                name: "STEM Education Research",
+                image: "grants/stem.jpg",
+                synopsis: "Research supporting science, technology, engineering and mathematics education."
+            },
+            {
+                name: "Youth Research & Innovation",
+                image: "grants/youth-research.jpg",
+                synopsis: "Supporting young researchers and innovative solutions to social and economic challenges."
+            }
+        ]
+    },
+
+    education: {
+        title: "Education Grants",
+        topics: [
+            {
+                name: "Schools, Higher Education & Digital Learning",
+                image: "grants/education.jpg",
+                synopsis: "Supporting schools, universities, digital learning and improved educational outcomes."
+            },
+            {
+                name: "Teacher Training & Professional Development",
+                image: "grants/teacher-training.jpg",
+                synopsis: "Professional development and capacity-building programmes for teachers and education workers."
+            },
+            {
+                name: "Girls' Education",
+                image: "grants/girls-education.jpg",
+                synopsis: "Initiatives designed to improve access, retention and completion of education for girls."
+            },
+            {
+                name: "Inclusive Education",
+                image: "grants/inclusive-education.jpg",
+                synopsis: "Supporting accessible and inclusive education for learners from diverse backgrounds."
+            },
+            {
+                name: "Digital Skills & E-Learning",
+                image: "grants/digital-skills.jpg",
+                synopsis: "Programmes that improve digital literacy, technology access and online learning."
+            },
+            {
+                name: "Vocational & Technical Skills",
+                image: "grants/vocational.jpg",
+                synopsis: "Supporting technical, vocational and practical skills development."
+            },
+            {
+                name: "Early Childhood Education",
+                image: "grants/early-childhood.jpg",
+                synopsis: "Supporting quality early childhood development and learning programmes."
+            }
+        ]
+    },
+
+    business: {
+        title: "Business & Entrepreneurship",
+        topics: [
+            {
+                name: "Startup & Small Business Development",
+                image: "grants/business.jpg",
+                synopsis: "Supporting startups, small businesses, innovation and sustainable business growth."
+            },
+            {
+                name: "Youth Entrepreneurship",
+                image: "grants/youth-entrepreneurship.jpg",
+                synopsis: "Supporting young entrepreneurs with business development, employment and innovation."
+            },
+            {
+                name: "Women Entrepreneurship",
+                image: "grants/women-business.jpg",
+                synopsis: "Supporting women-owned businesses, enterprise development and economic participation."
+            },
+            {
+                name: "Digital Entrepreneurship",
+                image: "grants/digital-business.jpg",
+                synopsis: "Supporting technology-driven businesses and digital economic opportunities."
+            },
+            {
+                name: "Small Business Expansion",
+                image: "grants/business-expansion.jpg",
+                synopsis: "Supporting established small businesses seeking expansion, equipment and market development."
+            },
+            {
+                name: "Innovation & Technology Startups",
+                image: "grants/technology-startup.jpg",
+                synopsis: "Supporting innovative technology solutions and scalable startup enterprises."
+            },
+            {
+                name: "Employment Creation",
+                image: "grants/employment.jpg",
+                synopsis: "Business initiatives designed to create sustainable employment opportunities."
+            }
+        ]
+    },
+
+    community: {
+        title: "Community & Social Development",
+        topics: [
+            {
+                name: "Community Empowerment",
+                image: "grants/community.jpg",
+                synopsis: "Supporting communities through empowerment, participation and sustainable local development."
+            },
+            {
+                name: "Poverty Reduction & Livelihoods",
+                image: "grants/community-development.jpg",
+                synopsis: "Supporting sustainable livelihoods and initiatives aimed at reducing poverty."
+            },
+            {
+                name: "Community Infrastructure",
+                image: "grants/infrastructure.jpg",
+                synopsis: "Supporting essential community facilities, infrastructure and local development."
+            },
+            {
+                name: "Food Security & Community Nutrition",
+                image: "grants/community-food.jpg",
+                synopsis: "Community programmes addressing food security, nutrition and household resilience."
+            },
+            {
+                name: "Water & Sanitation",
+                image: "grants/water-sanitation.jpg",
+                synopsis: "Improving access to clean water, sanitation and hygiene services."
+            },
+            {
+                name: "Rural Community Development",
+                image: "grants/rural-development.jpg",
+                synopsis: "Supporting sustainable development and livelihoods in rural communities."
+            },
+            {
+                name: "Social Inclusion",
+                image: "grants/social-inclusion.jpg",
+                synopsis: "Promoting participation, inclusion and opportunities for underserved communities."
+            },
+            {
+                name: "Community Leadership Development",
+                image: "grants/community-leadership.jpg",
+                synopsis: "Building leadership, governance and organizational capacity at community level."
+            }
+        ]
+    },
+
+    health: {
+        title: "Health & Public Health",
+        topics: [
+            {
+                name: "Healthcare Access & Community Health",
+                image: "grants/health.jpg",
+                synopsis: "Supporting improved healthcare access and community health services."
+            },
+            {
+                name: "Disease Prevention & Health Education",
+                image: "grants/health-education.jpg",
+                synopsis: "Supporting disease prevention, public awareness and health education."
+            },
+            {
+                name: "Maternal & Child Health",
+                image: "grants/maternal-health.jpg",
+                synopsis: "Supporting maternal, newborn and child health initiatives."
+            },
+            {
+                name: "Mental Health Awareness",
+                image: "grants/mental-health.jpg",
+                synopsis: "Community-based mental health awareness, education and support initiatives."
+            },
+            {
+                name: "Community Health Workers",
+                image: "grants/community-health.jpg",
+                synopsis: "Supporting training and strengthening of community health programmes."
+            },
+            {
+                name: "Healthcare Innovation",
+                image: "grants/health-innovation.jpg",
+                synopsis: "Technology and innovation projects designed to improve healthcare delivery."
+            },
+            {
+                name: "Nutrition & Public Health",
+                image: "grants/nutrition.jpg",
+                synopsis: "Programmes addressing nutrition, healthy lifestyles and public health outcomes."
+            }
+        ]
+    },
+
+    agriculture: {
+        title: "Agriculture & Food Security",
+        topics: [
+            {
+                name: "Agricultural Development & Food Security",
+                image: "grants/agriculture.jpg",
+                synopsis: "Supporting agricultural productivity, food security and sustainable farming."
+            },
+            {
+                name: "Climate-Smart Agriculture",
+                image: "grants/climate-smart-agriculture.jpg",
+                synopsis: "Supporting climate-resilient farming and adaptation to changing environmental conditions."
+            },
+            {
+                name: "Smallholder Farmer Development",
+                image: "grants/smallholder.jpg",
+                synopsis: "Supporting smallholder farmers through training, inputs, markets and improved productivity."
+            },
+            {
+                name: "Agribusiness & Value Addition",
+                image: "grants/agribusiness.jpg",
+                synopsis: "Supporting agricultural enterprises, processing, value addition and market access."
+            },
+            {
+                name: "Irrigation & Water Management",
+                image: "grants/irrigation.jpg",
+                synopsis: "Supporting efficient irrigation systems and sustainable agricultural water management."
+            },
+            {
+                name: "Youth in Agriculture",
+                image: "grants/youth-agriculture.jpg",
+                synopsis: "Creating agricultural entrepreneurship and employment opportunities for young people."
+            },
+            {
+                name: "Women in Agriculture",
+                image: "grants/women-agriculture.jpg",
+                synopsis: "Supporting women's participation, enterprise and income generation in agriculture."
+            },
+            {
+                name: "Sustainable Farming",
+                image: "grants/sustainable-farming.jpg",
+                synopsis: "Promoting environmentally sustainable and productive agricultural practices."
+            }
+        ]
+    },
+
+    environment: {
+        title: "Environment & Climate",
+        topics: [
+            {
+                name: "Climate Action & Environmental Conservation",
+                image: "grants/environment.jpg",
+                synopsis: "Supporting climate action, conservation and environmental sustainability."
+            },
+            {
+                name: "Renewable Energy",
+                image: "grants/renewable-energy.jpg",
+                synopsis: "Supporting clean energy, renewable energy access and sustainable energy solutions."
+            },
+            {
+                name: "Waste Management & Recycling",
+                image: "grants/waste-management.jpg",
+                synopsis: "Supporting waste reduction, recycling and improved waste management systems."
+            },
+            {
+                name: "Forest Conservation",
+                image: "grants/forest-conservation.jpg",
+                synopsis: "Supporting forest protection, restoration and community conservation initiatives."
+            },
+            {
+                name: "Water Resource Conservation",
+                image: "grants/water-conservation.jpg",
+                synopsis: "Supporting sustainable management and protection of water resources."
+            },
+            {
+                name: "Climate Resilience",
+                image: "grants/climate-resilience.jpg",
+                synopsis: "Supporting communities and institutions to adapt to climate-related challenges."
+            }
+        ]
+    },
+
+    arts: {
+        title: "Arts, Culture & Creative Industries",
+        topics: [
+            {
+                name: "Creative Entrepreneurship & Cultural Heritage",
+                image: "grants/arts.jpg",
+                synopsis: "Supporting creative businesses, cultural heritage and entrepreneurship."
+            },
+            {
+                name: "Literature & Writing",
+                image: "grants/literature.jpg",
+                synopsis: "Supporting writers, literary projects, publishing and storytelling."
+            },
+            {
+                name: "Film & Digital Media",
+                image: "grants/film.jpg",
+                synopsis: "Supporting film production, digital storytelling and creative media."
+            },
+            {
+                name: "Music & Performing Arts",
+                image: "grants/music.jpg",
+                synopsis: "Supporting musicians, performers and performing arts initiatives."
+            },
+            {
+                name: "Cultural Heritage Preservation",
+                image: "grants/cultural-heritage.jpg",
+                synopsis: "Supporting preservation, documentation and promotion of cultural heritage."
+            },
+            {
+                name: "Creative Youth Development",
+                image: "grants/creative-youth.jpg",
+                synopsis: "Supporting young creatives through training, production and entrepreneurship."
+            }
+        ]
+    },
+
+    youth: {
+        title: "Youth Development",
+        topics: [
+            {
+                name: "Youth Employment & Entrepreneurship",
+                image: "grants/youth.jpg",
+                synopsis: "Supporting youth employment, entrepreneurship and economic participation."
+            },
+            {
+                name: "Youth Entrepreneurship",
+                image: "grants/youth-entrepreneurship.jpg",
+                synopsis: "Supporting youth businesses, innovation and enterprise development."
+            },
+            {
+                name: "Youth Leadership Development",
+                image: "grants/youth-leadership.jpg",
+                synopsis: "Developing leadership, civic participation and decision-making skills among young people."
+            },
+            {
+                name: "Youth Skills Development",
+                image: "grants/youth-skills.jpg",
+                synopsis: "Supporting practical, technical and digital skills development for young people."
+            },
+            {
+                name: "Youth Innovation",
+                image: "grants/youth-innovation.jpg",
+                synopsis: "Supporting innovative ideas and solutions developed by young people."
+            },
+            {
+                name: "Sports & Youth Development",
+                image: "grants/youth-sports.jpg",
+                synopsis: "Using sports and recreation to support youth development and social inclusion."
+            }
+        ]
+    },
+
+    women: {
+        title: "Women & Gender",
+        topics: [
+            {
+                name: "Women's Economic Empowerment",
+                image: "grants/women.jpg",
+                synopsis: "Supporting women's economic empowerment, livelihoods and enterprise development."
+            },
+            {
+                name: "Women Entrepreneurship",
+                image: "grants/women-business.jpg",
+                synopsis: "Supporting women-owned businesses and entrepreneurship."
+            },
+            {
+                name: "Women Leadership Development",
+                image: "grants/women-leadership.jpg",
+                synopsis: "Supporting women's leadership, participation and decision-making."
+            },
+            {
+                name: "Girls' Education",
+                image: "grants/girls-education.jpg",
+                synopsis: "Supporting educational opportunities and retention for girls."
+            },
+            {
+                name: "Gender Equality",
+                image: "grants/gender-equality.jpg",
+                synopsis: "Supporting programmes that promote equality, inclusion and opportunity."
+            }
+        ]
+    },
+
+    infrastructure: {
+        title: "Infrastructure & Capital",
+        topics: [
+            {
+                name: "Construction & Community Infrastructure",
+                image: "grants/infrastructure.jpg",
+                synopsis: "Supporting construction and development of community infrastructure."
+            },
+            {
+                name: "School Infrastructure",
+                image: "grants/school-infrastructure.jpg",
+                synopsis: "Supporting construction, renovation and improvement of educational facilities."
+            },
+            {
+                name: "Healthcare Infrastructure",
+                image: "grants/health-infrastructure.jpg",
+                synopsis: "Supporting healthcare facilities, renovation, equipment and infrastructure."
+            },
+            {
+                name: "Water Infrastructure",
+                image: "grants/water-infrastructure.jpg",
+                synopsis: "Supporting water supply systems and community water infrastructure."
+            },
+            {
+                name: "Technology & Equipment",
+                image: "grants/equipment.jpg",
+                synopsis: "Supporting acquisition of technology, equipment and productive assets."
+            }
+        ]
+    }
+};
+
+
+/* ================= SHOW TOPICS ================= */
+
+function showTopics() {
+
+    const type =
+        document.getElementById("grantType").value;
+
+    const area =
+        document.getElementById("topicsArea");
+
+    const title =
+        document.getElementById("topicsTitle");
+
+    const list =
+        document.getElementById("topicList");
+
+
+    list.innerHTML = "";
+
+
+    if (!type) {
+
+        area.classList.remove("show");
+
+        return;
+    }
+
+
+    const selectedGrant =
+        grants[type];
+
+
+    title.textContent =
+        selectedGrant.title + " — Grant Topics";
+
+
+    selectedGrant.topics.forEach(function(topic, index) {
+
+        const topicRow =
+            document.createElement("div");
+
+        topicRow.className = "topic";
+
+        topicRow.innerHTML = `
+
+            <div class="topic-name">
+                ${topic.name}
+            </div>
+
+            <button
+                class="plus"
+                onclick="openTopic('${type}', ${index})">
+                +
+            </button>
+
+        `;
+
+        list.appendChild(topicRow);
+
+
+        const detail =
+            document.createElement("div");
+
+        detail.className = "detail";
+
+        detail.id =
+            "detail-" + type + "-" + index;
+
+
+        detail.innerHTML = `
+
+            <div class="detail-content">
+
+                <h2>${topic.name}</h2>
+
+                <div class="cover">
+
+                    <img
+                        src="${topic.image}"
+                        alt="${topic.name}">
+
+                </div>
+
+                <div class="synopsis">
+
+                    <strong>Synopsis</strong>
+
+                    <br><br>
+
+                    ${topic.synopsis}
+
+                </div>
+
+                <div class="buttons">
+
+                    <a
+                        href="#"
+                        class="btn view"
+                        onclick="viewProposal(event, '${type}', ${index})">
+                        View
+                    </a>
+
+                    <a
+                        href="#"
+                        class="btn buy">
+                        Buy Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+        list.appendChild(detail);
+
+    });
+
+
+    area.classList.add("show");
+
+}
+
+
+/* ================= OPEN TOPIC ================= */
+
+function openTopic(type, index) {
+
+    const selected =
+        document.getElementById(
+            "detail-" + type + "-" + index
+        );
+
+
+    document.querySelectorAll(".detail")
+        .forEach(function(detail) {
+
+            if (detail !== selected) {
+                detail.classList.remove("show");
+            }
+
+        });
+
+
+    selected.classList.toggle("show");
+
+
+    if (selected.classList.contains("show")) {
+
+        setTimeout(function() {
+
+            selected.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }, 100);
+
+    }
+
+}
+
+
+/* ================= VIEW PROPOSAL ================= */
+
+function viewProposal(event, type, index) {
+
+    event.preventDefault();
+
+
+    const topic =
+        grants[type].topics[index];
+
+
+    const selected =
+        document.getElementById(
+            "detail-" + type + "-" + index
+        );
+
+
+    /* If already open, close it */
+
+    const existing =
+        selected.querySelector(".proposal-preview");
+
+
+    if (existing) {
+
+        existing.remove();
+
+        return;
+    }
+
+
+    /* Create proposal summary */
+
+    const preview =
+        document.createElement("div");
+
+    preview.className =
+        "proposal-preview";
+
+
+    preview.innerHTML = `
+
+        <div class="proposal-summary">
+
+            <h3>
+                Grant Proposal Summary
+            </h3>
+
+
+            <h4>
+                Project Title
+            </h4>
+
+            <p>
+                ${topic.name}
+            </p>
+
+
+            <h4>
+                Executive Summary
+            </h4>
+
+            <p>
+                This proposed project focuses on
+                ${topic.name.toLowerCase()}, with the
+                aim of addressing identified needs,
+                creating meaningful opportunities and
+                producing measurable benefits for the
+                intended beneficiaries.
+            </p>
+
+
+            <h4>
+                Problem Statement
+            </h4>
+
+            <p>
+                The project responds to existing
+                challenges affecting the target
+                beneficiaries. These challenges can
+                limit opportunities, participation,
+                skills, economic development and
+                sustainable community progress.
+            </p>
+
+
+            <h4>
+                Project Objectives
+            </h4>
+
+            <ul>
+
+                <li>
+                    Address identified needs within
+                    the selected grant area.
+                </li>
+
+                <li>
+                    Improve opportunities and
+                    participation for beneficiaries.
+                </li>
+
+                <li>
+                    Strengthen skills, capacity and
+                    community development.
+                </li>
+
+                <li>
+                    Produce measurable and
+                    sustainable project outcomes.
+                </li>
+
+            </ul>
+
+
+            <h4>
+                Target Beneficiaries
+            </h4>
+
+            <p>
+                The project will benefit the primary
+                target population associated with
+                ${topic.name.toLowerCase()}, together
+                with relevant community groups,
+                organizations and stakeholders.
+            </p>
+
+
+            <h4>
+                Key Activities
+            </h4>
+
+            <ul>
+
+                <li>
+                    Community and stakeholder
+                    engagement.
+                </li>
+
+                <li>
+                    Training and capacity building.
+                </li>
+
+                <li>
+                    Project implementation activities.
+                </li>
+
+                <li>
+                    Monitoring and evaluation.
+                </li>
+
+                <li>
+                    Stakeholder collaboration and
+                    reporting.
+                </li>
+
+            </ul>
+
+
+            <h4>
+                Expected Outcomes
+            </h4>
+
+            <p>
+                The project is expected to improve
+                skills, opportunities, participation,
+                access to resources and measurable
+                outcomes for the intended beneficiaries.
+            </p>
+
+
+            <h4>
+                Implementation
+            </h4>
+
+            <p>
+                Implementation will follow a structured
+                approach covering planning, activities,
+                timelines, responsibilities, partnerships,
+                monitoring and evaluation.
+            </p>
+
+
+            <h4>
+                Budget Summary
+            </h4>
+
+            <p>
+                The proposed budget will cover the
+                necessary costs for project activities,
+                personnel, materials, training,
+                administration, monitoring and
+                evaluation.
+            </p>
+
+
+            <h4>
+                Sustainability
+            </h4>
+
+            <p>
+                Sustainability measures will be included
+                to ensure that the project's benefits
+                continue beyond the initial grant funding
+                period.
+            </p>
+
+        </div>
+
+    `;
+
+
+    selected.appendChild(preview);
+
+
+    /* Scroll to proposal */
+
+    setTimeout(function() {
+
+        preview.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+
+    }, 100);
+
+}
+
+</script>
+
+</body>
+</html>

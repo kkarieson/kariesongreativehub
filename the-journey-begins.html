@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey Begins</title>
+
+    <style>
+        :root {
+            --black: #222222;
+            --red: #c40000;
+            --white: #ffffff;
+            --grey: #777777;
+            --page-bg: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--page-bg);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+        }
+
+        header {
+            background: var(--black);
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 5%;
+        }
+
+        header img {
+            width: 130px;
+            height: auto;
+        }
+
+        .back {
+            color: var(--white);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: var(--red);
+        }
+
+        .book {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .page {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 70px 10%;
+            min-height: 700px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .title-page {
+            min-height: 900px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .title-content {
+            width: 100%;
+            padding-top: 180px;
+        }
+
+        .title {
+            color: var(--red);
+            font-family: "Brush Script MT",
+                         "Segoe Script",
+                         cursive;
+            font-size: clamp(48px, 8vw, 78px);
+            font-weight: bold;
+            line-height: 1.15;
+            margin-bottom: 55px;
+        }
+
+        .subtitle {
+            color: var(--grey);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(16px, 2.5vw, 21px);
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        .author {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
+            color: var(--black);
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .author span {
+            display: block;
+        }
+
+        h2 {
+            color: var(--red);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--black);
+            font-size: 26px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 17px;
+        }
+
+        .dedication {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .dedication p {
+            max-width: 600px;
+            font-style: italic;
+            color: var(--grey);
+        }
+
+        .chapter p:first-of-type::first-letter {
+            font-size: 55px;
+            font-weight: bold;
+            color: var(--red);
+            float: left;
+            line-height: 0.9;
+            padding-right: 8px;
+        }
+              .end-preview {
+    text-align: center !important;
+    color: var(--red) !important;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        footer strong {
+            display: block;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .title-content {
+                padding-top: 120px;
+            }
+
+            .title {
+                font-size: 45px;
+                margin-bottom: 50px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .author {
+                bottom: 55px;
+                font-size: 16px;
+            }
+
+            .page {
+                padding: 50px 7%;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="karieson_logo.png" alt="karieson Creative Hub">
+
+    <a href="ebooks.html" class="back">
+        ← Back to eBooks
+    </a>
+</header>
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                The Journey Begins
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Adventure, Courage and the Road Ahead
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DEDICATION -->
+    <section class="page dedication">
+
+        <div>
+
+            <h2>Dedication</h2>
+
+            <p>
+                To everyone who has ever stood at the beginning of an
+                unfamiliar road, carrying both fear and hope, and found
+                the courage to take the first step.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- AUTHOR'S NOTE -->
+    <section class="page">
+
+        <h2>Author's Note</h2>
+
+        <p>
+            The Journey Begins is a work of adventure fiction.
+        </p>
+
+        <p>
+            Every great journey begins with a single decision to move
+            beyond what is familiar.
+        </p>
+
+        <p>
+            This story explores courage, friendship, discovery and the
+            challenges that appear when people leave the safety of the
+            familiar behind.
+        </p>
+
+        <p>
+            The journey of its characters is not only about discovering
+            new places. It is also about discovering themselves and
+            learning what they are capable of when circumstances test
+            their determination.
+        </p>
+
+        <p>
+            The characters, places and events in this story are fictional
+            and are presented for storytelling purposes.
+        </p>
+
+    </section>
+
+    <!-- CHAPTER ONE -->
+    <section class="page chapter">
+
+        <h3>Chapter One</h3>
+
+        <h2>The Departure</h2>
+
+        <p>
+            The bus was already waiting when Daniel reached the station.
+        </p>
+
+        <p>
+            He stopped for a moment and looked at it from across the road.
+            It was older than he had expected, with dusty windows and
+            faded paint along its sides.
+        </p>
+
+        <p>
+            Yet this was the vehicle that would carry him farther from
+            home than he had ever been.
+        </p>
+
+        <p>
+            His backpack was light, but the decision he carried felt heavy.
+        </p>
+
+        <p>
+            For months, he had talked about making the journey.
+        </p>
+
+        <p>
+            Now there was no more planning.
+        </p>
+
+        <p>
+            It was time to leave.
+        </p>
+
+        <p>
+            His friend Karim appeared beside him.
+        </p>
+
+        <p>
+            “Ready?”
+        </p>
+
+        <p>
+            Daniel looked at the road ahead.
+        </p>
+
+        <p>
+            “I think so.”
+        </p>
+
+        <p>
+            Karim smiled.
+        </p>
+
+        <p>
+            “Then let's go.”
+        </p>
+
+        <p>
+            They climbed onto the bus.
+        </p>
+
+        <p>
+            As the engine started, Daniel looked through the window one
+            final time.
+        </p>
+
+        <p>
+            The familiar streets slowly disappeared behind them.
+        </p>
+
+        <p>
+            Ahead was a road neither of them had travelled before.
+        </p>
+
+        <p>
+            The journey had begun.
+        </p>
+<p class="end-preview">
+            — End of Preview —
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <strong>Karieson Creative Hub</strong>
+    The Journey Begins<br>
+    All Rights Reserved
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home Again | Karieson Creative Hub</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+/* BOOK */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+/* TITLE PAGE */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+/* DEDICATION */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+/* AUTHOR'S NOTE */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+/* CHAPTER */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+        padding: 55px 25px;
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <img src="karieson_logo.png"
+             alt="karieson Creative Hub"
+             class="logo">
+
+        <a href="ebooks.html" class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                Home Again
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Home, Memories and Second Chances
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div class="dedication">
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                To everyone who has ever left home, carried its
+                memories with them, and discovered that sometimes
+                returning is another way of beginning again.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            Home Again is a heartfelt story about returning home
+            and confronting the relationships and memories left
+            behind.
+        </p>
+
+        <p>
+            Leaving home can create distance, but distance does
+            not always erase the bonds that connect us to the
+            people and places we came from.
+        </p>
+
+        <p>
+            Sometimes returning means facing conversations that
+            were never finished and memories that were never
+            fully understood.
+        </p>
+
+        <p>
+            This story explores family, friendship, belonging,
+            forgiveness and the possibility of rebuilding
+            relationships after years apart.
+        </p>
+
+        <p>
+            Home is not always a place we return to.
+            Sometimes it is something we learn to understand
+            again.
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            The Road Home
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The bus slowed as it approached the old town.
+        </p>
+
+        <p>
+            He looked through the window and recognized the
+            familiar streets.
+        </p>
+
+        <p>
+            The road seemed narrower than he remembered.
+        </p>
+
+        <p>
+            Perhaps the road had not changed.
+        </p>
+
+        <p>
+            Perhaps he had.
+        </p>
+
+        <p>
+            He had been away for almost seven years.
+        </p>
+
+        <p>
+            Seven years of work, new friendships and a life that
+            had slowly become comfortable.
+        </p>
+
+        <p>
+            Yet there had always been a small part of him that
+            remained connected to this place.
+        </p>
+
+        <p>
+            He remembered the house at the end of the street.
+            The front yard. The old wooden door. The sound of
+            his family talking late into the evening.
+        </p>
+
+        <p>
+            He also remembered the argument.
+        </p>
+
+        <p>
+            The argument that had made him leave.
+        </p>
+
+        <p>
+            For years, he had told himself that leaving had been
+            necessary.
+        </p>
+
+        <p>
+            Maybe it had been.
+        </p>
+
+        <p>
+            But now, as the bus entered the town, he wondered
+            whether staying away had really solved anything.
+        </p>
+
+        <p>
+            The bus stopped.
+        </p>
+
+        <p>
+            He picked up his bag and stepped outside.
+        </p>
+
+        <p>
+            The air smelled exactly as he remembered.
+        </p>
+
+        <p>
+            He stood there for a moment, unsure which direction
+            to take.
+        </p>
+
+        <p>
+            Then he saw the road leading toward his childhood
+            home.
+        </p>
+
+        <p>
+            He started walking.
+        </p>
+
+        <p>
+            With every step, memories returned.
+        </p>
+
+        <p>
+            He did not know what waited for him at the end of
+            the road.
+        </p>
+
+        <p>
+            But he knew he could no longer keep running from it.
+        </p>
+
+        <p>
+            This time, he was going home.
+        </p>
+
+    </section>
+
+
+    <!-- END OF PREVIEW -->
+
+    <section class="page">
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Karieson Creative Hub |
+    <span>Home Again</span> |
+    All Rights Reserved
+
+</footer>
+
+</body>
+</html>

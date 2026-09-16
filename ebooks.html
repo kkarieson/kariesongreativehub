@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Karieson Creative Hub | eBook Novels</title>
+
+<style>
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #eeeeee;
+    --border: #d6d6d6;
+    --text-grey: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: var(--black);
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 25px 15px 28px;
+}
+
+.logo {
+    width: 150px;
+    max-width: 45%;
+    height: auto;
+    display: block;
+    margin: 0 0 18px;
+}
+
+.header-title {
+    font-size: clamp(23px, 4vw, 35px);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.red-line {
+    width: 55px;
+    height: 4px;
+    background: var(--red);
+    margin: 12px auto 0;
+}
+
+/* MAIN */
+
+.container {
+    width: min(850px, 92%);
+    margin: 50px auto 70px;
+}
+
+/* INTRO */
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro h1 {
+    font-size: clamp(20px, 3vw, 28px);
+    margin-bottom: 10px;
+    color: var(--red);
+}
+
+.intro p {
+    color: var(--text-grey);
+    text-align: left;
+    line-height: 1.7;
+}
+
+/* SELECTION */
+
+.selection-box {
+    border: 1px solid var(--border);
+    padding: 28px;
+    background: white;
+}
+
+.selection-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #bbb;
+    background: white;
+    color: var(--black);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--red);
+}
+
+/* NOVELS */
+
+.novels-area {
+    display: none;
+    margin-top: 30px;
+}
+
+.novels-area.show {
+    display: block;
+}
+
+.novels-title {
+    background: var(--black);
+    color: white;
+    padding: 10px 16px;
+    border-left: 2px solid var(--red);
+    font-weight: bold;
+}
+
+.novel-list {
+    border: 1px solid var(--border);
+    border-top: none;
+}
+
+.novel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 18px;
+    border-bottom: 1px solid var(--border);
+    background: white;
+}
+
+.novel:last-child {
+    border-bottom: none;
+}
+
+.novel:hover {
+    background: #fafafa;
+}
+
+.novel-name {
+    font-size: 15px;
+    line-height: 1.5;
+    padding-right: 12px;
+}
+
+.plus {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--red);
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.plus:hover {
+    background: var(--black);
+}
+
+/* DETAIL */
+
+.detail {
+    display: none;
+    background: var(--grey);
+    padding: 30px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail.show {
+    display: block;
+}
+
+.detail-content {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.detail h2 {
+    margin-bottom: 22px;
+    font-size: 25px;
+    color: var(--black);
+}
+
+/* A4 NOVEL COVER */
+
+.cover {
+    width: min(100%, 450px);
+    aspect-ratio: 210 / 297;
+    margin: auto;
+    background: #ddd;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* SYNOPSIS */
+
+.synopsis {
+    text-align: center;
+    margin: 25px auto;
+    color: #444;
+    line-height: 1.7;
+}
+
+.synopsis strong {
+    color: var(--red);
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 25px auto 5px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid;
+    transition: 0.2s ease;
+}
+
+/* VIEW */
+
+.view {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+/* BUY */
+
+.buy {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+}
+
+/* HOVER */
+
+.view:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--white);
+}
+
+.buy:hover {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+    color: #aaa;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .container {
+        width: 94%;
+        margin-top: 30px;
+    }
+
+    .selection-box {
+        padding: 20px;
+    }
+
+    .novel {
+        padding: 14px;
+    }
+
+    .novel-name {
+        padding-right: 10px;
+    }
+
+    .detail {
+        padding: 25px 15px;
+    }
+
+    .detail h2 {
+        font-size: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <img src="karieson_logo.png"
+         alt="karieson Creative Hub"
+         class="logo">
+
+    <div class="header-title">
+        eBook Novels
+    </div>
+
+    <div class="red-line"></div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <section class="intro">
+
+        <h1>Explore my  eBook Novels</h1>
+
+        <p>
+            Discover a collection of original stories and eBook novels
+            across different genres. Select a novel category below to
+            explore available titles, read their synopses, and choose
+            your preferred eBook.
+        </p>
+
+    </section>
+
+
+    <!-- NOVEL TYPE SELECTION -->
+
+    <div class="selection-box">
+
+        <label for="novelType">
+            Novel Type
+        </label>
+
+        <select id="novelType" onchange="showNovels()">
+
+            <option value="">
+                — Select Novel Type —
+            </option>
+
+            <option value="romance">
+                Romance
+            </option>
+
+            <option value="fiction">
+                Fiction
+            </option>
+
+            <option value="historical">
+                Historical Fiction
+            </option>
+
+            <option value="adventure">
+                Adventure
+            </option>
+
+            <option value="mystery">
+                Mystery & Suspense
+            </option>
+
+            <option value="inspirational">
+                Inspirational
+            </option>
+
+            <option value="social">
+                Social & Contemporary
+            </option>
+
+            <option value="young-adult">
+                Young Adult
+            </option>
+
+            <option value="family">
+                Family & Relationships
+            </option>
+
+            <option value="african">
+                African Stories
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- NOVELS AREA -->
+
+    <div id="novelsArea" class="novels-area">
+
+        <div class="novels-title" id="novelsTitle">
+            eBook Novels
+        </div>
+
+        <div class="novel-list" id="novelList"></div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Karieson Creative Hub
+    <span>•</span>
+    eBook Novels
+    <span>•</span>
+    All Rights Reserved
+</footer>
+
+
+<script>
+
+/* ================= NOVEL DATA ================= */
+
+const novels = {
+
+    romance: {
+        title: "Romance Novels",
+        books: [
+            {
+    name: "Love Beyond the Distance",
+    image: "novels/love-beyond-distance.jpg",
+    preview: "love-beyond-distance.html",
+    synopsis: "A moving story about love, distance, sacrifice and the choices that can either bring two hearts together or tear them apart."
+   },
+            {
+    name: "When Hearts Remember",
+    image: "novels/when-hearts-remember.jpg",
+    preview: "when-hearts-remember.html",
+    synopsis: "A romantic journey of two people whose past continues to shape their present and their hopes for the future."
+   },
+            {
+    name: "The Promise We Made",
+    image: "novels/the-promise-we-made.jpg",
+    preview: "the-promise-we-made.html",
+    synopsis: "A story of love, commitment and the difficult promises that must be kept when life changes unexpectedly."
+}
+        ]
+    },
+
+    fiction: {
+        title: "Fiction Novels",
+        books: [
+            {
+    name: "The Last Chapter",
+    image: "novels/the-last-chapter.jpg",
+    preview: "the-last-chapter.html",
+    synopsis: "A fictional journey filled with unexpected choices, hidden truths and the courage to begin again."
+       },
+    {
+    name: "Beyond the Horizon",
+    image: "beyond-the-horizon.png",
+    preview: "beyond-the-horizon.html",
+    synopsis: "An inspiring fictional story about ambition, uncertainty and the search for a better future."
+  },
+            {
+    name: "The Road We Choose",
+    image: "novels/the-road-we-chose.jpg",
+    preview: "the-road-we-choose.html",
+    synopsis: "A character-driven story exploring friendship, difficult decisions and the consequences of choosing one's own path."
+}
+        ]
+    },
+
+    historical: {
+        title: "Historical Fiction",
+        books: [
+      {
+    name: "Echoes of Yesterday",
+    image: "novels/echoes-of-yesterday.jpg",
+    preview: "echoes-of-yesterday.html",
+    synopsis: "A historical story where the lives of ordinary people unfold against the changing events of their time."
+},
+{
+    name: "The Forgotten Village",
+    image: "novels/the-forgotten-village.jpg",
+    preview: "the-forgotten-village.html",
+    synopsis: "A journey into a forgotten community where old memories reveal stories that shaped generations."
+},
+{
+    name: "Before the New Dawn",
+    image: "novels/before-the-new-dawn.jpg",
+    preview: "before-the-new-dawn.html",
+    synopsis: "A story of courage, survival and hope during a period of profound social change."
+}
+        ]
+    },
+
+    adventure: {
+        title: "Adventure Novels",
+        books: [
+            {
+    name: "The Journey Begins",
+    image: "novels/the-journey-begins.jpg",
+    preview: "the-journey-begins.html",
+    synopsis: "An adventurous journey into unfamiliar places where courage, friendship and determination are tested."
+},
+{
+    name: "Across the Unknown",
+    image: "novels/across-the-unknown.jpg",
+    preview: "across-the-unknown.html",
+    synopsis: "A thrilling adventure about exploration, discovery and the risks of venturing beyond the familiar."
+},
+{
+    name: "The Hidden Path",
+    image: "novels/the-hidden-path.jpg",
+    preview: "the-hidden-path.html",
+    synopsis: "A mysterious path leads the characters into an unexpected adventure filled with challenges and discoveries."
+}
+        ]
+    },
+
+    mystery: {
+        title: "Mystery & Suspense",
+        books: [
+            {
+    name: "The Missing Letter",
+    image: "novels/the-missing-letter.jpg",
+    preview: "the-missing-letter.html",
+    synopsis: "A mysterious letter sets off a chain of events that reveals secrets hidden for years."
+},
+{
+    name: "The Silent Witness",
+    image: "novels/the-silent-witness.jpg",
+    preview: "the-silent-witness.html",
+    synopsis: "A suspenseful story surrounding a forgotten event and a witness who knows more than anyone realizes."
+},
+{
+    name: "Secrets in the Dark",
+    image: "novels/secrets-in-the-dark.jpg",
+    preview: "secrets-in-the-dark.html",
+    synopsis: "Unanswered questions and hidden secrets slowly emerge as the characters search for the truth."
+}
+        ]
+    },
+
+    inspirational: {
+        title: "Inspirational Novels",
+        books: [
+           {
+    name: "A Reason to Rise",
+    image: "novels/a-reason-to-rise.jpg",
+    preview: "a-reason-to-rise.html",
+    synopsis: "An inspirational story about resilience, hope and finding strength after difficult experiences."
+},
+{
+    name: "The Courage to Begin",
+    image: "novels/the-courage-to-begin.jpg",
+    preview: "the-courage-to-begin.html",
+    synopsis: "A story about overcoming fear and finding the courage to start a new chapter in life."
+},
+{
+    name: "After the Storm",
+    image: "novels/after-the-storm.jpg",
+    preview: "after-the-storm.html",
+    synopsis: "A powerful journey of recovery, hope and discovering new possibilities after hardship."
+} 
+        ]
+    },
+
+    social: {
+        title: "Social & Contemporary Novels",
+        books: [
+            {
+    name: "Life Between the Lines",
+    image: "novels/life-between-the-lines.jpg",
+    preview: "life-between-the-lines.html",
+    synopsis: "A contemporary story exploring society, relationships, identity and the realities of modern life."
+},
+{
+    name: "The City We Live In",
+    image: "novels/the-city-we-live-in.jpg",
+    preview: "the-city-we-live-in.html",
+    synopsis: "A modern story about ambition, friendship and the pressures of life in a changing society."
+},
+{
+    name: "Voices of Tomorrow",
+    image: "novels/voices-of-tomorrow.jpg",
+    preview: "voices-of-tomorrow.html",
+    synopsis: "A contemporary story exploring young voices, social change and the dreams of a new generation."
+}
+        ]
+    },
+
+    "young-adult": {
+        title: "Young Adult Novels",
+        books: [
+       {
+    name: "Finding My Way",
+    image: "novels/finding-my-way.jpg",
+    preview: "finding-my-way.html",
+    synopsis: "A coming-of-age story about friendship, identity, dreams and discovering one's place in the world."
+},
+{
+    name: "The Next Step",
+    image: "novels/the-next-step.jpg",
+    preview: "the-next-step.html",
+    synopsis: "A young person's journey through difficult choices, friendship and the uncertainty of growing up."
+},
+{
+    name: "Dreams Don't Wait",
+    image: "novels/dreams-dont-wait.jpg",
+    preview: "dreams-dont-wait.html",
+    synopsis: "An inspiring young adult story about pursuing dreams despite doubt, obstacles and unexpected setbacks."
+}     
+        ]
+    },
+
+    family: {
+        title: "Family & Relationships",
+        books: [
+       {
+    name: "The Family We Carry",
+    image: "novels/the-family-we-carry.jpg",
+    preview: "the-family-we-carry.html",
+    synopsis: "A story about family bonds, forgiveness, difficult memories and the meaning of belonging."
+},
+{
+    name: "Home Again",
+    image: "novels/home-again.jpg",
+    preview: "home-again.html",
+    synopsis: "A heartfelt story about returning home and confronting the relationships and memories left behind."
+},
+{
+    name: "Between Us",
+    image: "novels/between-us.jpg",
+    preview: "between-us.html",
+    synopsis: "A story of relationships, misunderstandings and the conversations that can change everything."
+}     
+        ]
+    },
+
+    african: {
+        title: "African Stories",
+        books: [
+            {
+    name: "Under the African Sky",
+    image: "novels/under-the-african-sky.jpg",
+    preview: "under-the-african-sky.html",
+    synopsis: "A story rooted in African life, community, tradition and the dreams of a changing generation."
+},
+{
+    name: "The Village Beyond the Hill",
+    image: "novels/the-village-beyond-the-hill.jpg",
+    preview: "the-village-beyond-the-hill.html",
+    synopsis: "A compelling story of community, tradition, family and the challenges of embracing change."
+}
+        ]
+    }
+
+};
+
+
+/* ================= SHOW NOVELS ================= */
+
+function showNovels() {
+
+    const type =
+        document.getElementById("novelType").value;
+
+    const area =
+        document.getElementById("novelsArea");
+
+    const title =
+        document.getElementById("novelsTitle");
+
+    const list =
+        document.getElementById("novelList");
+
+
+    list.innerHTML = "";
+
+
+    if (!type) {
+
+        area.classList.remove("show");
+
+        return;
+    }
+
+
+    const selectedCategory =
+        novels[type];
+
+
+    title.textContent =
+        selectedCategory.title + " — Available eBooks";
+
+
+    selectedCategory.books.forEach(function(book, index) {
+
+        const novelRow =
+            document.createElement("div");
+
+        novelRow.className = "novel";
+
+        novelRow.innerHTML = `
+
+            <div class="novel-name">
+                ${book.name}
+            </div>
+
+            <button
+                class="plus"
+                onclick="openNovel('${type}', ${index})">
+                +
+            </button>
+
+        `;
+
+        list.appendChild(novelRow);
+
+
+        const detail =
+            document.createElement("div");
+
+        detail.className = "detail";
+
+        detail.id =
+            "detail-" + type + "-" + index;
+
+
+        detail.innerHTML = `
+
+            <div class="detail-content">
+
+                <h2>${book.name}</h2>
+
+                <div class="cover">
+
+                    <img
+                        src="${book.image}"
+                        alt="${book.name}">
+
+                </div>
+
+                <div class="synopsis">
+
+                    <strong>Synopsis</strong>
+
+                    <br><br>
+
+                    ${book.synopsis}
+
+                </div>
+
+                <div class="buttons">
+
+                    <a
+    href="${book.preview}"
+    class="btn view">
+    View
+</a>
+
+                    <a
+                        href="#"
+                        class="btn buy">
+                        Buy Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+        list.appendChild(detail);
+
+    });
+
+
+    area.classList.add("show");
+
+}
+
+
+/* ================= OPEN NOVEL ================= */
+
+function openNovel(type, index) {
+
+    const selected =
+        document.getElementById(
+            "detail-" + type + "-" + index
+        );
+
+
+    document.querySelectorAll(".detail")
+        .forEach(function(detail) {
+
+            if (detail !== selected) {
+                detail.classList.remove("show");
+            }
+
+        });
+
+
+    selected.classList.toggle("show");
+
+
+    if (selected.classList.contains("show")) {
+
+        setTimeout(function() {
+
+            selected.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }, 100);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

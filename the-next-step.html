@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Next Step | Karieson Creative Hub</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+        padding: 55px 25px;
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <img src="karieson_logo.png"
+             alt="karieson Creative Hub"
+             class="logo">
+
+        <a href="ebooks.html" class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                The Next Step
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Friendship, Choices and Growing Up
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div class="dedication">
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                To everyone standing at a crossroads,
+                uncertain about what comes next but brave
+                enough to keep moving forward.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The Next Step is a young adult story about difficult
+            choices, friendship and the uncertainty that comes
+            with growing up.
+        </p>
+
+        <p>
+            Growing up means making decisions without always
+            knowing where those decisions will lead.
+        </p>
+
+        <p>
+            Sometimes the people around us expect us to follow
+            one path while our own dreams point somewhere else.
+        </p>
+
+        <p>
+            This story explores friendship, responsibility,
+            uncertainty and the importance of learning from
+            the choices we make.
+        </p>
+
+        <p>
+            We may not always know what lies ahead, but there
+            is always another step waiting to be taken.
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            The Decision
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The letter was still sitting on the table.
+        </p>
+
+        <p>
+            He had read it three times, but the words had not
+            become any easier to understand.
+        </p>
+
+        <p>
+            He had been accepted.
+        </p>
+
+        <p>
+            It was the opportunity he had been waiting for.
+        </p>
+
+        <p>
+            There was only one problem.
+        </p>
+
+        <p>
+            Accepting it meant leaving home.
+        </p>
+
+        <p>
+            He looked through the window at the familiar street.
+        </p>
+
+        <p>
+            This was where he had grown up.
+        </p>
+
+        <p>
+            Every corner carried a memory.
+        </p>
+
+        <p>
+            The shop where he and his friends used to buy snacks
+            after school. The field where they had spent countless
+            afternoons. The old tree where they had once promised
+            each other that they would never lose contact.
+        </p>
+
+        <p>
+            Now everything felt different.
+        </p>
+
+        <p>
+            His phone rang.
+        </p>
+
+        <p>
+            It was his best friend.
+        </p>
+
+        <p>
+            "Have you decided?"
+        </p>
+
+        <p>
+            He looked at the letter again.
+        </p>
+
+        <p>
+            "Not yet."
+        </p>
+
+        <p>
+            There was silence on the other end.
+        </p>
+
+        <p>
+            Then his friend said something he had not expected.
+        </p>
+
+        <p>
+            "Maybe you don't have to know whether it's the
+            perfect choice. Maybe you just have to decide
+            whether it's the next step."
+        </p>
+
+        <p>
+            He smiled.
+        </p>
+
+        <p>
+            Perhaps that was all he needed.
+        </p>
+
+        <p>
+            He picked up the pen.
+        </p>
+
+        <p>
+            Then he signed the letter.
+        </p>
+
+        <p>
+            The decision had been made.
+        </p>
+
+        <p>
+            Now the real journey could begin.
+        </p>
+
+    </section>
+
+
+    <!-- END OF PREVIEW -->
+
+    <section class="page">
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Karieson Creative Hub |
+    <span>The Next Step</span> |
+    All Rights Reserved
+
+</footer>
+
+</body>
+</html>

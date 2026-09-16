@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Path</title>
+
+    <style>
+        :root {
+            --black: #222222;
+            --red: #c40000;
+            --white: #ffffff;
+            --grey: #777777;
+            --page-bg: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--page-bg);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+        }
+
+        header {
+            background: var(--black);
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 5%;
+        }
+
+        header img {
+            width: 130px;
+            height: auto;
+        }
+
+        .back {
+            color: var(--white);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: var(--red);
+        }
+
+        .book {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .page {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 70px 10%;
+            min-height: 700px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .title-page {
+            min-height: 900px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .title-content {
+            width: 100%;
+            padding-top: 180px;
+        }
+
+        .title {
+            color: var(--red);
+            font-family: "Brush Script MT",
+                         "Segoe Script",
+                         cursive;
+            font-size: clamp(48px, 8vw, 78px);
+            font-weight: bold;
+            line-height: 1.15;
+            margin-bottom: 55px;
+        }
+
+        .subtitle {
+            color: var(--grey);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(16px, 2.5vw, 21px);
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        .author {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
+            color: var(--black);
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .author span {
+            display: block;
+        }
+
+        h2 {
+            color: var(--red);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--black);
+            font-size: 26px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 17px;
+        }
+
+        .dedication {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .dedication p {
+            max-width: 600px;
+            font-style: italic;
+            color: var(--grey);
+        }
+
+        .chapter p:first-of-type::first-letter {
+            font-size: 55px;
+            font-weight: bold;
+            color: var(--red);
+            float: left;
+            line-height: 0.9;
+            padding-right: 8px;
+        }
+              .end-preview {
+    text-align: center !important;
+    color: var(--red) !important;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        footer strong {
+            display: block;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .title-content {
+                padding-top: 120px;
+            }
+
+            .title {
+                font-size: 45px;
+                margin-bottom: 50px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .author {
+                bottom: 55px;
+                font-size: 16px;
+            }
+
+            .page {
+                padding: 50px 7%;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="karieson_logo.png" alt="karieson Creative Hub">
+
+    <a href="ebooks.html" class="back">
+        ← Back to eBooks
+    </a>
+</header>
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                The Hidden Path
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Mystery, Adventure and Unexpected Discoveries
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DEDICATION -->
+    <section class="page dedication">
+
+        <div>
+
+            <h2>Dedication</h2>
+
+            <p>
+                To those who are willing to look beyond what everyone else
+                can see, follow the path less travelled, and discover the
+                possibilities hidden just beyond the familiar.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- AUTHOR'S NOTE -->
+    <section class="page">
+
+        <h2>Author's Note</h2>
+
+        <p>
+            The Hidden Path is a work of adventure fiction.
+        </p>
+
+        <p>
+            The story explores mystery, friendship, courage and the
+            unexpected discoveries that can emerge from a simple decision
+            to explore.
+        </p>
+
+        <p>
+            Sometimes the most important paths are not the ones clearly
+            marked on a map. They are the paths we discover because we
+            are curious enough to look beyond what is familiar.
+        </p>
+
+        <p>
+            This story follows characters whose search for a hidden path
+            leads them into an adventure they never expected.
+        </p>
+
+        <p>
+            The characters, places and events are fictional and are
+            presented for storytelling purposes.
+        </p>
+
+    </section>
+
+    <!-- CHAPTER ONE -->
+    <section class="page chapter">
+
+        <h3>Chapter One</h3>
+
+        <h2>The Mark on the Wall</h2>
+
+        <p>
+            Nobody knew who had carved the symbol into the old stone wall.
+        </p>
+
+        <p>
+            It had been there for as long as the villagers could remember.
+        </p>
+
+        <p>
+            Most people passed it without noticing.
+        </p>
+
+        <p>
+            But Samuel had always been curious about it.
+        </p>
+
+        <p>
+            One afternoon, while exploring the area with his friend
+            Lina, he noticed something unusual.
+        </p>
+
+        <p>
+            A small arrow had been carved beneath the symbol.
+        </p>
+
+        <p>
+            It pointed toward a narrow opening between the trees.
+        </p>
+
+        <p>
+            Lina looked at him.
+        </p>
+
+        <p>
+            “Have you ever seen that before?”
+        </p>
+
+        <p>
+            Samuel shook his head.
+        </p>
+
+        <p>
+            They stood silently for a moment.
+        </p>
+
+        <p>
+            The opening looked like nothing more than a narrow trail
+            disappearing into the forest.
+        </p>
+
+        <p>
+            But something about it felt different.
+        </p>
+
+        <p>
+            Samuel stepped closer.
+        </p>
+
+        <p>
+            “Maybe we should follow it.”
+        </p>
+
+        <p>
+            Lina hesitated.
+        </p>
+
+        <p>
+            “And if it leads somewhere we shouldn't go?”
+        </p>
+
+        <p>
+            Samuel smiled.
+        </p>
+
+        <p>
+            “Then we'll find out.”
+        </p>
+
+        <p>
+            Together, they stepped onto the hidden path.
+        </p>
+
+        <p>
+            Neither of them knew where it would lead.
+        </p>
+<p class="end-preview">
+            — End of Preview —
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <strong>Karieson Creative Hub</strong>
+    The Hidden Path<br>
+    All Rights Reserved
+</footer>
+
+</body>
+</html>

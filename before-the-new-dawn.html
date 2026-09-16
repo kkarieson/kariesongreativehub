@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Before the New Dawn</title>
+
+    <style>
+        :root {
+            --black: #222222;
+            --red: #c40000;
+            --white: #ffffff;
+            --grey: #777777;
+            --page-bg: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--page-bg);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+        }
+
+        header {
+            background: var(--black);
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 5%;
+        }
+
+        header img {
+            width: 130px;
+            height: auto;
+        }
+
+        .back {
+            color: var(--white);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: var(--red);
+        }
+
+        .book {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .page {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 70px 10%;
+            min-height: 700px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .title-page {
+            min-height: 900px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .title-content {
+            width: 100%;
+            padding-top: 180px;
+        }
+
+        .title {
+            color: var(--red);
+            font-family: "Brush Script MT",
+                         "Segoe Script",
+                         cursive;
+            font-size: clamp(48px, 8vw, 78px);
+            font-weight: bold;
+            line-height: 1.15;
+            margin-bottom: 55px;
+        }
+
+        .subtitle {
+            color: var(--grey);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(16px, 2.5vw, 21px);
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .author {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
+            color: var(--black);
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .author span {
+            display: block;
+        }
+
+        h2 {
+            color: var(--red);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--black);
+            font-size: 26px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 17px;
+        }
+
+        .dedication {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .dedication p {
+            max-width: 600px;
+            font-style: italic;
+            color: var(--grey);
+        }
+
+        .chapter p:first-of-type::first-letter {
+            font-size: 55px;
+            font-weight: bold;
+            color: var(--red);
+            float: left;
+            line-height: 0.9;
+            padding-right: 8px;
+        }
+        .end-preview {
+    text-align: center !important;
+    color: var(--red) !important;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        footer strong {
+            display: block;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .title-content {
+                padding-top: 120px;
+            }
+
+            .title {
+                font-size: 45px;
+                margin-bottom: 50px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .author {
+                bottom: 55px;
+                font-size: 16px;
+            }
+
+            .page {
+                padding: 50px 7%;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="karieson_logo.png" alt="karieson Creative Hub">
+
+    <a href="ebooks.html" class="back">
+        ← Back to eBooks
+    </a>
+</header>
+
+<main class="book">
+
+    <section class="page title-page">
+        <div class="title-content">
+
+            <h1 class="title">
+                Before the New Dawn
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Courage, Survival and Hope
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="page dedication">
+
+        <div>
+            <h2>Dedication</h2>
+
+            <p>
+                To those who endured difficult times with courage, to those who
+                carried hope through uncertainty, and to every generation that
+                believed tomorrow could be different.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="page">
+
+        <h2>Author's Note</h2>
+
+        <p>
+            Before the New Dawn is a work of historical fiction.
+        </p>
+
+        <p>
+            The story explores courage, survival, family and hope during a
+            period of profound social change.
+        </p>
+
+        <p>
+            Historical change is not experienced only through dates and major
+            events. It is also experienced in homes, communities and families
+            whose lives are changed by the world around them.
+        </p>
+
+        <p>
+            This story focuses on ordinary people facing extraordinary
+            circumstances and the choices they must make to protect their
+            families and preserve hope.
+        </p>
+
+        <p>
+            The characters and events are fictional and are presented for
+            storytelling purposes.
+        </p>
+
+    </section>
+
+    <section class="page chapter">
+
+        <h3>Chapter One</h3>
+
+        <h2>Before Sunrise</h2>
+
+        <p>
+            The village was still asleep when Mariam opened the door.
+        </p>
+
+        <p>
+            The darkness outside was slowly beginning to change, although the
+            first light of morning had not yet appeared.
+        </p>
+
+        <p>
+            She stood quietly and listened.
+        </p>
+
+        <p>
+            For several days, the village had lived with uncertainty.
+            Conversations had become quieter, doors were closed earlier and
+            people no longer gathered outside in the evenings as they once had.
+        </p>
+
+        <p>
+            Mariam looked toward the hills.
+        </p>
+
+        <p>
+            Somewhere beyond them was the road her brother had taken three days
+            earlier.
+        </p>
+
+        <p>
+            He had promised to return.
+        </p>
+
+        <p>
+            She wanted to believe him.
+        </p>
+
+        <p>
+            Behind her, her mother called her name.
+        </p>
+
+        <p>
+            “Mariam.”
+        </p>
+
+        <p>
+            She turned.
+        </p>
+
+        <p>
+            Her mother was standing in the doorway.
+        </p>
+
+        <p>
+            “Come inside. It is almost morning.”
+        </p>
+
+        <p>
+            Mariam looked toward the horizon one more time.
+        </p>
+
+        <p>
+            A thin line of light had appeared beyond the hills.
+        </p>
+
+        <p>
+            The night was ending.
+        </p>
+
+        <p>
+            Neither of them knew what the new day would bring.
+        </p>
+
+        <p>
+            But for the first time in many days, Mariam allowed herself to hope.
+        </p>
+<p class="end-preview">
+            — End of Preview —
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <strong>Karieson Creative Hub</strong>
+    Before the New Dawn<br>
+    All Rights Reserved
+</footer>
+
+</body>
+</html>

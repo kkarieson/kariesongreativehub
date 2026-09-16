@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Courage to Begin | Karieson Creative Hub</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+/* BOOK */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+/* TITLE PAGE */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+/* DEDICATION */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+/* AUTHOR'S NOTE */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+/* CHAPTER */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+        padding: 55px 25px;
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <img src="karieson_logo.png"
+             alt="karieson Creative Hub"
+             class="logo">
+
+        <a href="ebooks.html" class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+</header>
+
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                The Courage to Begin
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Courage, Change and New Beginnings
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div class="dedication">
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                To everyone who has stood at the beginning of
+                something new, afraid of what might happen,
+                yet courageous enough to take the first step.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The Courage to Begin is a story about overcoming fear
+            and finding the courage to start a new chapter in life.
+        </p>
+
+        <p>
+            Beginning again can be difficult. We often know what
+            we are leaving behind, but we cannot always see what
+            lies ahead.
+        </p>
+
+        <p>
+            This story explores uncertainty, personal growth,
+            difficult decisions and the quiet courage required
+            to move forward.
+        </p>
+
+        <p>
+            Sometimes the hardest step is the first one.
+        </p>
+
+        <p>
+            Yet every journey begins when someone decides that
+            fear will not be the reason they remain where they are.
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            The First Step
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            She stood outside the door with her bag in her hand.
+        </p>
+
+        <p>
+            For several minutes, she did not move.
+        </p>
+
+        <p>
+            Behind her was everything she knew. The familiar room,
+            the familiar streets and the people who had watched her
+            grow.
+        </p>
+
+        <p>
+            Ahead was uncertainty.
+        </p>
+
+        <p>
+            She had imagined this moment many times, but imagination
+            had never prepared her for how difficult it would feel.
+        </p>
+
+        <p>
+            Her hands tightened around the handle of the bag.
+        </p>
+
+        <p>
+            What if she failed?
+        </p>
+
+        <p>
+            The question had followed her for weeks.
+        </p>
+
+        <p>
+            What if she was making the wrong decision?
+        </p>
+
+        <p>
+            She looked back at the house one final time.
+        </p>
+
+        <p>
+            Then she remembered why she had decided to leave.
+        </p>
+
+        <p>
+            Not because she hated the life she had lived,
+            but because she knew there was more she needed to discover.
+        </p>
+
+        <p>
+            She took a deep breath.
+        </p>
+
+        <p>
+            Then she stepped forward.
+        </p>
+
+        <p>
+            It was only one step.
+        </p>
+
+        <p>
+            But sometimes one step is enough to change the direction
+            of an entire life.
+        </p>
+
+    </section>
+
+
+    <!-- END OF PREVIEW -->
+
+    <section class="page">
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Karieson Creative Hub |
+    <span>The Courage to Begin</span> |
+    All Rights Reserved
+</footer>
+
+</body>
+</html>

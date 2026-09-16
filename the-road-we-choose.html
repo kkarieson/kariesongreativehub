@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Road We Chose | Karieson</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+/* BOOK */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+/* TITLE PAGE */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+/* DEDICATION */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+/* AUTHOR'S NOTE */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+.fiction-notice {
+    color: var(--grey) !important;
+
+    font-size: 14px !important;
+
+    font-style: italic;
+
+    text-align: center !important;
+
+    margin-top: 35px;
+}
+
+/* CHAPTER */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+
+        padding: 55px 25px;
+
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <img
+            src="karieson_logo.png"
+            alt="karieson"
+            class="logo"
+        >
+
+        <a
+            href="ebooks.html"
+            class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                The Road We Choose
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Friendship, Choices and the Paths We Take
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div>
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p class="dedication">
+                To everyone standing at a crossroads, wondering which
+                path to choose, and to those who learned that every road
+                carries both consequences and possibilities.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            <strong>The Road We Chose</strong> is a work of fiction.
+        </p>
+
+        <p>
+            The characters, events, places and circumstances presented in
+            this story are products of imagination. Any resemblance to
+            actual persons, living or deceased, or to real events or places
+            is purely coincidental.
+        </p>
+
+        <p>
+            This story explores friendship, difficult decisions and the
+            consequences that can follow the choices we make.
+        </p>
+
+        <p>
+            Sometimes two people can stand at the same crossroads and
+            choose completely different roads. Neither may know where the
+            journey will lead until they have already travelled far from
+            where they began.
+        </p>
+
+        <p>
+            Through the experiences of its characters, this story reflects
+            on friendship, responsibility, ambition and the importance of
+            accepting the consequences of our decisions.
+        </p>
+
+        <p class="fiction-notice">
+            This is a work of fiction. Names, characters, places and events
+            are used for fictional storytelling purposes.
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            The Choice
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The road divided into two directions just beyond the old bridge.
+        </p>
+
+        <p>
+            They stood there without speaking.
+        </p>
+
+        <p>
+            For the past three years, they had walked almost every road
+            together. They had shared the same dreams, the same fears and
+            countless conversations about the future.
+        </p>
+
+        <p>
+            But that morning was different.
+        </p>
+
+        <p>
+            One road led toward the city.
+        </p>
+
+        <p>
+            The other disappeared into the countryside.
+        </p>
+
+        <p>
+            "Which way?" he finally asked.
+        </p>
+
+        <p>
+            She looked at the two roads.
+        </p>
+
+        <p>
+            "I don't know."
+        </p>
+
+        <p>
+            He smiled quietly.
+        </p>
+
+        <p>
+            "Maybe that's the point."
+        </p>
+
+        <p>
+            They had always believed that choosing the right road would
+            make everything easier.
+        </p>
+
+        <p>
+            They were about to discover that sometimes the hardest part
+            was simply making the choice.
+        </p>
+
+        <p>
+            She picked up her bag.
+        </p>
+
+        <p>
+            "Then we choose."
+        </p>
+
+        <p>
+            He looked at her one last time before stepping toward the road
+            that would change both their lives.
+        </p>
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Karieson Creative Hub
+    <span>•</span>
+    The Road We Chose
+    <span>•</span>
+    All Rights Reserved
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Village Beyond the Hill | Karieson Creative Hub</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+/* BOOK */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+/* TITLE PAGE */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+/* DEDICATION */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+/* AUTHOR'S NOTE */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+/* CHAPTER */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+        padding: 55px 25px;
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <img src="karieson_logo.png"
+             alt="karieson Creative Hub"
+             class="logo">
+
+        <a href="ebooks.html" class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                The Village Beyond the Hill
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of Community, Tradition, Family and Change
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div class="dedication">
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                To the communities that protect their stories,
+                the families that carry traditions across
+                generations, and everyone who has ever stood
+                between the comfort of the past and the promise
+                of change.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The Village Beyond the Hill is a compelling story of
+            community, tradition, family and the challenges of
+            embracing change.
+        </p>
+
+        <p>
+            Every community has stories that are passed from one
+            generation to another. These stories preserve memories,
+            values and lessons that shape the people who hear them.
+        </p>
+
+        <p>
+            But change is inevitable. New ideas can bring
+            opportunities while also challenging traditions that
+            have existed for generations.
+        </p>
+
+        <p>
+            This story explores the relationship between tradition
+            and change, and the difficult choices families and
+            communities sometimes face when the future begins to
+            look different from the past.
+        </p>
+
+        <p>
+            Sometimes moving forward does not mean forgetting
+            where we came from. It means finding a way to carry
+            the best parts of the past into the future.
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            Beyond the Hill
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            From the top of the hill, the village looked peaceful.
+        </p>
+
+        <p>
+            The houses stood among the trees, their roofs glowing
+            beneath the morning sunlight.
+        </p>
+
+        <p>
+            Smoke rose slowly from cooking fires as families began
+            another day.
+        </p>
+
+        <p>
+            He had climbed the hill many times as a child.
+        </p>
+
+        <p>
+            But this morning, he was looking at the village with
+            different eyes.
+        </p>
+
+        <p>
+            He had been away for five years.
+        </p>
+
+        <p>
+            During those years, he had studied in the city,
+            discovered new ideas and met people who saw the world
+            differently.
+        </p>
+
+        <p>
+            Now he had returned with a plan.
+        </p>
+
+        <p>
+            He believed the village could change without losing
+            everything that made it special.
+        </p>
+
+        <p>
+            Not everyone agreed.
+        </p>
+
+        <p>
+            His father had warned him the night before.
+        </p>
+
+        <p>
+            "People here do not change easily."
+        </p>
+
+        <p>
+            He had smiled.
+        </p>
+
+        <p>
+            "Neither did I."
+        </p>
+
+        <p>
+            His father had looked at him for a long moment.
+        </p>
+
+        <p>
+            "That is exactly what worries me."
+        </p>
+
+        <p>
+            He remembered those words as he began walking down
+            the hill.
+        </p>
+
+        <p>
+            At the centre of the village, people were already
+            gathering.
+        </p>
+
+        <p>
+            Some were curious about his return.
+        </p>
+
+        <p>
+            Others had already heard about his ideas.
+        </p>
+
+        <p>
+            He knew the conversation would not be easy.
+        </p>
+
+        <p>
+            The future rarely arrives without asking difficult
+            questions.
+        </p>
+
+        <p>
+            He stopped at the edge of the village and looked back
+            at the hill.
+        </p>
+
+        <p>
+            Beyond it was the road to the city.
+        </p>
+
+        <p>
+            Behind him was home.
+        </p>
+
+        <p>
+            Between the two stood a choice.
+        </p>
+
+        <p>
+            He took a breath and continued walking.
+        </p>
+
+        <p>
+            The village was waiting.
+        </p>
+
+    </section>
+
+
+    <!-- END OF PREVIEW -->
+
+    <section class="page">
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Karieson Creative Hub |
+    <span>The Village Beyond the Hill</span> |
+    All Rights Reserved
+
+</footer>
+
+</body>
+</html>

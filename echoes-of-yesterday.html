@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Echoes of Yesterday</title>
+
+    <style>
+        :root {
+            --black: #222222;
+            --red: #c40000;
+            --white: #ffffff;
+            --grey: #777777;
+            --page-bg: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--page-bg);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+        }
+
+        header {
+            background: var(--black);
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 5%;
+        }
+
+        header img {
+            width: 130px;
+            height: auto;
+        }
+
+        .back {
+            color: var(--white);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            color: var(--red);
+        }
+
+        .book {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .page {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 70px 10%;
+            min-height: 700px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .title-page {
+            min-height: 900px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .title-content {
+            width: 100%;
+            padding-top: 180px;
+        }
+
+        .title {
+            color: var(--red);
+            font-family: "Brush Script MT",
+                         "Segoe Script",
+                         cursive;
+            font-size: clamp(48px, 8vw, 78px);
+            font-weight: bold;
+            line-height: 1.15;
+            margin-bottom: 55px;
+        }
+
+        .subtitle {
+            color: var(--grey);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(16px, 2.5vw, 21px);
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .author {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 80px;
+            color: var(--black);
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .author span {
+            display: block;
+        }
+
+        h2 {
+            color: var(--red);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--black);
+            font-size: 26px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 17px;
+        }
+
+        .dedication {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .dedication p {
+            max-width: 600px;
+            font-style: italic;
+            color: var(--grey);
+        }
+
+        .chapter p:first-of-type::first-letter {
+            font-size: 55px;
+            font-weight: bold;
+            color: var(--red);
+            float: left;
+            line-height: 0.9;
+            padding-right: 8px;
+        }
+.end-preview {
+    text-align: center !important;
+    color: var(--red) !important;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        footer strong {
+            display: block;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .title-content {
+                padding-top: 120px;
+            }
+
+            .title {
+                font-size: 45px;
+                margin-bottom: 50px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .author {
+                bottom: 55px;
+                font-size: 16px;
+            }
+
+            .page {
+                padding: 50px 7%;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="karieson_logo.png" alt="karieson Creative Hub">
+
+    <a href="ebooks.html" class="back">
+        ← Back to eBooks
+    </a>
+</header>
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+    <section class="page title-page">
+        <div class="title-content">
+
+            <h1 class="title">
+                Echoes of Yesterday
+            </h1>
+
+            <h2 class="subtitle">
+                A Story of History, Memory and the Lives We Leave Behind
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DEDICATION -->
+    <section class="page dedication">
+
+        <div>
+            <h2>Dedication</h2>
+
+            <p>
+                To those who remember the people and places that came before them,
+                and to every generation that carries the stories of yesterday
+                into the future.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- AUTHOR'S NOTE -->
+    <section class="page">
+
+        <h2>Author's Note</h2>
+
+        <p>
+            Echoes of Yesterday is a work of historical fiction.
+        </p>
+
+        <p>
+            The story explores the lives of ordinary people living through
+            a period of change, uncertainty and transformation.
+        </p>
+
+        <p>
+            History is often remembered through great events and famous names,
+            but behind every historical moment are ordinary people whose lives
+            are changed by circumstances beyond their control.
+        </p>
+
+        <p>
+            Through its characters, this story reflects on family, community,
+            courage, loss and the memories that survive long after a particular
+            time has passed.
+        </p>
+
+        <p>
+            The characters and events in this story are fictional and are
+            presented for storytelling purposes.
+        </p>
+
+    </section>
+
+    <!-- CHAPTER ONE -->
+    <section class="page chapter">
+
+        <h3>Chapter One</h3>
+
+        <h2>The Old House</h2>
+
+        <p>
+            The house had stood at the edge of the village for longer than
+            anyone could remember.
+        </p>
+
+        <p>
+            Its walls had become darker with age, and the wooden doors carried
+            the marks of countless seasons. Children had grown up beside it,
+            families had gathered beneath its roof, and generations had passed
+            through its narrow rooms.
+        </p>
+
+        <p>
+            When Amina returned after many years away, the first thing she
+            noticed was how small the house seemed.
+        </p>
+
+        <p>
+            She remembered it differently.
+        </p>
+
+        <p>
+            In her childhood memories, the rooms had been enormous and the
+            courtyard had seemed wide enough to contain the whole world.
+        </p>
+
+        <p>
+            Now she stood quietly at the entrance, holding an old key in her
+            hand.
+        </p>
+
+        <p>
+            Her grandfather had given it to her many years ago.
+        </p>
+
+        <p>
+            “One day,” he had told her, “you will understand why we must
+            remember where we came from.”
+        </p>
+
+        <p>
+            At the time, she had not understood his words.
+        </p>
+
+        <p>
+            Standing there years later, she finally began to.
+        </p>
+
+        <p>
+            The past was not gone.
+        </p>
+
+        <p>
+            It had simply been waiting for someone to listen.
+        </p>
+<p class="end-preview">
+            — End of Preview —
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <strong>Karieson Creative Hub</strong>
+    Echoes of Yesterday<br>
+    All Rights Reserved
+</footer>
+
+</body>
+</html>

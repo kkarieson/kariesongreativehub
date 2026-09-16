@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dreams Don't Wait | Karieson Creative Hub</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+/* BOOK */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+/* TITLE PAGE */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+/* DEDICATION */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+/* AUTHOR'S NOTE */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+/* CHAPTER */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+        padding: 55px 25px;
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <img src="Karieson_logo.png"
+             alt="Karieson Creative Hub"
+             class="logo">
+
+        <a href="ebooks.html" class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                Dreams Don't Wait
+            </h1>
+
+            <h2 class="subtitle">
+                An Inspiring Story of Dreams, Courage and Perseverance
+            </h2>
+
+            <div class="author">
+                Abdullahi Sheikh Aden
+                <span>(Karieson)</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div class="dedication">
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                To every young dreamer who has faced doubt,
+                obstacles and setbacks, yet continues to believe
+                that a better future is possible.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            Dreams Don't Wait is an inspiring young adult story
+            about pursuing dreams despite doubt, obstacles and
+            unexpected setbacks.
+        </p>
+
+        <p>
+            Dreams can begin as simple ideas, but turning them
+            into reality requires patience, courage and
+            determination.
+        </p>
+
+        <p>
+            Along the way, there will always be people who doubt
+            us, circumstances that slow us down and moments when
+            giving up seems easier than continuing.
+        </p>
+
+        <p>
+            This story explores ambition, friendship,
+            perseverance and the importance of believing in a
+            possibility even when the road ahead is uncertain.
+        </p>
+
+        <p>
+            A dream does not promise an easy journey.
+            It simply gives us a reason to keep walking.
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            The Dream
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            The notebook had been under his bed for three years.
+        </p>
+
+        <p>
+            Inside were pages filled with ideas, drawings,
+            plans and sentences describing the life he hoped
+            to build one day.
+        </p>
+
+        <p>
+            Nobody knew how important that notebook was to him.
+        </p>
+
+        <p>
+            His friends laughed whenever he talked about his
+            dream.
+        </p>
+
+        <p>
+            "Maybe one day," they would say.
+        </p>
+
+        <p>
+            Sometimes he laughed with them.
+        </p>
+
+        <p>
+            But secretly, he never stopped believing.
+        </p>
+
+        <p>
+            One evening, he opened the notebook again.
+        </p>
+
+        <p>
+            The first page contained a sentence he had written
+            years earlier.
+        </p>
+
+        <p>
+            I will build something that matters.
+        </p>
+
+        <p>
+            He read the words slowly.
+        </p>
+
+        <p>
+            He had changed since writing them.
+        </p>
+
+        <p>
+            He had become older. He had experienced failure.
+            He had watched opportunities disappear. He had
+            listened to people tell him to choose something
+            safer.
+        </p>
+
+        <p>
+            But the dream was still there.
+        </p>
+
+        <p>
+            He closed the notebook and looked at the clock.
+        </p>
+
+        <p>
+            Tomorrow, he would take the first real step.
+        </p>
+
+        <p>
+            He was afraid.
+        </p>
+
+        <p>
+            But fear was no longer going to make the decision
+            for him.
+        </p>
+
+        <p>
+            The next morning, he woke before sunrise.
+        </p>
+
+        <p>
+            He picked up his bag and walked toward the door.
+        </p>
+
+        <p>
+            The dream had waited long enough.
+        </p>
+
+        <p>
+            Now it was his turn to move.
+        </p>
+
+    </section>
+
+
+    <!-- END OF PREVIEW -->
+
+    <section class="page">
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Karieson Creative Hub |
+    <span>Dreams Don't Wait</span> |
+    All Rights Reserved
+
+</footer>
+
+</body>
+</html>
