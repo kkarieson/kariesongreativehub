@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Karieson Creative Hub | Request Proposal</title>
+
+
+<style>
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #eeeeee;
+    --border: #d6d6d6;
+    --text-grey: #666666;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: var(--black);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 25px 15px 28px;
+}
+
+
+.logo {
+    width: 150px;
+    max-width: 45%;
+    height: auto;
+    display: block;
+    margin: 0 0 18px;
+}
+
+
+.header-title {
+    font-size: clamp(23px, 4vw, 35px);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.red-line {
+    width: 55px;
+    height: 4px;
+    background: var(--red);
+    margin: 12px auto 0;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    width: min(850px, 92%);
+    margin: 50px auto 70px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+.intro h1 {
+    font-size: clamp(20px, 3vw, 28px);
+    margin-bottom: 10px;
+    color: var(--red);
+}
+
+
+.intro p {
+    color: var(--text-grey);
+    text-align: left;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   REQUEST FORM
+========================= */
+
+.request-form {
+    border: 1px solid var(--border);
+    padding: 28px;
+    background: white;
+}
+
+
+.request-form h2 {
+    background: var(--black);
+    color: white;
+    padding: 10px 16px;
+    border-left: 2px solid var(--red);
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #bbb;
+
+    background: white;
+
+    color: var(--black);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    border-radius: 0;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: var(--red);
+
+}
+
+
+.form-group textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 150px;
+
+    padding: 11px 24px;
+
+    background: var(--red);
+
+    color: var(--white);
+
+    border: 1px solid var(--red);
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.submit-btn:hover {
+
+    background: var(--black);
+
+    border-color: var(--black);
+
+}
+
+
+/* =========================
+   CLOSE / BACK
+========================= */
+
+.form-actions {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.back-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    border: 1px solid var(--black);
+
+    padding: 9px 18px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+}
+
+
+.back-btn:hover {
+
+    background: var(--red);
+
+    border-color: var(--red);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: var(--black);
+
+    color: #aaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-size: 14px;
+
+}
+
+
+footer span {
+
+    color: var(--red);
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .container {
+
+        width: 94%;
+
+        margin-top: 30px;
+
+    }
+
+
+    .request-form {
+
+        padding: 20px;
+
+    }
+
+
+    .request-form h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .submit-btn {
+
+        width: 100%;
+
+    }
+
+
+    .form-actions {
+
+        margin-bottom: 15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <img
+        src="karieson_logo.png"
+        alt="Karieson Creative Hub"
+        class="logo"
+    >
+
+    <div class="header-title">
+        Request a Proposal
+    </div>
+
+    <div class="red-line"></div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <h1>
+            Request a Proposal
+        </h1>
+
+        <p>
+            Tell me about the project or proposal you need.
+            Provide the requested information below and submit
+            your request for review.
+        </p>
+
+    </section>
+
+
+    <!-- FORM -->
+
+    <div class="request-form">
+
+
+        <div class="form-actions">
+
+            <a
+                href="index.html"
+                class="back-btn"
+            >
+                Back
+            </a>
+
+        </div>
+
+
+        <h2>
+            Proposal Request Form
+        </h2>
+
+
+        <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+        >
+
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Proposal Request - Karieson Creative Hub"
+            >
+
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PROPOSAL TYPE -->
+
+            <div class="form-group">
+
+                <label for="proposal">
+                    Proposal Type
+                </label>
+
+                <select
+                    id="proposal"
+                    name="proposal"
+                    required
+                >
+
+                    <option value="">
+                        — Select Proposal Type —
+                    </option>
+
+                    <option value="Agriculture">
+                        Agriculture
+                    </option>
+
+                    <option value="Youth Entrepreneurship">
+                        Youth Entrepreneurship
+                    </option>
+
+                    <option value="Community Development">
+                        Community Development
+                    </option>
+
+                    <option value="Education">
+                        Education
+                    </option>
+
+                    <option value="Health">
+                        Health
+                    </option>
+
+                    <option value="Technology">
+                        Technology
+                    </option>
+
+                    <option value="Environment">
+                        Environment
+                    </option>
+
+                    <option value="Research">
+                        Research
+                    </option>
+
+                    <option value="Business">
+                        Business
+                    </option>
+
+                    <option value="Social Development">
+                        Social Development
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label for="message">
+                    Describe Your Request
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about the proposal you need..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Request
+            </button>
+
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Karieson Creative Hub
+
+    <span>•</span>
+
+    Request a Proposal
+
+    <span>•</span>
+
+    All Rights Reserved
+
+</footer>
+
+
+</body>
+
+</html>
