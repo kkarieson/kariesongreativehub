@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>When Hearts Remember | Karieson</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>When the Hearts Remember | Karieson</title><style>
 
 :root {
-    --black: #222222;
-    --red: #c40000;
-    --white: #ffffff;
-    --grey: #777777;
-    --border: #dddddd;
+    --corporate-red: #C00000;
+    --corporate-black: #000000;
+    --corporate-grey: #666666;
+    --white: #FFFFFF;
+    --content: #222222;
+    --border: #DDDDDD;
 }
 
 * {
@@ -22,16 +18,24 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #eeeeee;
-    color: var(--black);
-    font-family: Georgia, "Times New Roman", serif;
+html {
+    scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+    background: #eeeeee;
+    color: var(--content);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
 
 header {
-    background: var(--black);
+    background: var(--corporate-black);
     padding: 18px 25px;
 }
 
@@ -56,37 +60,51 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: bold;
+
+    transition: color 0.2s ease;
 }
 
 .back:hover {
-    color: var(--red);
+    color: var(--corporate-red);
 }
 
-/* BOOK */
+
+/* ==================================================
+   BOOK
+================================================== */
 
 .book {
     width: min(760px, 94%);
     margin: 35px auto 60px;
 }
 
-.page {
-    min-height: 900px;
 
+/* ==================================================
+   BOOK CHAPTER / FRONT PAGE
+================================================== */
+
+.book-chapter {
     background: var(--white);
 
+    min-height: 900px;
+
     margin-bottom: 25px;
+
     padding: 80px;
 
     border: 1px solid var(--border);
 }
 
-/* TITLE PAGE */
 
-.title-page {
+/* ==================================================
+   TITLE PAGE
+================================================== */
+
+.front-page {
     min-height: 900px;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 
     text-align: center;
@@ -94,111 +112,288 @@ header {
     position: relative;
 }
 
-.title-content {
+.front-page-content {
     width: 100%;
-    padding-top: 180px;
 }
 
-.title {
-    color: var(--red);
+.book-label {
+    color: var(--corporate-grey);
 
-    font-family: "Brush Script MT",
-                 "Segoe Script",
-                 cursive;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+}
+
+.front-page h1 {
+    color: var(--corporate-red);
+
+    font-family:
+        "Brush Script MT",
+        "Lucida Calligraphy",
+        "Segoe Script",
+        "URW Chancery L",
+        cursive;
 
     font-size: clamp(48px, 8vw, 78px);
 
     font-weight: bold;
+
     line-height: 1.15;
 
-    margin-bottom: 55px;
+    margin-bottom: 30px;
 }
 
-.subtitle {
-    color: var(--grey);
+.title-divider {
+    width: 65px;
+    height: 3px;
 
-    font-family: Georgia, "Times New Roman", serif;
+    background: var(--corporate-red);
+
+    margin: 0 auto 30px;
+}
+
+.book-subtitle {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: var(--corporate-grey);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: clamp(16px, 2.5vw, 21px);
 
     font-weight: bold;
     font-style: italic;
 
-    line-height: 1.5;
-
-    max-width: 500px;
-
-    margin: auto;
+    line-height: 1.6;
 }
 
-.author {
+.title-spacer {
+    height: 130px;
+}
+
+.author-label {
+    color: var(--corporate-grey);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.author-name {
+    color: var(--corporate-black);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.author-pen-name {
+    color: var(--corporate-black);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    font-style: italic;
+
+    margin-top: 3px;
+}
+
+.title-bottom {
     position: absolute;
 
     left: 0;
     right: 0;
-    bottom: 80px;
+    bottom: 55px;
 
-    color: var(--black);
+    color: var(--corporate-grey);
 
-    font-size: 18px;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 
-    line-height: 1.8;
+    font-size: 12px;
+
+    line-height: 1.7;
 }
 
-.author span {
-    display: block;
+.title-bottom p:last-child {
+    color: var(--corporate-red);
 }
 
-/* SECTION HEADINGS */
 
-.section-title {
-    text-align: center;
+/* ==================================================
+   FRONT PAGE LABELS
+================================================== */
 
-    color: var(--black);
+.front-page-label {
+    color: var(--corporate-red);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: 30px;
+
+    font-weight: bold;
 
     margin-bottom: 18px;
 }
 
-.red-line {
-    width: 55px;
-    height: 3px;
 
-    background: var(--red);
-
-    margin: 0 auto 55px;
-}
-
-/* DEDICATION */
+/* ==================================================
+   DEDICATION
+================================================== */
 
 .dedication-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     text-align: center;
 }
 
-.dedication {
-    max-width: 500px;
+.dedication-text {
+    max-width: 520px;
 
-    margin: auto;
+    margin: 80px auto 0;
 
-    font-size: 19px;
+    color: var(--content);
+
+    font-size: 20px;
+
     line-height: 2;
 
     font-style: italic;
 }
 
-/* AUTHOR'S NOTE */
 
-.author-note p,
-.chapter p {
-    color: var(--black);
+/* ==================================================
+   AUTHOR'S NOTE
+================================================== */
+
+.authors-note-page {
+    text-align: center;
+}
+
+.authors-note-content {
+    max-width: 600px;
+
+    margin: 45px auto 0;
+
+    text-align: justify;
+}
+
+.authors-note-content p {
+    color: var(--content);
 
     font-size: 17px;
+
+    line-height: 1.95;
+
+    margin-bottom: 25px;
+}
+
+.authors-note-content strong {
+    color: var(--corporate-red);
+}
+
+
+/* ==================================================
+   CHAPTER HEADING
+================================================== */
+
+.chapter-heading {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.chapter-number {
+    color: var(--corporate-red);
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-heading h2 {
+    color: var(--corporate-black);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    line-height: 1.3;
+
+    margin-bottom: 18px;
+}
+
+.chapter-heading h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    background: var(--corporate-red);
+
+    margin: 22px auto 0;
+}
+
+
+/* ==================================================
+   CHAPTER CONTENT
+================================================== */
+
+.chapter-content {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.chapter-content p {
+    color: var(--content);
+
+    font-size: 17px;
+
     line-height: 1.95;
 
     text-align: justify;
@@ -206,64 +401,47 @@ header {
     margin-bottom: 25px;
 }
 
-/* CHAPTER */
 
-.chapter-number {
-    text-align: center;
+/* DROP CAP */
 
-    color: var(--red);
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 13px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 12px;
-}
-
-.chapter-title {
-    text-align: center;
-
-    color: var(--black);
-
-    font-size: 28px;
-
-    margin-bottom: 18px;
-}
-
-.chapter .red-line {
-    margin-bottom: 45px;
-}
-
-.chapter p:first-of-type::first-letter {
-    font-size: 55px;
-
+.chapter-content p:first-of-type::first-letter {
     float: left;
 
-    line-height: .8;
+    color: var(--corporate-red);
 
-    padding-right: 7px;
+    font-size: 58px;
 
-    color: var(--red);
+    font-weight: bold;
+
+    line-height: 0.8;
+
+    padding-right: 8px;
 }
+
+
+/* ==================================================
+   PREVIEW END
+================================================== */
 
 .end-preview {
     text-align: center !important;
 
-    color: var(--red) !important;
+    color: var(--corporate-red) !important;
 
     font-weight: bold;
+
     font-style: italic;
 
-    margin-top: 50px;
+    margin-top: 55px;
 }
 
-/* FOOTER */
+
+/* ==================================================
+   FOOTER
+================================================== */
 
 footer {
-    background: var(--black);
+    background: var(--corporate-black);
 
     color: #aaaaaa;
 
@@ -277,10 +455,13 @@ footer {
 }
 
 footer span {
-    color: var(--red);
+    color: var(--corporate-red);
 }
 
-/* MOBILE */
+
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media (max-width: 600px) {
 
@@ -297,134 +478,214 @@ footer span {
         margin-top: 15px;
     }
 
-    .page {
+    .book-chapter {
         min-height: 700px;
+
         padding: 55px 25px;
+
         margin-bottom: 15px;
     }
 
-    .title-page {
+    .front-page {
         min-height: 700px;
     }
 
-    .title-content {
-        padding-top: 120px;
-    }
-
-    .title {
+    .front-page h1 {
         font-size: 45px;
-        margin-bottom: 50px;
     }
 
-    .subtitle {
+    .book-subtitle {
         font-size: 16px;
     }
 
-    .author {
-        bottom: 55px;
-        font-size: 16px;
+    .title-spacer {
+        height: 90px;
     }
 
-    .section-title {
+    .title-bottom {
+        bottom: 35px;
+    }
+
+    .front-page-label {
         font-size: 25px;
     }
 
-    .author-note p,
-    .chapter p {
+    .dedication-text {
+        font-size: 18px;
+        line-height: 1.85;
+    }
+
+    .authors-note-content p,
+    .chapter-content p {
         font-size: 16px;
         line-height: 1.85;
     }
+
+    .chapter-heading h2 {
+        font-size: 26px;
+    }
+
 }
 
-</style>
-</head>
 
-<body>
+/* ==================================================
+   PRINT
+================================================== */
 
-<header>
+@media print {
 
-    <div class="header-inner">
+    @page {
+        size: A4;
+        margin: 18mm 15mm 15mm 15mm;
+    }
 
-        <img
-            src="karieson_logo.png"
-            alt="karieson"
-            class="logo"
-        >
+    body {
+        background: var(--white);
+    }
 
-        <a
-            href="ebooks.html"
-            class="back">
-            ← Back to eBooks
-        </a>
+    header,
+    footer {
+        display: none;
+    }
 
+    .book {
+        width: 100%;
+        margin: 0;
+    }
+
+    .book-chapter {
+        border: none;
+        margin: 0;
+        min-height: auto;
+
+        page-break-after: always;
+        break-after: page;
+    }
+
+    .book-chapter:last-child {
+        page-break-after: auto;
+        break-after: auto;
+    }
+
+    .front-page {
+        min-height: 250mm;
+    }
+
+    .title-bottom {
+        position: absolute;
+    }
+
+    .chapter-content p,
+    .authors-note-content p {
+        font-size: 12pt;
+        line-height: 1.7;
+    }
+
+}
+
+</style></head><body><header><div class="header-inner">
+
+    <img
+        src="karieson_logo.png"
+        alt="karieson"
+        class="logo"
+    >
+
+    <a
+        href="ebooks.html"
+        class="back">
+        ← Back to eBooks
+    </a>
+
+</div>
+
+</header><main class="book"><!-- ==================================================
+     TITLE PAGE
+================================================== --><section class="book-chapter front-page" id="title-page"><div class="front-page-content">
+
+    <div class="book-label">
+        eBook
     </div>
 
-</header>
+    <h1>
+        When the Hearts Remember
+    </h1>
 
+    <div class="title-divider"></div>
 
-<main class="book">
+    <p class="book-subtitle">
+        A Story of Love, Memory and the Bonds We Cannot Forget
+    </p>
 
+    <div class="title-spacer"></div>
 
-    <!-- TITLE PAGE -->
+    <p class="author-label">
+        Written by
+    </p>
 
-<section class="page title-page">
+    <p class="author-name">
+        Abdullahi Sheikh Aden
+    </p>
 
-    <div class="title-content">
+    <p class="author-pen-name">
+        (Karieson)
+    </p>
 
-        <h1 class="title">
-            When the Hearts Remember
-        </h1>
-
-        <h2 class="subtitle">
-            A Story of Love, Memory and the Bonds We Cannot Forget
-        </h2>
-
-        <div class="author">
-            Abdullahi Sheikh Aden
-            <span>(Karieson)</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-    <!-- DEDICATION -->
-
-    <section class="page dedication-page">
-
-        <div>
-
-            <h2 class="section-title">
-                Dedication
-            </h2>
-
-            <div class="red-line"></div>
-
-            <p class="dedication">
-                To everyone who has ever carried a memory of someone they loved,
-                and to those who discovered that some connections remain in the
-                heart long after life has taken people in different directions.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- AUTHOR'S NOTE -->
-
-    <section class="page author-note">
-
-        <h2 class="section-title">
-            Author's Note
-        </h2>
-
-        <div class="red-line"></div>
+    <div class="title-bottom">
 
         <p>
-            When Hearts Remember is a story about the memories that remain
-            with us long after moments have passed.
+            Karieson Creative Hub
+        </p>
+
+        <p>
+            All Rights Reserved
+        </p>
+
+    </div>
+
+</div>
+
+</section><!-- ==================================================
+     DEDICATION
+================================================== --><section
+    class="book-chapter front-page dedication-page"
+    id="dedication-page"><div class="front-page-content">
+
+    <div class="front-page-label">
+        Dedication
+    </div>
+
+    <div class="title-divider"></div>
+
+    <div class="dedication-text">
+
+        <p>
+            To everyone who has ever carried a memory of someone they loved,
+            and to those who discovered that some connections remain in the
+            heart long after life has taken people in different directions.
+        </p>
+
+    </div>
+
+</div>
+
+</section><!-- ==================================================
+     AUTHOR'S NOTE
+================================================== --><section
+    class="book-chapter front-page authors-note-page"
+    id="authors-note"><div class="front-page-content">
+
+    <div class="front-page-label">
+        Author's Note
+    </div>
+
+    <div class="title-divider"></div>
+
+    <div class="authors-note-content">
+
+        <p>
+            <strong>When the Hearts Remember</strong> is a story about the
+            memories that remain with us long after moments have passed.
         </p>
 
         <p>
@@ -441,124 +702,125 @@ footer span {
         </p>
 
         <p>
-            It is also a story about forgiveness, understanding and the courage
-            to face the emotions we have tried to leave behind.
+            It is also a story about forgiveness, understanding and the
+            courage to face the emotions we have tried to leave behind.
         </p>
 
         <p>
-            Because sometimes the heart remembers what the mind has spent years
-            trying to forget.
+            Because sometimes the heart remembers what the mind has spent
+            years trying to forget.
         </p>
 
-    </section>
+    </div>
 
+</div>
 
-    <!-- CHAPTER ONE -->
+</section><!-- ==================================================
+     CHAPTER ONE
+================================================== --><section class="book-chapter" id="chapter-one"><div class="chapter-heading">
 
-    <section class="page chapter">
+    <div class="chapter-number">
+        Chapter One
+    </div>
 
-        <div class="chapter-number">
-            CHAPTER ONE
-        </div>
+    <h2>
+        The Memory That Returned
+    </h2>
 
-        <h2 class="chapter-title">
-            The Memory That Returned
-        </h2>
+</div>
 
-        <div class="red-line"></div>
+<div class="chapter-content">
 
-        <p>
-            She had forgotten the sound of his voice.
-        </p>
+    <p>
+        She had forgotten the sound of his voice.
+    </p>
 
-        <p>
-            At least, that was what she had told herself for years.
-        </p>
+    <p>
+        At least, that was what she had told herself for years.
+    </p>
 
-        <p>
-            Life had become busy enough to make the past feel distant. There
-            were new responsibilities, new places and new people. The memories
-            that once occupied her thoughts every evening had slowly become
-            quieter.
-        </p>
+    <p>
+        Life had become busy enough to make the past feel distant. There were
+        new responsibilities, new places and new people. The memories that
+        once occupied her thoughts every evening had slowly become quieter.
+    </p>
 
-        <p>
-            She had learned not to look back.
-        </p>
+    <p>
+        She had learned not to look back.
+    </p>
 
-        <p>
-            Until that afternoon.
-        </p>
+    <p>
+        Until that afternoon.
+    </p>
 
-        <p>
-            She was walking through the crowded street when she heard a voice
-            behind her.
-        </p>
+    <p>
+        She was walking through the crowded street when she heard a voice
+        behind her.
+    </p>
 
-        <p>
-            It was only a few words.
-        </p>
+    <p>
+        It was only a few words.
+    </p>
 
-        <p>
-            But her heart recognized them before her mind could understand why.
-        </p>
+    <p>
+        But her heart recognized them before her mind could understand why.
+    </p>
 
-        <p>
-            She stopped.
-        </p>
+    <p>
+        She stopped.
+    </p>
 
-        <p>
-            For a moment, everything around her seemed to disappear. The sound
-            of vehicles, the conversations of strangers and the movement of
-            people around her all became distant.
-        </p>
+    <p>
+        For a moment, everything around her seemed to disappear. The sound
+        of vehicles, the conversations of strangers and the movement of
+        people around her all became distant.
+    </p>
 
-        <p>
-            Slowly, she turned around.
-        </p>
+    <p>
+        Slowly, she turned around.
+    </p>
 
-        <p>
-            And there he was.
-        </p>
+    <p>
+        And there he was.
+    </p>
 
-        <p>
-            The person she had spent years trying not to remember.
-        </p>
+    <p>
+        The person she had spent years trying not to remember.
+    </p>
 
-        <p>
-            He looked older now. There were changes in his face, changes that
-            only time could create. But his eyes were the same.
-        </p>
+    <p>
+        He looked older now. There were changes in his face, changes that
+        only time could create. But his eyes were the same.
+    </p>
 
-        <p>
-            Their eyes met.
-        </p>
+    <p>
+        Their eyes met.
+    </p>
 
-        <p>
-            Neither of them spoke.
-        </p>
+    <p>
+        Neither of them spoke.
+    </p>
 
-        <p>
-            Yet in that single moment, years of silence suddenly felt like
-            yesterday.
-        </p>
+    <p>
+        Yet in that single moment, years of silence suddenly felt like
+        yesterday.
+    </p>
 
-        <p class="end-preview">
-            — End of Preview —
-        </p>
+    <p class="end-preview">
+        — End of Preview —
+    </p>
 
-    </section>
+</div>
 
-</main>
+</section></main><footer>Karieson Creative Hub
 
+<span>•</span>
 
-<footer>
-    Karieson Creative Hub
-    <span>•</span>
-    When Hearts Remember
-    <span>•</span>
-    All Rights Reserved
-</footer>
+When the Hearts Remember
 
-</body>
+<span>•</span>
+
+All Rights Reserved
+
+</footer></body>
 </html>
