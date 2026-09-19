@@ -231,8 +231,17 @@ select:focus {
     color: var(--red);
 }
 
-/* BUTTONS */
 
+/* BUTTONS */
+/* PRICE */
+
+.price {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--red);
+    margin: 20px auto 0;
+}
 .buttons {
     display: flex;
     justify-content: center;
@@ -464,8 +473,10 @@ const novels = {
     name: "Love Beyond the Distance",
     image: "love-beyond-the-distance.png",
     preview: "love-beyond-distance.html",
+    price: "KES 873.75",
+    buyLink: "https://selar.com/871b38i3z9",
     synopsis: "A moving story about love, distance, sacrifice and the choices that can either bring two hearts together or tear them apart."
-   },
+},
             {
     name: "When Hearts Remember",
     image: "when-the-hearts-remember.png",
@@ -787,23 +798,26 @@ function showNovels() {
 
                 </div>
 
-                <div class="buttons">
+                <div class="price">
+    ${book.price || ""}
+</div>
 
-                    <a
-    href="${book.preview}"
-    class="btn view">
-    View
-</a>
+<div class="buttons">
 
-                    <a
-                        href="#"
-                        class="btn buy">
-                        Buy Now
-                    </a>
+    <a
+        href="${book.preview}"
+        class="btn view">
+        View
+    </a>
 
-                </div>
+    <a
+        href="${book.buyLink || '#'}"
+        class="btn buy"
+        ${book.buyLink ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+        Buy Now
+    </a>
 
-            </div>
+</div>
 
         `;
 
