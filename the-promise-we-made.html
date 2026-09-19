@@ -9,12 +9,18 @@
 <style>
 
 :root {
-    --black: #222222;
-    --red: #c40000;
-    --white: #ffffff;
-    --grey: #777777;
-    --border: #dddddd;
+    --corporate-red: #C00000;
+    --corporate-black: #000000;
+    --corporate-grey: #777777;
+    --white: #FFFFFF;
+    --content: #222222;
+    --border: #DDDDDD;
+    --page-background: #EEEEEE;
 }
+
+/* ==================================================
+   RESET
+================================================== */
 
 * {
     margin: 0;
@@ -22,16 +28,22 @@
     box-sizing: border-box;
 }
 
+/* ==================================================
+   BODY
+================================================== */
+
 body {
-    background: #eeeeee;
-    color: var(--black);
+    background: var(--page-background);
+    color: var(--content);
     font-family: Georgia, "Times New Roman", serif;
 }
 
-/* HEADER */
+/* ==================================================
+   HEADER
+================================================== */
 
 header {
-    background: var(--black);
+    background: var(--corporate-black);
     padding: 18px 25px;
 }
 
@@ -56,18 +68,26 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: bold;
+
+    transition: color 0.2s ease;
 }
 
 .back:hover {
-    color: var(--red);
+    color: var(--corporate-red);
 }
 
-/* BOOK */
+/* ==================================================
+   BOOK
+================================================== */
 
 .book {
     width: min(760px, 94%);
     margin: 35px auto 60px;
 }
+
+/* ==================================================
+   PAGE
+================================================== */
 
 .page {
     min-height: 900px;
@@ -78,15 +98,21 @@ header {
     padding: 80px;
 
     border: 1px solid var(--border);
+
+    position: relative;
 }
 
-/* TITLE PAGE */
+/* ==================================================
+   TITLE PAGE
+================================================== */
 
 .title-page {
     min-height: 900px;
 
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+
+    align-items: center;
     justify-content: center;
 
     text-align: center;
@@ -94,28 +120,54 @@ header {
     position: relative;
 }
 
-.title-content {
+.title-main {
     width: 100%;
-    padding-top: 180px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 }
 
-.title {
-    color: var(--red);
+/* BOOK TITLE */
 
-    font-family: "Brush Script MT",
-                 "Segoe Script",
-                 cursive;
+.book-title {
+    color: var(--corporate-red);
+
+    font-family:
+        "Brush Script MT",
+        "Lucida Calligraphy",
+        "Segoe Script",
+        "URW Chancery L",
+        cursive;
 
     font-size: clamp(48px, 8vw, 78px);
 
     font-weight: bold;
+
     line-height: 1.15;
 
-    margin-bottom: 55px;
+    text-align: center;
+
+    margin-bottom: 28px;
 }
 
-.subtitle {
-    color: var(--grey);
+/* TITLE DIVIDER */
+
+.title-divider {
+    width: 85px;
+    height: 3px;
+
+    background: var(--corporate-red);
+
+    margin: 0 auto 28px;
+}
+
+/* SUBTITLE */
+
+.book-subtitle {
+    color: var(--corporate-grey);
 
     font-family: Georgia, "Times New Roman", serif;
 
@@ -124,81 +176,114 @@ header {
     font-weight: bold;
     font-style: italic;
 
-    line-height: 1.5;
+    line-height: 1.6;
 
-    max-width: 500px;
+    max-width: 520px;
 
     margin: auto;
 }
+
+/* AUTHOR */
 
 .author {
     position: absolute;
 
     left: 0;
     right: 0;
-    bottom: 80px;
 
-    color: var(--black);
+    bottom: 75px;
 
-    font-size: 18px;
+    color: var(--corporate-black);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
     font-weight: bold;
 
-    line-height: 1.8;
-}
-
-.author span {
-    display: block;
-}
-
-/* SECTION HEADINGS */
-
-.section-title {
     text-align: center;
-
-    color: var(--black);
-
-    font-size: 30px;
-
-    margin-bottom: 18px;
 }
 
-.red-line {
-    width: 55px;
-    height: 3px;
+/* ==================================================
+   GENERAL PAGE CONTENT
+================================================== */
 
-    background: var(--red);
-
-    margin: 0 auto 55px;
+.page-content {
+    width: 100%;
 }
 
-/* DEDICATION */
+/* ==================================================
+   DEDICATION
+================================================== */
 
 .dedication-page {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     text-align: center;
 }
 
-.dedication {
+.page-label {
+    color: var(--corporate-red);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: bold;
+    font-style: italic;
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.dedication-text {
     max-width: 500px;
 
     margin: auto;
 
+    color: var(--content);
+
     font-size: 19px;
+
     line-height: 2;
 
     font-style: italic;
+
+    text-align: center;
 }
 
-/* AUTHOR'S NOTE */
+/* ==================================================
+   AUTHOR'S NOTE
+================================================== */
 
-.author-note p,
-.chapter p {
-    color: var(--black);
+.author-note-page {
+    display: block;
+}
+
+.author-note-title {
+    color: var(--corporate-red);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: bold;
+    font-style: italic;
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.author-note p {
+    color: var(--content);
 
     font-size: 17px;
+
     line-height: 1.95;
 
     text-align: justify;
@@ -206,16 +291,37 @@ header {
     margin-bottom: 25px;
 }
 
-/* CHAPTER */
+.author-note p:last-child {
+    margin-bottom: 0;
+}
 
-.chapter-number {
+/* ==================================================
+   CHAPTER
+================================================== */
+
+.chapter-page {
+    display: block;
+}
+
+.chapter-content {
+    width: 100%;
+}
+
+/* CHAPTER HEADING */
+
+.chapter-heading {
     text-align: center;
 
-    color: var(--red);
+    margin-bottom: 45px;
+}
+
+.chapter-number {
+    color: var(--corporate-red);
 
     font-family: Arial, Helvetica, sans-serif;
 
     font-size: 13px;
+
     font-weight: bold;
 
     letter-spacing: 3px;
@@ -224,20 +330,61 @@ header {
 }
 
 .chapter-title {
-    text-align: center;
+    color: var(--corporate-black);
 
-    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 28px;
+    font-size: 30px;
 
-    margin-bottom: 18px;
+    font-weight: bold;
+
+    line-height: 1.3;
 }
 
-.chapter .red-line {
-    margin-bottom: 45px;
+/* RED DIVIDER UNDER CHAPTER */
+
+.chapter-heading::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    background: var(--corporate-red);
+
+    margin: 22px auto 0;
 }
 
-.chapter p:first-of-type::first-letter {
+/* CHAPTER TEXT */
+
+.chapter-content p {
+    color: var(--content);
+
+    font-size: 17px;
+
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+/* DIALOGUE */
+
+.chapter-content .dialogue {
+    text-align: left;
+
+    font-style: italic;
+
+    font-weight: bold;
+}
+
+/* ==================================================
+   FIRST LETTER
+================================================== */
+
+.chapter-content p:not(.dialogue):first-of-type::first-letter {
     font-size: 55px;
 
     float: left;
@@ -246,26 +393,17 @@ header {
 
     padding-right: 7px;
 
-    color: var(--red);
+    color: var(--corporate-red);
 }
 
-.end-preview {
-    text-align: center !important;
-
-    color: var(--red) !important;
-
-    font-weight: bold;
-    font-style: italic;
-
-    margin-top: 50px;
-}
-
-/* FOOTER */
+/* ==================================================
+   FOOTER
+================================================== */
 
 footer {
-    background: var(--black);
+    background: var(--corporate-black);
 
-    color: #aaaaaa;
+    color: #AAAAAA;
 
     text-align: center;
 
@@ -277,10 +415,12 @@ footer {
 }
 
 footer span {
-    color: var(--red);
+    color: var(--corporate-red);
 }
 
-/* MOBILE */
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media (max-width: 600px) {
 
@@ -288,57 +428,212 @@ footer span {
         padding: 15px;
     }
 
+    .header-inner {
+        width: 96%;
+    }
+
     .logo {
         width: 100px;
     }
 
+    .back {
+        font-size: 13px;
+    }
+
     .book {
         width: 96%;
+
         margin-top: 15px;
+        margin-bottom: 30px;
     }
 
     .page {
         min-height: 700px;
+
         padding: 55px 25px;
+
         margin-bottom: 15px;
     }
 
+    /* TITLE PAGE */
+
     .title-page {
         min-height: 700px;
+
+        padding: 45px 25px;
     }
 
-    .title-content {
-        padding-top: 120px;
-    }
-
-    .title {
+    .book-title {
         font-size: 45px;
-        margin-bottom: 50px;
+
+        line-height: 1.15;
+
+        margin-bottom: 25px;
     }
 
-    .subtitle {
+    .title-divider {
+        width: 65px;
+
+        margin-bottom: 25px;
+    }
+
+    .book-subtitle {
         font-size: 16px;
+
+        line-height: 1.55;
     }
 
     .author {
-        bottom: 55px;
+        bottom: 50px;
+
         font-size: 16px;
     }
 
-    .section-title {
+    /* DEDICATION */
+
+    .page-label {
         font-size: 25px;
+
+        margin-bottom: 40px;
     }
 
-    .author-note p,
-    .chapter p {
-        font-size: 16px;
+    .dedication-text {
+        font-size: 17px;
+
         line-height: 1.85;
     }
+
+    /* AUTHOR NOTE */
+
+    .author-note-title {
+        font-size: 25px;
+
+        margin-bottom: 40px;
+    }
+
+    .author-note p {
+        font-size: 16px;
+
+        line-height: 1.85;
+
+        margin-bottom: 22px;
+    }
+
+    /* CHAPTER */
+
+    .chapter-heading {
+        margin-bottom: 40px;
+    }
+
+    .chapter-number {
+        font-size: 12px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .chapter-title {
+        font-size: 26px;
+    }
+
+    .chapter-content p {
+        font-size: 16px;
+
+        line-height: 1.85;
+
+        margin-bottom: 22px;
+    }
+
+    .chapter-content p:not(.dialogue):first-of-type::first-letter {
+        font-size: 48px;
+    }
+
+    footer {
+        padding: 22px 12px;
+
+        font-size: 12px;
+    }
 }
+.drop-cap::first-letter {
+    font-size: 55px;
+    float: left;
+    line-height: 0.8;
+    padding-right: 8px;
+    padding-top: 4px;
+
+    color: var(--corporate-red);
+
+    font-family:
+        "Brush Script MT",
+        "Lucida Calligraphy",
+        "Segoe Script",
+        "URW Chancery L",
+        cursive;
+
+    font-weight: bold;
+    font-style: italic;
+}
+.end-preview {
+    text-align: center !important;
+    color: var(--corporate-red) !important;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-bottom: 0 !important;
+}
+
+/* ==================================================
+   PRINT
+================================================== */
+
+@media print {
+
+    body {
+        background: var(--white);
+    }
+
+    header,
+    footer {
+        display: none;
+    }
+
+    .book {
+        width: 100%;
+        margin: 0;
+    }
+
+    .page {
+        width: 100%;
+
+        min-height: 100vh;
+
+        margin: 0;
+
+        border: none;
+
+        page-break-after: always;
+    }
+
+    .page:last-child {
+        page-break-after: auto;
+    }
+
+    .title-page {
+        min-height: 100vh;
+    }
+
+    .chapter-page {
+        min-height: 100vh;
+    }
+}
+
+
 </style>
 </head>
 
 <body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -364,194 +659,303 @@ footer span {
 <main class="book">
 
 
-    <!-- TITLE PAGE -->
+<!-- =====================================================
+     TITLE PAGE
+===================================================== -->
 
-    <section class="page title-page">
+<section class="page title-page">
 
-        <div class="title-content">
+    <div class="title-main">
 
-            <h1 class="title">
-                The Promise We Made
-            </h1>
+        <h1 class="book-title">
+            The Promise We Made
+        </h1>
 
-            <h2 class="subtitle">
-                A Story of Love, Commitment and the Choices We Keep
-            </h2>
+        <div class="title-divider"></div>
 
-            <div class="author">
-            Abdullahi Sheikh Aden
-            <span>(Karieson)</span>
+        <div class="book-subtitle">
+            A Story of Love, Commitment and the Choices We Keep
         </div>
 
+    </div>
+
+    <div class="author">
+        Abdullahi Sheikh Aden (Karieson)
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DEDICATION
+===================================================== -->
+
+<section class="page dedication-page">
+
+    <div class="page-content">
+
+        <div class="page-label">
+            Dedication
+        </div>
+
+        <div class="dedication-text">
+
+            To those who have made promises with sincere hearts,
+            carried them through difficult seasons, and discovered
+            that true commitment is measured not only by the words
+            we speak, but by the choices we make when keeping them
+            becomes difficult.
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- DEDICATION -->
+<!-- =====================================================
+     AUTHOR'S NOTE
+===================================================== -->
 
-    <section class="page dedication-page">
+<section class="page author-note-page">
 
-        <div>
+    <div class="page-content">
 
-            <h2 class="section-title">
-                Dedication
-            </h2>
+        <h2 class="author-note-title">
+            Author's Note
+        </h2>
 
-            <div class="red-line"></div>
+        <div class="author-note">
 
-            <p class="dedication">
-                To those who have made promises with sincere hearts,
-                carried them through difficult seasons, and discovered
-                that true commitment is measured not only by the words
-                we speak, but by the choices we make when keeping them
-                becomes difficult.
+            <p>
+                <em>The Promise We Made</em> is a story about love,
+                commitment, difficult choices, sacrifice, trust,
+                and the consequences of the decisions we make for
+                the people we love.
+            </p>
+
+            <p>
+                At the heart of this story is a simple promise:
+                a promise made sincerely, but tested by distance,
+                time, changing circumstances, and the realities
+                of life.
+            </p>
+
+            <p>
+                Aden and Amina begin their journey believing that
+                love and a promise can protect them from whatever
+                lies ahead. But as their lives change, they learn
+                that loving someone does not always mean knowing
+                what is best for them.
+            </p>
+
+            <p>
+                Sometimes love requires sacrifice. Sometimes it
+                requires patience. Sometimes it requires difficult
+                conversations and the courage to admit that we have
+                made mistakes.
+            </p>
+
+            <p>
+                Most importantly, the story asks what a promise
+                really means when keeping it becomes difficult.
+            </p>
+
+            <p>
+                A promise is not simply a collection of words.
+                It is a responsibility.
+            </p>
+
+            <p>
+                And sometimes, honoring that responsibility means
+                choosing each other again—not because we are forced
+                to by the past, but because we freely choose the
+                person standing beside us in the present.
             </p>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- AUTHOR'S NOTE -->
+<!-- =====================================================
+     CHAPTER ONE
+===================================================== -->
 
-    <section class="page author-note">
+<section class="page chapter-page">
 
-        <h2 class="section-title">
-            Author's Note
-        </h2>
+    <div class="page-content chapter-content">
 
-        <div class="red-line"></div>
+        <div class="chapter-heading">
 
-        <p>
-            The Promise We Made is a story about love, commitment and the
-            difficult choices that sometimes stand between two people.
-        </p>
+            <div class="chapter-number">
+                CHAPTER ONE
+            </div>
 
-        <p>
-            A promise can be easy to make when everything is going well.
-            Keeping that promise, however, can become much harder when
-            circumstances change.
-        </p>
+            <h2 class="chapter-title">
+                The Promise
+            </h2>
 
-        <p>
-            This story explores what happens when the people we love are
-            faced with choices that test their loyalty, their courage and
-            their understanding of one another.
-        </p>
-
-        <p>
-            It is a story about sacrifice, trust and the consequences of
-            decisions made in moments when there seems to be no easy answer.
-        </p>
-
-        <p>
-            Because sometimes a promise is not simply something we say.
-            It becomes a responsibility that follows us wherever life takes us.
-        </p>
-
-    </section>
-
-
-    <!-- CHAPTER ONE -->
-
-    <section class="page chapter">
-
-        <div class="chapter-number">
-            CHAPTER ONE
         </div>
 
-        <h2 class="chapter-title">
-            The Promise
-        </h2>
 
-        <div class="red-line"></div>
-
-        <p>
+        <p class="dialogue">
             "Promise me you won't forget."
         </p>
 
+        <p class="drop-cap">
+    Amina said it quietly, almost as if she was afraid
+    that speaking the words too loudly would somehow make
+    them less true.
+</p>
+            
+
         <p>
-            She looked at him for a long moment before answering.
+            Aden looked at her.
         </p>
 
         <p>
-            They were sitting beneath the old tree where they had spent
-            countless evenings talking about the future. The sun was slowly
-            disappearing beyond the horizon, leaving the sky covered in
-            fading shades of gold.
+            For a moment, he said nothing.
         </p>
 
         <p>
-            Everything felt peaceful.
+            They were sitting beneath the old tree at the edge of
+            the field, the same place where they had spent countless
+            evenings talking about everything and nothing. The tree
+            had been there long before either of them could remember,
+            its branches spreading wide enough to shelter them from
+            the afternoon sun.
         </p>
 
         <p>
-            Perhaps that was why neither of them understood how quickly
-            everything was about to change.
+            It had become their place.
         </p>
 
         <p>
-            "I won't forget," she finally said.
+            Whenever life felt confusing, they came there.
         </p>
 
         <p>
-            He smiled.
+            Whenever they had something important to say, they came
+            there.
         </p>
 
         <p>
+            And whenever they wanted to imagine the future, they sat
+            beneath those branches and allowed themselves to dream.
+        </p>
+
+        <p>
+            That evening, however, the future felt different.
+        </p>
+
+        <p>
+            The sun was slowly disappearing beyond the horizon,
+            covering the sky in fading shades of gold and red. A
+            gentle wind moved through the leaves above them.
+        </p>
+
+        <p>
+            Aden lowered his eyes.
+        </p>
+
+        <p class="dialogue">
+            "I won't forget."
+        </p>
+
+        <p class="dialogue">
             "No matter what happens?"
         </p>
 
         <p>
-            She nodded.
+            He turned toward her.
         </p>
 
-        <p>
+        <p class="dialogue">
             "No matter what happens."
         </p>
 
         <p>
-            Those words seemed simple at the time.
+            She smiled, but there was uncertainty behind it.
+        </p>
+
+        <p class="dialogue">
+            "You say that now."
+        </p>
+
+        <p class="dialogue">
+            "I mean it."
         </p>
 
         <p>
-            Neither of them knew that years later, one of them would be
-            forced to remember exactly what had been promised beneath
-            that tree.
+            "I know."
         </p>
 
         <p>
-            The next morning, he left.
+            Aden reached for her hand.
+        </p>
+
+        <p class="dialogue">
+            "You don't have to be afraid."
         </p>
 
         <p>
-            He carried a small bag, a few belongings and the confidence
-            of someone who believed that leaving was only temporary.
+            Amina looked down at their hands.
+        </p>
+
+        <p class="dialogue">
+            "I'm not afraid of you leaving."
         </p>
 
         <p>
-            She watched him disappear down the road.
+            He raised an eyebrow.
+        </p>
+
+        <p class="dialogue">
+            "Then what are you afraid of?"
         </p>
 
         <p>
-            She believed he would return.
+            She paused.
+        </p>
+
+        <p class="dialogue">
+            "I'm afraid that life will change you."
         </p>
 
         <p>
-            And for a while, she believed that promises were strong enough
-            to protect people from the changes that life could bring.
+            The words stayed between them.
         </p>
 
+        <p>
+            Aden wanted to laugh, but he couldn't.
+        </p>
+
+        <p>
+            Because somewhere inside him, he knew she wasn't talking
+            about another person.
+        </p>
+
+        <p>
+            She was talking about distance.
+        </p>
         <p class="end-preview">
-            — End of Preview —
-        </p>
+    — End of Preview —
+</p>
 
-    </section>
+    </div>
+
+</section>
+
 
 </main>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
