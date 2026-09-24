@@ -1,0 +1,5264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Karieson Creative Hub</title>
+
+  <style>
+    :root {
+      --red: #c00000;
+      --dark-red: #8f0000;
+      --black: #080808;
+      --white: #ffffff;
+      --light: #f5f5f5;
+      --gray: #666666;
+      --border: #dddddd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      height: 8rem;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 12rem;
+      width: auto;
+      display: block;
+    }
+
+    .hamburger {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      background: var(--red);
+      color: var(--white);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .hamburger:hover {
+      background: var(--dark-red);
+    }
+
+    /* =========================
+       SIDE MENU
+    ========================= */
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -19rem;
+      width: 19rem;
+      height: 100vh;
+      background: var(--black);
+      padding: 5rem 2rem 2rem;
+      z-index: 2000;
+      transition: right 0.25s ease;
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      border: none;
+      background: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 0.9rem 0;
+      color: var(--white);
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover {
+      color: var(--red);
+    }
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    .search-section {
+      padding: 1rem 5%;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .search-container {
+      max-width: 70rem;
+      margin: auto;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .search-container input {
+      flex: 1;
+      min-width: 0;
+      padding: 0.85rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.3rem;
+      outline: none;
+    }
+
+    .search-container input:focus {
+      border-color: var(--red);
+    }
+
+    .search-container button {
+      padding: 0 1.5rem;
+      border: none;
+      border-radius: 0.3rem;
+      background: var(--red);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background: var(--dark-red);
+    }
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: var(--white);
+  color: #222222;
+  text-align: center;
+  padding: 5rem 5%;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #222222;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  max-width: 45rem;
+  margin: auto;
+  color: #555555;
+}
+.hero-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.hero-btn:hover {
+  background: var(--dark-red);
+}
+
+
+    /* =========================
+       GENERAL SECTION HEADING
+    ========================= */
+
+    .main-section-heading {
+      max-width: 60rem;
+      margin: 0 auto 3rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .section-number {
+      flex: 0 0 3.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .main-section-heading h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .main-section-heading p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title h2,
+    .section-title h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--gray);
+    }
+
+    /* =========================
+       CREATIVE HUB
+    ========================= */
+
+    .hub {
+      padding: 4rem 5%;
+      background: var(--white);
+    }
+
+    /* =========================
+       RESEARCH
+    ========================= */
+
+    .research-main {
+      max-width: 75rem;
+      margin: auto;
+    }
+
+    .research-section {
+      padding: 0;
+    }
+
+    .research-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.4rem;
+      padding: 1rem 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .field-link {
+      border: none;
+      background: transparent;
+      color: #333;
+      padding: 0.5rem 0.2rem;
+      cursor: pointer;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .field-link:hover,
+    .field-link.active {
+      color: var(--red);
+    }
+
+    .field-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .research-results {
+      max-width: 65rem;
+      margin: 1.5rem auto 0;
+    }
+
+    .research-item {
+      display: none;
+      padding: 1.5rem;
+      background: var(--light);
+      border-top: 3px solid var(--red);
+      border-radius: 0.25rem;
+    }
+
+    .research-item.show {
+      display: block;
+    }
+
+    .research-item h3 {
+      color: var(--red);
+      margin-bottom: 0.8rem;
+    }
+
+    .research-topic {
+      display: block;
+      padding: 0.65rem 0;
+      color: var(--black);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .research-topic:hover {
+      color: var(--red);
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: var(--gray);
+    }
+
+    .no-results.show {
+      display: block;
+    }
+    /* =========================
+   RESEARCH TOPIC LINKS
+========================= */
+
+.research-topic {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--black);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.research-topic:hover {
+  color: var(--red);
+}
+
+
+/* =========================
+   TOPIC DETAILS
+========================= */
+
+.topic-details {
+  display: none;
+  background: var(--white);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.topic-details.show {
+  display: block;
+}
+
+
+/* =========================
+   COVER IMAGE
+========================= */
+
+.topic-cover img {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 0.3rem;
+}
+
+
+/* =========================
+   TOPIC TITLE
+========================= */
+
+.topic-details h4 {
+  color: var(--red);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+
+/* =========================
+   SYNOPSIS
+========================= */
+
+.topic-synopsis {
+  max-width: 55rem;
+  margin: 0 auto 1.5rem;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+.topic-buy-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.topic-buy-btn:hover {
+  background: var(--dark-red);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .topic-cover img {
+    max-width: 100%;
+  }
+
+  .topic-details {
+    padding: 1.2rem 0;
+  }
+
+  .topic-details h4 {
+    font-size: 1.2rem;
+  }
+
+  .topic-synopsis {
+    font-size: 0.9rem;
+  }
+
+  .topic-buy-btn {
+    width: 80%;
+    max-width: 18rem;
+  }
+
+}
+/* =========================
+   RESEARCH ACCORDIONS
+========================= */
+
+.research-item {
+  display: none;
+  padding: 1.5rem 0;
+  background: var(--white);
+  border-top: 3px solid var(--red);
+  border-radius: 0;
+}
+
+.research-item.show {
+  display: block;
+}
+
+.research-accordion {
+  border-bottom: 1px solid var(--border);
+}
+
+.research-accordion summary {
+  display: block;
+  padding: 1rem 0.5rem;
+  color: var(--black);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.research-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.research-accordion summary::after {
+  content: "+";
+  float: right;
+  color: var(--red);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.research-accordion[open] summary {
+  color: var(--red);
+}
+
+.research-accordion[open] summary::after {
+  content: "−";
+}
+
+
+/* =========================
+   RESEARCH TOPIC CONTENT
+========================= */
+
+.research-topic-content {
+  padding: 1.5rem 0 2rem;
+  text-align: center;
+  background: var(--white);
+}
+
+.research-cover-image {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: 0.35rem;
+  object-fit: cover;
+}
+
+.research-topic-content h4 {
+  margin: 0 auto 1rem;
+  max-width: 55rem;
+  color: var(--red);
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.research-topic-content p {
+  max-width: 55rem;
+  margin: 0 auto;
+  color: var(--gray);
+  line-height: 1.8;
+  text-align: left;
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+.research-buy {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.buy-now-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.buy-now-btn:hover {
+  background: var(--dark-red);
+  color: var(--white);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .research-item {
+    padding: 1.2rem 0;
+  }
+
+  .research-accordion summary {
+    padding: 1rem 0.2rem;
+    padding-right: 2rem;
+    line-height: 1.5;
+  }
+
+  .research-topic-content {
+    padding: 1.2rem 0 1.8rem;
+  }
+
+  .research-cover-image {
+    max-width: 100%;
+    margin-bottom: 1.3rem;
+  }
+
+  .research-topic-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .research-topic-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+}
+
+    /* =========================
+       GRANT PROPOSALS
+    ========================= */
+
+    .grants {
+      padding: 4rem 5%;
+      background: var(--light);
+    }
+
+    .grant-grid {
+      max-width: 70rem;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grant-card {
+      background: var(--white);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 0.4rem;
+    }
+
+    .grant-card h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .grant-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .view-btn {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      border: 1px solid var(--red);
+      color: var(--red);
+      border-radius: 0.25rem;
+    }
+
+    .view-btn:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    /* =========================
+       REQUEST BUTTON
+    ========================= */
+
+    .request-area {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .request-btn,
+    .submit-btn {
+      border: none;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 0.3rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .request-btn:hover,
+    .submit-btn:hover {
+      background: var(--dark-red);
+    }
+
+    /* =========================
+       REQUEST FORM
+       PART OF SECTION 02
+    ========================= */
+
+    .request-form {
+      display: none;
+      max-width: 45rem;
+      margin: 2.5rem auto 0;
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--red);
+      border-radius: 0.4rem;
+    }
+
+    .request-form.show-form {
+      display: block;
+    }
+
+    .request-form h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .close-form-btn {
+      float: right;
+      width: 2rem;
+      height: 2rem;
+      margin-top: -0.5rem;
+      border: none;
+      background: none;
+      color: var(--gray);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .close-form-btn:hover {
+      color: var(--red);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-group textarea {
+      min-height: 8rem;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+    }
+/* =========================
+   EBOOKS / NOVELS
+========================= */
+
+.ebooks {
+  padding: 4rem 5%;
+  background: var(--white);
+  color: var(--black);
+}
+
+.ebooks .main-section-heading p {
+  color: var(--gray);
+}
+
+
+/* =========================
+   CATEGORY LIST
+========================= */
+
+.novel-categories {
+  width: 100%;
+  max-width: 70rem;
+  margin: 2rem auto 0;
+
+  direction: ltr;
+}
+
+.category-list {
+  width: 100%;
+
+  border-top: 1px solid var(--border);
+
+  direction: ltr;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.novel-category {
+  width: 100%;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--white);
+
+  direction: ltr;
+}
+
+
+/* =========================
+   CATEGORY HEADER
+========================= */
+
+.category-toggle {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  padding: 0.85rem 0.5rem;
+
+  margin: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: var(--white);
+
+  color: var(--black);
+
+  font-family: inherit;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: left;
+
+  direction: ltr;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.category-toggle:hover {
+  color: var(--red);
+}
+
+
+/* =========================
+   CATEGORY NAME
+========================= */
+
+.category-toggle > span:first-child {
+  order: 1;
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  display: block;
+
+  text-align: left;
+
+  direction: ltr;
+}
+
+
+/* =========================
+   PLUS / MINUS
+========================= */
+
+.category-plus {
+  order: 2;
+
+  flex: 0 0 30px;
+
+  width: 30px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-left: auto;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: var(--red);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 1.8rem;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  text-align: center;
+
+  direction: ltr;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.category-toggle:hover .category-plus {
+  color: var(--black);
+}
+
+
+/* =========================
+   NOVEL LINKS DROPDOWN
+========================= */
+
+.category-books {
+  display: none;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  background: #fafafa;
+
+  border-top: 1px solid var(--border);
+
+  direction: ltr;
+}
+
+.category-books.show {
+  display: block;
+}
+
+
+/* =========================
+   NOVEL TEXT LINKS
+========================= */
+
+.novel-text-link {
+  display: block;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0.9rem 1rem 0.9rem 2rem;
+
+  background: var(--white);
+
+  color: var(--black);
+
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--border);
+
+  font-size: 0.95rem;
+
+  line-height: 1.5;
+
+  text-align: left;
+
+  direction: ltr;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.novel-text-link:last-child {
+  border-bottom: none;
+}
+
+.novel-text-link:hover {
+  color: var(--red);
+
+  background: #fafafa;
+
+  padding-left: 2.4rem;
+}
+
+
+/* =========================
+   NOVEL DETAIL
+========================= */
+
+.index-novel-detail {
+  display: none;
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 70rem;
+
+  margin: 2rem auto 0;
+
+  padding: 2.5rem 1.5rem;
+
+  box-sizing: border-box;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.08);
+
+  direction: ltr;
+}
+
+.index-novel-detail.show {
+  display: block;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.index-detail-close {
+  position: absolute;
+
+  top: 0.7rem;
+
+  right: 1rem;
+
+  width: 35px;
+
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #666;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 2rem;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.index-detail-close:hover {
+  color: var(--red);
+}
+
+
+/* =========================
+   DETAIL CONTENT
+========================= */
+
+.index-detail-content {
+  width: 100%;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  direction: ltr;
+}
+
+
+/* =========================
+   BOOK COVER
+========================= */
+
+.index-detail-cover {
+  width: min(100%, 380px);
+
+  margin: 0 auto 1.8rem;
+}
+
+.index-detail-cover img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   NOVEL TITLE
+========================= */
+
+.index-detail-content h3 {
+  margin: 0 0 0.5rem;
+
+  color: var(--red);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.6rem;
+
+  line-height: 1.3;
+
+  text-align: center;
+}
+
+
+/* =========================
+   AUTHOR
+========================= */
+
+.index-detail-author {
+  margin: 0 0 1.3rem;
+
+  color: var(--gray);
+
+  font-size: 0.9rem;
+
+  font-style: italic;
+
+  text-align: center;
+}
+
+
+/* =========================
+   RED LINE
+========================= */
+
+.index-detail-line {
+  width: 50px;
+
+  height: 3px;
+
+  margin: 0 auto 1.4rem;
+
+  background: var(--red);
+}
+
+
+/* =========================
+   SYNOPSIS
+========================= */
+
+.index-detail-synopsis {
+  margin-bottom: 1.5rem;
+
+  color: #555;
+
+  font-size: 0.95rem;
+
+  line-height: 1.75;
+
+  text-align: left;
+
+  direction: ltr;
+}
+
+.index-detail-synopsis strong {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--red);
+
+  font-size: 1rem;
+}
+
+.index-detail-synopsis p {
+  margin: 0;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.index-detail-price {
+  margin-bottom: 1.3rem;
+
+  color: var(--red);
+
+  font-size: 1.15rem;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.index-detail-buttons {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  flex-wrap: wrap;
+}
+
+.index-detail-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 120px;
+
+  box-sizing: border-box;
+
+  padding: 0.65rem 1rem;
+
+  border: 1px solid;
+
+  border-radius: 0.25rem;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.index-view-btn {
+  background: var(--black);
+
+  color: var(--white);
+
+  border-color: var(--black);
+}
+
+.index-view-btn:hover {
+  background: var(--red);
+
+  color: var(--white);
+
+  border-color: var(--red);
+}
+
+
+/* =========================
+   BUY BUTTON
+========================= */
+
+.index-buy-btn {
+  background: var(--red);
+
+  color: var(--white);
+
+  border-color: var(--red);
+}
+
+.index-buy-btn:hover {
+  background: var(--black);
+
+  color: var(--white);
+
+  border-color: var(--black);
+}
+
+
+/* =========================
+   SEE ALL
+========================= */
+
+.ebooks-link {
+  margin-top: 2rem;
+
+  text-align: center;
+}
+
+.see-all-btn {
+  display: inline-block;
+
+  padding: 0.65rem 1.2rem;
+
+  border: 1px solid var(--red);
+
+  border-radius: 0.25rem;
+
+  background: transparent;
+
+  color: var(--red);
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.see-all-btn:hover {
+  background: var(--red);
+
+  color: var(--white);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .ebooks {
+    padding: 3rem 5%;
+  }
+
+
+  /* CATEGORY */
+
+  .category-toggle {
+    min-height: 50px;
+
+    padding: 0.85rem 0;
+
+    font-size: 0.95rem;
+  }
+
+
+  /* CATEGORY NAME */
+
+  .category-toggle > span:first-child {
+    text-align: left;
+  }
+
+
+  /* PLUS */
+
+  .category-plus {
+    flex-basis: 30px;
+
+    width: 30px;
+
+    height: 30px;
+
+    font-size: 1.7rem;
+  }
+
+
+  /* NOVEL LINKS */
+
+  .novel-text-link {
+    padding:
+      0.85rem
+      1rem
+      0.85rem
+      1.7rem;
+  }
+
+  .novel-text-link:hover {
+    padding-left: 2rem;
+  }
+
+
+  /* DETAIL */
+
+  .index-novel-detail {
+    margin-top: 1.5rem;
+
+    padding:
+      2.5rem
+      1rem
+      1.8rem;
+  }
+
+
+  /* COVER */
+
+  .index-detail-cover {
+    width: min(100%, 300px);
+  }
+
+
+  /* TITLE */
+
+  .index-detail-content h3 {
+    font-size: 1.4rem;
+  }
+
+
+  /* SYNOPSIS */
+
+  .index-detail-synopsis {
+    font-size: 0.92rem;
+  }
+
+
+  /* BUTTONS */
+
+  .index-detail-buttons {
+    gap: 0.5rem;
+  }
+
+  .index-detail-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+      0.65rem
+      0.7rem;
+  }
+
+}
+    
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .ebooks {
+    padding: 3rem 5%;
+  }
+
+
+  /* CATEGORY */
+
+  .category-toggle {
+    padding: 0.9rem 0.25rem;
+
+    font-size: 0.95rem;
+  }
+
+
+  /* PLUS */
+
+  .category-plus {
+    width: 28px;
+    height: 28px;
+
+    font-size: 1.7rem;
+  }
+
+
+  /* NOVEL LINKS */
+
+  .novel-text-link {
+    padding:
+      0.85rem
+      1rem
+      0.85rem
+      1.7rem;
+  }
+
+  .novel-text-link:hover {
+    padding-left: 2rem;
+  }
+
+
+  /* DETAIL */
+
+  .index-novel-detail {
+    margin-top: 1.5rem;
+
+    padding:
+      2.5rem
+      1rem
+      1.8rem;
+  }
+
+
+  /* COVER */
+
+  .index-detail-cover {
+    width: min(100%, 300px);
+  }
+
+
+  /* TITLE */
+
+  .index-detail-content h3 {
+    font-size: 1.4rem;
+  }
+
+
+  /* SYNOPSIS */
+
+  .index-detail-synopsis {
+    font-size: 0.92rem;
+  }
+
+
+  /* BUTTONS */
+
+  .index-detail-buttons {
+    width: 100%;
+
+    gap: 0.5rem;
+  }
+
+  .index-detail-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    padding:
+      0.65rem
+      0.7rem;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 600px) {
+
+  .ebooks {
+    padding: 3rem 5%;
+  }
+
+  .category-toggle {
+    padding: 0.9rem 0.5rem;
+
+    font-size: 0.95rem;
+  }
+
+  .novel-text-link {
+    padding-left: 3.2rem;
+  }
+
+  .novel-text-link:hover {
+    padding-left: 3.5rem;
+  }
+
+  .index-novel-detail {
+    padding: 2.5rem 1rem 1.8rem;
+  }
+
+  .index-detail-cover {
+    width: min(100%, 300px);
+  }
+
+  .index-detail-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .index-detail-buttons {
+    width: 100%;
+  }
+
+  .index-detail-btn {
+    flex: 1;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .research-accordion summary {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .research-cover-image {
+    width: 100%;
+  }
+
+  .research-topic-content p {
+    font-size: 0.9rem;
+  }
+
+}
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 2rem 5%;
+      background: var(--black);
+      color: #aaa;
+      border-top: 1px solid #333;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  header {
+    height: 6rem;
+  }
+
+  .logo img {
+    height: 6rem;
+  }
+
+  .hero {
+    padding: 4rem 5%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .main-section-heading {
+    gap: 0.8rem;
+  }
+
+  .section-number {
+    flex-basis: 3rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .main-section-heading h2 {
+    font-size: 1.45rem;
+  }
+
+  .research-links {
+    justify-content: flex-start;
+    gap: 0.3rem 1rem;
+  }
+
+  .field-link {
+    font-size: 0.85rem;
+  }
+
+  .grant-grid,
+  .ebook-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-container button {
+    padding: 0 1rem;
+  }
+
+  .request-form {
+    padding: 1.3rem;
+  }
+
+
+  /* =========================
+     FULL BOOK COVER
+  ========================= */
+
+  .book-cover {
+    width: 100%;
+    height: auto;
+    background: #eeeeee;
+    overflow: hidden;
+  }
+
+  .book-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .ebook-content p {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+  header {
+    padding: 0 4%;
+  }
+
+  .logo img {
+    max-width: 12rem;
+    height: auto;
+  }
+
+  .search-section,
+  .hub,
+  .grants,
+  .ebooks {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container button {
+    min-height: 2.8rem;
+  }
+
+}
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="logo">
+      <img
+        src="karieson_logo.png"
+        alt="Karieson Creative Hub"
+      >
+    </div>
+
+    <button
+      class="hamburger"
+      id="menuBtn"
+      type="button"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- =========================
+       SIDE MENU
+  ========================= -->
+
+  <nav
+    class="side-menu"
+    id="sideMenu"
+    aria-label="Main navigation"
+  >
+
+    <button
+      class="close-menu"
+      id="closeBtn"
+      type="button"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+    <a href="#home">Home</a>
+<a href="explore.html">Research Projects</a>
+<a href="grants html">Grant Proposals</a>
+<a href="request.html">Request Proposal</a>
+<a href="ebooks.html">eBook Novels</a>
+<a href="services.html">What I Do</a>
+<a href="about-me.html">About Karieson</a>
+<a href="contacts.html">Get in Touch</a>
+  </nav>
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section
+  class="hero"
+  id="home"
+>
+
+  <h1>
+    Welcome to
+    <span>Karieson Creative Hub</span>
+  </h1>
+
+  <p>
+    A professional platform for research projects,
+    grant proposals and creative eBook novels.
+  </p>
+
+  <a
+    href="explore.html"
+    class="hero-btn"
+  >
+    Explore Research
+  </a>
+
+  <a
+    href="grants.html"
+    class="hero-btn"
+  >
+    Explore Grants
+  </a>
+
+  <a
+    href="ebooks.html"
+    class="hero-btn"
+  >
+    Explore eBooks
+  </a>
+
+</section>
+
+
+  <!-- =========================
+       SEARCH
+  ========================= -->
+
+  <section class="search-section">
+
+    <div class="search-container">
+
+      <input
+        type="search"
+        id="researchSearch"
+        placeholder="Search research topics..."
+        aria-label="Search research topics"
+      >
+
+      <button
+        type="button"
+        id="searchResearchBtn"
+      >
+        Search
+      </button>
+
+    </div>
+
+  </section>
+
+
+  
+
+
+  <!-- =========================
+       CREATIVE HUB
+  ========================= -->
+
+  <main class="hub" id="hub">
+
+    <div class="section-title">
+      <h2>Our Creative Hub</h2>
+      <p>
+        Professional academic and creative services.
+      </p>
+    </div>
+
+
+    <!-- =========================
+         01 RESEARCH PROJECTS
+    ========================= -->
+
+    <section
+      class="research-main"
+      id="research-projects"
+    >
+
+      <div class="main-section-heading">
+
+        <div class="section-number">
+          01
+        </div>
+
+        <div>
+          <h2>Research Projects</h2>
+
+          <p>
+            Research project development for diploma,
+            degree, master's and other academic levels.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div
+        class="research-section"
+        id="research"
+      >
+
+        <div class="section-title">
+
+          <h3>Research Fields</h3>
+
+          <p>
+            Explore research topics by field.
+          </p>
+
+        </div>
+
+
+        <div class="research-links">
+
+          <button
+            class="field-link"
+            data-field="all"
+            type="button"
+          >
+            All
+          </button>
+
+          <button
+            class="field-link"
+            data-field="education"
+            type="button"
+          >
+            Education
+          </button>
+
+          <button
+            class="field-link"
+            data-field="technology"
+            type="button"
+          >
+            Technology
+          </button>
+
+          <button
+            class="field-link"
+            data-field="agriculture"
+            type="button"
+          >
+            Agriculture
+          </button>
+
+          <button
+            class="field-link"
+            data-field="health"
+            type="button"
+          >
+            Health
+          </button>
+
+          <button
+            class="field-link"
+            data-field="social"
+            type="button"
+          >
+            Social Sciences
+          </button>
+
+          <button
+            class="field-link"
+            data-field="economics"
+            type="button"
+          >
+            Economics
+          </button>
+
+          <button
+            class="field-link"
+            data-field="political"
+            type="button"
+          >
+            Political Science
+          </button>
+
+          <button
+            class="field-link"
+            data-field="environment"
+            type="button"
+          >
+            Environment
+          </button>
+
+          <button
+            class="field-link"
+            data-field="business"
+            type="button"
+          >
+            Business
+          </button>
+
+          <button
+            class="field-link"
+            data-field="engineering"
+            type="button"
+          >
+            Engineering
+          </button>
+
+        </div>
+
+
+        <!-- =========================
+     RESEARCH RESULTS
+========================= -->
+
+<div class="research-results">
+
+
+  <!-- =========================
+       EDUCATION RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="education"
+  >
+
+    <h3>Education Research</h3>
+
+
+    <!-- TOPIC 1 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        The Impact of Educational Technology on Student Performance
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="educational-technology.png"
+          alt="Cover of The Impact of Educational Technology on Student Performance"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines how educational technology
+          influences student performance, engagement and
+          learning outcomes. It explores the use of digital
+          learning platforms, interactive learning tools and
+          other technologies in modern education. The study
+          also considers challenges related to access,
+          teacher preparedness and effective technology
+          integration.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/educational-technology.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <!-- TOPIC 2 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        Challenges Facing Access to Quality Education
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="quality-education.png"
+          alt="Cover of Challenges Facing Access to Quality Education"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research explores the major challenges that
+          affect access to quality education. It examines
+          factors such as poverty, inadequate learning
+          facilities, geographical barriers, limited
+          educational resources and social inequalities.
+          The study also considers practical approaches
+          for improving educational access and creating
+          more inclusive learning opportunities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/quality-education.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <!-- TOPIC 3 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        Effects of Teacher Training on Academic Performance
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="teacher-training.png"
+          alt="Cover of Effects of Teacher Training on Academic Performance"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research investigates how teacher training
+          and professional development influence teaching
+          effectiveness and student academic performance.
+          It examines teaching methods, classroom management,
+          professional skills and the importance of continuous
+          teacher development.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/teacher-training.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <!-- TOPIC 4 -->
+
+    <details class="research-accordion">
+
+      <summary>
+        Digital Learning and Student Engagement
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="student-engagement.png"
+          alt="Cover of Digital Learning and Student Engagement"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines how digital learning tools
+          and online educational platforms influence student
+          participation and engagement. It explores the
+          benefits and challenges of digital learning and
+          considers how technology can support meaningful
+          educational experiences.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/digital-learning.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       TECHNOLOGY RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="technology"
+  >
+
+    <h3>Technology Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Artificial Intelligence and Business Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="ai-business-development.png"
+          alt="Cover of Artificial Intelligence and Business Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines the role of artificial
+          intelligence in improving business operations,
+          decision-making, innovation and competitiveness.
+          It explores opportunities and challenges associated
+          with the adoption of AI in modern businesses.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/artificial-intelligence.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        The Impact of ICT on Modern Education
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="ict-modern-education.png"
+          alt="Cover of The Impact of ICT on Modern Education"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+   Synopsis
+        </h4>
+
+        <p>
+          This research explores how information and
+          communication technologies are transforming
+          teaching and learning. It examines digital tools,
+          access to information and the challenges involved
+          in integrating ICT into education.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/ict-education.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Cybersecurity Awareness Among Young People
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="cybersecurity.png"
+          alt="Cover of Cybersecurity Awareness Among Young People"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This study examines awareness of online security,
+          privacy and responsible digital behaviour among
+          young people. It explores common cybersecurity
+          challenges and approaches for improving awareness
+          of safe and responsible digital practices.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/cybersecurity-awareness.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Digital Transformation in Small Businesses
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/digital-transformation.png"
+          alt="Cover of Digital Transformation in Small Businesses"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Digital Transformation in Small Businesses
+        </h4>
+
+        <p>
+          This research investigates how small businesses
+          can use digital technologies to improve efficiency,
+          customer service, marketing and business growth.
+          It considers opportunities for businesses to adapt
+          to changing digital markets.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/digital-transformation.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       AGRICULTURE RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="agriculture"
+  >
+
+    <h3>Agriculture Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Climate-Smart Agriculture and Food Security
+      </summary>
+
+      <img
+          src="food-security.png"
+          alt="Cover of Climate-Smart Agriculture and Food Security"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+           Synopsis 
+        </h4>
+
+        <p>
+          This research examines climate-smart agricultural
+          practices and their potential contribution to food
+          security, resilience and sustainable agricultural
+          production. It explores approaches that can help
+          farmers respond to changing climate conditions.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/climate-smart-agriculture.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        The Impact of Irrigation on Agricultural Productivity
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="irrigation.png"
+          alt="Cover of The Impact of Irrigation on Agricultural Productivity"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+           Synopsis 
+        </h4>
+
+        <p>
+          This study examines how irrigation can influence
+          agricultural productivity, crop production and
+          farmer livelihoods, particularly in areas affected
+          by unreliable rainfall. It also considers the role
+          of efficient water management in agricultural
+          development.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/irrigation-productivity.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Participation in Modern Agriculture
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="modern-agriculture.png"
+          alt="Cover of Youth Participation in Modern Agriculture"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+       Synopsis
+        </h4>
+
+        <p>
+          This research explores opportunities and barriers
+          affecting youth participation in modern agriculture,
+          entrepreneurship and agricultural innovation. It
+          examines ways to encourage young people to participate
+          in productive and sustainable agricultural activities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-agriculture.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Drought and Agricultural Production
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="drought.png"
+          alt="Cover of Drought and Agricultural Production"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines the effects of drought on
+          agricultural production and explores strategies
+          that farmers and communities can use to strengthen
+          resilience, protect livelihoods and improve food
+          security.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/drought-agriculture.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       HEALTH RESEARCH
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="health"
+  >
+
+    <h3>Health Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Access to Healthcare Services in Rural Communities
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/rural-healthcare.png"
+          alt="Cover of Access to Healthcare Services in Rural Communities"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Access to Healthcare Services in Rural Communities
+        </h4>
+
+        <p>
+          This research examines factors affecting access
+          to healthcare services in rural communities,
+          including distance, availability of facilities,
+          resources and healthcare personnel. It explores
+          possible approaches for improving access to
+          essential healthcare services.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/rural-healthcare.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Community Health and Disease Prevention
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/community-health.png"
+          alt="Cover of Community Health and Disease Prevention"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Community Health and Disease Prevention
+        </h4>
+
+        <p>
+          This research explores community-based approaches
+          to health promotion and disease prevention. It
+          examines the role of health awareness, preventive
+          practices and community participation in improving
+          public health outcomes.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/community-health.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Nutrition and Public Health
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/nutrition-public-health.png"
+          alt="Cover of Nutrition and Public Health"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Nutrition and Public Health
+        </h4>
+
+        <p>
+          This research examines the relationship between
+          nutrition, healthy lifestyles and public health.
+          It considers factors that influence community
+          nutrition outcomes and explores approaches for
+          supporting healthier communities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/nutrition-public-health.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Digital Technology in Healthcare Delivery
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/digital-healthcare.png"
+          alt="Cover of Digital Technology in Healthcare Delivery"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Digital Technology in Healthcare Delivery
+        </h4>
+
+        <p>
+          This study explores how digital technologies can
+          support healthcare delivery, communication,
+          information management and access to services.
+          It considers the potential benefits and challenges
+          of digital solutions in healthcare.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/digital-healthcare.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       SOCIAL SCIENCES
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="social"
+  >
+
+    <h3>Social Sciences Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Unemployment and Community Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="community-development.png"
+          alt="Cover of Youth Unemployment and Community Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines the relationship between
+          youth unemployment, livelihoods and community
+          development. It explores approaches for expanding
+          employment opportunities and supporting young
+          people to participate in community development.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-unemployment.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Poverty and Social Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="poverty-social-development.png"
+          alt="Cover of Poverty and Social Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research explores the causes and effects of
+          poverty and examines strategies that can contribute
+          to inclusive social and economic development. It
+          considers factors that influence household and
+          community wellbeing.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/poverty-social-development.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Gender and Community Participation
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="community-participation.png"
+          alt="Cover of Gender and Community Participation"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines participation in community
+          development and considers factors that influence
+          inclusive involvement in local decision-making,
+          community programmes and development activities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/gender-community.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Social Media and Youth Behaviour
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="youth-behaviour.png"
+          alt="Cover of Social Media and Youth Behaviour"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This study examines how social media use can
+          influence communication, interaction and behaviour
+          among young people. It considers both opportunities
+          and challenges associated with social media use.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/social-media-youth.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       ECONOMICS
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="economics"
+  >
+
+    <h3>Economics Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Unemployment and Economic Growth
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="youth-unemployment.png"
+          alt="Cover of Youth Unemployment and Economic Growth"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines how youth unemployment
+          affects economic growth and explores policies and
+          opportunities that can support youth employment,
+          entrepreneurship and economic participation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-economic-growth.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Financial Inclusion and Poverty Reduction
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="poverty-reduction.png"
+          alt="Cover of Financial Inclusion and Poverty Reduction"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research explores how access to financial
+          services can support household economic
+          opportunities, entrepreneurship and poverty
+          reduction. It considers the role of financial
+          inclusion in strengthening economic participation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/financial-inclusion.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Small Businesses and Economic Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="small-businesses-development.png"
+          alt="Cover of Small Businesses and Economic Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines the contribution of small
+          businesses to employment, household income,
+          innovation and local economic development. It
+          explores factors that can influence small-business
+          growth and sustainability.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/small-businesses.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Inflation and Household Welfare
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="inflation-household.png"
+          alt="Cover of Inflation and Household Welfare"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Synopsis 
+        </h4>
+
+        <p>
+          This research examines how changes in prices can
+          affect household purchasing power, consumption
+          patterns and economic wellbeing. It considers how
+          inflation can influence different household needs
+          and economic decisions.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/inflation-household.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       POLITICAL SCIENCE
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="political"
+  >
+
+    <h3>Political Science Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Participation in Democratic Processes
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-democracy.png"
+          alt="Cover of Youth Participation in Democratic Processes"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Participation in Democratic Processes
+        </h4>
+
+        <p>
+          This research examines the participation of young
+          people in democratic processes and explores factors
+          that influence civic engagement, political awareness
+          and participation in public affairs.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-democracy.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Good Governance and Public Service Delivery
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/good-governance.png"
+          alt="Cover of Good Governance and Public Service Delivery"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Good Governance and Public Service Delivery
+        </h4>
+
+        <p>
+          This research examines principles of good governance
+          and their relationship with effective, accountable
+          and responsive public service delivery. It explores
+          factors that can contribute to better governance
+          and improved public services.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/good-governance.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        The Role of Elections in Democratic Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/elections-democracy.png"
+          alt="Cover of The Role of Elections in Democratic Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          The Role of Elections in Democratic Development
+        </h4>
+
+        <p>
+          This study examines the importance of elections
+          in democratic development, political participation
+          and representation. It considers how credible
+          electoral processes can contribute to democratic
+          institutions and public participation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/elections-democracy.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Political Leadership and Community Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/political-leadership.png"
+          alt="Cover of Political Leadership and Community Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Political Leadership and Community Development
+        </h4>
+
+        <p>
+          This research explores the relationship between
+          political leadership, community priorities and
+          local development. It examines how leadership can
+          influence community programmes and development
+          outcomes.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/political-leadership.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       ENVIRONMENT
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="environment"
+  >
+
+    <h3>Environmental Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Climate Change and Community Livelihoods
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/climate-livelihoods.png"
+          alt="Cover of Climate Change and Community Livelihoods"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Climate Change and Community Livelihoods
+        </h4>
+
+        <p>
+          This research examines how climate change can
+          affect community livelihoods and explores approaches
+          for strengthening resilience, adaptation and
+          sustainable development in vulnerable communities.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/climate-livelihoods.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Water Resource Management and Sustainability
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/water-management.png"
+          alt="Cover of Water Resource Management and Sustainability"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Water Resource Management and Sustainability
+        </h4>
+
+        <p>
+          This research explores sustainable approaches to
+          managing water resources and the importance of
+          responsible water use for communities, agriculture
+          and ecosystems.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/water-management.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Drought and Environmental Conservation
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/drought-conservation.png"
+          alt="Cover of Drought and Environmental Conservation"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Drought and Environmental Conservation
+        </h4>
+
+        <p>
+          This research examines drought-related environmental
+          challenges and explores conservation approaches
+          that can support ecosystem resilience, sustainable
+          resource use and community adaptation.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/drought-conservation.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Waste Management and Environmental Protection
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/waste-management.png"
+          alt="Cover of Waste Management and Environmental Protection"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Waste Management and Environmental Protection
+        </h4>
+
+        <p>
+          This research examines waste management practices
+          and their role in protecting the environment and
+          promoting healthier communities. It considers
+          approaches for improving waste handling and
+          environmental awareness.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/waste-management.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       BUSINESS
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="business"
+  >
+
+    <h3>Business Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Youth Entrepreneurship and Job Creation
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/youth-entrepreneurship.png"
+          alt="Cover of Youth Entrepreneurship and Job Creation"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Youth Entrepreneurship and Job Creation
+        </h4>
+
+        <p>
+          This research explores how youth entrepreneurship
+          can contribute to employment creation, innovation,
+          income generation and local economic development.
+          It examines opportunities and challenges affecting
+          young entrepreneurs.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/youth-entrepreneurship.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Marketing Strategies for Small Businesses
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/small-business-marketing.png"
+          alt="Cover of Marketing Strategies for Small Businesses"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Marketing Strategies for Small Businesses
+        </h4>
+
+        <p>
+          This research examines marketing strategies that
+          small businesses can use to attract customers,
+          improve visibility and strengthen competitiveness.
+          It considers traditional and digital approaches
+          to reaching target customers.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/small-business-marketing.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Innovation and Business Growth
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/business-innovation.png"
+          alt="Cover of Innovation and Business Growth"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Innovation and Business Growth
+        </h4>
+
+        <p>
+          This study examines how innovation can help
+          businesses improve products, services and processes.
+          It explores how innovative approaches can support
+          competitiveness, efficiency and long-term growth.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/business-innovation.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Small and Medium Enterprises Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/sme-development.png"
+          alt="Cover of Small and Medium Enterprises Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Small and Medium Enterprises Development
+        </h4>
+
+        <p>
+          This research examines the role of small and
+          medium enterprises in employment, innovation,
+          income generation and economic development.
+          It considers factors that influence SME growth
+          and sustainability.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/sme-development.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       ENGINEERING
+  ========================= -->
+
+  <div
+    class="research-item"
+    data-field="engineering"
+  >
+
+    <h3>Engineering Research</h3>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Renewable Energy and Sustainable Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/renewable-energy.png"
+          alt="Cover of Renewable Energy and Sustainable Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Renewable Energy and Sustainable Development
+        </h4>
+
+        <p>
+          This research explores the contribution of renewable
+          energy technologies to sustainable development,
+          energy access and environmental protection. It
+          examines opportunities for increasing the use of
+          cleaner and sustainable energy solutions.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/renewable-energy.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Water Engineering and Community Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/water-engineering.png"
+          alt="Cover of Water Engineering and Community Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Water Engineering and Community Development
+        </h4>
+
+        <p>
+          This research examines how water engineering
+          solutions can support reliable water access,
+          community development and sustainable resource
+          management. It considers engineering approaches
+          suitable for community needs.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/water-engineering.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Sustainable Infrastructure Development
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/sustainable-infrastructure.png"
+          alt="Cover of Sustainable Infrastructure Development"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Sustainable Infrastructure Development
+        </h4>
+
+        <p>
+          This research explores approaches to developing
+          infrastructure that supports economic growth,
+          community needs and long-term environmental
+          sustainability. It considers principles for
+          resilient and responsible infrastructure planning.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/sustainable-infrastructure.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="research-accordion">
+
+      <summary>
+        Solar Energy Adoption in Rural Communities
+      </summary>
+
+      <div class="research-topic-content">
+
+        <img
+          src="research-covers/solar-rural-communities.png"
+          alt="Cover of Solar Energy Adoption in Rural Communities"
+          class="research-cover-image"
+          loading="lazy"
+        >
+
+        <h4>
+          Solar Energy Adoption in Rural Communities
+        </h4>
+
+        <p>
+          This research examines factors influencing the
+          adoption of solar energy in rural communities and
+          explores its potential contribution to reliable,
+          affordable and sustainable energy access.
+        </p>
+
+        <div class="research-buy">
+          <a
+            href="research/solar-rural-communities.html"
+            class="buy-now-btn"
+          >
+            Buy Now
+          </a>
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
+
+  <!-- =========================
+       NO RESULTS
+  ========================= -->
+
+  <div
+    class="no-results"
+    id="noResults"
+  >
+    No research topics found.
+  </div>
+
+
+</div>
+
+    <!-- =========================
+     02 GRANT PROPOSALS
+     FORM IS PART OF SECTION 02
+========================= -->
+
+<section
+  class="grants"
+  id="grants"
+>
+
+  <div class="main-section-heading">
+
+    <div class="section-number">
+      02
+    </div>
+
+    <div>
+
+      <h2>Grant Proposals</h2>
+
+      <p>
+        Professional grant proposal development for
+        organizations, community groups, businesses
+        and innovative projects.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="grant-grid">
+
+  <article class="grant-card">
+    <h3>Research &amp; Academic Grants</h3>
+    <p>Research projects, academic development, innovation and research training.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Education Grants</h3>
+    <p>Projects supporting schools, higher education, digital learning and skills development.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Business &amp; Entrepreneurship</h3>
+    <p>Startup, small business, innovation, employment and business expansion projects.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Community &amp; Social Development</h3>
+    <p>Community empowerment, livelihoods, poverty reduction and social development.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Health &amp; Public Health</h3>
+    <p>Healthcare access, disease prevention, community health and health education.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Agriculture &amp; Food Security</h3>
+    <p>Agricultural development, food security, agribusiness and climate-smart farming.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Environment &amp; Climate</h3>
+    <p>Climate action, environmental conservation, renewable energy and sustainability.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Arts, Culture &amp; Creative Industries</h3>
+    <p>Writing, literature, film, music, cultural heritage and creative entrepreneurship.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Youth Development</h3>
+    <p>Youth employment, entrepreneurship, leadership, education and skills development.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Women &amp; Gender</h3>
+    <p>Women's economic empowerment, entrepreneurship, leadership and equality.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Infrastructure &amp; Capital</h3>
+    <p>Construction, renovation, equipment, technology and community infrastructure.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Climate-Smart Agriculture</h3>
+    <p>Climate resilience, sustainable agriculture and food security.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Youth Entrepreneurship</h3>
+    <p>Youth businesses, employment, innovation and enterprise development.</p>
+  </article>
+
+  <article class="grant-card">
+    <h3>Community Development</h3>
+    <p>Community empowerment, livelihoods and social development.</p>
+  </article>
+
+</div>
+
+
+
+      <!-- REQUEST BUTTON -->
+
+      <div class="request-area">
+
+        <button
+          type="button"
+          class="request-btn"
+          id="requestBtn"
+        >
+          Request Proposal
+        </button>
+
+      </div>
+
+
+      <!-- =========================
+           REQUEST FORM
+           INSIDE SECTION 02
+      ========================= -->
+
+      <div
+        class="request-form"
+        id="request"
+      >
+
+        <button
+          type="button"
+          class="close-form-btn"
+          id="closeFormBtn"
+          aria-label="Close form"
+        >
+          ×
+        </button>
+
+        <h2>
+          Request a Proposal
+        </h2>
+
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Proposal Request - Karieson Creative Hub"
+          >
+
+
+          <div class="form-group">
+
+            <label for="fullName">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              id="fullName"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="proposal">
+              Proposal Type
+            </label>
+
+            <select
+              id="proposal"
+              name="proposal"
+              required
+            >
+
+              <option value="">
+                Select proposal type
+              </option>
+
+              <option value="Agriculture">
+                Agriculture
+              </option>
+
+              <option value="Youth Entrepreneurship">
+                Youth Entrepreneurship
+              </option>
+
+              <option value="Community Development">
+                Community Development
+              </option>
+
+              <option value="Education">
+                Education
+              </option>
+
+              <option value="Health">
+                Health
+              </option>
+
+              <option value="Technology">
+                Technology
+              </option>
+
+              <option value="Environment">
+                Environment
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="message">
+              Describe Your Request
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us about the proposal you need..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+            Submit Request
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+<!-- =========================
+     03 NOVELS / EBOOKS
+========================= -->
+
+<section
+  class="ebooks"
+  id="ebooks"
+>
+
+  <div class="main-section-heading">
+
+    <div class="section-number">
+      03
+    </div>
+
+    <div>
+
+      <h2>Novels / eBooks</h2>
+
+      <p>
+        Explore original digital novels and creative
+        storytelling projects.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       NOVEL CATEGORIES
+  ========================= -->
+
+  <div class="novel-categories">
+
+    <div
+      class="category-list"
+      id="indexCategoryList"
+    ></div>
+
+  </div>
+
+
+  <!-- =========================
+       NOVEL DETAIL
+  ========================= -->
+
+  <div
+    id="indexNovelDetail"
+    class="index-novel-detail"
+  >
+
+    <button
+      type="button"
+      class="index-detail-close"
+      onclick="closeIndexNovel()"
+      aria-label="Close novel"
+    >
+      ×
+    </button>
+
+
+    <div class="index-detail-content">
+
+
+      <!-- BOOK COVER -->
+
+      <div class="index-detail-cover">
+
+        <img
+          id="indexDetailImage"
+          src=""
+          alt="Novel cover"
+        >
+
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h3
+        id="indexDetailTitle"
+      ></h3>
+
+
+      <!-- AUTHOR -->
+
+      <p class="index-detail-author">
+        Written by Abdullahi Sheikh Aden
+      </p>
+
+
+      <div class="index-detail-line"></div>
+
+
+      <!-- SYNOPSIS -->
+
+      <div class="index-detail-synopsis">
+
+        <strong>
+          Synopsis
+        </strong>
+
+        <p
+          id="indexDetailSynopsis"
+        ></p>
+
+      </div>
+
+
+      <!-- PRICE -->
+
+      <div
+        id="indexDetailPrice"
+        class="index-detail-price"
+      ></div>
+
+
+      <!-- BUTTONS -->
+
+      <div class="index-detail-buttons">
+
+        <a
+          id="indexDetailView"
+          href="#"
+          class="index-detail-btn index-view-btn"
+        >
+          View
+        </a>
+
+
+        <a
+          id="indexDetailBuy"
+          href="#"
+          class="index-detail-btn index-buy-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Buy Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       SEE ALL
+  ========================= -->
+
+  <div class="ebooks-link">
+
+    <a
+      href="ebooks.html"
+      class="see-all-btn"
+    >
+      See All eBooks
+    </a>
+
+  </div>
+
+</section>
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      © 2026
+      <strong>Karieson Creative Hub</strong>.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* =========================
+         MENU
+      ========================= */
+
+      const menuBtn = document.getElementById("menuBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const sideMenu = document.getElementById("sideMenu");
+
+      menuBtn.addEventListener("click", () => {
+        sideMenu.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        sideMenu.classList.remove("active");
+      });
+
+      sideMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          sideMenu.classList.remove("active");
+        });
+      });
+
+
+      /* =========================
+         RESEARCH
+      ========================= */
+
+      const fieldLinks =
+        document.querySelectorAll(".field-link");
+
+      const researchItems =
+        document.querySelectorAll(".research-item");
+
+      const searchInput =
+        document.getElementById("researchSearch");
+
+      const searchButton =
+        document.getElementById("searchResearchBtn");
+
+      const noResults =
+        document.getElementById("noResults");
+
+
+      function filterResearch(field) {
+
+        let found = false;
+
+        fieldLinks.forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.dataset.field === field
+          );
+        });
+
+        researchItems.forEach(item => {
+
+          const match =
+            field === "all" ||
+            item.dataset.field === field;
+
+          item.classList.toggle("show", match);
+
+          if (match) {
+            found = true;
+          }
+
+        });
+
+        noResults.classList.toggle(
+          "show",
+          !found
+        );
+      }
+
+
+      fieldLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          searchInput.value = "";
+
+          filterResearch(link.dataset.field);
+
+        });
+
+      });
+
+
+      function searchResearch() {
+
+        const term =
+          searchInput.value.trim().toLowerCase();
+
+        fieldLinks.forEach(link => {
+          link.classList.remove("active");
+        });
+
+
+        if (!term) {
+
+          researchItems.forEach(item => {
+            item.classList.remove("show");
+          });
+
+          noResults.classList.remove("show");
+
+          return;
+        }
+
+
+        let found = false;
+
+
+        researchItems.forEach(item => {
+
+          const match =
+            item.textContent
+              .toLowerCase()
+              .includes(term);
+
+          item.classList.toggle("show", match);
+
+          if (match) {
+            found = true;
+          }
+
+        });
+
+
+        noResults.classList.toggle(
+          "show",
+          !found
+        );
+
+      }
+
+
+      searchInput.addEventListener(
+        "input",
+        searchResearch
+      );
+
+      searchButton.addEventListener(
+        "click",
+        searchResearch
+      );
+
+
+      /* =========================
+         REQUEST FORM
+      ========================= */
+
+      const requestBtn =
+        document.getElementById("requestBtn");
+
+      const requestForm =
+        document.getElementById("request");
+
+      const closeFormBtn =
+        document.getElementById("closeFormBtn");
+
+
+      requestBtn.addEventListener("click", () => {
+
+        requestForm.classList.add("show-form");
+
+        setTimeout(() => {
+
+          requestForm.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }, 50);
+
+      });
+
+
+      closeFormBtn.addEventListener("click", () => {
+
+        requestForm.classList.remove("show-form");
+
+        document
+          .getElementById("grants")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+      });
+
+
+      document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+          requestForm.classList.remove(
+            "show-form"
+          );
+
+        }
+
+      });
+
+    });
+
+  </script>
+  <script>
+
+/* ==================================================
+   INDEX PAGE NOVELS
+================================================== */
+
+const indexNovels = {
+
+  romance: {
+
+    title: "Romance",
+
+    books: [
+
+      {
+        name: "Love Beyond the Distance",
+        image: "love-beyond-the-distance.png",
+        preview: "love-beyond-distance.html",
+        price: "KES 873.75",
+        buyLink: "https://selar.com/871b38i3z9",
+        synopsis:
+          "A moving story about love, distance, sacrifice and the choices that can either bring two hearts together or tear them apart."
+      },
+
+      {
+        name: "When Hearts Remember",
+        image: "when-the-hearts-remember.png",
+        preview: "when-hearts-remember.html",
+        price: "KES 599",
+        buyLink: "https://selar.com/231d02900m",
+        synopsis:
+          "A romantic journey of two people whose past continues to shape their present and their hopes for the future."
+      },
+
+      {
+        name: "The Promise We Made",
+        image: "the-promise-we-made.png",
+        preview: "the-promise-we-made.html",
+        price: "",
+        buyLink: "",
+        synopsis:
+          "A story of love, commitment and the difficult promises that must be kept when life changes unexpectedly."
+      }
+
+    ]
+
+  },
+
+
+  fiction: {
+
+    title: "Fiction",
+
+    books: [
+
+      {
+        name: "The Journey",
+        image: "the-journey.png",
+        preview: "ebooks/the-journey.html",
+        price: "",
+        buyLink: "buy/the-journey.html",
+        synopsis:
+          "An inspirational story about ambition, friendship and personal growth. Follow a young dreamer through challenges, difficult choices and unexpected experiences as they discover the courage and resilience needed to pursue their dreams."
+      },
+
+      {
+        name: "Beyond the Horizon",
+        image: "beyond-the-horizon.png",
+        preview: "ebooks/beyond-the-horizon.html",
+        price: "",
+        buyLink: "buy/beyond-the-horizon.html",
+        synopsis:
+          "A powerful inspirational story about dreams, determination and the courage to pursue new possibilities. Follow a young dreamer as challenges test their confidence, resilience and willingness to keep moving forward."
+      },
+
+      {
+        name: "Echoes of Hope",
+        image: "echoes-of-hope.png",
+        preview: "ebooks/echoes-of-hope.html",
+        price: "",
+        buyLink: "buy/echoes-of-hope.html",
+        synopsis:
+          "When three young friends face unexpected challenges that threaten their dreams, they must learn to stand together and believe in themselves. Their journey takes them through moments of doubt, difficult choices and new discoveries."
+      },
+
+      {
+        name: "The Last Chapter",
+        image: "the-last-chapter.png",
+        preview: "the-last-chapter.html",
+        price: "",
+        buyLink: "",
+        synopsis:
+          "A fictional journey filled with unexpected choices, hidden truths and the courage to begin again."
+      },
+
+      {
+        name: "The Road We Choose",
+        image: "the-road-we-choose.png",
+        preview: "the-road-we-choose.html",
+        price: "",
+        buyLink: "",
+        synopsis:
+          "A character-driven story exploring friendship, difficult decisions and the consequences of choosing one's own path."
+      }
+
+    ]
+
+  },
+
+
+  historical: {
+    title: "Historical Fiction",
+    books: []
+  },
+
+
+  adventure: {
+    title: "Adventure",
+    books: []
+  },
+
+
+  mystery: {
+    title: "Mystery & Suspense",
+    books: []
+  },
+
+
+  inspirational: {
+
+    title: "Inspirational",
+
+    books: [
+
+      {
+        name: "The Journey",
+        image: "the-journey.png",
+        preview: "ebooks/the-journey.html",
+        price: "",
+        buyLink: "buy/the-journey.html",
+        synopsis:
+          "An inspirational story about ambition, friendship and personal growth. Follow a young dreamer through challenges, difficult choices and unexpected experiences as they discover the courage and resilience needed to pursue their dreams."
+      },
+
+      {
+        name: "Beyond the Horizon",
+        image: "beyond-the-horizon.png",
+        preview: "ebooks/beyond-the-horizon.html",
+        price: "",
+        buyLink: "buy/beyond-the-horizon.html",
+        synopsis:
+          "A powerful inspirational story about dreams, determination and the courage to pursue new possibilities."
+      },
+
+      {
+        name: "Echoes of Hope",
+        image: "echoes-of-hope.png",
+        preview: "ebooks/echoes-of-hope.html",
+        price: "",
+        buyLink: "buy/echoes-of-hope.html",
+        synopsis:
+          "When three young friends face unexpected challenges that threaten their dreams, they must learn to stand together and believe in themselves."
+      }
+
+    ]
+
+  },
+
+
+  social: {
+    title: "Social & Contemporary",
+    books: []
+  },
+
+
+  "young-adult": {
+    title: "Young Adult",
+    books: []
+  },
+
+
+  family: {
+
+    title: "Family & Relationships",
+
+    books: [
+
+      {
+        name: "When Hearts Remember",
+        image: "when-the-hearts-remember.png",
+        preview: "when-hearts-remember.html",
+        price: "KES 599",
+        buyLink: "https://selar.com/231d02900m",
+        synopsis:
+          "A romantic journey of two people whose past continues to shape their present and their hopes for the future."
+      },
+
+      {
+        name: "The Promise We Made",
+        image: "the-promise-we-made.png",
+        preview: "the-promise-we-made.html",
+        price: "",
+        buyLink: "",
+        synopsis:
+          "A story of love, commitment and the difficult promises that must be kept when life changes unexpectedly."
+      }
+
+    ]
+
+  },
+
+
+  african: {
+
+    title: "African Stories",
+
+    books: [
+
+      {
+        name: "The Road We Choose",
+        image: "the-road-we-choose.png",
+        preview: "the-road-we-choose.html",
+        price: "",
+        buyLink: "",
+        synopsis:
+          "A character-driven story exploring friendship, difficult decisions and the consequences of choosing one's own path."
+      },
+
+      {
+        name: "Love Beyond the Distance",
+        image: "love-beyond-the-distance.png",
+        preview: "love-beyond-distance.html",
+        price: "KES 873.75",
+        buyLink: "https://selar.com/871b38i3z9",
+        synopsis:
+          "A moving story about love, distance, sacrifice and the choices that can either bring two hearts together or tear them apart."
+      }
+
+    ]
+
+  }
+
+};
+
+
+/* ==================================================
+   BUILD CATEGORY LIST
+================================================== */
+
+function buildIndexCategories() {
+
+  const container =
+    document.getElementById("indexCategoryList");
+
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+
+  Object.keys(indexNovels).forEach(function(categoryKey) {
+
+    const category =
+      indexNovels[categoryKey];
+
+
+    /* CATEGORY */
+
+    const categoryBox =
+      document.createElement("div");
+
+    categoryBox.className =
+      "novel-category";
+
+
+    /* CATEGORY BUTTON */
+
+    const toggle =
+      document.createElement("button");
+
+    toggle.type = "button";
+
+    toggle.className =
+      "category-toggle";
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+    /*
+      IMPORTANT:
+      NAME FIRST
+      PLUS SECOND
+    */
+
+    toggle.innerHTML = `
+      <span>
+        ${category.title}
+      </span>
+
+      <span class="category-plus">
+        +
+      </span>
+    `;
+
+
+    /* BOOK LIST */
+
+    const books =
+      document.createElement("div");
+
+    books.className =
+      "category-books";
+
+
+    /* NOVELS */
+
+    category.books.forEach(
+      function(book, index) {
+
+        const link =
+          document.createElement("a");
+
+        link.href = "#";
+
+        link.className =
+          "novel-text-link";
+
+        link.textContent =
+          book.name;
+
+
+        link.addEventListener(
+          "click",
+          function(event) {
+
+            event.preventDefault();
+
+            openIndexNovel(
+              categoryKey,
+              index
+            );
+
+          }
+        );
+
+
+        books.appendChild(link);
+
+      }
+    );
+
+
+    /* CATEGORY TOGGLE */
+
+    toggle.addEventListener(
+      "click",
+      function() {
+
+        const alreadyOpen =
+          books.classList.contains("show");
+
+
+        /*
+          CLOSE ALL OTHER
+          CATEGORIES
+        */
+
+        document
+          .querySelectorAll(
+            ".category-books"
+          )
+          .forEach(
+            function(item) {
+
+              item.classList.remove(
+                "show"
+              );
+
+            }
+          );
+
+
+        /*
+          RESET ALL
+          PLUS SIGNS
+        */
+
+        document
+          .querySelectorAll(
+            ".category-plus"
+          )
+          .forEach(
+            function(item) {
+
+              item.textContent = "+";
+
+            }
+          );
+
+
+        /*
+          RESET ARIA
+        */
+
+        document
+          .querySelectorAll(
+            ".category-toggle"
+          )
+          .forEach(
+            function(item) {
+
+              item.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+          );
+
+
+        /*
+          OPEN SELECTED
+        */
+
+        if (!alreadyOpen) {
+
+          books.classList.add(
+            "show"
+          );
+
+
+          toggle
+            .querySelector(
+              ".category-plus"
+            )
+            .textContent = "−";
+
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "true"
+          );
+
+        }
+
+      }
+    );
+
+
+    categoryBox.appendChild(
+      toggle
+    );
+
+    categoryBox.appendChild(
+      books
+    );
+
+    container.appendChild(
+      categoryBox
+    );
+
+  });
+
+}
+
+
+/* ==================================================
+   OPEN NOVEL DETAIL
+================================================== */
+
+function openIndexNovel(
+  categoryKey,
+  index
+) {
+
+  const category =
+    indexNovels[categoryKey];
+
+
+  if (!category) {
+    return;
+  }
+
+
+  const book =
+    category.books[index];
+
+
+  if (!book) {
+    return;
+  }
+
+
+  /* TITLE */
+
+  const title =
+    document.getElementById(
+      "indexDetailTitle"
+    );
+
+  if (title) {
+
+    title.textContent =
+      book.name;
+
+  }
+
+
+  /* IMAGE */
+
+  const image =
+    document.getElementById(
+      "indexDetailImage"
+    );
+
+  if (image) {
+
+    image.src =
+      book.image;
+
+    image.alt =
+      book.name +
+      " book cover";
+
+  }
+
+
+  /* SYNOPSIS */
+
+  const synopsis =
+    document.getElementById(
+      "indexDetailSynopsis"
+    );
+
+  if (synopsis) {
+
+    synopsis.textContent =
+      book.synopsis;
+
+  }
+
+
+  /* PRICE */
+
+  const price =
+    document.getElementById(
+      "indexDetailPrice"
+    );
+
+  if (price) {
+
+    price.textContent =
+      book.price || "";
+
+  }
+
+
+  /* VIEW BUTTON */
+
+  const viewButton =
+    document.getElementById(
+      "indexDetailView"
+    );
+
+  if (viewButton) {
+
+    if (book.preview) {
+
+      viewButton.href =
+        book.preview;
+
+      viewButton.style.display =
+        "inline-flex";
+
+    } else {
+
+      viewButton.style.display =
+        "none";
+
+    }
+
+  }
+
+
+  /* BUY BUTTON */
+
+  const buyButton =
+    document.getElementById(
+      "indexDetailBuy"
+    );
+
+  if (buyButton) {
+
+    if (book.buyLink) {
+
+      buyButton.href =
+        book.buyLink;
+
+      buyButton.style.display =
+        "inline-flex";
+
+    } else {
+
+      buyButton.href =
+        "#";
+
+      buyButton.style.display =
+        "none";
+
+    }
+
+  }
+
+
+  /* DETAIL */
+
+  const detail =
+    document.getElementById(
+      "indexNovelDetail"
+    );
+
+
+  if (!detail) {
+    return;
+  }
+
+
+  detail.classList.add(
+    "show"
+  );
+
+
+  /*
+    SCROLL TO DETAIL
+  */
+
+  setTimeout(
+    function() {
+
+      detail.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    },
+    100
+  );
+
+}
+
+
+/* ==================================================
+   CLOSE NOVEL DETAIL
+================================================== */
+
+function closeIndexNovel() {
+
+  const detail =
+    document.getElementById(
+      "indexNovelDetail"
+    );
+
+
+  if (detail) {
+
+    detail.classList.remove(
+      "show"
+    );
+
+  }
+
+}
+
+
+/* ==================================================
+   START
+================================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    buildIndexCategories();
+
+  }
+);
+
+</script>
+
+</body>
+</html>
