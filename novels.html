@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
+    rel="stylesheet"
+>
+<title>Novels | Karieson Creative Hub</title>
+
+<style>
+
+:root {
+    --red: #c00000;
+    --dark-red: #8f0000;
+    --black: #080808;
+    --white: #ffffff;
+    --gray: #666666;
+    --border: #dddddd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+    background: var(--black);
+    color: var(--white);
+
+    padding: 1.5rem 7%;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+.header-logo {
+    display: block;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+@media (max-width: 600px) {
+
+    .header-logo {
+        width: 150px;
+    }
+
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    background: var(--black);
+    color: var(--white);
+
+    padding: 4rem 7% 5rem;
+
+    text-align: center;
+}
+
+.hero-inner {
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero h1 {
+    margin: 0 0 0.8rem;
+
+    font-size: clamp(2.2rem, 6vw, 4rem);
+
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #dddddd;
+
+    font-size: 1rem;
+}
+
+
+/* ==================================================
+   NOVEL LIST
+================================================== */
+
+.novels-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 4rem 1.5rem 5rem;
+}
+
+.category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    margin: 0 0 0.8rem;
+
+    padding-bottom: 0.6rem;
+
+    color: var(--red);
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    border-bottom: 2px solid var(--red);
+}
+
+
+/* ==================================================
+   CLICKABLE NOVEL
+================================================== */
+
+.novel-link {
+    display: block;
+
+    width: 100%;
+
+    padding: 0.9rem 0.5rem;
+
+    color: var(--black);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease,
+        background 0.2s ease;
+}
+
+.novel-link:hover {
+    color: var(--red);
+
+    padding-left: 1rem;
+
+    background: #fafafa;
+}
+/* ==================================================
+   ALL NOVELS
+================================================== */
+
+.all-novels {
+    min-height: 100vh;
+    padding: 70px 7%;
+    background: #ffffff;
+}
+
+.all-novels h1 {
+    margin: 0 0 35px;
+    color: #c00000;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+
+/* ==================================================
+   NOVEL LIST
+================================================== */
+
+.novel-list {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+
+/* Each numbered novel row */
+
+.novel {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Novel title */
+
+.novel-title {
+    display: block;
+    width: 100%;
+
+    padding: 13px 8px;
+
+    border: none;
+    border-bottom: 1px solid #dddddd;
+
+    background: transparent;
+
+    color: #222222;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease,
+        background 0.2s ease;
+}
+
+.novel-title:hover {
+    color: #c00000;
+    background: #fafafa;
+    padding-left: 14px;
+}
+
+
+/* ==================================================
+   NOVEL DETAILS
+================================================== */
+
+.detail {
+    display: none;
+
+    width: 100%;
+
+    padding: 30px 15px;
+
+    border-bottom: 1px solid #dddddd;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+.detail.show {
+    display: block;
+}
+
+.detail-content {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   NOVEL TITLE
+================================================== */
+
+.detail h2 {
+    margin: 0 0 25px;
+
+    color: #c00000;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    line-height: 1.3;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   COVER
+================================================== */
+
+.cover {
+    width: 100%;
+
+    margin: 0 auto 25px;
+
+    text-align: center;
+}
+
+.cover img {
+    display: block;
+
+    width: auto;
+    max-width: 250px;
+    max-height: 370px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+
+/* ==================================================
+   SYNOPSIS
+================================================== */
+
+.synopsis {
+    width: 100%;
+    max-width: 620px;
+
+    margin: 0 auto 20px;
+
+    color: #333333;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+.synopsis strong {
+    color: #c00000;
+}
+
+
+/* ==================================================
+   PRICE
+================================================== */
+
+.price {
+    margin: 15px 0;
+
+    color: #000000;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   CENTERED BUTTONS
+================================================== */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin: 20px auto 0;
+
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border: 1px solid #000000;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* ==================================================
+   VIEW — BLACK
+================================================== */
+
+.btn.view {
+    background: #000000;
+    color: #ffffff;
+
+    border-color: #000000;
+}
+
+.btn.view:hover {
+    background: #c00000;
+    color: #ffffff;
+
+    border-color: #c00000;
+}
+
+
+/* ==================================================
+   BUY NOW — RED
+================================================== */
+
+.btn.buy {
+    background: #c00000;
+    color: #ffffff;
+
+    border-color: #c00000;
+}
+
+.btn.buy:hover {
+    background: #000000;
+    color: #ffffff;
+
+    border-color: #000000;
+}
+
+
+/* ==================================================
+   BACK LINK
+================================================== */
+
+.back-link {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 50px;
+
+    color: #c00000;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #000000;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .all-novels {
+        padding: 55px 5%;
+    }
+
+    .all-novels h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .novel-title {
+        padding: 12px 5px;
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .detail {
+        padding: 25px 5px;
+        text-align: center;
+    }
+
+    .detail-content {
+        text-align: center;
+    }
+
+    .detail h2 {
+        font-size: 1.45rem;
+        text-align: center;
+    }
+
+    .cover {
+        text-align: center;
+    }
+
+    .cover img {
+        max-width: 210px;
+        max-height: 320px;
+        margin: 0 auto;
+    }
+
+    .synopsis {
+        max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .price {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn {
+        padding: 7px 13px;
+        font-size: 0.8rem;
+    }
+
+}
+
+
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding: 2rem 1rem;
+
+    background: var(--black);
+    color: #aaaaaa;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+}
+
+footer strong {
+    color: var(--white);
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        padding: 1.2rem 5%;
+    }
+
+    .hero {
+        padding: 3rem 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .novels-container {
+        padding:
+            3rem 1rem
+            4rem;
+    }
+
+    .category-title {
+        font-size: 1.15rem;
+    }
+
+    .novel-link {
+        font-size: 0.95rem;
+        padding: 0.8rem 0.3rem;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <img
+                src="karieson_logo.png"
+                alt="Karieson Creative Hub"
+                class="header-logo"
+            >
+        </a>
+
+    </div>
+
+</header>
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <h1>
+            My <span>Novels</span>
+        </h1>
+
+        <p>
+            Explore my collection of stories across romance,
+            fiction, adventure, mystery, inspirational and
+            contemporary literature.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ALL NOVELS
+================================================== -->
+
+<section class="all-novels">
+
+    <h1>All Novels</h1>
+
+    <div id="allNovelsList" class="novel-list"></div>
+
+</section>
+
+<a href="index.html" class="back-link">
+    ← Back to Karieson Creative Hub
+</a>
+
+    </div>
+
+</section>
+
+    
+
+</main>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <strong>Karieson Creative Hub</strong><br>
+
+    © 2026 Karieson Creative Hub.
+    All Rights Reserved.
+
+</footer>
+
+<script>
+const novels = {
+
+    romance: {
+        title: "Romance Novels",
+        books: [
+            {
+    name: "Love Beyond the Distance",
+    image: "love-beyond-the-distance.png",
+    preview: "love-beyond-distance.html",
+    price: "KES 873.75",
+    buyLink: "https://selar.com/871b38i3z9",
+    synopsis: "A moving story about love, distance, sacrifice and the choices that can either bring two hearts together or tear them apart."
+},
+            {
+    name: "When Hearts Remember",
+    image: "when-the-hearts-remember.png",
+    preview: "when-hearts-remember.html",
+    price: "KES 599",
+    buyLink: "https://selar.com/231d02900m",
+    synopsis: "A romantic journey of two people whose past continues to shape their present and their hopes for the future."
+},
+            {
+    name: "The Promise We Made",
+    image: "the-promise-we-made.png",
+    preview: "the-promise-we-made.html",
+    synopsis: "A story of love, commitment and the difficult promises that must be kept when life changes unexpectedly."
+}
+        ]
+    },
+
+    fiction: {
+        title: "Fiction Novels",
+        books: [
+            {
+    name: "The Last Chapter",
+    image: "the-last-chapter.png",
+    preview: "the-last-chapter.html",
+    synopsis: "A fictional journey filled with unexpected choices, hidden truths and the courage to begin again."
+       },
+    {
+    name: "Beyond the Horizon",
+    image: "beyond-the-horizon.png",
+    preview: "beyond-the-horizon.html",
+    synopsis: "An inspiring fictional story about ambition, uncertainty and the search for a better future."
+  },
+            {
+    name: "The Road We Choose",
+    image: "the-road-we-choose.png",
+    preview: "the-road-we-choose.html",
+    synopsis: "A character-driven story exploring friendship, difficult decisions and the consequences of choosing one's own path."
+}
+        ]
+    },
+
+    historical: {
+        title: "Historical Fiction",
+        books: [
+      {
+    name: "Echoes of Yesterday",
+    image: "echoes-of-yesterday.png",
+    preview: "echoes-of-yesterday.html",
+    synopsis: "A historical story where the lives of ordinary people unfold against the changing events of their time."
+},
+{
+    name: "The Forgotten Village",
+    image: "the-forgotten-village.png",
+    preview: "the-forgotten-village.html",
+    synopsis: "A journey into a forgotten community where old memories reveal stories that shaped generations."
+},
+{
+    name: "Before the New Dawn",
+    image: "before-the-new-dawn.png",
+    preview: "before-the-new-dawn.html",
+    synopsis: "A story of courage, survival and hope during a period of profound social change."
+}
+        ]
+    },
+
+    adventure: {
+        title: "Adventure Novels",
+        books: [
+            {
+    name: "The Journey Begins",
+    image: "the-journey-begins.png",
+    preview: "the-journey-begins.html",
+    synopsis: "An adventurous journey into unfamiliar places where courage, friendship and determination are tested."
+},
+{
+    name: "Across the Unknown",
+    image: "across-the-unknown.png",
+    preview: "across-the-unknown.html",
+    synopsis: "A thrilling adventure about exploration, discovery and the risks of venturing beyond the familiar."
+},
+{
+    name: "The Hidden Path",
+    image: "the-hidden-path.png",
+    preview: "the-hidden-path.html",
+    synopsis: "A mysterious path leads the characters into an unexpected adventure filled with challenges and discoveries."
+}
+        ]
+    },
+
+    mystery: {
+        title: "Mystery & Suspense",
+        books: [
+            {
+    name: "The Missing Letter",
+    image: "the-missing-letter.png",
+    preview: "the-missing-letter.html",
+    synopsis: "A mysterious letter sets off a chain of events that reveals secrets hidden for years."
+},
+{
+    name: "The Silent Witness",
+    image: "novels/the-silent-witness.jpg",
+    preview: "the-silent-witness.html",
+    synopsis: "A suspenseful story surrounding a forgotten event and a witness who knows more than anyone realizes."
+},
+{
+    name: "Secrets in the Dark",
+    image: "novels/secrets-in-the-dark.jpg",
+    preview: "secrets-in-the-dark.html",
+    synopsis: "Unanswered questions and hidden secrets slowly emerge as the characters search for the truth."
+}
+        ]
+    },
+
+    inspirational: {
+        title: "Inspirational Novels",
+        books: [
+           {
+    name: "A Reason to Rise",
+    image: "novels/a-reason-to-rise.jpg",
+    preview: "a-reason-to-rise.html",
+    synopsis: "An inspirational story about resilience, hope and finding strength after difficult experiences."
+},
+{
+    name: "The Courage to Begin",
+    image: "novels/the-courage-to-begin.jpg",
+    preview: "the-courage-to-begin.html",
+    synopsis: "A story about overcoming fear and finding the courage to start a new chapter in life."
+},
+{
+    name: "After the Storm",
+    image: "novels/after-the-storm.jpg",
+    preview: "after-the-storm.html",
+    synopsis: "A powerful journey of recovery, hope and discovering new possibilities after hardship."
+} 
+        ]
+    },
+
+    social: {
+        title: "Social & Contemporary Novels",
+        books: [
+            {
+    name: "Life Between the Lines",
+    image: "novels/life-between-the-lines.jpg",
+    preview: "life-between-the-lines.html",
+    synopsis: "A contemporary story exploring society, relationships, identity and the realities of modern life."
+},
+{
+    name: "The City We Live In",
+    image: "novels/the-city-we-live-in.jpg",
+    preview: "the-city-we-live-in.html",
+    synopsis: "A modern story about ambition, friendship and the pressures of life in a changing society."
+},
+{
+    name: "Voices of Tomorrow",
+    image: "novels/voices-of-tomorrow.jpg",
+    preview: "voices-of-tomorrow.html",
+    synopsis: "A contemporary story exploring young voices, social change and the dreams of a new generation."
+}
+        ]
+    },
+
+    "young-adult": {
+        title: "Young Adult Novels",
+        books: [
+       {
+    name: "Finding My Way",
+    image: "novels/finding-my-way.jpg",
+    preview: "finding-my-way.html",
+    synopsis: "A coming-of-age story about friendship, identity, dreams and discovering one's place in the world."
+},
+{
+    name: "The Next Step",
+    image: "novels/the-next-step.jpg",
+    preview: "the-next-step.html",
+    synopsis: "A young person's journey through difficult choices, friendship and the uncertainty of growing up."
+},
+{
+    name: "Dreams Don't Wait",
+    image: "novels/dreams-dont-wait.jpg",
+    preview: "dreams-dont-wait.html",
+    synopsis: "An inspiring young adult story about pursuing dreams despite doubt, obstacles and unexpected setbacks."
+}     
+        ]
+    },
+
+    family: {
+        title: "Family & Relationships",
+        books: [
+       {
+    name: "The Family We Carry",
+    image: "novels/the-family-we-carry.jpg",
+    preview: "the-family-we-carry.html",
+    synopsis: "A story about family bonds, forgiveness, difficult memories and the meaning of belonging."
+},
+{
+    name: "Home Again",
+    image: "novels/home-again.jpg",
+    preview: "home-again.html",
+    synopsis: "A heartfelt story about returning home and confronting the relationships and memories left behind."
+},
+{
+    name: "Between Us",
+    image: "novels/between-us.jpg",
+    preview: "between-us.html",
+    synopsis: "A story of relationships, misunderstandings and the conversations that can change everything."
+}     
+        ]
+    },
+
+    african: {
+        title: "African Stories",
+        books: [
+            {
+    name: "Under the African Sky",
+    image: "under-the-african-sky.png",
+    preview: "under-the-african-sky.html",
+    synopsis: "A story rooted in African life, community, tradition and the dreams of a changing generation."
+},
+{
+    name: "The Village Beyond the Hill",
+    image: "novels/the-village-beyond-the-hill.jpg",
+    preview: "the-village-beyond-the-hill.html",
+    synopsis: "A compelling story of community, tradition, family and the challenges of embracing change."
+}
+        ]
+    }
+
+};
+
+/* ==================================================
+   ALL NOVELS LANDING PAGE
+================================================== */
+
+function showAllNovels() {
+
+    const list = document.getElementById("allNovelsList");
+
+    if (!list) return;
+
+    list.innerHTML = "";
+
+    let novelNumber = 1;
+
+    Object.keys(novels).forEach(function(type) {
+
+        novels[type].books.forEach(function(book, index) {
+
+            /* Novel title */
+
+            const novelRow = document.createElement("div");
+
+            novelRow.className = "novel";
+
+            novelRow.innerHTML = `
+                <button
+                    class="novel-title"
+                    onclick="openAllNovel('${type}', ${index})"
+                >
+                    ${novelNumber}. ${book.name}
+                </button>
+            `;
+
+            list.appendChild(novelRow);
+
+
+            /* Novel details */
+
+            const detail = document.createElement("div");
+
+            detail.className = "detail";
+
+            detail.id = "all-detail-" + type + "-" + index;
+
+            detail.innerHTML = `
+                <div class="detail-content">
+
+                    <h2>${book.name}</h2>
+
+                    <div class="cover">
+                        <img
+                            src="${book.image}"
+                            alt="${book.name}"
+                        >
+                    </div>
+
+                    <div class="synopsis">
+
+                        <strong>Synopsis</strong>
+
+                        <br><br>
+
+                        ${book.synopsis}
+
+                    </div>
+
+                    ${
+                        book.price
+                        ? `<div class="price">${book.price}</div>`
+                        : ""
+                    }
+
+                    <div class="buttons">
+
+                        <a
+                            href="${book.preview}"
+                            class="btn view"
+                        >
+                            View
+                        </a>
+
+                        ${
+                            book.buyLink
+                            ? `
+                            <a
+                                href="${book.buyLink}"
+                                class="btn buy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Buy Now
+                            </a>
+                            `
+                            : ""
+                        }
+
+                    </div>
+
+                </div>
+            `;
+
+            list.appendChild(detail);
+
+            novelNumber++;
+
+        });
+
+    });
+
+}
+
+/* ==================================================
+   OPEN NOVEL
+================================================== */
+
+function openAllNovel(type, index) {
+
+    const selected =
+        document.getElementById(
+            "all-detail-" + type + "-" + index
+        );
+
+
+    document.querySelectorAll(
+        "#allNovelsList .detail"
+    ).forEach(function(detail) {
+
+        if (detail !== selected) {
+
+            detail.classList.remove("show");
+
+        }
+
+    });
+
+
+    selected.classList.toggle("show");
+
+
+    if (selected.classList.contains("show")) {
+
+        setTimeout(function() {
+
+            selected.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }, 100);
+
+    }
+
+}
+
+
+/* ==================================================
+   LOAD ALL NOVELS
+================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        showAllNovels();
+
+    }
+);
+
+</script>
+</body>
+</html>
