@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Day Choice Ended | Karieson</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+
+/* ================= BOOK ================= */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+
+/* ================= PAGE ================= */
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+
+    padding: 80px 80px;
+
+    border: 1px solid var(--border);
+}
+
+
+/* ================= TITLE PAGE ================= */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 550px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+
+/* ================= SECTION HEADINGS ================= */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+
+/* ================= DEDICATION ================= */
+
+.dedication-page {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    font-style: italic;
+}
+
+
+/* ================= AUTHOR'S NOTE ================= */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==================================================
+   FICTION NOTICE
+================================================== */
+
+.fiction-notice {
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--grey);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+.fiction-notice strong {
+    display: block;
+
+    color: var(--black);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+/* ================= CHAPTER ================= */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+
+/* ================= END PREVIEW ================= */
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+
+        padding: 55px 25px;
+
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+
+        line-height: 1.85;
+    }
+}
+
+
+/* ================= A4 PRINT ================= */
+
+@page {
+    size: A4 portrait;
+
+    margin: 18mm 18mm 20mm 18mm;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+
+        background: #ffffff;
+    }
+
+    header,
+    footer {
+        display: none !important;
+    }
+
+    .book {
+        width: 100%;
+
+        margin: 0;
+
+        box-shadow: none;
+    }
+
+    .page {
+        width: 174mm;
+
+        min-height: 257mm;
+
+        margin: 0 auto;
+
+        padding: 0;
+
+        border: none;
+
+        overflow: visible;
+
+        page-break-after: always;
+
+        break-after: page;
+    }
+
+    .chapter {
+        page-break-before: always;
+
+        break-before: page;
+    }
+
+    .chapter p,
+    .author-note p {
+        font-family:
+            "Times New Roman",
+            Times,
+            serif;
+
+        font-size: 18px;
+
+        line-height: 1.75;
+    }
+
+    .chapter p {
+        margin-bottom: 7mm;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="header-inner">
+
+        <img
+            src="karieson_logo.png"
+            alt="Karieson"
+            class="logo">
+
+        <a
+            href="../ebooks.html"
+            class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+
+<!-- ================= TITLE PAGE ================= -->
+
+<section class="page title-page">
+
+    <div class="title-content">
+
+        <h1 class="title">
+            The Day<br>
+            Choice Ended
+        </h1>
+
+        <h2 class="subtitle">
+            A Novella of Betrayal, Resilience,
+            and the Quiet War Between Truth and Survival
+        </h2>
+
+        <div class="author">
+
+            Abdullahi Sheikh Aden
+
+            <span>
+                (Karieson)
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEDICATION ================= -->
+
+<section class="page dedication-page">
+
+    <div>
+
+        <h2 class="section-title">
+            Dedication
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p class="dedication">
+
+            To those who have walked through uncertainty
+            without knowing where the road would lead;
+
+            to the families who carry the weight of
+            decisions they did not make;
+
+            and to everyone who has ever been forced to
+            choose between silence and the search for truth.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AUTHOR'S NOTE ================= -->
+
+<section class="page author-note">
+
+    <h2 class="section-title">
+        Author's Note
+    </h2>
+
+    <div class="red-line"></div>
+
+    <p>
+        <em>The Day Choice Ended</em> is a work of fiction
+        inspired by real experiences, memories, and stories
+        shared with me by someone close to me.
+    </p>
+
+    <p>
+        Although the novel is told in the first person,
+        the narrator is a fictionalized character. I have
+        deliberately used “I” and “me” to bring the reader
+        closer to the emotional weight of the journey and
+        to tell the story from an intimate perspective.
+    </p>
+
+    <p>
+        Some events, locations, circumstances, timelines,
+        and characters have been adapted, combined, or
+        reimagined for the purposes of storytelling.
+        The experiences that inspired this novel originated
+        in Ethiopia, while the story itself has been shaped
+        through my own perspective and creative interpretation
+        from Kenya.
+    </p>
+
+    <p>
+        The purpose of this novel is not to present a literal
+        record of one person's life, but to transform a deeply
+        personal experience into a story about choices,
+        uncertainty, resilience, and the consequences of
+        decisions.
+    </p>
+
+    <p>
+        Any resemblance to actual persons, events, or
+        circumstances beyond the inspiration described above
+        is coincidental or the result of fictionalization.
+    </p>
+
+    <p>
+        This is a novel. The truth within its pages is
+        emotional rather than documentary.
+    </p>
+
+    <p>
+        Abdullahi Sheikh Aden
+    </p>
+
+    <p class="fiction-notice">
+
+        <strong>
+            This is a work of fiction.
+        </strong>
+
+        The characters, names, places, events and situations
+        presented in this book have been adapted, combined,
+        or reimagined for storytelling purposes.
+
+    </p>
+
+</section>
+
+
+<!-- ================= CHAPTER ONE ================= -->
+
+<section class="page chapter">
+
+    <div class="chapter-number">
+        CHAPTER 1
+    </div>
+
+    <h2 class="chapter-title">
+        The Day Choice Ended
+    </h2>
+
+    <div class="red-line"></div>
+
+    <div class="chapter-content">
+
+        <p class="drop-cap">
+            It was eight-thirty in the morning, Hidar 29,
+            2002 in the Ethiopian calendar. The van jolted
+            over uneven roads, carrying me from Ruma detention
+            toward the courthouse.
+        </p>
+
+        <p>
+            The air inside was stale, heavy with sweat and
+            rusted iron. My hands gripped the cold bars, my
+            knuckles whitening with every bump as memories
+            surfaced—memories I was not sure I wanted to face.
+        </p>
+
+        <p>
+            The officers sat in silence, their eyes scanning
+            the streets like hawks, their boots planted firmly
+            on the floor as if the van itself were a battlefield.
+            Their silence was louder than words, a reminder that
+            my fate was no longer mine to command.
+        </p>
+
+        <p>
+            Outside, the city moved indifferently.
+        </p>
+
+        <p>
+            Children in uniforms hurried to school. Vendors
+            shouted prices for roasted maize. Buses honked
+            impatiently at intersections. Life carried on,
+            unaware of the van crawling through the streets
+            with me inside—a prisoner of both steel and
+            circumstance.
+        </p>
+
+        <p>
+            I wondered whether anyone saw me through the
+            tinted glass. I wondered whether anyone cared
+            who I was or what had brought me there.
+        </p>
+
+        <p>
+            To them, I was just another shadow passing by.
+        </p>
+
+        <p>
+            Ahead, the courthouse loomed gray and unyielding,
+            its high walls rising like a fortress against the
+            sky. The steel doors promised judgment. Judges in
+            stiff robes sat behind those doors, their expressions
+            unreadable, their decisions seemingly already etched
+            into the air I breathed.
+        </p>
+
+        <p>
+            The van slowed.
+        </p>
+
+        <p>
+            Its brakes screeched like a warning bell.
+        </p>
+
+        <p>
+            My chest tightened.
+        </p>
+
+        <p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    Karieson Creative Hub
+
+    <span>•</span>
+
+    The Day Choice Ended
+
+    <span>•</span>
+
+    All Rights Reserved
+
+</footer>
+
+
+</body>
+</html>
