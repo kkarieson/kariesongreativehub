@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dustwalkers | Karieson</title>
+
+<style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HEADER */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+/* BOOK */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+.page {
+    min-height: 900px;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+    padding: 80px;
+
+    border: 1px solid var(--border);
+}
+
+/* TITLE PAGE */
+
+.title-page {
+    min-height: 900px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 550px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+
+    background: var(--red);
+
+    margin: 0 auto 55px;
+}
+
+/* DEDICATION */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dedication {
+    max-width: 520px;
+
+    margin: auto;
+
+    font-size: 19px;
+    line-height: 2;
+
+    font-style: italic;
+}
+
+/* AUTHOR'S NOTE */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+
+    font-size: 17px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 25px;
+}
+
+/* FICTION NOTICE */
+
+.fiction-notice {
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--grey);
+
+    text-align: center !important;
+}
+
+.fiction-notice strong {
+    display: block;
+
+    color: var(--black);
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+}
+
+/* CHAPTER */
+
+.chapter-number {
+    text-align: center;
+
+    color: var(--red);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+
+    color: var(--black);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter .chapter-content > p:first-child::first-letter {
+    font-size: 55px;
+
+    float: left;
+
+    line-height: .8;
+
+    padding-right: 7px;
+
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+
+    color: var(--red) !important;
+
+    font-weight: bold;
+    font-style: italic;
+
+    margin-top: 50px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--black);
+
+    color: #aaaaaa;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+
+        padding: 55px 25px;
+
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <img
+            src="karieson_logo.png"
+            alt="Karieson"
+            class="logo"
+        >
+
+        <a
+            href="ebooks.html"
+            class="back">
+            ← Back to eBooks
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="book">
+
+
+    <!-- TITLE PAGE -->
+
+    <section class="page title-page">
+
+        <div class="title-content">
+
+            <h1 class="title">
+                Dustwalkers
+            </h1>
+
+            <h2 class="subtitle">
+                The Journey to Somalia
+                <br>
+                A journey written in dust, hunger, and faith.
+                <br>
+                A legacy carried by footsteps through forgotten winds.
+            </h2>
+
+            <div class="author">
+                Karieson
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEDICATION -->
+
+    <section class="page dedication-page">
+
+        <div>
+
+            <h2 class="section-title">
+                Dedication
+            </h2>
+
+            <div class="red-line"></div>
+
+            <div class="dedication">
+
+                <p>
+                    To my grandmother, who raised me with love,
+                    prayers, and quiet strength. Your faith still
+                    walks beside me.
+                </p>
+
+                <p>
+                    To my friends—Farhan, Yasin, Omar—we took
+                    the first steps together. This story will
+                    always carry your footprints.
+                </p>
+
+                <p>
+                    And to anyone who has ever walked toward
+                    something uncertain, not knowing what
+                    tomorrow holds—this is for you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHOR'S NOTE -->
+
+    <section class="page author-note">
+
+        <h2 class="section-title">
+            Author's Note
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p>
+            This is a work of fiction but it was born from truths.
+            It began in a town like Isiolo, where early morning
+            prayers mingled with quiet conversations. The characters
+            in this story didn’t know exactly where they were
+            going—only that they had to keep moving.
+        </p>
+
+        <p>
+            Somalia, for them, wasn’t just a place on a map.
+            It was a dream. A chance. Maybe even a kind of hope.
+        </p>
+
+        <p>
+            The people you’ll meet in these pages aren’t perfect.
+            They don’t have much. But they have each other—and
+            sometimes, that’s enough to begin.
+        </p>
+
+        <p>
+            This isn’t just a story about crossing borders.
+            It’s about friendship, silence, risk—and the search
+            for a life that feels truly your own.
+        </p>
+
+        <p>
+            I’m not a professional storyteller. I’m just someone
+            who’s lived close enough to the edge of this story to
+            imagine what it might feel like—and what it might mean.
+            May you find a piece of your own courage here.
+        </p>
+
+        <p class="fiction-notice">
+
+            <strong>
+                This is a work of fiction.
+            </strong>
+
+            The characters, names, places, events and situations
+            presented in this book have been adapted, combined,
+            or reimagined for storytelling purposes.
+
+        </p>
+
+    </section>
+
+
+    <!-- CHAPTER ONE -->
+
+    <section class="page chapter">
+
+        <div class="chapter-number">
+            CHAPTER ONE
+        </div>
+
+        <h2 class="chapter-title">
+            The Road Began at Fajr
+        </h2>
+
+        <div class="red-line"></div>
+
+        <div class="chapter-content">
+
+            <p>
+                The floor was cool beneath my forehead as I ended
+                sujood. The walls of the old mosque in Isiolo were
+                cracked with age, but the silence inside felt whole.
+                Peaceful. It was Farhan who broke it.
+            </p>
+
+            <p>
+                "Bro," he whispered, nudging my arm.
+                "We ready?"
+            </p>
+
+            <p>
+                The sky was still dark, stars clinging to the last
+                of the night. We had agreed to meet here—before
+                Fajr prayer—at the old mosque where generations had
+                come and gone, where time felt slower and intentions
+                clearer.
+            </p>
+
+            <p>
+                Since the erupt of unemployment, I had drawn a quiet
+                plan: to go to Somalia. Not alone, but with brothers—
+                Farhan, Yassin, and Omar. Men I trusted, whose lives,
+                like mine, had stalled in the waiting rooms of hardship.
+            </p>
+
+            <p>
+                Our bond was forged in shared frustration, but also
+                in hope. Together, we had decided: if opportunity
+                wouldn’t come to us, we would go in search of it.
+            </p>
+
+            <p>
+                The mosque air smelled of dust and old prayer mats.
+                We offered our prayer, quietly and with hearts heavy.
+                And then, as the first light began to rise, we stepped
+                outside, into the stillness of dawn.
+            </p>
+
+            <p>
+                My thoughts were ahead of my feet.
+            </p>
+
+            <p>
+                I was already on the road—far from Isiolo’s cracked
+                pavements, beyond the familiar dust. I saw the land
+                changing in my mind: dry plains stretching to the
+                horizon, border towns, foreign tongues.
+            </p>
+
+            <p>
+                And somewhere far ahead, Somalia—still unknown,
+                but pulling me like a quiet promise.
+            </p>
+
+            <p>
+                But first, I had to tell her.
+            </p>
+
+            <p>
+                My grandmother’s house wasn’t far—just a short walk.
+                Still, it felt like miles with the weight pressing
+                down on me.
+            </p>
+
+            <p>
+                I had pictured the moment: standing in her doorway,
+                the sun on my back, her eyes soft with concern as I
+                told her the truth—where I was going, and why.
+            </p>
+
+            <p>
+                But as I got closer, doubt crept in like a slow wind
+                curling around my ankles.
+            </p>
+
+            <p>
+                What if she didn’t understand?
+                What if she cried?
+                What if she looked at me with that quiet disappointment
+                that said more than words ever could?
+            </p>
+
+            <p>
+                My steps slowed.
+            </p>
+
+            <p>
+                I thought of her hands—thin, worn, trembling slightly
+                when they held mine. I remembered the kisses I gave her
+                the night before, the way she had closed her eyes and
+                held me just a little longer.
+            </p>
+
+            <p>
+                Did she know already, somehow?
+            </p>
+
+            <p>
+                I stopped at the corner of the street.
+                Her house was just in sight.
+            </p>
+
+            <p>
+                Still, I hesitated.
+            </p>
+
+            <p>
+                A war had broken out inside me—between the duty to
+                tell her and the urge to protect her from pain.
+                Between truth and escape. Between home and something
+                far more uncertain.
+            </p>
+
+            <p>
+                And in the end, I chose the road.
+            </p>
+
+            <p>
+                I turned away quietly, breath catching in my throat
+                as I walked into the fading light. Dust rose around
+                my shoes with every step. Behind me, her house slowly
+                disappeared from view.
+            </p>
+
+            <p>
+                Maybe one day, I would return—with stories, with
+                reasons, with the kind of strength she always
+                believed I had.
+            </p>
+
+            <p>
+                But that day, I chose silence—and the long road ahead.
+            </p>
+
+            <p>
+                We didn’t tell our families everything.
+            </p>
+
+            <p>
+                Farhan said we were “going north for a few days,”
+                but not how far. Omar left a note under his pillow.
+                Yassin said nothing at all—he just prayed, kissed
+                the Qur’an, and followed.
+            </p>
+
+            <p>
+                That was 2018. The year everything changed.
+            </p>
+
+            <p>
+                Before we left, I looked once more at the mosque
+                behind us. Its cracked walls had witnessed countless
+                prayers, departures, returns, promises and regrets.
+                I wondered whether the old building would remember
+                us when we were gone.
+            </p>
+
+            <p>
+                Farhan adjusted the strap of his bag and gave me a
+                tired smile. Omar checked what little food we carried,
+                while Yassin remained quiet, his eyes turned toward
+                the road.
+            </p>
+
+            <p>
+                None of us said that we were afraid.
+                We did not need to.
+            </p>
+
+            <p>
+                Fear had already joined us.
+            </p>
+
+            <p>
+                As we walked, I realized that leaving home was not
+                a single decision. It was a series of smaller decisions
+                made one after another—each step making the previous
+                step harder to undo.
+            </p>
+
+            <p>
+                By the time the mosque disappeared behind us,
+                the road had already become our answer.
+            </p>
+
+            <p class="end-preview">
+                — End of Preview —
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Karieson Creative Hub
+
+    <span>•</span>
+
+    Dustwalkers
+
+    <span>•</span>
+
+    All Rights Reserved
+
+</footer>
+
+</body>
+</html>
