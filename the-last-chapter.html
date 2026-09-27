@@ -71,6 +71,10 @@ header {
     border: 1px solid var(--border);
 }
 
+/* =========================
+   TITLE PAGE
+========================= */
+
 .title-page {
     min-height: 900px;
     display: flex;
@@ -122,6 +126,10 @@ header {
     display: block;
 }
 
+/* =========================
+   SECTION TITLES
+========================= */
+
 .section-title {
     text-align: center;
     color: var(--black);
@@ -135,6 +143,10 @@ header {
     background: var(--red);
     margin: 0 auto 55px;
 }
+
+/* =========================
+   DEDICATION
+========================= */
 
 .dedication-page {
     display: flex;
@@ -151,8 +163,11 @@ header {
     font-style: italic;
 }
 
-.author-note p,
-.chapter p {
+/* =========================
+   REFLECTION
+========================= */
+
+.reflection p {
     color: var(--black);
     font-size: 17px;
     line-height: 1.95;
@@ -160,28 +175,44 @@ header {
     margin-bottom: 25px;
 }
 
-.chapter-number {
+/* =========================
+   CHAPTER
+========================= */
+
+.chapter-page {
+    min-height: 900px;
+}
+
+.chapter-header {
     text-align: center;
+    margin-bottom: 45px;
+}
+
+.chapter-number {
     color: var(--red);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 3px;
+    text-transform: uppercase;
     margin-bottom: 12px;
 }
 
 .chapter-title {
-    text-align: center;
     color: var(--black);
     font-size: 28px;
-    margin-bottom: 18px;
+    margin: 0;
 }
 
-.chapter .red-line {
-    margin-bottom: 45px;
+.chapter-content p {
+    color: var(--black);
+    font-size: 17px;
+    line-height: 1.95;
+    text-align: justify;
+    margin-bottom: 25px;
 }
 
-.chapter p:first-of-type::first-letter {
+.drop-cap::first-letter {
     font-size: 55px;
     float: left;
     line-height: .8;
@@ -189,13 +220,9 @@ header {
     color: var(--red);
 }
 
-.end-preview {
-    text-align: center !important;
-    color: var(--red) !important;
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 50px;
-}
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: var(--black);
@@ -209,6 +236,82 @@ footer {
 footer span {
     color: var(--red);
 }
+/* =========================
+   AUTHOR'S NOTE
+========================= */
+
+.author-note {
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author-note .section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.author-note .red-line {
+    margin-bottom: 50px;
+}
+
+.author-note p {
+    max-width: 570px;
+    margin: 0 auto 25px;
+    color: var(--black);
+    font-size: 17px;
+    line-height: 1.95;
+    text-align: justify;
+}
+
+.author-note p:first-of-type::first-letter {
+    font-size: 48px;
+    float: left;
+    line-height: .8;
+    padding-right: 7px;
+    color: var(--red);
+}
+
+.author-note strong {
+    color: var(--black);
+    font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .author-note {
+        min-height: 700px;
+        padding: 55px 25px;
+    }
+
+    .author-note .section-title {
+        font-size: 25px;
+    }
+
+    .author-note .red-line {
+        margin-bottom: 40px;
+    }
+
+    .author-note p {
+        font-size: 16px;
+        line-height: 1.85;
+        margin-bottom: 22px;
+    }
+
+    .author-note p:first-of-type::first-letter {
+        font-size: 42px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
@@ -257,11 +360,16 @@ footer span {
         font-size: 25px;
     }
 
-    .author-note p,
-    .chapter p {
+    .reflection p,
+    .chapter-content p {
         font-size: 16px;
         line-height: 1.85;
     }
+
+    .chapter-page {
+        min-height: 700px;
+    }
+
 }
 
 </style>
@@ -289,7 +397,9 @@ footer span {
 
 <main class="book">
 
-    <!-- TITLE PAGE -->
+    <!-- ==================================================
+         TITLE PAGE
+    ================================================== -->
 
     <section class="page title-page">
 
@@ -313,7 +423,9 @@ footer span {
     </section>
 
 
-    <!-- DEDICATION -->
+    <!-- ==================================================
+         DEDICATION
+    ================================================== -->
 
     <section class="page dedication-page">
 
@@ -335,126 +447,196 @@ footer span {
     </section>
 
 
-    <!-- AUTHOR'S NOTE -->
+    <!-- ==================================================
+         REFLECTION
+    ================================================== -->
 
-    <section class="page author-note">
+    <section class="page reflection">
 
         <h2 class="section-title">
-            Author's Note
+            Reflection
         </h2>
 
         <div class="red-line"></div>
 
         <p>
-            The Last Chapter is a story about endings, choices and the
-            unexpected possibilities that can appear when one part of
-            life comes to an end.
+            Sometimes the past does not disappear simply because we have
+            stopped speaking about it. We may continue with our lives,
+            arrange our days carefully and convince ourselves that certain
+            memories belong to another time.
         </p>
 
         <p>
-            Sometimes we believe that an ending means everything is over.
-            But life rarely follows the endings we imagine for ourselves.
+            Yet a single unexpected moment can bring everything back.
+            For Zabiba, the mysterious letter is more than an envelope.
+            It is a reminder of something she believed she had left behind.
         </p>
 
         <p>
-            This story explores the consequences of choices, the weight
-            of hidden truths and the courage required to begin again.
+            The handwriting makes the mystery even more personal. Ten
+            years have passed, but the past still has a way of finding its
+            way back to the present.
         </p>
 
         <p>
-            It is a reminder that closing one chapter does not necessarily
-            mean closing the entire book.
+            The chapter also raises an important question: can we truly
+            begin again without confronting what happened before?
+        </p>
+
+        <p>
+            Zabiba has tried very hard to forget. But forgetting and
+            healing are not always the same thing. Sometimes the things
+            we avoid are the very things we eventually have to face.
+        </p>
+
+        <p>
+            The letter has arrived, and with it comes a choice. She can
+            walk away from the past, or she can open the door to answers
+            she may not be ready to hear.
+        </p>
+
+        <p>
+            Perhaps every ending leaves behind a question. And sometimes
+            that question becomes the beginning of another story.
         </p>
 
     </section>
+    <!-- ==================================================
+     AUTHOR'S NOTE
+================================================== -->
+
+<section class="page author-note">
+
+    <h2 class="section-title">
+        Author's Note
+    </h2>
+
+    <div class="red-line"></div>
+
+    <p>
+        <strong>The Last Chapter</strong> is a work of fiction. The
+        characters, events, conversations and circumstances presented
+        in this story are created for literary purposes.
+    </p>
+
+    <p>
+        Any resemblance to actual people, living or dead, or to real
+        events is purely coincidental unless specifically stated by the
+        author.
+    </p>
+
+    <p>
+        The story explores themes of choices, memories, secrets,
+        consequences and the possibility of beginning again. While
+        the situations in the story are fictional, the emotions and
+        questions behind them are drawn from the experiences that make
+        stories meaningful to readers.
+    </p>
+
+    <p>
+        Readers are invited to experience the story as fiction and to
+        interpret its characters and events in their own way.
+    </p>
+
+    <p>
+        This work is an original creative work by
+        <strong>Abdullahi Sheikh Aden (Karieson)</strong>.
+        All rights reserved.
+    </p>
+
+</section>
 
 
-    <!-- CHAPTER ONE -->
+    <!-- ==================================================
+         CHAPTER ONE
+    ================================================== -->
 
-    <section class="page chapter">
+    <section class="page chapter-page">
 
-        <div class="chapter-number">
-            CHAPTER ONE
+        <div class="chapter-header">
+
+            <div class="chapter-number">
+                Chapter One
+            </div>
+
+            <h1 class="chapter-title">
+                The End
+            </h1>
+
         </div>
 
-        <h2 class="chapter-title">
-            The End
-        </h2>
+        <div class="chapter-content">
 
-        <div class="red-line"></div>
+            <p class="drop-cap">
+                The letter was waiting on the table when Zabiba returned home.
+            </p>
 
-        <p>
-            The letter was waiting on the table when he returned home.
-        </p>
+            <p>
+                She stopped at the doorway.
+            </p>
 
-        <p>
-            He knew immediately that something was wrong.
-        </p>
+            <p>
+                For several seconds, she did not move.
+            </p>
 
-        <p>
-            There was no name written on the envelope. Only his address,
-            carefully written in handwriting he had not seen for years.
-        </p>
+            <p>
+                The room looked exactly as she had left it that morning. Her
+                books were still arranged on the small table beside the window.
+                A blue pen lay across an open notebook. The curtains moved
+                gently with the evening breeze.
+            </p>
 
-        <p>
-            He stood beside the table without touching it.
-        </p>
+            <p>
+                Everything appeared ordinary.
+            </p>
 
-        <p>
-            For a moment, he considered walking away.
-        </p>
+            <p>
+                Except for the envelope.
+            </p>
 
-        <p>
-            Some memories were better left buried.
-        </p>
+            <p>
+                It was lying alone on the table.
+            </p>
 
-        <p>
-            But curiosity was stronger than fear.
-        </p>
+            <p>
+                There was no stamp.
+            </p>
 
-        <p>
-            He opened the envelope.
-        </p>
+            <p>
+                No sender's name.
+            </p>
 
-        <p>
-            There was only one sentence inside.
-        </p>
+            <p>
+                Only her address, carefully written in handwriting she had not
+                seen for ten years.
+            </p>
 
-        <p>
-            <em>"You thought the story ended ten years ago."</em>
-        </p>
+            <p>
+                Zabiba felt something tighten inside her chest.
+            </p>
 
-        <p>
-            He read the sentence again.
-        </p>
+            <p>
+                She knew that handwriting.
+            </p>
 
-        <p>
-            Then he looked toward the window.
-        </p>
+            <p>
+                She had tried very hard to forget it.
+            </p>
 
-        <p>
-            Outside, the evening was beginning to fall.
-        </p>
-
-        <p>
-            For the first time in ten years, he understood that the past
-            had not forgotten him.
-        </p>
-
-        <p class="end-preview">
-            — End of Preview —
-        </p>
+        </div>
 
     </section>
 
 </main>
 
 <footer>
+
     Karieson Creative Hub
     <span>•</span>
     The Last Chapter
     <span>•</span>
     All Rights Reserved
+
 </footer>
 
 </body>
