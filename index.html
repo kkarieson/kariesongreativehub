@@ -1938,6 +1938,226 @@
 
 }
     
+
+    /* =========================
+       DEVICE / BROWSER DARK MODE
+       Main page: black background,
+       white text
+    ========================= */
+
+    @media (prefers-color-scheme: dark) {
+
+      body {
+        background: #080808;
+        color: #ffffff;
+      }
+
+      /* Main page sections */
+      .hero,
+      .hub,
+      .research-topic-content,
+      .topic-details,
+      .ebooks,
+      .research-item,
+      .index-novel-detail,
+      .grant-card,
+      .request-form,
+      .novel-category,
+      .category-toggle,
+      .novel-text-link {
+        background: #080808;
+        color: #ffffff;
+      }
+
+      .grants,
+      .search-section {
+        background: #111111;
+      }
+
+      /* Main text */
+      .hero,
+      .hero h1,
+      .main-section-heading h2,
+      .section-title h2,
+      .section-title h3,
+      .research-accordion summary,
+      .research-topic,
+      .category-toggle,
+      .novel-text-link,
+      .grant-card h3,
+      .request-form h2,
+      .form-group label,
+      .ebooks,
+      .index-detail-content,
+      .index-detail-synopsis p {
+        color: #ffffff;
+      }
+
+      /* Secondary text */
+      .hero p,
+      .main-section-heading p,
+      .section-title p,
+      .topic-synopsis,
+      .research-topic-content p,
+      .grant-card p,
+      .ebooks .main-section-heading p,
+      .index-detail-author,
+      .no-results {
+        color: #bbbbbb;
+      }
+
+      /* Hero hard-coded light colors */
+      .hero {
+        background: #080808;
+        color: #ffffff;
+      }
+
+      .hero h1 {
+        color: #ffffff;
+      }
+
+      .hero p {
+        color: #bbbbbb;
+      }
+
+      /* Search */
+      .search-section {
+        border-color: #333333;
+      }
+
+      .search-container input {
+        background: #111111;
+        color: #ffffff;
+        border-color: #444444;
+      }
+
+      .search-container input::placeholder {
+        color: #999999;
+      }
+
+      /* Research navigation */
+      .research-links {
+        border-color: #333333;
+      }
+
+      .field-link {
+        color: #ffffff;
+      }
+
+      /* Research cards / accordions */
+      .research-item {
+        border-top-color: var(--red);
+      }
+
+      .research-accordion {
+        border-color: #333333;
+      }
+
+      .research-accordion summary {
+        color: #ffffff;
+      }
+
+      .research-accordion[open] summary {
+        color: var(--red);
+      }
+
+      .research-topic,
+      .research-topic-content {
+        background: #080808;
+        color: #ffffff;
+        border-color: #333333;
+      }
+
+      /* Grants */
+      .grant-card {
+        border-color: #333333;
+      }
+
+      /* Forms */
+      .request-form {
+        border-color: #333333;
+        border-top-color: var(--red);
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        background: #111111;
+        color: #ffffff;
+        border-color: #444444;
+      }
+
+      /* eBooks */
+      .category-list {
+        border-color: #333333;
+      }
+
+      .novel-category {
+        border-color: #333333;
+      }
+
+      .category-books {
+        background: #111111;
+        border-color: #333333;
+      }
+
+      .novel-text-link {
+        background: #080808;
+        color: #ffffff;
+        border-color: #333333;
+      }
+
+      .novel-text-link:hover {
+        background: #111111;
+        color: var(--red);
+      }
+
+      .index-novel-detail {
+        border-color: #333333;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45);
+      }
+
+      .index-detail-close {
+        color: #bbbbbb;
+      }
+
+      .index-detail-synopsis {
+        color: #bbbbbb;
+      }
+
+      /* Keep brand colors */
+      .hero h1 span,
+      .research-item h3,
+      .topic-details h4,
+      .research-topic-content h4,
+      .index-detail-content h3,
+      .index-detail-price {
+        color: var(--red);
+      }
+
+      /* Header, menu and footer remain black */
+      header,
+      .side-menu,
+      footer {
+        background: #080808;
+      }
+
+      .side-menu a,
+      .close-menu,
+      footer {
+        color: #ffffff;
+      }
+
+      /* Borders */
+      .side-menu a {
+        border-bottom-color: #333333;
+      }
+
+      footer {
+        border-top-color: #333333;
+      }
+    }
+
   </style>
 </head>
 
