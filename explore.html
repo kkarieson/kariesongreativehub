@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
   <meta name="google-site-verification" content="1C5b9aQrNRjHjhUP-AB1nxivBK8e715AzvrFyjwY67A" />
 <title>Explore Research Topics | Karieson Creative Hub</title>
 <meta name="description" content="Explore research topics for Diploma, Degree and Master's programmes across education, technology, agriculture, business, health, economics, social sciences and more at Karieson Creative Hub.">
@@ -49,369 +50,39 @@
 </script>
 
 <style>
-  :root{
-    --corporate-red:#c1121f;
-    --black:#111111;
-    --black-2222:#222222;
-    --white:#ffffff;
-    --text:#111111;
-    --muted:#555555;
-    --border:#dddddd;
-  }
-
+  :root{--corporate-red:#c1121f;--black:#111111;--black-2222:#222222;--white:#ffffff;--text:#111111;--muted:#555555;--border:#dddddd}
   *{box-sizing:border-box}
-
   html{scroll-behavior:smooth}
-
-  body{
-    margin:0;
-    background:var(--white);
-    color:var(--text);
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:16px;
-    line-height:1.6;
-  }
-header{
-  padding:28px 6vw 42px;
-  background:var(--black);
-  border-bottom:1px solid var(--border);
-}
-
-.header-brand{
-  display:block;
-}
-
-.header-logo{
-  display:block;
-  width:110px;
-  height:auto;
-  object-fit:contain;
-  margin:0;
-}
-
-.header-content{
-  text-align:center;
-  padding-top:35px;
-}
-
-h1{
-  margin:0 0 10px;
-  color:var(--corporate-red);
-  font-size:clamp(30px,4vw,48px);
-  font-weight:800;
-  line-height:1.15;
-  letter-spacing:-.5px;
-}
-
-header p{
-  margin:0 auto;
-  max-width:780px;
-  color:var(--muted);
-  line-height:1.75;
-}
-  
-
-  main{
-    width:min(1180px,88vw);
-    margin:34px auto 70px;
-  }
-
-  .filters{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-    margin-bottom:34px;
-  }
-
-  label{
-    display:block;
-    margin-bottom:9px;
-    color:var(--black);
-    font-weight:800;
-  }
-
-  select{
-    width:100%;
-    min-height:52px;
-    padding:13px 16px;
-    border:1px solid #bdbdbd;
-    border-radius:0;
-    outline:none;
-    background:var(--white);
-    color:var(--black);
-    font:inherit;
-    cursor:pointer;
-    transition:border-color .2s ease,box-shadow .2s ease;
-  }
-
-  select:focus{
-    border-color:var(--corporate-red);
-    box-shadow:0 0 0 2px rgba(193,18,31,.12);
-  }
-
-  select:disabled{
-    background:#f7f7f7;
-    color:#777;
-    cursor:not-allowed;
-  }
-
-  select:invalid{color:#666}
-
-  #results{
-    border-top:1px solid var(--border);
-  }
-
-  .programme{
-    border-bottom:1px solid var(--border);
-  }
-
-  .programme-title{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    width:100%;
-    padding:22px 4px;
-    color:var(--black);
-    cursor:pointer;
-    font-size:20px;
-    font-weight:800;
-    line-height:1.4;
-  }
-
-  .programme-title:hover{
-    color:var(--corporate-red);
-  }
-.sign{
-  flex:0 0 auto;
-  width:28px;
-  color:var(--corporate-red);
-  font-size:30px;
-  font-weight:400;
-  line-height:1;
-  text-align:center;
-}
-  
-
-  .topic-list{
-    display:none;
-    padding:0 4px 25px;
-  }
-
-  .programme.open .topic-list{display:block}
-
-  .topic{
-    padding:17px 0;
-    border-top:1px solid #eeeeee;
-  }
-
-  .topic-link{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    width:100%;
-    color:var(--black);
-    text-decoration:none;
-    font-size:17px;
-    font-weight:800;
-    line-height:1.5;
-    cursor:pointer;
-    transition:color .2s ease;
-  }
-
-  .topic-link:hover{
-    color:var(--corporate-red);
-    text-decoration:underline;
-    text-decoration-thickness:1px;
-    text-underline-offset:3px;
-  }
-.topic-link{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  width:100%;
-}
-
-.topic-link:after{
-  content:"+";
-  margin-left:auto;
-  color:var(--corporate-red);
-  font-size:30px;
-  font-weight:400;
-  line-height:1;
-}
-
-.topic.expanded .topic-link:after{
-  content:"−";
-}
-
-  .topic-details{
-    display:none;
-    margin-top:20px;
-  }
-
-  .topic.expanded .topic-details{
-    display:grid;
-    grid-template-columns:minmax(220px,320px) 1fr;
-    gap:28px;
-    align-items:start;
-  }
-
-  .cover{
-  display:block;
-  width:100%;
-  aspect-ratio:210/297;
-  object-fit:cover;
-  border:1px solid #d5d5d5;
-  background:#f5f5f5;
-}
-.synopsis{
-  color:#444;
-  font-size:1rem;
-  line-height:1.8;
-  text-align:left;
-}
-
-.synopsis h3{
-  margin:0 0 11px;
-  color:var(--black);
-  font-size:1.5rem;
-  font-weight:800;
-  line-height:1.3;
-  text-align:left;
-}
-
-.synopsis p{
-  margin:0 0 14px;
-}
-
-.synopsis strong{
-  color:var(--black);
-}
-
-
-.actions{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:22px;
-}
-
-.btn{
-  display:inline-block;
-  padding:11px 20px;
-  border-radius:0;
-  text-decoration:none;
-  font-size:15px;
-  font-weight:800;
-  line-height:1.3;
-  border:1px solid var(--corporate-red);
-  transition:background .2s ease,color .2s ease,border-color .2s ease;
-}
-
-  .view{
-    color:var(--corporate-red);
-    background:var(--white);
-  }
-
-  .view:hover{
-    color:var(--white);
-    background:var(--corporate-red);
-  }
-
-  .buy{
-    color:var(--white);
-    background:var(--corporate-red);
-  }
-
-  .buy:hover{
-    color:var(--white);
-    background:var(--black);
-    border-color:var(--black);
-  }
-
-  .empty{
-    padding:48px 4px;
-    color:#666;
-    text-align:center;
-  }
-
-  footer{
-    margin-top:70px;
-    padding:24px 6vw;
-    background:var(--black-2222);
-    color:var(--white);
-    text-align:center;
-    font-size:14px;
-    font-weight:600;
-  }
-
-  @media(max-width:700px){
-    header{padding:36px 6vw 24px}
-
-    main{
-      width:88vw;
-      margin-top:28px;
-    }
-
-    .filters{
-      grid-template-columns:1fr;
-      gap:18px;
-    }
-
-    .programme-title{
-      font-size:18px;
-    }
-
-    .topic.expanded .topic-details{
-      grid-template-columns:1fr;
-    }
-
-    .cover{
-      max-width:320px;
-    }
-
-    .synopsis h3{
-      font-size:21px;
-    }
-
-    .actions{
-      width:100%;
-    }
-
-    .btn{
-      text-align:center;
-    }
-  }
-
-/* Automatic device/browser dark theme */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --white:#000000; --text:#fff; --muted:#b8b8b8;
-    --border:#383838; --black:#080808; --black-2222:#080808;
-  }
-  body { background:#000; color:#fff; }
-  header { background:#080808; border-bottom-color:#383838; }
-  header p { color:#b8b8b8; }
-  label, .programme-title, .topic-link, .synopsis h3, .synopsis strong { color:#fff; }
-  select { background:#111; color:#fff; border-color:#555; }
-  select option { background:#111; color:#fff; }
-  select:disabled { background:#171717; color:#888; }
-  #results, .programme, .topic { border-color:#383838; }
-  .topic { border-top-color:#2e2e2e; }
-  .synopsis { color:#c2c2c2; }
-  .cover { background:#1a1a1a; border-color:#444; }
-  .view { background:#000; color:#fff; }
-  .buy { color:#fff; }
-  .buy:hover { background:#fff; color:#000; border-color:#fff; }
-  .empty { color:#aaa; }
-  footer { background:#080808; color:#aaa; }
-}
-
+  body{margin:0;background:var(--white);color:var(--text);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6}
+  header{padding:28px 6vw 42px;background:var(--black);border-bottom:1px solid var(--border)}
+  .header-brand{display:block}.header-logo{display:block;width:110px;height:auto;object-fit:contain;margin:0}
+  .header-content{text-align:center;padding-top:35px}
+  h1{margin:0 0 10px;color:var(--corporate-red);font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.15;letter-spacing:-.5px}
+  header p{margin:0 auto;max-width:780px;color:var(--muted);line-height:1.75}
+  main{width:min(1180px,88vw);margin:34px auto 70px}
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:34px}
+  label{display:block;margin-bottom:9px;color:var(--black);font-weight:800}
+  select{width:100%;min-height:52px;padding:13px 16px;border:1px solid #bdbdbd;border-radius:0;outline:none;background:var(--white);color:var(--black);font:inherit;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease}
+  select:focus{border-color:var(--corporate-red);box-shadow:0 0 0 2px rgba(193,18,31,.12)}
+  select:disabled{background:#f7f7f7;color:#777;cursor:not-allowed}
+  #results{border-top:1px solid var(--border)}
+  .programme{border-bottom:1px solid var(--border)}
+  .programme-title{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:22px 4px;color:var(--black);cursor:pointer;font-size:20px;font-weight:800;line-height:1.4}
+  .programme-title:hover{color:var(--corporate-red)}.sign{flex:0 0 auto;width:28px;color:var(--corporate-red);font-size:30px;font-weight:400;line-height:1;text-align:center}
+  .topic-list{display:none;padding:0 4px 25px}.programme.open .topic-list{display:block}
+  .topic{padding:17px 0;border-top:1px solid #eeeeee}.topic-link{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;color:var(--black);text-decoration:none;font-size:17px;font-weight:800;line-height:1.5;cursor:pointer;transition:color .2s ease}
+  .topic-link:hover{color:var(--corporate-red);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.topic-link:after{content:"+";margin-left:auto;color:var(--corporate-red);font-size:30px;font-weight:400;line-height:1}.topic.expanded .topic-link:after{content:"−"}
+  .topic-details{display:none;margin-top:20px}.topic.expanded .topic-details{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:28px;align-items:start}
+  .cover,.detailed-cover{display:block;width:100%;aspect-ratio:210/297;object-fit:cover;border:1px solid #d5d5d5;background:#f5f5f5}
+  .synopsis,.detailed-copy{color:#444;font-size:1rem;line-height:1.8;text-align:left}.synopsis h3,.detailed-copy h3{margin:0 0 11px;color:var(--black);font-size:1.5rem;font-weight:800;line-height:1.3;text-align:left}.synopsis p,.detailed-copy p{margin:0 0 14px}.synopsis strong,.detailed-copy strong{color:var(--black)}
+  .actions{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px}.btn,.detailed-buy{display:inline-block;padding:11px 20px;border-radius:0;text-decoration:none;font-size:15px;font-weight:800;line-height:1.3;border:1px solid var(--corporate-red);transition:background .2s ease,color .2s ease,border-color .2s ease}
+  .view{color:var(--corporate-red);background:var(--white)}.view:hover{color:var(--white);background:var(--corporate-red)}.buy,.detailed-buy{color:var(--white);background:var(--corporate-red)}.buy:hover,.detailed-buy:hover{color:var(--white);background:var(--black);border-color:var(--black)}
+  .empty{padding:48px 4px;color:#666;text-align:center}
+  .detailed-library{margin:28px 0 10px;padding:0 4px;border-top:1px solid var(--border)}.detailed-heading{padding:24px 0 14px;color:var(--black);font-size:22px;font-weight:800}.detailed-card{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:28px;padding:24px 0;border-top:1px solid #eeeeee}.detailed-copy{display:flex;flex-direction:column}.detailed-copy h3{margin-bottom:12px}.detailed-buy{align-self:flex-start;margin-top:auto}.detailed-cover{max-width:260px}
+  footer{margin-top:70px;padding:24px 6vw;background:var(--black-2222);color:var(--white);text-align:center;font-size:14px;font-weight:600}
+  @media(max-width:700px){header{padding:36px 6vw 24px}main{width:88vw;margin-top:28px}.filters{grid-template-columns:1fr;gap:18px}.programme-title{font-size:18px}.topic.expanded .topic-details,.detailed-card{grid-template-columns:1fr}.cover,.detailed-cover{max-width:320px}.synopsis h3,.detailed-copy h3{font-size:21px}.actions{width:100%}.btn,.detailed-buy{text-align:center}}
+  @media(prefers-color-scheme:dark){:root{--white:#000000;--text:#fff;--muted:#b8b8b8;--border:#383838;--black:#080808;--black-2222:#080808}body{background:#000;color:#fff}header{background:#080808;border-bottom-color:#383838}header p{color:#b8b8b8}label,.programme-title,.topic-link,.synopsis h3,.synopsis strong,.detailed-copy h3,.detailed-copy strong{color:#fff}select{background:#111;color:#fff;border-color:#555}select option{background:#111;color:#fff}select:disabled{background:#171717;color:#888}#results,.programme,.topic,.detailed-library,.detailed-card{border-color:#383838}.topic,.detailed-card{border-top-color:#2e2e2e}.synopsis,.detailed-copy{color:#c2c2c2}.cover,.detailed-cover{background:#1a1a1a;border-color:#444}.view{background:#000;color:#fff}.buy,.detailed-buy{color:#fff}.buy:hover,.detailed-buy:hover{background:#fff;color:#000;border-color:#fff}.empty{color:#aaa}footer{background:#080808;color:#aaa}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -720,6 +391,303 @@ const data = {
   }
 };
 
+/* Detailed research entries merged from the research library.
+   Existing data above is preserved unchanged. */
+const detailedResearch = {
+  "education": [
+    {
+      "title": "The Impact of Educational Technology on Student Performance",
+      "image": "educational-technology.png",
+      "alt": "Cover of The Impact of Educational Technology on Student Performance",
+      "synopsis": "This research examines how educational technology\n          influences student performance, engagement and\n          learning outcomes. It explores the use of digital\n          learning platforms, interactive learning tools and\n          other technologies in modern education. The study\n          also considers challenges related to access,\n          teacher preparedness and effective technology\n          integration.",
+      "href": "research/educational-technology.html"
+    },
+    {
+      "title": "Challenges Facing Access to Quality Education",
+      "image": "quality-education.png",
+      "alt": "Cover of Challenges Facing Access to Quality Education",
+      "synopsis": "This research explores the major challenges that\n          affect access to quality education. It examines\n          factors such as poverty, inadequate learning\n          facilities, geographical barriers, limited\n          educational resources and social inequalities.\n          The study also considers practical approaches\n          for improving educational access and creating\n          more inclusive learning opportunities.",
+      "href": "research/quality-education.html"
+    },
+    {
+      "title": "Effects of Teacher Training on Academic Performance",
+      "image": "teacher-training.png",
+      "alt": "Cover of Effects of Teacher Training on Academic Performance",
+      "synopsis": "This research investigates how teacher training\n          and professional development influence teaching\n          effectiveness and student academic performance.\n          It examines teaching methods, classroom management,\n          professional skills and the importance of continuous\n          teacher development.",
+      "href": "research/teacher-training.html"
+    },
+    {
+      "title": "Digital Learning and Student Engagement",
+      "image": "student-engagement.png",
+      "alt": "Cover of Digital Learning and Student Engagement",
+      "synopsis": "This research examines how digital learning tools\n          and online educational platforms influence student\n          participation and engagement. It explores the\n          benefits and challenges of digital learning and\n          considers how technology can support meaningful\n          educational experiences.",
+      "href": "research/digital-learning.html"
+    }
+  ],
+  "technology": [
+    {
+      "title": "Artificial Intelligence and Business Development",
+      "image": "ai-business-development.png",
+      "alt": "Cover of Artificial Intelligence and Business Development",
+      "synopsis": "This research examines the role of artificial\n          intelligence in improving business operations,\n          decision-making, innovation and competitiveness.\n          It explores opportunities and challenges associated\n          with the adoption of AI in modern businesses.",
+      "href": "research/artificial-intelligence.html"
+    },
+    {
+      "title": "The Impact of ICT on Modern Education",
+      "image": "ict-modern-education.png",
+      "alt": "Cover of The Impact of ICT on Modern Education",
+      "synopsis": "This research explores how information and\n          communication technologies are transforming\n          teaching and learning. It examines digital tools,\n          access to information and the challenges involved\n          in integrating ICT into education.",
+      "href": "research/ict-education.html"
+    },
+    {
+      "title": "Cybersecurity Awareness Among Young People",
+      "image": "cybersecurity.png",
+      "alt": "Cover of Cybersecurity Awareness Among Young People",
+      "synopsis": "This study examines awareness of online security,\n          privacy and responsible digital behaviour among\n          young people. It explores common cybersecurity\n          challenges and approaches for improving awareness\n          of safe and responsible digital practices.",
+      "href": "research/cybersecurity-awareness.html"
+    },
+    {
+      "title": "Digital Transformation in Small Businesses",
+      "image": "research-covers/digital-transformation.png",
+      "alt": "Cover of Digital Transformation in Small Businesses",
+      "synopsis": "This research investigates how small businesses\n          can use digital technologies to improve efficiency,\n          customer service, marketing and business growth.\n          It considers opportunities for businesses to adapt\n          to changing digital markets.",
+      "href": "research/digital-transformation.html"
+    }
+  ],
+  "agriculture": [
+    {
+      "title": "Climate-Smart Agriculture and Food Security",
+      "image": "food-security.png",
+      "alt": "Cover of Climate-Smart Agriculture and Food Security",
+      "synopsis": "This research examines climate-smart agricultural\n          practices and their potential contribution to food\n          security, resilience and sustainable agricultural\n          production. It explores approaches that can help\n          farmers respond to changing climate conditions.",
+      "href": "research/climate-smart-agriculture.html"
+    }
+  ],
+  "health": [
+    {
+      "title": "Access to Healthcare Services in Rural Communities",
+      "image": "research-covers/rural-healthcare.png",
+      "alt": "Cover of Access to Healthcare Services in Rural Communities",
+      "synopsis": "This research examines factors affecting access\n          to healthcare services in rural communities,\n          including distance, availability of facilities,\n          resources and healthcare personnel. It explores\n          possible approaches for improving access to\n          essential healthcare services.",
+      "href": "research/rural-healthcare.html"
+    },
+    {
+      "title": "Community Health and Disease Prevention",
+      "image": "research-covers/community-health.png",
+      "alt": "Cover of Community Health and Disease Prevention",
+      "synopsis": "This research explores community-based approaches\n          to health promotion and disease prevention. It\n          examines the role of health awareness, preventive\n          practices and community participation in improving\n          public health outcomes.",
+      "href": "research/community-health.html"
+    },
+    {
+      "title": "Nutrition and Public Health",
+      "image": "research-covers/nutrition-public-health.png",
+      "alt": "Cover of Nutrition and Public Health",
+      "synopsis": "This research examines the relationship between\n          nutrition, healthy lifestyles and public health.\n          It considers factors that influence community\n          nutrition outcomes and explores approaches for\n          supporting healthier communities.",
+      "href": "research/nutrition-public-health.html"
+    },
+    {
+      "title": "Digital Technology in Healthcare Delivery",
+      "image": "research-covers/digital-healthcare.png",
+      "alt": "Cover of Digital Technology in Healthcare Delivery",
+      "synopsis": "This study explores how digital technologies can\n          support healthcare delivery, communication,\n          information management and access to services.\n          It considers the potential benefits and challenges\n          of digital solutions in healthcare.",
+      "href": "research/digital-healthcare.html"
+    }
+  ],
+  "social": [
+    {
+      "title": "Youth Unemployment and Community Development",
+      "image": "community-development.png",
+      "alt": "Cover of Youth Unemployment and Community Development",
+      "synopsis": "This research examines the relationship between\n          youth unemployment, livelihoods and community\n          development. It explores approaches for expanding\n          employment opportunities and supporting young\n          people to participate in community development.",
+      "href": "research/youth-unemployment.html"
+    },
+    {
+      "title": "Poverty and Social Development",
+      "image": "poverty-social-development.png",
+      "alt": "Cover of Poverty and Social Development",
+      "synopsis": "This research explores the causes and effects of\n          poverty and examines strategies that can contribute\n          to inclusive social and economic development. It\n          considers factors that influence household and\n          community wellbeing.",
+      "href": "research/poverty-social-development.html"
+    },
+    {
+      "title": "Gender and Community Participation",
+      "image": "community-participation.png",
+      "alt": "Cover of Gender and Community Participation",
+      "synopsis": "This research examines participation in community\n          development and considers factors that influence\n          inclusive involvement in local decision-making,\n          community programmes and development activities.",
+      "href": "research/gender-community.html"
+    },
+    {
+      "title": "Social Media and Youth Behaviour",
+      "image": "youth-behaviour.png",
+      "alt": "Cover of Social Media and Youth Behaviour",
+      "synopsis": "This study examines how social media use can\n          influence communication, interaction and behaviour\n          among young people. It considers both opportunities\n          and challenges associated with social media use.",
+      "href": "research/social-media-youth.html"
+    }
+  ],
+  "economics": [
+    {
+      "title": "Youth Unemployment and Economic Growth",
+      "image": "youth-unemployment.png",
+      "alt": "Cover of Youth Unemployment and Economic Growth",
+      "synopsis": "This research examines how youth unemployment\n          affects economic growth and explores policies and\n          opportunities that can support youth employment,\n          entrepreneurship and economic participation.",
+      "href": "research/youth-economic-growth.html"
+    },
+    {
+      "title": "Financial Inclusion and Poverty Reduction",
+      "image": "poverty-reduction.png",
+      "alt": "Cover of Financial Inclusion and Poverty Reduction",
+      "synopsis": "This research explores how access to financial\n          services can support household economic\n          opportunities, entrepreneurship and poverty\n          reduction. It considers the role of financial\n          inclusion in strengthening economic participation.",
+      "href": "research/financial-inclusion.html"
+    },
+    {
+      "title": "Small Businesses and Economic Development",
+      "image": "small-businesses-development.png",
+      "alt": "Cover of Small Businesses and Economic Development",
+      "synopsis": "This research examines the contribution of small\n          businesses to employment, household income,\n          innovation and local economic development. It\n          explores factors that can influence small-business\n          growth and sustainability.",
+      "href": "research/small-businesses.html"
+    },
+    {
+      "title": "Inflation and Household Welfare",
+      "image": "inflation-household.png",
+      "alt": "Cover of Inflation and Household Welfare",
+      "synopsis": "This research examines how changes in prices can\n          affect household purchasing power, consumption\n          patterns and economic wellbeing. It considers how\n          inflation can influence different household needs\n          and economic decisions.",
+      "href": "research/inflation-household.html"
+    }
+  ],
+  "political": [
+    {
+      "title": "Youth Participation in Democratic Processes",
+      "image": "research-covers/youth-democracy.png",
+      "alt": "Cover of Youth Participation in Democratic Processes",
+      "synopsis": "This research examines the participation of young\n          people in democratic processes and explores factors\n          that influence civic engagement, political awareness\n          and participation in public affairs.",
+      "href": "research/youth-democracy.html"
+    },
+    {
+      "title": "Good Governance and Public Service Delivery",
+      "image": "research-covers/good-governance.png",
+      "alt": "Cover of Good Governance and Public Service Delivery",
+      "synopsis": "This research examines principles of good governance\n          and their relationship with effective, accountable\n          and responsive public service delivery. It explores\n          factors that can contribute to better governance\n          and improved public services.",
+      "href": "research/good-governance.html"
+    },
+    {
+      "title": "The Role of Elections in Democratic Development",
+      "image": "research-covers/elections-democracy.png",
+      "alt": "Cover of The Role of Elections in Democratic Development",
+      "synopsis": "This study examines the importance of elections\n          in democratic development, political participation\n          and representation. It considers how credible\n          electoral processes can contribute to democratic\n          institutions and public participation.",
+      "href": "research/elections-democracy.html"
+    },
+    {
+      "title": "Political Leadership and Community Development",
+      "image": "research-covers/political-leadership.png",
+      "alt": "Cover of Political Leadership and Community Development",
+      "synopsis": "This research explores the relationship between\n          political leadership, community priorities and\n          local development. It examines how leadership can\n          influence community programmes and development\n          outcomes.",
+      "href": "research/political-leadership.html"
+    }
+  ],
+  "environment": [
+    {
+      "title": "Climate Change and Community Livelihoods",
+      "image": "research-covers/climate-livelihoods.png",
+      "alt": "Cover of Climate Change and Community Livelihoods",
+      "synopsis": "This research examines how climate change can\n          affect community livelihoods and explores approaches\n          for strengthening resilience, adaptation and\n          sustainable development in vulnerable communities.",
+      "href": "research/climate-livelihoods.html"
+    },
+    {
+      "title": "Water Resource Management and Sustainability",
+      "image": "research-covers/water-management.png",
+      "alt": "Cover of Water Resource Management and Sustainability",
+      "synopsis": "This research explores sustainable approaches to\n          managing water resources and the importance of\n          responsible water use for communities, agriculture\n          and ecosystems.",
+      "href": "research/water-management.html"
+    },
+    {
+      "title": "Drought and Environmental Conservation",
+      "image": "research-covers/drought-conservation.png",
+      "alt": "Cover of Drought and Environmental Conservation",
+      "synopsis": "This research examines drought-related environmental\n          challenges and explores conservation approaches\n          that can support ecosystem resilience, sustainable\n          resource use and community adaptation.",
+      "href": "research/drought-conservation.html"
+    },
+    {
+      "title": "Waste Management and Environmental Protection",
+      "image": "research-covers/waste-management.png",
+      "alt": "Cover of Waste Management and Environmental Protection",
+      "synopsis": "This research examines waste management practices\n          and their role in protecting the environment and\n          promoting healthier communities. It considers\n          approaches for improving waste handling and\n          environmental awareness.",
+      "href": "research/waste-management.html"
+    }
+  ],
+  "business": [
+    {
+      "title": "Youth Entrepreneurship and Job Creation",
+      "image": "research-covers/youth-entrepreneurship.png",
+      "alt": "Cover of Youth Entrepreneurship and Job Creation",
+      "synopsis": "This research explores how youth entrepreneurship\n          can contribute to employment creation, innovation,\n          income generation and local economic development.\n          It examines opportunities and challenges affecting\n          young entrepreneurs.",
+      "href": "research/youth-entrepreneurship.html"
+    },
+    {
+      "title": "Marketing Strategies for Small Businesses",
+      "image": "research-covers/small-business-marketing.png",
+      "alt": "Cover of Marketing Strategies for Small Businesses",
+      "synopsis": "This research examines marketing strategies that\n          small businesses can use to attract customers,\n          improve visibility and strengthen competitiveness.\n          It considers traditional and digital approaches\n          to reaching target customers.",
+      "href": "research/small-business-marketing.html"
+    },
+    {
+      "title": "Innovation and Business Growth",
+      "image": "research-covers/business-innovation.png",
+      "alt": "Cover of Innovation and Business Growth",
+      "synopsis": "This study examines how innovation can help\n          businesses improve products, services and processes.\n          It explores how innovative approaches can support\n          competitiveness, efficiency and long-term growth.",
+      "href": "research/business-innovation.html"
+    },
+    {
+      "title": "Small and Medium Enterprises Development",
+      "image": "research-covers/sme-development.png",
+      "alt": "Cover of Small and Medium Enterprises Development",
+      "synopsis": "This research examines the role of small and\n          medium enterprises in employment, innovation,\n          income generation and economic development.\n          It considers factors that influence SME growth\n          and sustainability.",
+      "href": "research/sme-development.html"
+    }
+  ],
+  "engineering": [
+    {
+      "title": "Renewable Energy and Sustainable Development",
+      "image": "research-covers/renewable-energy.png",
+      "alt": "Cover of Renewable Energy and Sustainable Development",
+      "synopsis": "This research explores the contribution of renewable\n          energy technologies to sustainable development,\n          energy access and environmental protection. It\n          examines opportunities for increasing the use of\n          cleaner and sustainable energy solutions.",
+      "href": "research/renewable-energy.html"
+    },
+    {
+      "title": "Water Engineering and Community Development",
+      "image": "research-covers/water-engineering.png",
+      "alt": "Cover of Water Engineering and Community Development",
+      "synopsis": "This research examines how water engineering\n          solutions can support reliable water access,\n          community development and sustainable resource\n          management. It considers engineering approaches\n          suitable for community needs.",
+      "href": "research/water-engineering.html"
+    },
+    {
+      "title": "Sustainable Infrastructure Development",
+      "image": "research-covers/sustainable-infrastructure.png",
+      "alt": "Cover of Sustainable Infrastructure Development",
+      "synopsis": "This research explores approaches to developing\n          infrastructure that supports economic growth,\n          community needs and long-term environmental\n          sustainability. It considers principles for\n          resilient and responsible infrastructure planning.",
+      "href": "research/sustainable-infrastructure.html"
+    },
+    {
+      "title": "Solar Energy Adoption in Rural Communities",
+      "image": "research-covers/solar-rural-communities.png",
+      "alt": "Cover of Solar Energy Adoption in Rural Communities",
+      "synopsis": "This research examines factors influencing the\n          adoption of solar energy in rural communities and\n          explores its potential contribution to reliable,\n          affordable and sustainable energy access.",
+      "href": "research/solar-rural-communities.html"
+    }
+  ]
+};
+
+const fieldMap = {
+  education: ["Education"],
+  technology: ["Information Technology", "Computer Science and Technology", "Information Systems and Technology"],
+  agriculture: ["Agriculture", "Agricultural Science", "Agriculture and Agribusiness"],
+  environment: ["Environmental Science", "Environmental Management"],
+  social: ["Sociology and Social Sciences", "Sociology and Social Policy", "Community Development"],
+  health: ["Health Sciences", "Public Health", "Public Health and Health Systems"],
+  economics: ["Economics", "Economics and Development Economics"],
+  business: ["Business Administration", "Business and Management", "Commerce", "Commerce and Marketing"],
+  political: ["Political Science", "Public Administration", "Public Administration and Governance"],
+  engineering: ["Engineering"]
+};
+
 const level = document.getElementById("level");
 const programme = document.getElementById("programme");
 const results = document.getElementById("results");
@@ -760,7 +728,7 @@ function render(){
   const list = document.createElement("div");
   list.className = "topic-list";
 
-  topics.forEach((name, i) => {
+  topics.forEach((name) => {
     const topic = document.createElement("article");
     topic.className = "topic";
     const slug = name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
@@ -791,6 +759,44 @@ function render(){
 
   group.append(title, list);
   results.appendChild(group);
+
+  /* Add the detailed entries that belong to the selected programme family.
+     Their cover images, synopses and purchase links are kept from the uploaded library. */
+  const detailedField = Object.keys(fieldMap).find(field =>
+    fieldMap[field].includes(programme.value)
+  );
+  const detailed = detailedResearch[detailedField] || [];
+
+  if(detailed.length){
+    const detailSection = document.createElement("section");
+    detailSection.className = "detailed-library";
+    detailSection.innerHTML = `
+      <div class="detailed-heading">
+        <span>
+          <strong>Detailed Research Library</strong>
+          <small>Research projects with original covers, synopses and purchase links</small>
+        </span>
+        <span class="detailed-count">${detailed.length} topics</span>
+      </div>`;
+
+    detailed.forEach((item, index) => {
+      const card = document.createElement("details");
+      card.className = "detailed-card";
+      card.innerHTML = `
+        <summary>${item.title}</summary>
+        <div class="detailed-content">
+          <img class="detailed-cover" src="${item.image}" alt="${item.alt}" loading="lazy">
+          <div class="detailed-copy">
+            <h3>Synopsis</h3>
+            <p>${item.synopsis.replace(/\n\s*/g, " ")}</p>
+            <a class="btn buy detailed-buy" href="${item.href}">Buy Now</a>
+          </div>
+        </div>`;
+      detailSection.appendChild(card);
+    });
+
+    results.appendChild(detailSection);
+  }
 }
 </script>
 <footer>Karieson Creative Hub All Rights Reserved</footer>
