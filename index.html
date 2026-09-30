@@ -2157,7 +2157,237 @@
         border-top-color: #333333;
       }
     }
+/* ==================================================
+   FAQ & SUGGESTIONS
+================================================== */
 
+.faq-suggestions {
+  padding: 4rem 5%;
+  background: var(--light);
+}
+
+/* FAQ CONTAINER */
+
+.faq-container {
+  max-width: 70rem;
+  margin: 0 auto 4rem;
+}
+
+/* FAQ ITEM */
+
+.faq-item {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 1.1rem 3rem 1.1rem 1rem;
+  color: var(--black);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s ease,
+              background 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--red);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.faq-item[open] summary {
+  color: var(--red);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item summary:hover {
+  color: var(--red);
+}
+
+.faq-answer {
+  padding: 0 1rem 1.2rem;
+}
+
+.faq-answer p {
+  max-width: 60rem;
+  margin: 0;
+  color: var(--gray);
+  line-height: 1.75;
+}
+
+
+/* ==================================================
+   SUGGESTIONS
+================================================== */
+
+.suggestions-container {
+  max-width: 70rem;
+  margin: auto;
+}
+
+.suggestion-form {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--red);
+  border-radius: 0.4rem;
+}
+
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.suggestion-group {
+  margin-bottom: 1rem;
+}
+
+.suggestion-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.suggestion-group input,
+.suggestion-group select,
+.suggestion-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.suggestion-group input:focus,
+.suggestion-group select:focus,
+.suggestion-group textarea:focus {
+  border-color: var(--red);
+}
+
+.suggestion-group textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.suggestion-submit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.suggestion-btn {
+  border: none;
+  padding: 0.8rem 2rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestion-btn:hover {
+  background: var(--dark-red);
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+
+  .faq-suggestions {
+    padding: 3rem 5%;
+  }
+
+  .suggestion-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .suggestion-form {
+    padding: 1.3rem;
+  }
+
+  .faq-item summary {
+    padding-right: 2.5rem;
+  }
+
+}
+
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+@media (prefers-color-scheme: dark) {
+
+  .faq-suggestions {
+    background: #111111;
+  }
+
+  .faq-item,
+  .suggestion-form {
+    background: #080808;
+    border-color: #333333;
+  }
+
+  .faq-item summary {
+    color: #ffffff;
+  }
+
+  .faq-item[open] summary {
+    color: var(--red);
+  }
+
+  .faq-answer p {
+    color: #bbbbbb;
+  }
+
+  .suggestion-group label {
+    color: #ffffff;
+  }
+
+  .suggestion-group input,
+  .suggestion-group select,
+  .suggestion-group textarea {
+    background: #111111;
+    color: #ffffff;
+    border-color: #444444;
+  }
+
+  .suggestion-group input::placeholder,
+  .suggestion-group textarea::placeholder {
+    color: #999999;
+  }
+
+}
   </style>
 </head>
 
@@ -4698,6 +4928,168 @@
     >
       See All eBooks
     </a>
+
+  </div>
+
+</section>
+
+<!-- ==================================================
+     FAQ & SUGGESTIONS
+================================================== -->
+
+<section class="faq-suggestions" id="faq">
+
+  <div class="main-section-heading">
+    <div class="section-number">06</div>
+
+    <div>
+      <h2>Frequently Asked Questions</h2>
+      <p>
+        Find answers to common questions about research projects,
+        grant proposals, academic support and the Creative Hub.
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-container">
+
+    <details class="faq-item">
+      <summary>What services does Karieson Creative Hub provide?</summary>
+      <div class="faq-answer">
+        <p>
+          Karieson Creative Hub provides academic research and project
+          support, research topics, research proposals, academic project
+          development, thesis and dissertation support, data analysis,
+          grant proposal development and creative eBook novels.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you provide research topics for students?</summary>
+      <div class="faq-answer">
+        <p>
+          Yes. Research topics are available across different fields,
+          including education, technology, agriculture, health, social
+          sciences, economics, political science, environment, business
+          and engineering.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you support final-year research projects?</summary>
+      <div class="faq-answer">
+        <p>
+          Yes. Research project support is available for diploma, degree,
+          master's and other academic levels.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I request a research proposal?</summary>
+      <div class="faq-answer">
+        <p>
+          Yes. You can use the research and proposal request options
+          available on the website to submit your requirements.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you provide grant proposal support?</summary>
+      <div class="faq-answer">
+        <p>
+          Yes. The Creative Hub provides grant proposal development and
+          related proposal support.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How can I get in touch?</summary>
+      <div class="faq-answer">
+        <p>
+          Visit the Get in Touch section of the website to find the
+          available contact options and discuss your project or inquiry.
+        </p>
+      </div>
+    </details>
+
+  </div>
+
+
+  <!-- SUGGESTIONS -->
+  <div class="suggestions-container">
+
+    <div class="section-title">
+      <h2>Suggestions & Feedback</h2>
+      <p>
+        Have an idea, suggestion or feedback that could improve
+        Karieson Creative Hub? Share it with us.
+      </p>
+    </div>
+
+    <form class="suggestion-form" action="#" method="post">
+
+      <div class="suggestion-grid">
+
+        <div class="suggestion-group">
+          <label for="suggestionName">Name</label>
+          <input
+            type="text"
+            id="suggestionName"
+            name="name"
+            placeholder="Your name"
+          >
+        </div>
+
+        <div class="suggestion-group">
+          <label for="suggestionEmail">Email</label>
+          <input
+            type="email"
+            id="suggestionEmail"
+            name="email"
+            placeholder="Your email"
+          >
+        </div>
+
+      </div>
+
+      <div class="suggestion-group">
+        <label for="suggestionType">Feedback Type</label>
+
+        <select id="suggestionType" name="feedback_type">
+          <option value="">Select an option</option>
+          <option value="suggestion">Suggestion</option>
+          <option value="feedback">Feedback</option>
+          <option value="research">Research Topics</option>
+          <option value="grant">Grant Proposals</option>
+          <option value="website">Website Improvement</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="suggestion-group">
+        <label for="suggestionMessage">Your Suggestion or Feedback</label>
+
+        <textarea
+          id="suggestionMessage"
+          name="message"
+          placeholder="Write your suggestion or feedback here..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="suggestion-submit">
+        <button type="submit" class="suggestion-btn">
+          Send Suggestion
+        </button>
+      </div>
+
+    </form>
 
   </div>
 
