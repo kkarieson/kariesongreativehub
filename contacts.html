@@ -202,32 +202,154 @@
       color: #222222;
     }
 
-    .showcase {
-      background: #222222;
-      color: #ffffff;
-      padding: 1.5rem;
-      margin-top: 1.25rem;
-    }
+    /* =========================================
+   COMBINED 3D CARD
+========================================= */
 
-    .showcase h3,
-    .showcase p {
-      color: #ffffff;
-    }
+.combined-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 35px;
+  background: var(--white);
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
 
-    .showcase h3 {
-      margin-bottom: 0.5rem;
-    }
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 12px 25px rgba(0, 0, 0, 0.07),
+    0 25px 55px rgba(0, 0, 0, 0.08);
 
-    .showcase a {
-      color: #ffffff;
-      text-decoration: underline;
-    }
+  position: relative;
+  overflow: hidden;
+}
 
-    .cta {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      margin-top: 2rem;
-    }
+/* subtle top accent */
+.combined-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--corporate-red);
+}
+
+/* =========================================
+   VISIT SECTION
+========================================= */
+
+.combined-card .section {
+  margin: 0;
+  padding: 0;
+}
+
+.combined-card .section-title h2 {
+  color: var(--corporate-red);
+  margin-top: 0;
+}
+
+/* =========================================
+   INNER SHOWCASES
+========================================= */
+
+.combined-card .showcase {
+  margin-top: 22px;
+  padding: 22px;
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.combined-card .showcase:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.combined-card .showcase h3 {
+  margin-top: 0;
+  color: var(--corporate-red);
+}
+
+.combined-card .showcase a {
+  color: var(--corporate-red);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.combined-card .showcase a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   STANDALONE CTA CARD
+========================================= */
+
+.cta {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 35px;
+
+  background: var(--white);
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 12px 25px rgba(0, 0, 0, 0.07),
+    0 25px 55px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* CTA top accent */
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--corporate-red);
+}
+
+.cta .section-title h2 {
+  color: var(--corporate-red);
+  margin-top: 0;
+}
+
+.cta p {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .combined-card {
+    margin: 30px auto;
+    padding: 25px 18px;
+    border-radius: 15px;
+  }
+
+  .combined-card .showcase {
+    padding: 18px;
+  }
+
+  .cta {
+    margin: 30px auto;
+    padding: 25px 18px;
+    border-radius: 15px;
+  }
+}
 
     footer {
       border-top: 1px solid #333333;
@@ -366,34 +488,72 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-title">
-          <h2>My Showcase Site</h2>
-        </div>
+<!-- =========================================
+     VISIT ME AT — COMBINED CARD
+========================================= -->
 
-        <div class="showcase">
-          <h3>Garissa Digital Training</h3>
-          <p>
-            You can also get in touch through my digital training and showcase platform.
-          </p>
-          <p>
-            <a href="https://garissadigitaltraining.onrender.com" target="_blank" rel="noopener">
-              Visit Garissa Digital Training
-            </a>
-          </p>
-        </div>
-      </section>
+<div class="combined-card">
 
-      <section class="cta">
-        <div class="section-title">
-          <h2>Have an Idea or Project?</h2>
-        </div>
-        <p>
-          If you would like to discuss research, grant proposals, project support,
-          digital training, community initiatives, or creative work, feel free to reach out.
-        </p>
-      </section>
+  <section class="section">
 
+    <div class="section-title">
+      <h2>Visit me at</h2>
+    </div>
+
+    <div class="showcase">
+      <h3>Garissa Agro-Digital Empowerment Hub Official Website</h3>
+
+      <p>
+        You can also get in touch through the Garissa Agro-Digital
+        Empowerment Hub CBO Official Website.
+      </p>
+
+      <p>
+        <a href="https://garissadigitaltraining.onrender.com"
+           target="_blank"
+           rel="noopener">
+          garissadigitaltraining.onrender.com
+        </a>
+      </p>
+    </div>
+
+    <div class="showcase">
+      <h3>My Official Personal Website</h3>
+
+      <p>
+        Visit my official personal website and creative platform.
+      </p>
+
+      <p>
+        <a href="https://aadenkarie.onrender.com"
+           target="_blank"
+           rel="noopener">
+          aadenkarie.onrender.com
+        </a>
+      </p>
+    </div>
+
+  </section>
+
+</div>
+
+
+<!-- =========================================
+     CTA — STANDALONE CARD
+========================================= -->
+
+<section class="cta">
+
+  <div class="section-title">
+    <h2>Have an Idea or Project?</h2>
+  </div>
+
+  <p>
+    If you would like to discuss research, grant proposals, project support,
+    digital training, community initiatives, or creative work, feel free to reach out.
+  </p>
+
+</section>
     </div>
   </main>
 
