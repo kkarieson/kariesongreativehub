@@ -265,7 +265,7 @@ header p{
     align-items:start;
   }
 
-.cover{
+  .cover{
   display:block;
   width:100%;
   height:100%;
@@ -916,84 +916,1103 @@ const level = document.getElementById("level");
 const programme = document.getElementById("programme");
 const results = document.getElementById("results");
 
+
+/* =========================================================
+   LEVEL CHANGE
+========================================================= */
+
 level.addEventListener("change", () => {
+
   const programmes = Object.keys(data[level.value] || {});
-  programme.innerHTML = '<option value="" selected disabled>Select programme</option>';
+
+  programme.innerHTML =
+    '<option value="" selected disabled>Select programme</option>';
+
   programmes.forEach(p => {
+
     const o = document.createElement("option");
-    o.value = p; o.textContent = p;
+
+    o.value = p;
+    o.textContent = p;
+
     programme.appendChild(o);
+
   });
+
   programme.disabled = programmes.length === 0;
-  results.innerHTML = '<div class="empty">Select a programme to explore research topics.</div>';
+
+  results.innerHTML =
+    '<div class="empty">Select a programme to explore research topics.</div>';
+
 });
+
 
 programme.addEventListener("change", render);
 
-function render(){
-  const topics = data[level.value]?.[programme.value] || [];
-  if(!topics.length){
-    results.innerHTML = '<div class="empty">No research topics available.</div>';
+
+/* =========================================================
+   COMPLETE RESEARCH PREVIEW
+   Opens directly from JavaScript
+========================================================= */
+
+function openResearchPreview(
+  name,
+  item,
+  levelName,
+  programmeName
+) {
+
+  const synopsis =
+    typeof item === "string"
+      ? `This research topic examines ${name.toLowerCase()}. The study can investigate the background of the problem, key variables, relevant stakeholders, existing evidence, methodological approaches, findings and practical recommendations.`
+      : item.synopsis;
+
+  const cover =
+    typeof item === "string"
+      ? IMG
+      : item.cover;
+
+  const buyLink =
+    typeof item === "string"
+      ? `buy.html?topic=${encodeURIComponent(name)}`
+      : item.link;
+
+  const previewWindow = window.open("", "_blank");
+
+  if (!previewWindow) {
+
+    alert(
+      "Please allow pop-ups to open the research preview."
+    );
+
     return;
   }
 
-  results.innerHTML = "";
-  const group = document.createElement("div");
-  group.className = "programme open";
 
-  const title = document.createElement("div");
-  title.className = "programme-title";
-  title.innerHTML = `<span>${programme.value} — ${level.options[level.selectedIndex].text}</span><span class="sign">−</span>`;
+  previewWindow.document.write(`
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+  ${name} | Research Preview | Karieson Creative Hub
+</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f5f5f5;
+  color:#222;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  background:#000;
+  color:#fff;
+  padding:24px 20px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:28px;
+  font-weight:800;
+}
+
+header p{
+  margin:6px 0 0;
+  color:#ddd;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container{
+  width:92%;
+  max-width:1000px;
+  margin:30px auto;
+}
+
+
+/* =========================================================
+   TOPIC HEADER
+========================================================= */
+
+.preview-header{
+  background:#fff;
+  padding:28px;
+  margin-bottom:22px;
+  border-left:5px solid #c00000;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.preview-header h2{
+  margin:0 0 15px;
+  color:#c00000;
+  font-size:27px;
+  line-height:1.4;
+}
+
+.meta{
+  font-size:15px;
+  line-height:1.9;
+}
+
+.meta strong{
+  color:#111;
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.cover-section{
+  background:#fff;
+  padding:25px;
+  margin-bottom:22px;
+  text-align:center;
+}
+
+.cover{
+  display:block;
+  width:100%;
+  max-width:550px;
+  height:auto;
+  max-height:700px;
+  object-fit:contain;
+  margin:auto;
+  border:1px solid #ddd;
+  background:#f5f5f5;
+}
+
+
+/* =========================================================
+   PREVIEW DESIGN
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f3f3f3;
+  color:#222;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  background:#000;
+  color:#fff;
+  padding:22px 15px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:22px;
+  font-weight:700;
+}
+
+header p{
+  margin:4px 0 0;
+  color:#fff;
+  font-size:13px;
+}
+
+
+/* =========================================================
+   MAIN PREVIEW CARD — ONE CONTAINER
+========================================================= */
+
+.container{
+  width:94%;
+  max-width:900px;
+  margin:35px auto;
+}
+
+.preview-card{
+  background:#fff;
+  padding:35px;
+
+  border-radius:10px;
+
+  box-shadow:
+    0 3px 6px rgba(0,0,0,.10),
+    0 12px 25px rgba(0,0,0,.10),
+    0 25px 50px rgba(0,0,0,.06);
+
+  border:1px solid #e5e5e5;
+}
+
+
+/* =========================================================
+   SMALL RED TITLE
+========================================================= */
+
+.preview-card h2{
+  margin:0 0 12px;
+
+  color:#c00000;
+
+  font-size:21px;
+  font-weight:700;
+  line-height:1.4;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.preview-card h3{
+  margin:28px 0 10px;
+
+  color:#c00000;
+
+  font-size:17px;
+  font-weight:700;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+.preview-card p{
+  margin:0 0 12px;
+
+  color:#222;
+
+  font-size:15px;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.preview-card ol,
+.preview-card ul{
+  color:#222;
+  padding-left:25px;
+}
+
+.preview-card li{
+  color:#222;
+  margin-bottom:7px;
+  font-size:15px;
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.preview-card .cover{
+  display:block;
+
+  width:100%;
+  max-width:500px;
+  height:auto;
+  max-height:650px;
+
+  object-fit:contain;
+
+  margin:25px auto;
+
+  border:1px solid #ddd;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  border:0;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.back{
+  background:#000;
+  color:#fff;
+}
+
+.buy{
+  background:#c00000;
+  color:#fff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px 15px;
+  margin-top:40px;
+  font-size:13px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+  .container{
+    width:94%;
+    margin:20px auto;
+  }
+
+  .preview-card{
+    padding:22px;
+  }
+
+  .preview-card h2{
+    font-size:19px;
+  }
+
+  .preview-card h3{
+    font-size:16px;
+  }
+
+  .preview-card p,
+  .preview-card li{
+    font-size:14px;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <h1>Karieson Creative Hub</h1>
+
+  <p>Research Project Preview</p>
+
+</header>
+
+
+<main class="container">
+
+  <div class="preview-card">
+
+    <h2>${name}</h2>
+
+    <div class="meta">
+
+      <strong>Academic Level:</strong>
+      ${levelName}
+
+      <br>
+
+      <strong>Programme:</strong>
+      ${programmeName}
+
+    </div>
+
+
+  <!-- =====================================================
+       COVER
+  ====================================================== -->
+
+  <section class="cover-section">
+
+    <img
+      src="${cover}"
+      class="cover"
+      alt="Research cover for ${name}"
+      onerror="this.style.display='none';"
+    >
+
+  </section>
+
+
+  <!-- =====================================================
+       1. INTRODUCTION
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>1. Introduction</h3>
+
+    <p>
+      This research topic focuses on
+      <strong>${name}</strong>.
+      The study introduces the subject,
+      provides its context and identifies
+      the major issues requiring investigation.
+    </p>
+
+    <p>
+      The research provides an academic
+      framework for understanding the topic
+      and examining relevant factors,
+      challenges and possible solutions.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       2. BACKGROUND
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>2. Background of the Study</h3>
+
+    <p>
+      The background section provides the
+      context surrounding
+      <strong>${name}</strong>.
+      It examines the circumstances that
+      have contributed to the development
+      of the issue and explains why the
+      topic requires academic investigation.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       3. STATEMENT OF THE PROBLEM
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>3. Statement of the Problem</h3>
+
+    <p>
+      Despite existing developments and
+      efforts related to this area,
+      important questions and challenges
+      may remain.
+      This study therefore seeks to
+      investigate the key problem associated
+      with <strong>${name}</strong>.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       4. OBJECTIVES
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>4. Objectives of the Study</h3>
+
+    <p>
+      <strong>General Objective</strong>
+    </p>
+
+    <p>
+      To examine and analyze the major
+      issues associated with
+      <strong>${name}</strong>.
+    </p>
+
+    <p>
+      <strong>Specific Objectives</strong>
+    </p>
+
+    <ol>
+
+      <li>
+        To examine the current situation
+        relating to the research topic.
+      </li>
+
+      <li>
+        To identify the major factors
+        associated with the topic.
+      </li>
+
+      <li>
+        To assess the effects and implications
+        of the identified factors.
+      </li>
+
+      <li>
+        To propose practical recommendations
+        based on the findings.
+      </li>
+
+    </ol>
+
+  </section>
+
+
+  <!-- =====================================================
+       5. RESEARCH QUESTIONS
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>5. Research Questions</h3>
+
+    <ol>
+
+      <li>
+        What is the current situation
+        relating to ${name}?
+      </li>
+
+      <li>
+        What factors influence the issue
+        under investigation?
+      </li>
+
+      <li>
+        What are the effects or implications
+        associated with the issue?
+      </li>
+
+      <li>
+        What measures can address the
+        identified challenges?
+      </li>
+
+    </ol>
+
+  </section>
+
+
+  <!-- =====================================================
+       6. SIGNIFICANCE
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>6. Significance of the Study</h3>
+
+    <p>
+      The study may provide useful information
+      to students, researchers, institutions,
+      practitioners and other relevant
+      stakeholders interested in
+      <strong>${name}</strong>.
+    </p>
+
+    <p>
+      The findings may also provide a basis
+      for further research and informed
+      decision-making within the relevant
+      field.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       7. SCOPE
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>7. Scope of the Study</h3>
+
+    <p>
+      The study focuses specifically on
+      <strong>${name}</strong>.
+      The scope may cover the relevant
+      population, geographical area,
+      variables and period selected by
+      the researcher.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       8. TOPIC OVERVIEW
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>8. Topic Overview</h3>
+
+    <p>
+      ${synopsis}
+    </p>
+
+  </section>
+
+
+  <!-- =====================================================
+       9. PROPOSED METHODOLOGY
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>9. Proposed Research Methodology</h3>
+
+    <p>
+      The researcher may use an appropriate
+      research design based on the nature
+      of the study.
+    </p>
+
+    <ul>
+
+      <li>Research design</li>
+
+      <li>Target population</li>
+
+      <li>Sample size and sampling procedure</li>
+
+      <li>Data collection methods</li>
+
+      <li>Data analysis procedures</li>
+
+      <li>Ethical considerations</li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- =====================================================
+       10. EXPECTED OUTCOMES
+  ====================================================== -->
+
+  <section class="section">
+
+    <h3>10. Expected Outcomes</h3>
+
+    <p>
+      The study is expected to generate
+      findings that improve understanding
+      of <strong>${name}</strong> and provide
+      practical recommendations relevant
+      to the selected research context.
+    </p>
+
+  </section>
+
+
+      <!-- =====================================================
+         ACTIONS
+    ====================================================== -->
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="btn back"
+        onclick="window.close();">
+        Close Preview
+      </button>
+
+      <a
+        href="${buyLink}"
+        class="btn buy">
+        Buy Now
+      </a>
+
+    </div>
+
+
+  </div>
+  <!-- END ONE PREVIEW CARD -->
+
+
+</main>
+
+
+<footer>
+
+  ©2026 Karieson Creative Hub.
+  All rights reserved.
+
+</footer>
+
+
+</body>
+
+</html>
+
+  `);
+
+  previewWindow.document.close();
+}
+
+/* =========================================================
+   RENDER RESEARCH TOPICS
+========================================================= */
+
+function render(){
+
+  const topics =
+    data[level.value]?.[programme.value] || [];
+
+
+  if(!topics.length){
+
+    results.innerHTML =
+      '<div class="empty">No research topics available.</div>';
+
+    return;
+
+  }
+
+
+  results.innerHTML = "";
+
+
+  /* =======================================================
+     PROGRAMME GROUP
+  ======================================================== */
+
+  const group =
+    document.createElement("div");
+
+  group.className =
+    "programme open";
+
+
+  /* =======================================================
+     PROGRAMME TITLE
+  ======================================================== */
+
+  const title =
+    document.createElement("div");
+
+  title.className =
+    "programme-title";
+
+  title.innerHTML = `
+
+    <span>
+      ${programme.value}
+      —
+      ${level.options[level.selectedIndex].text}
+    </span>
+
+    <span class="sign">−</span>
+
+  `;
+
+
   title.onclick = () => {
+
     group.classList.toggle("open");
-    title.querySelector(".sign").textContent = group.classList.contains("open") ? "−" : "+";
+
+    title.querySelector(".sign").textContent =
+      group.classList.contains("open")
+        ? "−"
+        : "+";
+
   };
 
-  const list = document.createElement("div");
-  list.className = "topic-list";
+
+  /* =======================================================
+     TOPIC LIST
+  ======================================================== */
+
+  const list =
+    document.createElement("div");
+
+  list.className =
+    "topic-list";
+
+
+  /* =======================================================
+     CREATE EACH TOPIC
+  ======================================================== */
 
   topics.forEach((item, i) => {
-    const topic = document.createElement("article");
-    topic.className = "topic";
 
-    const name = typeof item === "string" ? item : item.title;
-    const cover = typeof item === "string" ? IMG : item.cover;
-    const synopsis = typeof item === "string"
-      ? `This research topic examines <strong>${name.toLowerCase()}</strong>. The study can investigate the background of the problem, key variables, relevant stakeholders, existing evidence, methodological approaches, findings and practical recommendations.`
-      : item.synopsis;
-    const buyLink = typeof item === "string"
-      ? `buy.html?topic=${encodeURIComponent(name)}`
-      : item.link;
-    const viewLink = `research.html?topic=${encodeURIComponent(name)}&level=${encodeURIComponent(level.value)}&programme=${encodeURIComponent(programme.value)}`;
+    const topic =
+      document.createElement("article");
+
+    topic.className =
+      "topic";
+
+
+    /* =====================================================
+       TOPIC DATA
+    ====================================================== */
+
+    const name =
+      typeof item === "string"
+        ? item
+        : item.title;
+
+
+    const cover =
+      typeof item === "string"
+        ? IMG
+        : item.cover;
+
+
+    const synopsis =
+      typeof item === "string"
+
+        ? `This research topic examines <strong>${name.toLowerCase()}</strong>. The study can investigate the background of the problem, key variables, relevant stakeholders, existing evidence, methodological approaches, findings and practical recommendations.`
+
+        : item.synopsis;
+
+
+    const buyLink =
+      typeof item === "string"
+
+        ? `buy.html?topic=${encodeURIComponent(name)}`
+
+        : item.link;
+
+
+    /* =====================================================
+       TOPIC CARD
+    ====================================================== */
 
     topic.innerHTML = `
-      <a class="topic-link" href="#" aria-expanded="false">${name}</a>
-      <div class="topic-details">
-        <img class="cover" src="${cover}" alt="Research cover for ${name}" loading="lazy" onerror="this.style.visibility='hidden';">
-        <div class="synopsis">
-          <h3>${name}</h3>
-          <p>${synopsis}</p>
-          <p><strong>Academic level:</strong> ${level.options[level.selectedIndex].text}<br>
-          <strong>Programme:</strong> ${programme.value}</p>
-          <div class="actions">
-            <a class="btn view" href="${viewLink}">View</a>
-            <a class="btn buy" href="${buyLink}">Buy now</a>
-          </div>
-        </div>
-      </div>`;
 
-    topic.querySelector(".topic-link").addEventListener("click", e => {
+      <a
+        class="topic-link"
+        href="#"
+        aria-expanded="false">
+
+        ${name}
+
+      </a>
+
+
+      <div class="topic-details">
+
+
+        <img
+          class="cover"
+          src="${cover}"
+          alt="Research cover for ${name}"
+          loading="lazy"
+          onerror="this.style.visibility='hidden';"
+        >
+
+
+        <div class="synopsis">
+
+
+          <h3>
+            ${name}
+          </h3>
+
+
+          <p>
+            ${synopsis}
+          </p>
+
+
+          <p>
+
+            <strong>
+              Academic level:
+            </strong>
+
+            ${level.options[level.selectedIndex].text}
+
+            <br>
+
+            <strong>
+              Programme:
+            </strong>
+
+            ${programme.value}
+
+          </p>
+
+
+          <div class="actions">
+
+
+            <button
+              type="button"
+              class="btn view">
+
+              View
+
+            </button>
+
+
+            <a
+              class="btn buy"
+              href="${buyLink}">
+
+              Buy now
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+
+    /* =====================================================
+       TOPIC EXPAND / COLLAPSE
+    ====================================================== */
+
+    const topicLink =
+      topic.querySelector(".topic-link");
+
+
+    topicLink.addEventListener("click", e => {
+
       e.preventDefault();
+
       topic.classList.toggle("expanded");
-      e.currentTarget.setAttribute("aria-expanded", topic.classList.contains("expanded"));
+
+      topicLink.setAttribute(
+        "aria-expanded",
+        topic.classList.contains("expanded")
+      );
+
     });
+
+
+    /* =====================================================
+       VIEW BUTTON
+    ====================================================== */
+
+    const viewButton =
+      topic.querySelector(".view");
+
+
+    viewButton.addEventListener("click", () => {
+
+      openResearchPreview(
+
+        name,
+
+        item,
+
+        level.options[level.selectedIndex].text,
+
+        programme.value
+
+      );
+
+    });
+
+
+    /* =====================================================
+       ADD TOPIC TO LIST
+    ====================================================== */
+
     list.appendChild(topic);
+
   });
 
-  group.append(title, list);
+
+  /* =======================================================
+     ADD GROUP TO RESULTS
+  ======================================================== */
+
+  group.append(
+    title,
+    list
+  );
+
+
   results.appendChild(group);
+
 }
-</script>
+</script >
 <footer>Karieson Creative Hub All Rights Reserved</footer>
 </body>
 </html>
