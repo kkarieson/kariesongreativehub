@@ -468,91 +468,267 @@ const IMG = "research-cover.png";
 /* Add or edit topics here. Each programme has 5+ topics for every level. */
 const data = {
   diploma: {
-    "Education": [
-      "Impact of Digital Learning Tools on Student Engagement",
-      "Factors Affecting Academic Performance among Secondary School Students",
-      "Role of Guidance and Counselling in Student Discipline",
-      "Influence of Teacher Motivation on Classroom Performance",
-      "Challenges Facing Inclusive Education in Public Schools"
-    ],
-    "Information Technology": [
-      "Adoption of Cloud Computing among Small Businesses",
-      "Cybersecurity Awareness among College Students",
-      "Impact of Mobile Applications on Service Delivery",
-      "Factors Affecting E-Learning Platform Adoption",
-      "Role of Information Systems in Small Business Management"
-    ],
-    "Agriculture": [
-      "Adoption of Modern Farming Practices among Smallholder Farmers",
-      "Effects of Climate Variability on Crop Production",
-      "Role of Agricultural Extension Services in Farm Productivity",
-      "Post-Harvest Losses and Food Security among Smallholder Farmers",
-      "Use of Organic Manure in Improving Soil Fertility"
-    ],
-    "Environmental Science": [
-      "Household Waste Management Practices in Urban Communities",
-      "Effects of Plastic Waste on the Local Environment",
-      "Community Participation in Environmental Conservation",
-      "Assessment of Water Pollution Sources in Urban Areas",
-      "Effects of Deforestation on Local Ecosystems"
-    ],
-    "Sociology and Social Sciences": [
-      "Social Media Use and Youth Social Interaction",
-      "Factors Influencing School Dropout among Young People",
-      "Effects of Urbanization on Family Relationships",
-      "Community Networks and Social Support among Youth",
-      "Gender Roles and Household Decision-Making"
-    ],
-    "Health Sciences": [
-      "Factors Influencing Health-Seeking Behaviour among Young Adults",
-      "Knowledge and Practices of Hand Hygiene among Students",
-      "Barriers to Accessing Primary Healthcare Services",
-      "Nutrition Awareness among College Students",
-      "Community Awareness of Preventive Healthcare Practices"
-    ],
-    "Business Administration": [
-      "Customer Service Quality and Customer Satisfaction",
-      "Influence of Employee Motivation on Organizational Performance",
-      "Inventory Management Practices in Small Businesses",
-      "Digital Marketing and Business Growth",
-      "Challenges Facing Entrepreneurship among Youth"
-    ],
-    "Economics": [
-      "Effects of Inflation on Household Consumption",
-      "Youth Unemployment and Household Welfare",
-      "Small Businesses and Local Economic Development",
-      "Factors Influencing Household Saving Behaviour",
-      "Effects of Rising Food Prices on Low-Income Households"
-    ],
-    "Criminology and Criminal Justice": [
-      "Factors Contributing to Youth Involvement in Crime",
-      "Community Policing and Crime Prevention",
-      "Effects of Substance Abuse on Criminal Behaviour",
-      "Public Perception of Police Effectiveness",
-      "Rehabilitation and Reintegration of Offenders"
-    ],
-    "Community Development": [
-      "Community Participation in Local Development Projects",
-      "Role of Youth Groups in Community Development",
-      "Women Empowerment and Household Economic Welfare",
-      "Challenges Affecting Community-Based Organizations",
-      "Social Entrepreneurship and Community Development"
-    ],
-    "Public Administration": [
-      "Citizen Satisfaction with Public Service Delivery",
-      "Challenges Affecting Effective Public Administration",
-      "Role of Digital Services in Public Service Delivery",
-      "Employee Performance in Public Institutions",
-      "Transparency and Accountability in Local Government"
-    ],
-    "Commerce": [
-      "Consumer Buying Behaviour in Retail Businesses",
-      "Effects of E-Commerce on Traditional Retailing",
-      "Customer Relationship Management and Business Performance",
-      "Factors Influencing Retail Store Location",
-      "Pricing Strategies and Customer Purchase Decisions"
-    ]
-  },
+  "Education": [
+    {
+      "title": "The Impact of Educational Technology on Student Performance",
+      "cover": "educational-technology.png",
+      "synopsis": "This research examines how educational technology influences student performance, engagement and learning outcomes. It explores the use of digital learning platforms, interactive learning tools and other technologies in modern education. The study also considers challenges related to access, teacher preparedness and effective technology integration.",
+      "link": "research/educational-technology.html"
+    },
+    {
+      "title": "Challenges Facing Access to Quality Education",
+      "cover": "quality-education.png",
+      "synopsis": "This research explores the major challenges that affect access to quality education. It examines factors such as poverty, inadequate learning facilities, geographical barriers, limited educational resources and social inequalities. The study also considers practical approaches for improving educational access and creating more inclusive learning opportunities.",
+      "link": "research/quality-education.html"
+    },
+    {
+      "title": "Effects of Teacher Training on Academic Performance",
+      "cover": "teacher-training.png",
+      "synopsis": "This research investigates how teacher training and professional development influence teaching effectiveness and student academic performance. It examines teaching methods, classroom management, professional skills and the importance of continuous teacher development.",
+      "link": "research/teacher-training.html"
+    },
+    {
+      "title": "Digital Learning and Student Engagement",
+      "cover": "student-engagement.png",
+      "synopsis": "This research examines how digital learning tools and online educational platforms influence student participation and engagement. It explores the benefits and challenges of digital learning and considers how technology can support meaningful educational experiences.",
+      "link": "research/digital-learning.html"
+    }
+  ],
+  "Technology": [
+    {
+      "title": "Artificial Intelligence and Business Development",
+      "cover": "ai-business-development.png",
+      "synopsis": "This research examines the role of artificial intelligence in improving business operations, decision-making, innovation and competitiveness. It explores opportunities and challenges associated with the adoption of AI in modern businesses.",
+      "link": "research/artificial-intelligence.html"
+    },
+    {
+      "title": "The Impact of ICT on Modern Education",
+      "cover": "ict-modern-education.png",
+      "synopsis": "This research explores how information and communication technologies are transforming teaching and learning. It examines digital tools, access to information and the challenges involved in integrating ICT into education.",
+      "link": "research/ict-education.html"
+    },
+    {
+      "title": "Cybersecurity Awareness Among Young People",
+      "cover": "cybersecurity.png",
+      "synopsis": "This study examines awareness of online security, privacy and responsible digital behaviour among young people. It explores common cybersecurity challenges and approaches for improving awareness of safe and responsible digital practices.",
+      "link": "research/cybersecurity-awareness.html"
+    },
+    {
+      "title": "Digital Transformation in Small Businesses",
+      "cover": "research-covers/digital-transformation.png",
+      "synopsis": "This research investigates how small businesses can use digital technologies to improve efficiency, customer service, marketing and business growth. It considers opportunities for businesses to adapt to changing digital markets.",
+      "link": "research/digital-transformation.html"
+    }
+  ],
+  "Agriculture": [
+    {
+      "title": "Climate-Smart Agriculture and Food Security",
+      "cover": "food-security.png",
+      "synopsis": "This research examines climate-smart agricultural practices and their potential contribution to food security, resilience and sustainable agricultural production. It explores approaches that can help farmers respond to changing climate conditions.",
+      "link": "research/climate-smart-agriculture.html"
+    },
+    {
+      "title": "The Impact of Irrigation on Agricultural Productivity",
+      "cover": "irrigation.png",
+      "synopsis": "This study examines how irrigation can influence agricultural productivity, crop production and farmer livelihoods, particularly in areas affected by unreliable rainfall. It also considers the role of efficient water management in agricultural development.",
+      "link": "research/irrigation-productivity.html"
+    },
+    {
+      "title": "Youth Participation in Modern Agriculture",
+      "cover": "modern-agriculture.png",
+      "synopsis": "This research explores opportunities and barriers affecting youth participation in modern agriculture, entrepreneurship and agricultural innovation. It examines ways to encourage young people to participate in productive and sustainable agricultural activities.",
+      "link": "research/youth-agriculture.html"
+    },
+    {
+      "title": "Drought and Agricultural Production",
+      "cover": "drought.png",
+      "synopsis": "This research examines the effects of drought on agricultural production and explores strategies that farmers and communities can use to strengthen resilience, protect livelihoods and improve food security.",
+      "link": "research/drought-agriculture.html"
+    }
+  ],
+  "Health": [
+    {
+      "title": "Access to Healthcare Services in Rural Communities",
+      "cover": "research-covers/rural-healthcare.png",
+      "synopsis": "This research examines factors affecting access to healthcare services in rural communities, including distance, availability of facilities, resources and healthcare personnel. It explores possible approaches for improving access to essential healthcare services.",
+      "link": "research/rural-healthcare.html"
+    },
+    {
+      "title": "Community Health and Disease Prevention",
+      "cover": "research-covers/community-health.png",
+      "synopsis": "This research explores community-based approaches to health promotion and disease prevention. It examines the role of health awareness, preventive practices and community participation in improving public health outcomes.",
+      "link": "research/community-health.html"
+    },
+    {
+      "title": "Nutrition and Public Health",
+      "cover": "research-covers/nutrition-public-health.png",
+      "synopsis": "This research examines the relationship between nutrition, healthy lifestyles and public health. It considers factors that influence community nutrition outcomes and explores approaches for supporting healthier communities.",
+      "link": "research/nutrition-public-health.html"
+    },
+    {
+      "title": "Digital Technology in Healthcare Delivery",
+      "cover": "research-covers/digital-healthcare.png",
+      "synopsis": "This study explores how digital technologies can support healthcare delivery, communication, information management and access to services. It considers the potential benefits and challenges of digital solutions in healthcare.",
+      "link": "research/digital-healthcare.html"
+    }
+  ],
+  "Social Sciences": [
+    {
+      "title": "Youth Unemployment and Community Development",
+      "cover": "community-development.png",
+      "synopsis": "This research examines the relationship between youth unemployment, livelihoods and community development. It explores approaches for expanding employment opportunities and supporting young people to participate in community development.",
+      "link": "research/youth-unemployment.html"
+    },
+    {
+      "title": "Poverty and Social Development",
+      "cover": "poverty-social-development.png",
+      "synopsis": "This research explores the causes and effects of poverty and examines strategies that can contribute to inclusive social and economic development. It considers factors that influence household and community wellbeing.",
+      "link": "research/poverty-social-development.html"
+    },
+    {
+      "title": "Gender and Community Participation",
+      "cover": "community-participation.png",
+      "synopsis": "This research examines participation in community development and considers factors that influence inclusive involvement in local decision-making, community programmes and development activities.",
+      "link": "research/gender-community.html"
+    },
+    {
+      "title": "Social Media and Youth Behaviour",
+      "cover": "youth-behaviour.png",
+      "synopsis": "This study examines how social media use can influence communication, interaction and behaviour among young people. It considers both opportunities and challenges associated with social media use.",
+      "link": "research/social-media-youth.html"
+    }
+  ],
+  "Economics": [
+    {
+      "title": "Youth Unemployment and Economic Growth",
+      "cover": "youth-unemployment.png",
+      "synopsis": "This research examines how youth unemployment affects economic growth and explores policies and opportunities that can support youth employment, entrepreneurship and economic participation.",
+      "link": "research/youth-economic-growth.html"
+    },
+    {
+      "title": "Financial Inclusion and Poverty Reduction",
+      "cover": "poverty-reduction.png",
+      "synopsis": "This research explores how access to financial services can support household economic opportunities, entrepreneurship and poverty reduction. It considers the role of financial inclusion in strengthening economic participation.",
+      "link": "research/financial-inclusion.html"
+    },
+    {
+      "title": "Small Businesses and Economic Development",
+      "cover": "small-businesses-development.png",
+      "synopsis": "This research examines the contribution of small businesses to employment, household income, innovation and local economic development. It explores factors that can influence small-business growth and sustainability.",
+      "link": "research/small-businesses.html"
+    },
+    {
+      "title": "Inflation and Household Welfare",
+      "cover": "inflation-household.png",
+      "synopsis": "This research examines how changes in prices can affect household purchasing power, consumption patterns and economic wellbeing. It considers how inflation can influence different household needs and economic decisions.",
+      "link": "research/inflation-household.html"
+    }
+  ],
+  "Political Science": [
+    {
+      "title": "Youth Participation in Democratic Processes",
+      "cover": "research-covers/youth-democracy.png",
+      "synopsis": "This research examines the participation of young people in democratic processes and explores factors that influence civic engagement, political awareness and participation in public affairs.",
+      "link": "research/youth-democracy.html"
+    },
+    {
+      "title": "Good Governance and Public Service Delivery",
+      "cover": "research-covers/good-governance.png",
+      "synopsis": "This research examines principles of good governance and their relationship with effective, accountable and responsive public service delivery. It explores factors that can contribute to better governance and improved public services.",
+      "link": "research/good-governance.html"
+    },
+    {
+      "title": "The Role of Elections in Democratic Development",
+      "cover": "research-covers/elections-democracy.png",
+      "synopsis": "This study examines the importance of elections in democratic development, political participation and representation. It considers how credible electoral processes can contribute to democratic institutions and public participation.",
+      "link": "research/elections-democracy.html"
+    },
+    {
+      "title": "Political Leadership and Community Development",
+      "cover": "research-covers/political-leadership.png",
+      "synopsis": "This research explores the relationship between political leadership, community priorities and local development. It examines how leadership can influence community programmes and development outcomes.",
+      "link": "research/political-leadership.html"
+    }
+  ],
+  "Environment": [
+    {
+      "title": "Climate Change and Community Livelihoods",
+      "cover": "research-covers/climate-livelihoods.png",
+      "synopsis": "This research examines how climate change can affect community livelihoods and explores approaches for strengthening resilience, adaptation and sustainable development in vulnerable communities.",
+      "link": "research/climate-livelihoods.html"
+    },
+    {
+      "title": "Water Resource Management and Sustainability",
+      "cover": "research-covers/water-management.png",
+      "synopsis": "This research explores sustainable approaches to managing water resources and the importance of responsible water use for communities, agriculture and ecosystems.",
+      "link": "research/water-management.html"
+    },
+    {
+      "title": "Drought and Environmental Conservation",
+      "cover": "research-covers/drought-conservation.png",
+      "synopsis": "This research examines drought-related environmental challenges and explores conservation approaches that can support ecosystem resilience, sustainable resource use and community adaptation.",
+      "link": "research/drought-conservation.html"
+    },
+    {
+      "title": "Waste Management and Environmental Protection",
+      "cover": "research-covers/waste-management.png",
+      "synopsis": "This research examines waste management practices and their role in protecting the environment and promoting healthier communities. It considers approaches for improving waste handling and environmental awareness.",
+      "link": "research/waste-management.html"
+    }
+  ],
+  "Business": [
+    {
+      "title": "Youth Entrepreneurship and Job Creation",
+      "cover": "research-covers/youth-entrepreneurship.png",
+      "synopsis": "This research explores how youth entrepreneurship can contribute to employment creation, innovation, income generation and local economic development. It examines opportunities and challenges affecting young entrepreneurs.",
+      "link": "research/youth-entrepreneurship.html"
+    },
+    {
+      "title": "Marketing Strategies for Small Businesses",
+      "cover": "research-covers/small-business-marketing.png",
+      "synopsis": "This research examines marketing strategies that small businesses can use to attract customers, improve visibility and strengthen competitiveness. It considers traditional and digital approaches to reaching target customers.",
+      "link": "research/small-business-marketing.html"
+    },
+    {
+      "title": "Innovation and Business Growth",
+      "cover": "research-covers/business-innovation.png",
+      "synopsis": "This study examines how innovation can help businesses improve products, services and processes. It explores how innovative approaches can support competitiveness, efficiency and long-term growth.",
+      "link": "research/business-innovation.html"
+    },
+    {
+      "title": "Small and Medium Enterprises Development",
+      "cover": "research-covers/sme-development.png",
+      "synopsis": "This research examines the role of small and medium enterprises in employment, innovation, income generation and economic development. It considers factors that influence SME growth and sustainability.",
+      "link": "research/sme-development.html"
+    }
+  ],
+  "Engineering": [
+    {
+      "title": "Renewable Energy and Sustainable Development",
+      "cover": "research-covers/renewable-energy.png",
+      "synopsis": "This research explores the contribution of renewable energy technologies to sustainable development, energy access and environmental protection. It examines opportunities for increasing the use of cleaner and sustainable energy solutions.",
+      "link": "research/renewable-energy.html"
+    },
+    {
+      "title": "Water Engineering and Community Development",
+      "cover": "research-covers/water-engineering.png",
+      "synopsis": "This research examines how water engineering solutions can support reliable water access, community development and sustainable resource management. It considers engineering approaches suitable for community needs.",
+      "link": "research/water-engineering.html"
+    },
+    {
+      "title": "Sustainable Infrastructure Development",
+      "cover": "research-covers/sustainable-infrastructure.png",
+      "synopsis": "This research explores approaches to developing infrastructure that supports economic growth, community needs and long-term environmental sustainability. It considers principles for resilient and responsible infrastructure planning.",
+      "link": "research/sustainable-infrastructure.html"
+    },
+    {
+      "title": "Solar Energy Adoption in Rural Communities",
+      "cover": "research-covers/solar-rural-communities.png",
+      "synopsis": "This research examines factors influencing the adoption of solar energy in rural communities and explores its potential contribution to reliable, affordable and sustainable energy access.",
+      "link": "research/solar-rural-communities.html"
+    }
+  ]
+} ,
   degree: {
     "Education": [
       "Influence of Competency-Based Learning on Academic Achievement",
@@ -767,23 +943,32 @@ function render(){
   const list = document.createElement("div");
   list.className = "topic-list";
 
-  topics.forEach((name, i) => {
+  topics.forEach((item, i) => {
     const topic = document.createElement("article");
     topic.className = "topic";
-    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+
+    const name = typeof item === "string" ? item : item.title;
+    const cover = typeof item === "string" ? IMG : item.cover;
+    const synopsis = typeof item === "string"
+      ? `This research topic examines <strong>${name.toLowerCase()}</strong>. The study can investigate the background of the problem, key variables, relevant stakeholders, existing evidence, methodological approaches, findings and practical recommendations.`
+      : item.synopsis;
+    const buyLink = typeof item === "string"
+      ? `buy.html?topic=${encodeURIComponent(name)}`
+      : item.link;
+    const viewLink = `research.html?topic=${encodeURIComponent(name)}&level=${encodeURIComponent(level.value)}&programme=${encodeURIComponent(programme.value)}`;
 
     topic.innerHTML = `
-      <a class="topic-link" href="#${slug}" aria-expanded="false">${name}</a>
+      <a class="topic-link" href="#" aria-expanded="false">${name}</a>
       <div class="topic-details">
-        <img class="cover" src="${IMG}" alt="A4 research cover for ${name}" onerror="this.style.visibility='hidden';this.alt='Place research-cover.png in the same folder as explore.html';">
+        <img class="cover" src="${cover}" alt="Research cover for ${name}" loading="lazy" onerror="this.style.visibility='hidden';">
         <div class="synopsis">
           <h3>${name}</h3>
-          <p>This research topic examines <strong>${name.toLowerCase()}</strong>. The study can investigate the background of the problem, key variables, relevant stakeholders, existing evidence, methodological approaches, findings and practical recommendations. It is structured as a starting point for an academic research project and can be adapted to the institution's approved research format.</p>
+          <p>${synopsis}</p>
           <p><strong>Academic level:</strong> ${level.options[level.selectedIndex].text}<br>
           <strong>Programme:</strong> ${programme.value}</p>
           <div class="actions">
-            <a class="btn view" href="research.html?topic=${encodeURIComponent(name)}&level=${encodeURIComponent(level.value)}&programme=${encodeURIComponent(programme.value)}">View</a>
-            <a class="btn buy" href="buy.html?topic=${encodeURIComponent(name)}">Buy now</a>
+            <a class="btn view" href="${viewLink}">View</a>
+            <a class="btn buy" href="${buyLink}">Buy now</a>
           </div>
         </div>
       </div>`;
