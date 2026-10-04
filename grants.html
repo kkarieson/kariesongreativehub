@@ -709,10 +709,11 @@ footer span {
     All Rights Reserved
 </footer>
 
-
 <script>
 
-/* ================= GRANT DATA ================= */
+/* =========================================================
+   GRANT DATA
+========================================================= */
 
 const grants = {
 
@@ -1136,40 +1137,31 @@ const grants = {
             }
         ]
     }
+
 };
 
 
-/* ================= SHOW TOPICS ================= */
+/* =========================================================
+   SHOW GRANT TOPICS
+========================================================= */
 
 function showTopics() {
 
-    const type =
-        document.getElementById("grantType").value;
-
-    const area =
-        document.getElementById("topicsArea");
-
-    const title =
-        document.getElementById("topicsTitle");
-
-    const list =
-        document.getElementById("topicList");
-
+    const type = document.getElementById("grantType").value;
+    const area = document.getElementById("topicsArea");
+    const title = document.getElementById("topicsTitle");
+    const list = document.getElementById("topicList");
 
     list.innerHTML = "";
 
-
-    if (!type) {
+    if (!type || !grants[type]) {
 
         area.classList.remove("show");
 
         return;
     }
 
-
-    const selectedGrant =
-        grants[type];
-
+    const selectedGrant = grants[type];
 
     title.textContent =
         selectedGrant.title + " — Grant Topics";
@@ -1177,8 +1169,11 @@ function showTopics() {
 
     selectedGrant.topics.forEach(function(topic, index) {
 
-        const topicRow =
-            document.createElement("div");
+        /* ---------------------------------------------
+           TOPIC ROW
+        --------------------------------------------- */
+
+        const topicRow = document.createElement("div");
 
         topicRow.className = "topic";
 
@@ -1189,8 +1184,10 @@ function showTopics() {
             </div>
 
             <button
+                type="button"
                 class="plus"
-                onclick="openTopic('${type}', ${index})">
+                onclick="openTopic('${type}', ${index})"
+                aria-label="Open ${topic.name}">
                 +
             </button>
 
@@ -1199,8 +1196,11 @@ function showTopics() {
         list.appendChild(topicRow);
 
 
-        const detail =
-            document.createElement("div");
+        /* ---------------------------------------------
+           TOPIC DETAIL
+        --------------------------------------------- */
+
+        const detail = document.createElement("div");
 
         detail.className = "detail";
 
@@ -1218,7 +1218,10 @@ function showTopics() {
 
                     <img
                         src="${topic.image}"
-                        alt="${topic.name}">
+                        alt="${topic.name}"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                    >
 
                 </div>
 
@@ -1232,22 +1235,31 @@ function showTopics() {
 
                 </div>
 
-                <div class="buttons">
+            </div>
 
-                    <a
-                        href="#"
-                        class="btn view"
-                        onclick="viewProposal(event, '${type}', ${index})">
-                        View
-                    </a>
 
-                    <a
-                        href="#"
-                        class="btn buy">
-                        Buy Now
-                    </a>
+            <div class="actions">
 
-                </div>
+                <button
+                    type="button"
+                    class="btn view"
+                    onclick="openGrantPreview(
+                        '${type}',
+                        ${index}
+                    )">
+
+                    View
+
+                </button>
+
+
+                <a
+                    class="btn buy"
+                    href="buy.html?topic=${encodeURIComponent(topic.name)}">
+
+                    Buy Now
+
+                </a>
 
             </div>
 
@@ -1263,7 +1275,9 @@ function showTopics() {
 }
 
 
-/* ================= OPEN TOPIC ================= */
+/* =========================================================
+   OPEN / CLOSE TOPIC DETAIL
+========================================================= */
 
 function openTopic(type, index) {
 
@@ -1273,11 +1287,18 @@ function openTopic(type, index) {
         );
 
 
+    if (!selected) {
+        return;
+    }
+
+
     document.querySelectorAll(".detail")
         .forEach(function(detail) {
 
             if (detail !== selected) {
+
                 detail.classList.remove("show");
+
             }
 
         });
@@ -1302,81 +1323,796 @@ function openTopic(type, index) {
 }
 
 
-/* ================= VIEW PROPOSAL ================= */
+/* =========================================================
+   OPEN COMPLETE GRANT PREVIEW
+========================================================= */
 
-function viewProposal(event, type, index) {
+function openGrantPreview(type, index) {
 
-    event.preventDefault();
+    /* ---------------------------------------------
+       GET SELECTED GRANT
+    --------------------------------------------- */
 
+    const grant = grants[type];
 
-    const topic =
-        grants[type].topics[index];
+    if (!grant || !grant.topics[index]) {
 
-
-    const selected =
-        document.getElementById(
-            "detail-" + type + "-" + index
-        );
-
-
-    /* If already open, close it */
-
-    const existing =
-        selected.querySelector(".proposal-preview");
-
-
-    if (existing) {
-
-        existing.remove();
+        alert("Grant topic could not be found.");
 
         return;
     }
 
 
-    /* Create proposal summary */
+    const item = grant.topics[index];
 
-    const preview =
-        document.createElement("div");
+    const name = item.name;
 
-    preview.className =
-        "proposal-preview";
+    const topicName = item.name;
+
+    const synopsis = item.synopsis;
+
+    const cover = item.image;
 
 
-    preview.innerHTML = `
+    /* ---------------------------------------------
+       BUY LINK
+    --------------------------------------------- */
 
-        <div class="proposal-summary">
+    const buyLink =
+        "buy.html?topic=" +
+        encodeURIComponent(item.name);
+
+
+    /* ---------------------------------------------
+       OPEN PREVIEW WINDOW
+    --------------------------------------------- */
+
+    const previewWindow =
+        window.open("", "_blank");
+
+
+    if (!previewWindow) {
+
+        alert(
+            "Please allow pop-ups to open the grant preview."
+        );
+
+        return;
+    }
+
+
+    /* ---------------------------------------------
+       PREVIEW PAGE
+    --------------------------------------------- */
+
+    previewWindow.document.write(`
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    ${name} | Grant Preview | Karieson Creative Hub
+</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+    margin:0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#f3f3f3;
+
+    color:#222;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    background:#000;
+
+    color:#fff;
+
+    padding:22px 15px;
+
+    text-align:center;
+
+}
+
+header h1{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+header p{
+
+    margin:5px 0 0;
+
+    color:#ddd;
+
+    font-size:13px;
+
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container{
+
+    width:94%;
+
+    max-width:900px;
+
+    margin:35px auto;
+
+}
+
+
+/* =========================================================
+   ONE PREVIEW CARD
+========================================================= */
+
+.preview-card{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:10px;
+
+    border:1px solid #e5e5e5;
+
+    box-shadow:
+        0 3px 6px rgba(0,0,0,.10),
+        0 12px 25px rgba(0,0,0,.10),
+        0 25px 50px rgba(0,0,0,.06);
+
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.preview-card h2{
+
+    margin:0 0 12px;
+
+    color:#c00000;
+
+    font-size:21px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.meta{
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #eee;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.meta strong{
+
+    color:#111;
+
+}
+
+
+/* =========================================================
+   COVER SECTION
+========================================================= */
+
+.cover-section{
+
+    width:100%;
+
+    margin:25px 0;
+
+    text-align:center;
+
+}
+
+
+/* =========================================================
+   COVER IMAGE
+========================================================= */
+
+.preview-card .cover{
+
+    display:block;
+
+    width:100%;
+
+    max-width:500px;
+
+    max-height:650px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    margin:0 auto;
+
+    border:1px solid #ddd;
+
+    background:#f5f5f5;
+
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.section{
+
+    margin-top:30px;
+
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.preview-card h3{
+
+    margin:0 0 10px;
+
+    color:#c00000;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+.preview-card p{
+
+    margin:0 0 14px;
+
+    color:#222;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.preview-card ol,
+.preview-card ul{
+
+    margin:8px 0 0;
+
+    padding-left:25px;
+
+    color:#222;
+
+}
+
+.preview-card li{
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+}
+
+
+/* =========================================================
+   SYNOPSIS
+========================================================= */
+
+.synopsis{
+
+    margin-top:18px;
+
+    padding:18px;
+
+    background:#f7f7f7;
+
+    border-left:4px solid #c00000;
+
+    color:#333;
+
+    font-size:15px;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+    padding-top:25px;
+
+    border-top:1px solid #eee;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:5px;
+
+    border:1px solid transparent;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.back{
+
+    background:#000;
+
+    color:#fff;
+
+    border-color:#000;
+
+}
+
+.back:hover{
+
+    background:#222;
+
+}
+
+
+/* =========================================================
+   BUY BUTTON
+========================================================= */
+
+.buy{
+
+    background:#c00000;
+
+    color:#fff;
+
+    border-color:#c00000;
+
+}
+
+.buy:hover{
+
+    background:#000;
+
+    color:#fff;
+
+    border-color:#000;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#000;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:20px 15px;
+
+    margin-top:40px;
+
+    font-size:13px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .container{
+
+        width:94%;
+
+        margin:20px auto;
+
+    }
+
+
+    .preview-card{
+
+        padding:22px;
+
+        border-radius:8px;
+
+    }
+
+
+    .preview-card h2{
+
+        font-size:19px;
+
+    }
+
+
+    .preview-card h3{
+
+        font-size:16px;
+
+    }
+
+
+    .preview-card p,
+    .preview-card li{
+
+        font-size:14px;
+
+    }
+
+
+    .meta{
+
+        font-size:14px;
+
+    }
+
+
+    .actions{
+
+        flex-direction:column;
+
+    }
+
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTOMATIC DARK MODE
+========================================================= */
+
+@media (prefers-color-scheme: dark){
+
+    body{
+
+        background:#000;
+
+        color:#fff;
+
+    }
+
+
+    .preview-card{
+
+        background:#0b0b0b;
+
+        border-color:#333;
+
+        box-shadow:
+            0 3px 8px rgba(0,0,0,.5),
+            0 15px 35px rgba(0,0,0,.4);
+
+    }
+
+
+    .preview-card h2,
+    .preview-card h3{
+
+        color:#fff;
+
+    }
+
+
+    .meta{
+
+        border-color:#333;
+
+    }
+
+
+    .meta strong{
+
+        color:#fff;
+
+    }
+
+
+    .preview-card p,
+    .preview-card li{
+
+        color:#ddd;
+
+    }
+
+
+    .synopsis{
+
+        background:#171717;
+
+        border-color:#c00000;
+
+        color:#ccc;
+
+    }
+
+
+    .preview-card .cover{
+
+        background:#202020;
+
+        border-color:#444;
+
+    }
+
+
+    .actions{
+
+        border-color:#333;
+
+    }
+
+
+    .back{
+
+        background:#fff;
+
+        color:#000;
+
+        border-color:#fff;
+
+    }
+
+
+    .buy{
+
+        background:#c00000;
+
+        color:#fff;
+
+        border-color:#c00000;
+
+    }
+
+
+    .buy:hover{
+
+        background:#fff;
+
+        color:#000;
+
+        border-color:#fff;
+
+    }
+
+
+    footer{
+
+        color:#aaa;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>Karieson Creative Hub</h1>
+
+    <p>Grant Proposal Preview</p>
+
+</header>
+
+
+<main class="container">
+
+
+    <div class="preview-card">
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <h2>
+            ${name}
+        </h2>
+
+
+        <div class="meta">
+
+            <strong>Grant Category:</strong>
+            ${grant.title}
+
+            <br>
+
+            <strong>Project Topic:</strong>
+            ${topicName}
+
+        </div>
+
+
+        <!-- =================================================
+             COVER
+        ================================================== -->
+
+        <section class="cover-section">
+
+            <img
+                src="${cover}"
+                class="cover"
+                alt="Grant cover for ${name}"
+                onerror="this.style.display='none';"
+            >
+
+        </section>
+
+
+        <!-- =================================================
+             1. INTRODUCTION
+        ================================================== -->
+
+        <section class="section">
 
             <h3>
-                Grant Proposal Summary
+                1. Introduction
             </h3>
-
-
-            <h4>
-                Project Title
-            </h4>
-
-            <p>
-                ${topic.name}
-            </p>
-
-
-            <h4>
-                Executive Summary
-            </h4>
 
             <p>
                 This proposed project focuses on
-                ${topic.name.toLowerCase()}, with the
-                aim of addressing identified needs,
-                creating meaningful opportunities and
-                producing measurable benefits for the
-                intended beneficiaries.
+                ${topicName.toLowerCase()},
+                with the aim of addressing identified
+                needs, creating meaningful opportunities
+                and producing measurable benefits for
+                the intended beneficiaries.
             </p>
 
+            <p>
+                The proposal provides a structured
+                approach for implementing activities,
+                strengthening capacity and achieving
+                sustainable project outcomes.
+            </p>
 
-            <h4>
-                Problem Statement
-            </h4>
+        </section>
+
+
+        <!-- =================================================
+             2. PROBLEM STATEMENT
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                2. Statement of the Problem
+            </h3>
 
             <p>
                 The project responds to existing
@@ -1387,16 +2123,40 @@ function viewProposal(event, type, index) {
                 sustainable community progress.
             </p>
 
+        </section>
 
-            <h4>
-                Project Objectives
-            </h4>
 
-            <ul>
+        <!-- =================================================
+             3. GENERAL AND SPECIFIC OBJECTIVES
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                3. Objectives of the Grant Proposal
+            </h3>
+
+            <p>
+                <strong>General Objective</strong>
+            </p>
+
+            <p>
+                To address identified needs related to
+                ${topicName.toLowerCase()} and create
+                sustainable opportunities for the
+                intended beneficiaries.
+            </p>
+
+
+            <p>
+                <strong>Specific Objectives</strong>
+            </p>
+
+            <ol>
 
                 <li>
                     Address identified needs within
-                    the selected grant area.
+                    the selected project area.
                 </li>
 
                 <li>
@@ -1414,27 +2174,22 @@ function viewProposal(event, type, index) {
                     sustainable project outcomes.
                 </li>
 
-            </ul>
+            </ol>
+
+        </section>
 
 
-            <h4>
-                Target Beneficiaries
-            </h4>
+        <!-- =================================================
+             4. GRANT ACTIVITIES
+        ================================================== -->
 
-            <p>
-                The project will benefit the primary
-                target population associated with
-                ${topic.name.toLowerCase()}, together
-                with relevant community groups,
-                organizations and stakeholders.
-            </p>
+        <section class="section">
 
+            <h3>
+                4. Grant Activities
+            </h3>
 
-            <h4>
-                Key Activities
-            </h4>
-
-            <ul>
+            <ol>
 
                 <li>
                     Community and stakeholder
@@ -1458,12 +2213,20 @@ function viewProposal(event, type, index) {
                     reporting.
                 </li>
 
-            </ul>
+            </ol>
+
+        </section>
 
 
-            <h4>
-                Expected Outcomes
-            </h4>
+        <!-- =================================================
+             5. EXPECTED OUTCOMES
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                5. Expected Outcomes
+            </h3>
 
             <p>
                 The project is expected to improve
@@ -1472,10 +2235,18 @@ function viewProposal(event, type, index) {
                 outcomes for the intended beneficiaries.
             </p>
 
+        </section>
 
-            <h4>
-                Implementation
-            </h4>
+
+        <!-- =================================================
+             6. IMPLEMENTATION
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                6. Implementation of the Grant Proposal
+            </h3>
 
             <p>
                 Implementation will follow a structured
@@ -1484,10 +2255,18 @@ function viewProposal(event, type, index) {
                 monitoring and evaluation.
             </p>
 
+        </section>
 
-            <h4>
-                Budget Summary
-            </h4>
+
+        <!-- =================================================
+             7. BUDGET SUMMARY
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                7. Budget Summary
+            </h3>
 
             <p>
                 The proposed budget will cover the
@@ -1497,10 +2276,18 @@ function viewProposal(event, type, index) {
                 evaluation.
             </p>
 
+        </section>
 
-            <h4>
-                Sustainability
-            </h4>
+
+        <!-- =================================================
+             8. SUSTAINABILITY
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                8. Sustainability
+            </h3>
 
             <p>
                 Sustainability measures will be included
@@ -1509,24 +2296,83 @@ function viewProposal(event, type, index) {
                 period.
             </p>
 
+        </section>
+
+
+        <!-- =================================================
+             9. TOPIC SYNOPSIS
+        ================================================== -->
+
+        <section class="section">
+
+            <h3>
+                9. Project Synopsis
+            </h3>
+
+            <div class="synopsis">
+
+                <strong>
+                    ${topicName}
+                </strong>
+
+                <br><br>
+
+                ${synopsis}
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIONS
+        ================================================== -->
+
+        <div class="actions">
+
+            <button
+                type="button"
+                class="btn back"
+                onclick="window.close();">
+
+                Close Preview
+
+            </button>
+
+
+            <a
+                href="${buyLink}"
+                class="btn buy">
+
+                Buy Now
+
+            </a>
+
         </div>
 
-    `;
+
+    </div>
 
 
-    selected.appendChild(preview);
+</main>
 
 
-    /* Scroll to proposal */
+<footer>
 
-    setTimeout(function() {
+    ©2026 Karieson Creative Hub.
+    All rights reserved.
 
-        preview.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-        });
+</footer>
 
-    }, 100);
+
+</body>
+
+</html>
+
+    `);
+
+
+    previewWindow.document.close();
 
 }
 

@@ -1361,7 +1361,35 @@ footer{
 
 }
 
+/* Automatic device/browser dark theme */
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black:#080808; --white:#000000; --grey:#171717;
+    --border:#383838; --text-grey:#b8b8b8;
+  }
+  body { background:#000; color:#fff; }
+  .intro p, .proposal-summary p, .proposal-summary li { color:#b8b8b8; }
+  .selection-box, .proposal-summary, .topic {
+    background:#0b0b0b; color:#fff; border-color:#383838;
+  }
+  select {
+    background:#111; color:#fff; border-color:#555;
+  }
+  select option { background:#111; color:#fff; }
+  select:disabled { background:#171717; color:#888; }
+  .topic:hover { background:#171717; }
+  .topic-list { border-color:#383838; }
+  .detail { background:#171717; color:#fff; border-color:#383838; }
+  .synopsis { color:#c2c2c2; }
+  .proposal-summary h4 { color:#fff; }
+  .cover { background:#202020; box-shadow:0 6px 20px rgba(0,0,0,.45); }
+  header, .topics-title, .instructions, .view, footer { background:#080808; }
+  .plus, .buy { color:#fff; }
+  .buy:hover { background:#fff; color:#080808; border-color:#fff; }
+  footer { color:#aaa; }
+}
+}
 
 
 </style>
