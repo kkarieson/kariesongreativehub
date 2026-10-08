@@ -1084,33 +1084,26 @@ function openResearchPreview(
 <title>
   ${name} | Research Preview | Karieson Creative Hub
 </title>
-
-
 <style>
-
 /* =========================================================
    RESET
 ========================================================= */
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-
-/* =========================================================
-   BODY
-========================================================= */
-
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f5f5f5;
-  color:#222;
-  line-height:1.7;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #222;
+  line-height: 1.7;
 }
 
 
@@ -1118,171 +1111,77 @@ body{
    HEADER
 ========================================================= */
 
-header{
-  background:#000;
-  color:#fff;
-  padding:24px 20px;
-  text-align:center;
+header {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 22px 20px;
+  text-align: center;
 }
 
-header h1{
-  margin:0;
-  font-size:28px;
-  font-weight:800;
+header h1 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
 }
 
-header p{
-  margin:6px 0 0;
-  color:#ddd;
+header p {
+  margin: 5px 0 0;
+  color: #ddd;
+  font-size: clamp(12px, 2vw, 15px);
 }
 
 
 /* =========================================================
    MAIN CONTAINER
+   Full width with responsive side spacing
 ========================================================= */
 
-.container{
-  width:92%;
-  max-width:1000px;
-  margin:30px auto;
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
 
 /* =========================================================
-   TOPIC HEADER
+   PREVIEW CARD
 ========================================================= */
 
-.preview-header{
-  background:#fff;
-  padding:28px;
-  margin-bottom:22px;
-  border-left:5px solid #c00000;
-  box-shadow:0 2px 8px rgba(0,0,0,.05);
-}
+.preview-card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 
-.preview-header h2{
-  margin:0 0 15px;
-  color:#c00000;
-  font-size:27px;
-  line-height:1.4;
-}
+  background: #fff;
+  padding: clamp(20px, 4vw, 40px);
 
-.meta{
-  font-size:15px;
-  line-height:1.9;
-}
-
-.meta strong{
-  color:#111;
-}
-
-
-/* =========================================================
-   COVER
-========================================================= */
-
-.cover-section{
-  background:#fff;
-  padding:25px;
-  margin-bottom:22px;
-  text-align:center;
-}
-
-.cover{
-  display:block;
-  width:100%;
-  max-width:550px;
-  height:auto;
-  max-height:700px;
-  object-fit:contain;
-  margin:auto;
-  border:1px solid #ddd;
-  background:#f5f5f5;
-}
-
-
-/* =========================================================
-   PREVIEW DESIGN
-========================================================= */
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f3f3f3;
-  color:#222;
-  line-height:1.7;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header{
-  background:#000;
-  color:#fff;
-  padding:22px 15px;
-  text-align:center;
-}
-
-header h1{
-  margin:0;
-  font-size:22px;
-  font-weight:700;
-}
-
-header p{
-  margin:4px 0 0;
-  color:#fff;
-  font-size:13px;
-}
-
-
-/* =========================================================
-   MAIN PREVIEW CARD — ONE CONTAINER
-========================================================= */
-
-.container{
-  width:94%;
-  max-width:900px;
-  margin:35px auto;
-}
-
-.preview-card{
-  background:#fff;
-  padding:35px;
-
-  border-radius:10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
 
   box-shadow:
-    0 3px 6px rgba(0,0,0,.10),
-    0 12px 25px rgba(0,0,0,.10),
-    0 25px 50px rgba(0,0,0,.06);
-
-  border:1px solid #e5e5e5;
+    0 3px 6px rgba(0, 0, 0, 0.10),
+    0 12px 25px rgba(0, 0, 0, 0.08),
+    0 25px 50px rgba(0, 0, 0, 0.05);
 }
 
 
 /* =========================================================
-   SMALL RED TITLE
+   TITLE
 ========================================================= */
 
-.preview-card h2{
-  margin:0 0 12px;
+.preview-card h2 {
+  margin: 0 0 15px;
 
-  color:#c00000;
+  color: #c00000;
 
-  font-size:21px;
-  font-weight:700;
-  line-height:1.4;
+  font-size: clamp(19px, 3vw, 27px);
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
 }
 
 
@@ -1290,13 +1189,15 @@ header p{
    SECTION TITLES
 ========================================================= */
 
-.preview-card h3{
-  margin:28px 0 10px;
+.preview-card h3 {
+  margin: 28px 0 10px;
 
-  color:#c00000;
+  color: #c00000;
 
-  font-size:17px;
-  font-weight:700;
+  font-size: clamp(16px, 2vw, 19px);
+  font-weight: 700;
+
+  line-height: 1.4;
 }
 
 
@@ -1304,13 +1205,16 @@ header p{
    PARAGRAPHS
 ========================================================= */
 
-.preview-card p{
-  margin:0 0 12px;
+.preview-card p {
+  margin: 0 0 14px;
 
-  color:#222;
+  color: #222;
 
-  font-size:15px;
-  line-height:1.7;
+  font-size: clamp(14px, 1.5vw, 16px);
+
+  line-height: 1.7;
+
+  overflow-wrap: break-word;
 }
 
 
@@ -1319,69 +1223,104 @@ header p{
 ========================================================= */
 
 .preview-card ol,
-.preview-card ul{
-  color:#222;
-  padding-left:25px;
+.preview-card ul {
+  margin: 0 0 15px;
+  padding-left: 25px;
 }
 
-.preview-card li{
-  color:#222;
-  margin-bottom:7px;
-  font-size:15px;
-}
+.preview-card li {
+  margin-bottom: 7px;
 
+  color: #222;
 
-/* =========================================================
-   COVER
-========================================================= */
+  font-size: clamp(14px, 1.5vw, 16px);
 
-.preview-card .cover{
-  display:block;
+  line-height: 1.7;
 
-  width:100%;
-  max-width:500px;
-  height:auto;
-  max-height:650px;
-
-  object-fit:contain;
-
-  margin:25px auto;
-
-  border:1px solid #ddd;
+  overflow-wrap: break-word;
 }
 
 
 /* =========================================================
-   ACTIONS
+   COVER IMAGE
 ========================================================= */
 
-.actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
+.preview-card .cover {
+  display: block;
+
+  width: 100%;
+  max-width: 550px;
+
+  height: auto;
+  max-height: 700px;
+
+  object-fit: contain;
+
+  margin: 25px auto;
+
+  border: 1px solid #ddd;
+
+  background: #f5f5f5;
 }
 
-.btn{
-  display:inline-block;
-  padding:10px 20px;
-  border:0;
-  border-radius:5px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:14px;
-  cursor:pointer;
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.actions {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  margin-top: 30px;
 }
 
-.back{
-  background:#000;
-  color:#fff;
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 10px 22px;
+
+  border: 0;
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.buy{
-  background:#c00000;
-  color:#fff;
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.back {
+  background: #000;
+  color: #fff;
+}
+
+.buy {
+  background: #c00000;
+  color: #fff;
 }
 
 
@@ -1389,13 +1328,57 @@ header p{
    FOOTER
 ========================================================= */
 
-footer{
-  background:#000;
-  color:#fff;
-  text-align:center;
-  padding:20px 15px;
-  margin-top:40px;
-  font-size:13px;
+footer {
+  width: 100%;
+
+  background: #000;
+  color: #fff;
+
+  text-align: center;
+
+  padding: 20px 15px;
+
+  margin-top: 40px;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .container {
+    max-width: 1300px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .preview-card {
+    max-width: 1000px;
+  }
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .container {
+    padding: 25px 16px;
+  }
+
+  .preview-card {
+    max-width: 100%;
+  }
+
+  .preview-card .cover {
+    max-width: 500px;
+  }
 }
 
 
@@ -1403,73 +1386,149 @@ footer{
    MOBILE
 ========================================================= */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-  .container{
-    width:94%;
-    margin:20px auto;
+  header {
+    padding: 18px 15px;
   }
 
-  .preview-card{
-    padding:22px;
+  .container {
+    width: 100%;
+    padding: 15px 10px;
+    margin: 0 auto;
   }
 
-  .preview-card h2{
-    font-size:19px;
+  .preview-card {
+    width: 100%;
+
+    padding: 20px 16px;
+
+    border-radius: 8px;
   }
 
-  .preview-card h3{
-    font-size:16px;
+  .preview-card h2 {
+    font-size: 19px;
+  }
+
+  .preview-card h3 {
+    margin-top: 22px;
+    font-size: 16px;
   }
 
   .preview-card p,
-  .preview-card li{
-    font-size:14px;
+  .preview-card li {
+    font-size: 14px;
+    line-height: 1.65;
   }
 
-  .actions{
-    flex-direction:column;
+  .preview-card ol,
+  .preview-card ul {
+    padding-left: 22px;
   }
 
-  .btn{
-    width:100%;
-    text-align:center;
+  .preview-card .cover {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+
+    margin: 20px auto;
   }
 
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
 
-/* Automatic device/browser dark theme */
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .container {
+    padding: 10px 6px;
+  }
+
+  .preview-card {
+    padding: 16px 12px;
+    border-radius: 6px;
+  }
+
+  .preview-card h2 {
+    font-size: 18px;
+  }
+
+  .preview-card p,
+  .preview-card li {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --black:#080808; --white:#000000; --grey:#171717;
-    --border:#383838; --text-grey:#b8b8b8;
-  }
-  body { background:#000; color:#fff; }
-  .intro p, .proposal-summary p, .proposal-summary li { color:#b8b8b8; }
-  .selection-box, .proposal-summary, .topic {
-    background:#0b0b0b; color:#fff; border-color:#383838;
-  }
-  select {
-    background:#111; color:#fff; border-color:#555;
-  }
-  select option { background:#111; color:#fff; }
-  select:disabled { background:#171717; color:#888; }
-  .topic:hover { background:#171717; }
-  .topic-list { border-color:#383838; }
-  .detail { background:#171717; color:#fff; border-color:#383838; }
-  .synopsis { color:#c2c2c2; }
-  .proposal-summary h4 { color:#fff; }
-  .cover { background:#202020; box-shadow:0 6px 20px rgba(0,0,0,.45); }
-  header, .topics-title, .instructions, .view, footer { background:#080808; }
-  .plus, .buy { color:#fff; }
-  .buy:hover { background:#fff; color:#080808; border-color:#fff; }
-  footer { color:#aaa; }
-}
-}
 
+  body {
+    background: #000;
+    color: #fff;
+  }
 
+  .preview-card {
+    background: #0b0b0b;
+    color: #fff;
+    border-color: #383838;
+
+    box-shadow:
+      0 3px 8px rgba(0, 0, 0, 0.4),
+      0 15px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .preview-card p,
+  .preview-card li {
+    color: #ddd;
+  }
+
+  .preview-card h2,
+  .preview-card h3 {
+    color: #e00000;
+  }
+
+  .preview-card .cover {
+    background: #171717;
+    border-color: #383838;
+  }
+
+  .back {
+    background: #fff;
+    color: #000;
+  }
+
+  .buy {
+    background: #c00000;
+    color: #fff;
+  }
+
+  .buy:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  footer {
+    background: #080808;
+    color: #aaa;
+  }
+}
 </style>
+
 
 </head>
 
