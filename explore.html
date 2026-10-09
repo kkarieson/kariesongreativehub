@@ -1095,7 +1095,6 @@ function openResearchPreview(
   previewWindow.document.write(`
 
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -1104,17 +1103,14 @@ function openResearchPreview(
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0"
+  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
 >
 
-<title>
-  ${name} | Research Preview | Karieson Creative Hub
-</title>
-<style>
-/* =========================================================
-   1. RESET AND PAGE SETTINGS
-========================================================= */
+<meta name="mobile-web-app-capable" content="yes">
 
+<title>${name} | Research Preview | Karieson Creative Hub</title>
+
+<style>
 *,
 *::before,
 *::after {
@@ -1126,12 +1122,12 @@ html {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  display: block;
   width: 100%;
   min-width: 0;
   min-height: 100vh;
@@ -1145,515 +1141,281 @@ body {
   background: #f3f3f3;
   color: #222;
 
-  overflow-wrap: break-word;
+  overflow-x: hidden;
 }
 
-
-/* =========================================================
-   2. HEADER
-========================================================= */
-
 header {
-  display: block;
   width: 100%;
   margin: 0;
-  padding: 24px 20px;
-
+  padding: 22px 16px;
   background: #000;
   color: #fff;
-
   text-align: center;
 }
 
 header h1 {
   margin: 0;
-
-  color: #fff;
-
-  font-size: clamp(20px, 4vw, 28px);
-  font-weight: 700;
+  font-size: clamp(20px, 5vw, 28px);
   line-height: 1.4;
-
-  overflow-wrap: anywhere;
 }
 
 header p {
-  margin: 6px 0 0;
-
+  margin: 5px 0 0;
   color: #ddd;
-
   font-size: 14px;
-  line-height: 1.6;
 }
 
-
-/* =========================================================
-   3. MAIN CONTAINER
-========================================================= */
-
-main.container {
-  display: block;
-
+.container {
   width: 100%;
   max-width: 1200px;
-
+  min-width: 0;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 24px 16px;
 }
-
-
-/* =========================================================
-   4. PREVIEW CARD
-========================================================= */
 
 .preview-card {
   display: block;
-
   width: 100%;
   max-width: 1000px;
-
+  min-width: 0;
   margin: 0 auto;
-  padding: clamp(20px, 4vw, 40px);
+  padding: clamp(16px, 4vw, 40px);
 
   background: #fff;
-  color: #222;
-
   border: 1px solid #e5e5e5;
-  border-radius: 10px;
+  border-radius: 8px;
 
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-
-  overflow-wrap: break-word;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
 }
-
-
-/* =========================================================
-   5. ACADEMIC INFORMATION
-========================================================= */
-
-.preview-card .meta {
-  margin: 0 0 20px;
-
-  color: #444;
-
-  font-size: 14px;
-  line-height: 1.9;
-}
-
-.preview-card .meta strong {
-  color: #222;
-}
-
-
-/* =========================================================
-   6. MAIN TITLE
-========================================================= */
 
 .preview-card h2 {
-  margin: 0 0 18px;
-
+  margin: 0 0 15px;
   color: #c00000;
-
-  font-size: clamp(21px, 3.5vw, 30px);
-  font-weight: 800;
+  font-size: clamp(21px, 4vw, 28px);
   line-height: 1.4;
-
   overflow-wrap: anywhere;
-  word-break: normal;
 }
 
-
-/* =========================================================
-   7. SECTION TITLES
-========================================================= */
+.meta {
+  margin-bottom: 20px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
 
 .preview-card h3 {
-  margin: 28px 0 12px;
-
+  margin: 26px 0 10px;
   color: #c00000;
-
-  font-size: clamp(17px, 2.5vw, 20px);
-  font-weight: 800;
-  line-height: 1.45;
-
-  overflow-wrap: anywhere;
+  font-size: clamp(17px, 3vw, 20px);
+  line-height: 1.4;
 }
-
-.preview-card .section:first-of-type h3 {
-  margin-top: 24px;
-}
-
-
-/* =========================================================
-   8. PARAGRAPHS
-========================================================= */
 
 .preview-card p {
-  margin: 0 0 16px;
-
-  color: #333;
-
-  font-size: 15px;
+  margin: 0 0 14px;
+  font-size: 16px;
   line-height: 1.8;
-
   overflow-wrap: break-word;
 }
-
-.preview-card p strong {
-  color: #222;
-}
-
-
-/* =========================================================
-   9. ORDERED AND UNORDERED LISTS
-========================================================= */
 
 .preview-card ol,
 .preview-card ul {
   margin: 0 0 18px;
-  padding-left: 26px;
+  padding-left: 25px;
 }
 
 .preview-card li {
-  margin-bottom: 9px;
-
-  color: #333;
-
-  font-size: 15px;
-  line-height: 1.75;
-
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.8;
   overflow-wrap: break-word;
-}
-
-.preview-card li:last-child {
-  margin-bottom: 0;
-}
-
-
-/* =========================================================
-   10. COVER IMAGE
-   HTML and images are in the same folder.
-========================================================= */
-
-.preview-card .cover-section {
-  display: block;
-
-  width: 100%;
-  margin: 25px 0;
 }
 
 .preview-card .cover {
   display: block;
-
   width: 100%;
   max-width: 550px;
-
   height: auto;
-  max-height: none;
-
-  margin: 0 auto;
-
   object-fit: contain;
-  object-position: center;
-
+  margin: 24px auto;
   border: 1px solid #ddd;
-  background: #fff;
+  background: #f5f5f5;
 }
-
-/* Display a message if the image fails to load. */
-
-.preview-card .cover-error {
-  display: none;
-
-  width: 100%;
-  max-width: 550px;
-
-  margin: 0 auto;
-  padding: 25px 15px;
-
-  border: 1px dashed #bbb;
-
-  color: #777;
-  text-align: center;
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   11. ACTION BUTTONS
-========================================================= */
 
 .actions {
   display: flex;
-
   justify-content: center;
-  align-items: stretch;
-
-  gap: 12px;
+  align-items: center;
   flex-wrap: wrap;
-
+  gap: 12px;
   width: 100%;
-
   margin-top: 30px;
 }
 
 .btn {
   display: inline-flex;
-
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   min-height: 46px;
   padding: 12px 22px;
-
-  border: 1px solid transparent;
+  border: none;
   border-radius: 5px;
-
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.4;
-
   text-decoration: none;
-  text-align: center;
-
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.btn:focus-visible {
-  outline: 3px solid #777;
-  outline-offset: 3px;
 }
 
 .back {
-  background: #111;
+  background: #000;
   color: #fff;
-}
-
-.back:hover {
-  background: #333;
 }
 
 .buy {
   background: #c00000;
   color: #fff;
-  border-color: #c00000;
 }
-
-.buy:hover {
-  background: #990000;
-  border-color: #990000;
-}
-
-
-/* =========================================================
-   12. FOOTER
-========================================================= */
 
 footer {
-  display: block;
-
   width: 100%;
-
-  margin: 40px 0 0;
-  padding: 22px 15px;
-
-  background: #111;
+  margin-top: 30px;
+  padding: 20px 15px;
+  background: #000;
   color: #fff;
-
   text-align: center;
-
   font-size: 13px;
-  line-height: 1.7;
 }
 
-
-/* =========================================================
-   13. LARGE SCREENS
-========================================================= */
-
-@media (min-width: 1200px) {
-
-  main.container {
-    padding: 40px 30px;
-  }
-
-  .preview-card {
-    max-width: 1000px;
-  }
-}
-
-
-/* =========================================================
-   14. TABLETS
-========================================================= */
-
+/* TABLETS */
 @media (min-width: 601px) and (max-width: 900px) {
-
-  main.container {
-    padding: 25px 18px;
+  .container {
+    padding: 24px;
   }
 
   .preview-card {
     max-width: 100%;
-    padding: 28px;
-  }
-
-  .preview-card .cover {
-    max-width: 480px;
   }
 }
 
-
-/* =========================================================
-   15. MOBILE PHONES
-========================================================= */
-
+/* MOBILE */
 @media (max-width: 600px) {
-
-  header {
-    padding: 20px 15px;
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
   }
 
-  main.container {
+  header {
+    padding: 18px 14px;
+  }
+
+  .container {
     width: 100%;
     max-width: none;
-
+    padding: 12px;
     margin: 0;
-    padding: 15px 10px;
   }
 
   .preview-card {
     width: 100%;
     max-width: none;
-
-    margin: 0;
     padding: 20px 16px;
-
-    border-radius: 7px;
+    margin: 0;
+    border-radius: 6px;
   }
 
   .preview-card h2 {
     font-size: 21px;
-    line-height: 1.45;
   }
 
   .preview-card h3 {
-    margin-top: 24px;
     font-size: 17px;
   }
 
   .preview-card p,
   .preview-card li {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .preview-card .meta {
-    font-size: 13px;
-  }
-
-  .preview-card ol,
-  .preview-card ul {
-    padding-left: 22px;
-  }
-
-  .preview-card .cover-section {
-    margin: 22px 0;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   .preview-card .cover {
     width: 100%;
     max-width: 100%;
     height: auto;
+    margin: 20px auto;
   }
 
   .actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
   }
 
   .btn {
     width: 100%;
     min-height: 46px;
   }
-
-  footer {
-    margin-top: 25px;
-  }
 }
 
-
-/* =========================================================
-   16. VERY SMALL PHONES
-========================================================= */
-
+/* VERY SMALL PHONES */
 @media (max-width: 380px) {
-
-  header {
-    padding: 18px 12px;
-  }
-
-  main.container {
-    padding: 10px 6px;
+  .container {
+    padding: 8px;
   }
 
   .preview-card {
-    padding: 17px 12px;
-    border-radius: 5px;
+    padding: 16px 12px;
   }
 
   .preview-card h2 {
     font-size: 19px;
   }
 
-  .preview-card h3 {
-    font-size: 16px;
+  .preview-card p,
+  .preview-card li {
+    font-size: 14px;
+  }
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #fff;
+  }
+
+  .preview-card {
+    background: #0b0b0b;
+    color: #fff;
+    border-color: #383838;
   }
 
   .preview-card p,
   .preview-card li {
-    font-size: 13px;
-    line-height: 1.75;
+    color: #ddd;
   }
 
-  .preview-card .meta {
-    font-size: 12px;
-  }
-}
-
-
-/* =========================================================
-   17. ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
+  .preview-card h2,
+  .preview-card h3 {
+    color: #e00000;
   }
 
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
+  .preview-card .cover {
+    background: #171717;
+    border-color: #383838;
   }
-}
 
+  .back {
+    background: #fff;
+    color: #000;
+  }
 
-/* =========================================================
-   18. CONSISTENT LIGHT THEME
-   Prevent phone dark mode from changing the preview.
-========================================================= */
+  .buy {
+    background: #c00000;
+    color: #fff;
+  }
 
-:root {
-  color-scheme: light;
+  footer {
+    background: #080808;
+    color: #aaa;
+  }
 }
 </style>
 
