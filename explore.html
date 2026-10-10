@@ -265,13 +265,15 @@ header p{
     align-items:start;
   }
 
-  .cover{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:fill;
-  border:1px solid #d5d5d5;
-  background:#f5f5f5;
+.cover {
+display: block;
+width: 100%;
+max-width: 100%;
+height: auto;
+object-fit: contain;
+border: 1px solid #d5d5d5;
+background: #f5f5f5;
+box-sizing: border-box;
 }
 .synopsis{
   color:#444;
@@ -739,48 +741,203 @@ const data = {
   ]
 },
   degree: {
-    "Education": [
-      "Influence of Competency-Based Learning on Academic Achievement",
-      "Teacher Professional Development and Teaching Effectiveness",
-      "Technology Integration and Learning Outcomes",
-      "School Leadership and Teacher Job Satisfaction",
-      "Inclusive Education and Learning Participation among Students"
-    ],
-    "Computer Science and Technology": [
-      "Artificial Intelligence Adoption in Higher Education",
-      "Cybersecurity Risk Management in Small and Medium Enterprises",
-      "Machine Learning Applications in Business Decision-Making",
-      "Cloud Computing Adoption and Organizational Performance",
-      "Mobile Technology and Digital Transformation"
-    ],
-    "Agricultural Science": [
-      "Climate-Smart Agriculture and Smallholder Farm Productivity",
-      "Agricultural Value Chains and Farmer Income",
-      "Digital Agriculture and Access to Market Information",
-      "Sustainable Irrigation Practices and Crop Productivity",
-      "Agricultural Cooperatives and Smallholder Farmer Welfare"
-    ],
-    "Environmental Science": [
-      "Urban Waste Management and Environmental Sustainability",
-      "Climate Change Adaptation Strategies among Local Communities",
-      "Water Quality Assessment and Public Health",
-      "Renewable Energy Adoption and Environmental Sustainability",
-      "Urbanization and Loss of Biodiversity"
-    ],
-    "Sociology and Social Sciences": [
-      "Social Inequality and Access to Educational Opportunities",
-      "Social Media, Identity and Youth Behaviour",
-      "Migration and Household Socioeconomic Outcomes",
-      "Gender Inequality and Economic Participation",
-      "Changing Family Structures in Urban Communities"
-    ],
-    "Public Health": [
-      "Determinants of Healthcare Utilization in Underserved Communities",
-      "Health Education and Preventive Health Behaviour",
-      "Maternal Health Service Utilization and Associated Factors",
-      "Mental Health Awareness among University Students",
-      "Community-Based Interventions and Health Outcomes"
-    ],
+  "Education": [
+    {
+      "title": "Influence of Competency-Based Learning on Academic Achievement",
+      "cover": "competency-based-learning.png",
+      "synopsis": "This research examines the influence of competency-based learning on students' academic achievement. It explores learner-centred teaching methods, practical skills development, continuous assessment, curriculum implementation and the role of teachers in promoting meaningful learning outcomes.",
+      "link": "research/competency-based-learning.html"
+    },
+    {
+      "title": "Teacher Professional Development and Teaching Effectiveness",
+      "cover": "teacher-professional-development.png",
+      "synopsis": "This research investigates the relationship between teacher professional development and teaching effectiveness. It examines in-service training, workshops, mentoring, pedagogical skills, classroom management and the contribution of continuous professional learning to improved teaching practices and student outcomes.",
+      "link": "research/teacher-professional-development.html"
+    },
+    {
+      "title": "Technology Integration and Learning Outcomes",
+      "cover": "technology-integration-learning.png",
+      "synopsis": "This research examines how technology integration influences learning outcomes in educational institutions. It explores digital learning platforms, educational applications, interactive teaching resources, student engagement, digital literacy and challenges associated with implementing technology in teaching and learning.",
+      "link": "research/technology-integration-learning.html"
+    },
+    {
+      "title": "School Leadership and Teacher Job Satisfaction",
+      "cover": "school-leadership-job-satisfaction.png",
+      "synopsis": "This research investigates how school leadership practices influence teacher job satisfaction. It examines leadership styles, communication, staff motivation, professional recognition, decision-making participation and workplace conditions that contribute to teacher morale, commitment and performance.",
+      "link": "research/school-leadership-job-satisfaction.html"
+    },
+    {
+      "title": "Inclusive Education and Learning Participation among Students",
+      "cover": "inclusive-education.png",
+      "synopsis": "This research explores the relationship between inclusive education practices and student participation in learning. It examines accessibility, differentiated instruction, teacher preparedness, learning resources, peer interaction and institutional support for students with diverse educational needs.",
+      "link": "research/inclusive-education.html"
+    }
+  ],
+
+  "Computer Science and Technology": [
+    {
+      "title": "Artificial Intelligence Adoption in Higher Education",
+      "cover": "ai-adoption-higher-education.png",
+      "synopsis": "This research examines the adoption of artificial intelligence in higher education institutions. It explores AI-powered learning tools, automated assessment, personalized learning, administrative efficiency, data privacy, ethical concerns and factors influencing acceptance among students and lecturers.",
+      "link": "research/ai-adoption-higher-education.html"
+    },
+    {
+      "title": "Cybersecurity Risk Management in Small and Medium Enterprises",
+      "cover": "cybersecurity-risk-management.png",
+      "synopsis": "This research investigates cybersecurity risk management practices among small and medium enterprises. It examines common cyber threats, employee awareness, access controls, data protection, incident response strategies and the challenges businesses face when implementing effective cybersecurity measures.",
+      "link": "research/cybersecurity-risk-management.html"
+    },
+    {
+      "title": "Machine Learning Applications in Business Decision-Making",
+      "cover": "machine-learning-business.png",
+      "synopsis": "This research examines how machine learning applications support business decision-making. It explores predictive analytics, customer behaviour analysis, demand forecasting, operational efficiency, data quality and the challenges organizations encounter when integrating machine learning into business processes.",
+      "link": "research/machine-learning-business.html"
+    },
+    {
+      "title": "Cloud Computing Adoption and Organizational Performance",
+      "cover": "cloud-computing-organizational-performance.png",
+      "synopsis": "This research investigates the relationship between cloud computing adoption and organizational performance. It examines cost efficiency, scalability, data accessibility, collaboration, service reliability, information security and the factors influencing organizations' decisions to migrate to cloud-based systems.",
+      "link": "research/cloud-computing-adoption.html"
+    },
+    {
+      "title": "Mobile Technology and Digital Transformation",
+      "cover": "mobile-technology-digital-transformation.png",
+      "synopsis": "This research explores how mobile technology contributes to digital transformation in organizations. It examines mobile applications, digital communication, service delivery, employee productivity, customer engagement and the challenges associated with adopting mobile technologies in modern business environments.",
+      "link": "research/mobile-technology-digital-transformation.html"
+    }
+  ],
+
+  "Agricultural Science": [
+    {
+      "title": "Climate-Smart Agriculture and Smallholder Farm Productivity",
+      "cover": "climate-smart-agriculture.png",
+      "synopsis": "This research examines the influence of climate-smart agricultural practices on smallholder farm productivity. It explores drought-resistant crops, soil conservation, efficient water use, climate information services and the barriers farmers face when adopting sustainable agricultural practices.",
+      "link": "research/climate-smart-agriculture.html"
+    },
+    {
+      "title": "Agricultural Value Chains and Farmer Income",
+      "cover": "agricultural-value-chains.png",
+      "synopsis": "This research investigates how agricultural value chains influence farmer income. It examines market access, transportation, storage facilities, processing, price information, intermediary relationships and the contribution of improved value chain coordination to farmers' economic outcomes.",
+      "link": "research/agricultural-value-chains.html"
+    },
+    {
+      "title": "Digital Agriculture and Access to Market Information",
+      "cover": "digital-agriculture-market-information.png",
+      "synopsis": "This research examines the role of digital agriculture in improving farmers' access to market information. It explores mobile applications, digital trading platforms, market price updates, agricultural advisory services, internet access and the influence of digital information on farmers' marketing decisions.",
+      "link": "research/digital-agriculture.html"
+    },
+    {
+      "title": "Sustainable Irrigation Practices and Crop Productivity",
+      "cover": "sustainable-irrigation.png",
+      "synopsis": "This research investigates the relationship between sustainable irrigation practices and crop productivity. It examines water conservation, drip irrigation, irrigation scheduling, soil moisture management, water availability and the economic and environmental factors affecting irrigation adoption.",
+      "link": "research/sustainable-irrigation.html"
+    },
+    {
+      "title": "Agricultural Cooperatives and Smallholder Farmer Welfare",
+      "cover": "agricultural-cooperatives.png",
+      "synopsis": "This research explores how agricultural cooperatives influence the welfare of smallholder farmers. It examines collective marketing, access to farm inputs, agricultural credit, training, bargaining power, cooperative governance and the contribution of collective action to household livelihoods.",
+      "link": "research/agricultural-cooperatives.html"
+    }
+  ],
+
+  "Environmental Science": [
+    {
+      "title": "Urban Waste Management and Environmental Sustainability",
+      "cover": "urban-waste-management.png",
+      "synopsis": "This research examines urban waste management practices and their contribution to environmental sustainability. It explores waste collection, recycling, waste separation, disposal methods, public participation and the institutional challenges affecting effective solid waste management in urban areas.",
+      "link": "research/urban-waste-management.html"
+    },
+    {
+      "title": "Climate Change Adaptation Strategies among Local Communities",
+      "cover": "climate-change-adaptation.png",
+      "synopsis": "This research investigates climate change adaptation strategies used by local communities. It examines community preparedness, traditional environmental knowledge, livelihood diversification, early warning systems, access to climate information and the role of institutions in strengthening resilience.",
+      "link": "research/climate-change-adaptation.html"
+    },
+    {
+      "title": "Water Quality Assessment and Public Health",
+      "cover": "water-quality-public-health.png",
+      "synopsis": "This research examines the relationship between water quality and public health. It explores drinking water contamination, sanitation practices, water treatment, environmental monitoring and community awareness of waterborne diseases. The study also considers measures for improving access to safe water.",
+      "link": "research/water-quality-public-health.html"
+    },
+    {
+      "title": "Renewable Energy Adoption and Environmental Sustainability",
+      "cover": "renewable-energy-adoption.png",
+      "synopsis": "This research investigates the contribution of renewable energy adoption to environmental sustainability. It examines solar, wind and other renewable energy technologies, adoption costs, public awareness, energy accessibility and the environmental implications of transitioning from conventional energy sources.",
+      "link": "research/renewable-energy-adoption.html"
+    },
+    {
+      "title": "Urbanization and Loss of Biodiversity",
+      "cover": "urbanization-biodiversity.png",
+      "synopsis": "This research explores how urbanization contributes to biodiversity loss. It examines habitat destruction, land-use changes, pollution, infrastructure development, fragmentation of natural ecosystems and conservation strategies that can support biodiversity in rapidly expanding urban areas.",
+      "link": "research/urbanization-biodiversity.html"
+    }
+  ],
+
+  "Sociology and Social Sciences": [
+  {
+    "title": "Social Inequality and Access to Educational Opportunities",
+    "cover": "social-inequality-education.png",
+    "synopsis": "This research examines how social inequality influences access to educational opportunities. It explores household income, gender, geographical location, disability, social background and access to educational resources. The study also considers interventions that may reduce educational disparities.",
+    "link": "research/social-inequality-education.html"
+  },
+  {
+    "title": "Social Media, Identity and Youth Behaviour",
+    "cover": "social-media-youth-behaviour.png",
+    "synopsis": "This research investigates the relationship between social media use, identity formation and youth behaviour. It examines online self-presentation, peer influence, social comparison, digital communities, cyberbullying and the potential effects of social media engagement on young people's social relationships.",
+    "link": "research/social-media-youth-behaviour.html"
+  },
+  {
+    "title": "Migration and Household Socioeconomic Outcomes",
+    "cover": "migration-household-outcomes.png",
+    "synopsis": "This research examines how migration influences household socioeconomic outcomes. It explores employment opportunities, remittances, household expenditure, access to education, family relationships and the economic and social challenges experienced by households affected by migration.",
+    "link": "research/migration-household-outcomes.html"
+  },
+  {
+    "title": "Gender Inequality and Economic Participation",
+    "cover": "gender-inequality-economic-participation.png",
+    "synopsis": "This research investigates the relationship between gender inequality and economic participation. It examines employment opportunities, wage differences, access to finance, unpaid care work, workplace discrimination and social expectations that influence women's and men's participation in economic activities.",
+    "link": "research/gender-inequality-economic-participation.html"
+  },
+  {
+    "title": "Changing Family Structures in Urban Communities",
+    "cover": "changing-family-structures.png",
+    "synopsis": "This research explores changes in family structures within urban communities. It examines urbanization, employment patterns, economic pressures, changing gender roles, marriage trends and intergenerational relationships. The study also considers how these changes influence family support systems and household wellbeing.",
+    "link": "research/changing-family-structures.html"
+  }
+],
+
+"Public Health": [
+  {
+    "title": "Determinants of Healthcare Utilization in Underserved Communities",
+    "cover": "healthcare-utilization-underserved-communities.png",
+    "synopsis": "This research examines the factors influencing healthcare utilization in underserved communities. It explores healthcare accessibility, affordability, distance to health facilities, cultural beliefs, health insurance coverage and the availability of medical personnel. The study also investigates barriers that prevent individuals from seeking timely healthcare services.",
+    "link": "research/healthcare-utilization-underserved-communities.html"
+  },
+  {
+    "title": "Health Education and Preventive Health Behaviour",
+    "cover": "health-education-preventive-behaviour.png",
+    "synopsis": "This research investigates the relationship between health education and preventive health behaviour. It examines public health awareness campaigns, knowledge of disease prevention, vaccination, hygiene practices, screening participation and lifestyle choices. The study also considers how health communication influences individual and community health decisions.",
+    "link": "research/health-education-preventive-behaviour.html"
+  },
+  {
+    "title": "Maternal Health Service Utilization and Associated Factors",
+    "cover": "maternal-health-service-utilization.png",
+    "synopsis": "This research examines factors associated with the utilization of maternal health services among pregnant women and mothers. It explores antenatal care attendance, skilled birth attendance, postnatal care, socioeconomic status, healthcare accessibility, maternal education and cultural influences. The study also considers strategies for improving access to quality maternal healthcare.",
+    "link": "research/maternal-health-service-utilization.html"
+  },
+  {
+    "title": "Mental Health Awareness among University Students",
+    "cover": "mental-health-awareness-university-students.png",
+    "synopsis": "This research investigates mental health awareness among university students. It examines knowledge of common mental health conditions, academic stress, stigma, attitudes towards counselling, awareness of available support services and barriers to seeking professional assistance. The study also explores approaches for promoting mental health awareness and student wellbeing.",
+    "link": "research/mental-health-awareness-university-students.html"
+  },
+  {
+    "title": "Community-Based Interventions and Health Outcomes",
+    "cover": "community-based-health-interventions.png",
+    "synopsis": "This research examines the influence of community-based interventions on public health outcomes. It explores community health education, outreach programmes, preventive screening, local health worker participation and community engagement. The study also considers how these interventions contribute to disease prevention, healthcare access and improved community wellbeing.",
+    "link": "research/community-based-health-interventions.html"
+  }
+],
     "Business Administration": [
   {
     "title": "Strategic Management Practices and Organizational Performance",
@@ -913,108 +1070,471 @@ const data = {
     ],
     
     "Public Administration": [
-      "E-Government and Public Service Delivery",
-      "Decentralization and Local Government Performance",
-      "Public Participation in Policy-Making",
-      "Performance Management in Public Institutions",
-      "Public Procurement Practices and Service Delivery"
-    ],
-    "Commerce": [
-      "E-Commerce Adoption and Retail Business Performance",
-      "Supply Chain Management and Organizational Competitiveness",
-      "Consumer Behaviour in Digital Marketplaces",
-      "Brand Loyalty and Customer Retention",
-      "Market Orientation and Small Business Performance"
-    ]
+  {
+    "title": "E-Government and Public Service Delivery",
+    "cover": "e-government-public-service-delivery.png",
+    "synopsis": "This research examines the influence of e-government on public service delivery. It explores digital government platforms, online public services, administrative efficiency, transparency, citizen satisfaction and accessibility. The study also investigates challenges such as digital literacy, infrastructure limitations, data security and unequal access to digital services.",
+    "link": "research/e-government-public-service-delivery.html"
   },
+  {
+    "title": "Decentralization and Local Government Performance",
+    "cover": "decentralization-local-government.png",
+    "synopsis": "This research investigates the relationship between decentralization and local government performance. It examines the distribution of administrative responsibilities, allocation of financial resources, local decision-making, accountability mechanisms and citizen participation. The study also considers how decentralization influences public service delivery and local development.",
+    "link": "research/decentralization-local-government.html"
+  },
+  {
+    "title": "Public Participation in Policy-Making",
+    "cover": "public-participation-policy-making.png",
+    "synopsis": "This research examines the role of public participation in policy-making processes. It explores public consultations, community forums, stakeholder engagement, citizen representation, access to policy information and the influence of public contributions on government decisions. The study also investigates barriers to meaningful participation and strategies for strengthening inclusive governance.",
+    "link": "research/public-participation-policy-making.html"
+  },
+  {
+    "title": "Performance Management in Public Institutions",
+    "cover": "performance-management-public-institutions.png",
+    "synopsis": "This research investigates the influence of performance management practices on the effectiveness of public institutions. It examines employee performance appraisal, target setting, monitoring systems, staff motivation, accountability and service delivery standards. The study also considers challenges affecting the implementation of performance management systems in public organizations.",
+    "link": "research/performance-management-public-institutions.html"
+  },
+  {
+    "title": "Public Procurement Practices and Service Delivery",
+    "cover": "public-procurement-service-delivery.png",
+    "synopsis": "This research examines the relationship between public procurement practices and service delivery. It explores procurement planning, supplier selection, transparency, regulatory compliance, contract management and value for money. The study also investigates how procurement delays, inadequate oversight and irregular practices can affect the quality and timely delivery of public services.",
+    "link": "research/public-procurement-service-delivery.html"
+  }
+],
+
+"Commerce": [
+  {
+    "title": "E-Commerce Adoption and Retail Business Performance",
+    "cover": "ecommerce-retail-business-performance.png",
+    "synopsis": "This research examines how e-commerce adoption influences retail business performance. It explores online sales platforms, digital payment systems, customer reach, operating costs, marketing efficiency and revenue growth. The study also investigates barriers to e-commerce adoption, including technology costs, cybersecurity concerns, logistics challenges and limited digital skills.",
+    "link": "research/ecommerce-retail-business-performance.html"
+  },
+  {
+    "title": "Supply Chain Management and Organizational Competitiveness",
+    "cover": "supply-chain-organizational-competitiveness.png",
+    "synopsis": "This research investigates the relationship between supply chain management and organizational competitiveness. It examines supplier relationships, inventory control, logistics efficiency, procurement strategies, information sharing and demand forecasting. The study also considers how effective supply chain coordination can reduce operating costs, improve customer satisfaction and strengthen competitive advantage.",
+    "link": "research/supply-chain-organizational-competitiveness.html"
+  },
+  {
+    "title": "Consumer Behaviour in Digital Marketplaces",
+    "cover": "consumer-behaviour-digital-marketplaces.png",
+    "synopsis": "This research examines consumer behaviour in digital marketplaces. It explores online product reviews, pricing strategies, website usability, perceived trust, electronic payment security and the influence of social media on purchasing decisions. The study also investigates factors affecting consumer confidence, purchase intentions and repeat purchases in online shopping environments.",
+    "link": "research/consumer-behaviour-digital-marketplaces.html"
+  },
+  {
+    "title": "Brand Loyalty and Customer Retention",
+    "cover": "brand-loyalty-customer-retention.png",
+    "synopsis": "This research investigates the relationship between brand loyalty and customer retention. It examines customer satisfaction, perceived product quality, brand trust, customer service, loyalty programmes and emotional connections with brands. The study also considers how businesses can strengthen customer relationships, encourage repeat purchases and reduce customer switching.",
+    "link": "research/brand-loyalty-customer-retention.html"
+  },
+  {
+    "title": "Market Orientation and Small Business Performance",
+    "cover": "market-orientation-small-business-performance.png",
+    "synopsis": "This research examines how market orientation influences small business performance. It explores customer needs analysis, competitor monitoring, market intelligence, product development and responsiveness to changing market conditions. The study also investigates the contribution of market-oriented strategies to sales growth, customer satisfaction, profitability and long-term business sustainability.",
+    "link": "research/market-orientation-small-business-performance.html"
+  
+   }
+  ]
+}, 
+  
   masters: {
-    "Education": [
-      "Artificial Intelligence, Pedagogy and the Future of Higher Education",
-      "Educational Leadership and Institutional Performance",
-      "Equity in Digital Learning Access and Student Outcomes",
-      "Teacher Wellbeing, Burnout and Professional Retention",
-      "Policy Implementation and Quality of Education"
-    ],
-    "Information Systems and Technology": [
-      "AI Governance and Responsible Adoption in Organizations",
-      "Cybersecurity Governance and Enterprise Risk Management",
-      "Digital Transformation Maturity in Public Institutions",
-      "Data Analytics Capability and Strategic Decision-Making",
-      "Information Systems Success and Organizational Performance"
-    ],
-    "Agriculture and Agribusiness": [
-      "Climate-Smart Agriculture and Food System Resilience",
-      "Agricultural Finance and Smallholder Commercialization",
-      "Digital Market Platforms and Farmer Market Access",
-      "Sustainable Value Chains and Rural Livelihoods",
-      "Agricultural Innovation Adoption and Productivity"
-    ],
-    "Environmental Management": [
-      "Climate Adaptation Governance and Community Resilience",
-      "Circular Economy Strategies for Urban Waste Reduction",
-      "Environmental Policy Implementation and Compliance",
-      "Sustainable Urban Development and Ecosystem Services",
-      "Renewable Energy Transition and Environmental Outcomes"
-    ],
-    "Sociology and Social Policy": [
-      "Social Protection and Poverty Reduction Outcomes",
-      "Digital Inequality and Social Exclusion",
-      "Migration, Remittances and Household Welfare",
-      "Gender, Work and Changing Household Economies",
-      "Social Cohesion and Community Resilience"
-    ],
-    "Public Health and Health Systems": [
-      "Health Systems Resilience and Access to Essential Services",
-      "Universal Health Coverage and Health Equity",
-      "Digital Health Interventions and Patient Outcomes",
-      "Health Policy Implementation and Service Quality",
-      "Social Determinants of Health and Health Inequalities"
-    ],
+  "Education": [
+    {
+      "title": "Artificial Intelligence, Pedagogy and the Future of Higher Education",
+      "cover": "ai-pedagogy-higher-education.png",
+      "synopsis": "This research examines how artificial intelligence is transforming pedagogy and the future of higher education. It explores AI-assisted teaching, personalized learning, automated assessment, academic integrity, lecturer preparedness and institutional policies governing AI use. The study also evaluates the implications of AI integration for teaching effectiveness, student engagement and educational quality.",
+      "link": "research/ai-pedagogy-higher-education.html"
+    },
+    {
+      "title": "Educational Leadership and Institutional Performance",
+      "cover": "educational-leadership-institutional-performance.png",
+      "synopsis": "This research investigates the relationship between educational leadership and institutional performance. It examines strategic leadership, resource allocation, organizational culture, staff motivation, stakeholder engagement and evidence-based decision-making. The study also explores how leadership approaches influence institutional effectiveness, academic outcomes and long-term educational development.",
+      "link": "research/educational-leadership-institutional-performance.html"
+    },
+    {
+      "title": "Equity in Digital Learning Access and Student Outcomes",
+      "cover": "digital-learning-equity-student-outcomes.png",
+      "synopsis": "This research examines how equity in access to digital learning influences student outcomes. It explores internet connectivity, access to digital devices, digital literacy, socioeconomic inequalities, disability inclusion and institutional support. The study also investigates strategies for reducing digital exclusion and improving learning opportunities across diverse student populations.",
+      "link": "research/digital-learning-equity-student-outcomes.html"
+    },
+    {
+      "title": "Teacher Wellbeing, Burnout and Professional Retention",
+      "cover": "teacher-wellbeing-burnout-retention.png",
+      "synopsis": "This research investigates the relationship between teacher wellbeing, occupational burnout and professional retention. It examines workload, institutional support, leadership practices, work-life balance, professional recognition and access to mental health resources. The study also considers organizational strategies for improving teacher wellbeing, strengthening job satisfaction and retaining qualified educators.",
+      "link": "research/teacher-wellbeing-burnout-retention.html"
+    },
+    {
+      "title": "Policy Implementation and Quality of Education",
+      "cover": "education-policy-implementation-quality.png",
+      "synopsis": "This research examines how education policy implementation influences the quality of education. It explores policy design, resource allocation, institutional capacity, stakeholder participation, monitoring systems and accountability mechanisms. The study also investigates implementation gaps and the strategies that educational institutions can adopt to improve policy effectiveness and educational outcomes.",
+      "link": "research/education-policy-implementation-quality.html"
+    }
+  ],
+
+  "Information Systems and Technology": [
+    {
+      "title": "AI Governance and Responsible Adoption in Organizations",
+      "cover": "ai-governance-responsible-adoption.png",
+      "synopsis": "This research examines AI governance frameworks and responsible artificial intelligence adoption in organizations. It explores ethical standards, algorithmic transparency, accountability, data privacy, risk assessment and regulatory compliance. The study also investigates organizational readiness and governance mechanisms that support trustworthy AI implementation and sustainable digital innovation.",
+      "link": "research/ai-governance-responsible-adoption.html"
+    },
+    {
+      "title": "Cybersecurity Governance and Enterprise Risk Management",
+      "cover": "cybersecurity-governance-enterprise-risk.png",
+      "synopsis": "This research investigates the relationship between cybersecurity governance and enterprise risk management. It examines information security policies, executive oversight, risk assessment, incident response, regulatory compliance and employee awareness. The study also explores how integrating cybersecurity into enterprise risk management can strengthen organizational resilience and protect critical information assets.",
+      "link": "research/cybersecurity-governance-enterprise-risk.html"
+    },
+    {
+      "title": "Digital Transformation Maturity in Public Institutions",
+      "cover": "digital-transformation-public-institutions.png",
+      "synopsis": "This research examines digital transformation maturity in public institutions. It explores digital strategy, technology infrastructure, organizational culture, employee competencies, service automation and citizen engagement. The study also identifies barriers to digital transformation and evaluates organizational capabilities that contribute to effective, transparent and citizen-centred public service delivery.",
+      "link": "research/digital-transformation-public-institutions.html"
+    },
+    {
+      "title": "Data Analytics Capability and Strategic Decision-Making",
+      "cover": "data-analytics-strategic-decision-making.png",
+      "synopsis": "This research investigates how organizational data analytics capability influences strategic decision-making. It examines data governance, analytical skills, business intelligence systems, predictive modelling, data quality and evidence-based management. The study also explores how organizations translate analytical insights into strategic actions, operational improvements and competitive advantage.",
+      "link": "research/data-analytics-strategic-decision-making.html"
+    },
+    {
+      "title": "Information Systems Success and Organizational Performance",
+      "cover": "information-systems-organizational-performance.png",
+      "synopsis": "This research examines the relationship between information systems success and organizational performance. It explores system quality, information quality, user satisfaction, system adoption, service support and organizational benefits. The study also investigates how effective information systems contribute to operational efficiency, improved decision-making and the achievement of strategic objectives.",
+      "link": "research/information-systems-organizational-performance.html"
+    }
+  ],
+
+  "Agriculture and Agribusiness": [
+    {
+      "title": "Climate-Smart Agriculture and Food System Resilience",
+      "cover": "climate-smart-agriculture-food-resilience.png",
+      "synopsis": "This research examines how climate-smart agriculture contributes to food system resilience. It explores climate adaptation, sustainable farming practices, soil management, water conservation, agricultural diversification and climate information services. The study also investigates institutional support and the adoption of climate-resilient practices that strengthen food security and agricultural sustainability.",
+      "link": "research/climate-smart-agriculture-food-resilience.html"
+    },
+    {
+      "title": "Agricultural Finance and Smallholder Commercialization",
+      "cover": "agricultural-finance-smallholder-commercialization.png",
+      "synopsis": "This research investigates the influence of agricultural finance on smallholder farmer commercialization. It examines access to credit, savings, agricultural insurance, financial literacy, investment in farm inputs and market participation. The study also explores financial barriers and institutional mechanisms that support farm expansion, productivity and participation in commercial agricultural value chains.",
+      "link": "research/agricultural-finance-smallholder-commercialization.html"
+    },
+    {
+      "title": "Digital Market Platforms and Farmer Market Access",
+      "cover": "digital-market-platforms-farmer-access.png",
+      "synopsis": "This research examines how digital market platforms influence farmers' access to agricultural markets. It explores online trading systems, mobile market information, digital payments, price transparency, logistics coordination and relationships between farmers and buyers. The study also investigates digital literacy, infrastructure limitations and trust factors affecting the adoption of agricultural e-commerce platforms.",
+      "link": "research/digital-market-platforms-farmer-access.html"
+    },
+    {
+      "title": "Sustainable Value Chains and Rural Livelihoods",
+      "cover": "sustainable-value-chains-rural-livelihoods.png",
+      "synopsis": "This research investigates the relationship between sustainable agricultural value chains and rural livelihoods. It examines responsible sourcing, value addition, market coordination, environmental management, fair pricing and participation by smallholder farmers. The study also evaluates how sustainable value chain practices influence household income, employment opportunities and long-term rural economic development.",
+      "link": "research/sustainable-value-chains-rural-livelihoods.html"
+    },
+    {
+      "title": "Agricultural Innovation Adoption and Productivity",
+      "cover": "agricultural-innovation-adoption-productivity.png",
+      "synopsis": "This research examines the factors influencing agricultural innovation adoption and farm productivity. It explores improved seed varieties, mechanization, precision agriculture, extension services, farmer training and access to finance. The study also investigates the roles of perceived benefits, technological knowledge and institutional support in determining farmers' adoption decisions and productivity outcomes.",
+      "link": "research/agricultural-innovation-adoption-productivity.html"
+    }
+  ],
+
+  "Environmental Management": [
+    {
+      "title": "Climate Adaptation Governance and Community Resilience",
+      "cover": "climate-adaptation-governance-community-resilience.png",
+      "synopsis": "This research examines how climate adaptation governance influences community resilience. It explores institutional coordination, local participation, climate risk assessments, adaptation financing and policy implementation. The study also investigates how collaboration between government agencies, community organizations and development partners can strengthen preparedness and adaptive capacity in climate-vulnerable communities.",
+      "link": "research/climate-adaptation-governance-community-resilience.html"
+    },
+    {
+      "title": "Circular Economy Strategies for Urban Waste Reduction",
+      "cover": "circular-economy-urban-waste-reduction.png",
+      "synopsis": "This research investigates the effectiveness of circular economy strategies in reducing urban waste. It examines waste prevention, recycling systems, material recovery, product reuse, sustainable consumption and business participation in circular production models. The study also explores policy incentives, infrastructure requirements and public engagement mechanisms that support resource efficiency and sustainable urban waste management.",
+      "link": "research/circular-economy-urban-waste-reduction.html"
+    },
+    {
+      "title": "Environmental Policy Implementation and Compliance",
+      "cover": "environmental-policy-implementation-compliance.png",
+      "synopsis": "This research examines the factors influencing environmental policy implementation and regulatory compliance. It explores institutional capacity, enforcement mechanisms, stakeholder awareness, monitoring systems, environmental legislation and organizational accountability. The study also investigates the challenges that limit compliance and identifies approaches for strengthening environmental governance and sustainable resource management.",
+      "link": "research/environmental-policy-implementation-compliance.html"
+    },
+    {
+      "title": "Sustainable Urban Development and Ecosystem Services",
+      "cover": "sustainable-urban-development-ecosystem-services.png",
+      "synopsis": "This research investigates the relationship between sustainable urban development and ecosystem services. It examines urban green spaces, biodiversity conservation, stormwater management, land-use planning, air quality and access to natural environments. The study also explores how urban planning policies can balance infrastructure development, environmental protection and community wellbeing.",
+      "link": "research/sustainable-urban-development-ecosystem-services.html"
+    },
+    {
+      "title": "Renewable Energy Transition and Environmental Outcomes",
+      "cover": "renewable-energy-transition-environmental-outcomes.png",
+      "synopsis": "This research examines the environmental outcomes associated with the transition to renewable energy. It explores solar and wind energy adoption, emissions reduction, energy policy, investment frameworks, grid integration and environmental trade-offs. The study also investigates the institutional, economic and technological factors that influence the transition towards more sustainable energy systems.",
+      "link": "research/renewable-energy-transition-environmental-outcomes.html"
+    }
+  ],
+
+  "Sociology and Social Policy": [
+    {
+      "title": "Social Protection and Poverty Reduction Outcomes",
+      "cover": "social-protection-poverty-reduction.png",
+      "synopsis": "This research examines the contribution of social protection programmes to poverty reduction. It explores cash transfers, social assistance, pension schemes, programme targeting, benefit adequacy and access among vulnerable populations. The study also investigates implementation challenges and evaluates how social protection policies influence household welfare, economic security and social inclusion.",
+      "link": "research/social-protection-poverty-reduction.html"
+    },
+    {
+      "title": "Digital Inequality and Social Exclusion",
+      "cover": "digital-inequality-social-exclusion.png",
+      "synopsis": "This research investigates the relationship between digital inequality and social exclusion. It examines internet access, digital literacy, device affordability, online public services and inequalities affecting marginalized populations. The study also explores how digital exclusion influences access to employment, education, healthcare and civic participation, as well as interventions that promote digital inclusion.",
+      "link": "research/digital-inequality-social-exclusion.html"
+    },
+    {
+      "title": "Migration, Remittances and Household Welfare",
+      "cover": "migration-remittances-household-welfare.png",
+      "synopsis": "This research examines how migration and remittances influence household welfare. It explores income security, consumption, education expenditure, healthcare access, investment decisions and family relationships. The study also investigates the economic and social costs of migration and the conditions under which remittances contribute to long-term household resilience and socioeconomic development.",
+      "link": "research/migration-remittances-household-welfare.html"
+    },
+    {
+      "title": "Gender, Work and Changing Household Economies",
+      "cover": "gender-work-household-economies.png",
+      "synopsis": "This research investigates how gender relations and changing employment patterns influence household economies. It examines paid employment, unpaid care work, income allocation, decision-making power, work-life balance and changing family responsibilities. The study also explores how economic pressures and social expectations shape gender roles, household welfare and participation in labour markets.",
+      "link": "research/gender-work-household-economies.html"
+    },
+    {
+      "title": "Social Cohesion and Community Resilience",
+      "cover": "social-cohesion-community-resilience.png",
+      "synopsis": "This research examines the relationship between social cohesion and community resilience. It explores social trust, community networks, collective action, conflict resolution, civic participation and shared identity. The study also investigates how inclusive institutions and community-based initiatives strengthen cooperation and help communities respond to economic, environmental and social disruptions.",
+      "link": "research/social-cohesion-community-resilience.html"
+    }
+  ],
+
+  "Public Health and Health Systems": [
+    {
+      "title": "Health Systems Resilience and Access to Essential Services",
+      "cover": "health-systems-resilience-essential-services.png",
+      "synopsis": "This research examines how health systems resilience influences access to essential health services. It explores workforce capacity, health financing, medicine supply chains, emergency preparedness, service continuity and institutional coordination. The study also investigates how health systems can anticipate, absorb and recover from disruptions while maintaining equitable access to essential care.",
+      "link": "research/health-systems-resilience-essential-services.html"
+    },
+    {
+      "title": "Universal Health Coverage and Health Equity",
+      "cover": "universal-health-coverage-equity.png",
+      "synopsis": "This research investigates the relationship between universal health coverage and health equity. It examines financial protection, healthcare accessibility, service availability, benefit coverage and disparities affecting underserved populations. The study also explores policy implementation, health financing mechanisms and institutional strategies for reducing inequalities in access to quality healthcare.",
+      "link": "research/universal-health-coverage-equity.html"
+    },
+    {
+      "title": "Digital Health Interventions and Patient Outcomes",
+      "cover": "digital-health-interventions-patient-outcomes.png",
+      "synopsis": "This research examines the influence of digital health interventions on patient outcomes. It explores telemedicine, electronic health records, mobile health applications, remote patient monitoring and digital health education. The study also investigates usability, data privacy, healthcare worker readiness and the effectiveness of digital interventions in improving access, continuity and quality of care.",
+      "link": "research/digital-health-interventions-patient-outcomes.html"
+    },
+    {
+      "title": "Health Policy Implementation and Service Quality",
+      "cover": "health-policy-implementation-service-quality.png",
+      "synopsis": "This research investigates how health policy implementation influences healthcare service quality. It examines policy coordination, resource allocation, workforce capacity, clinical standards, accountability and monitoring mechanisms. The study also explores implementation gaps and organizational challenges affecting the availability, safety, responsiveness and effectiveness of healthcare services.",
+      "link": "research/health-policy-implementation-service-quality.html"
+    },
+    {
+      "title": "Social Determinants of Health and Health Inequalities",
+      "cover": "social-determinants-health-inequalities.png",
+      "synopsis": "This research examines how social determinants influence health inequalities across populations. It explores income, education, housing, employment, nutrition, environmental conditions and access to healthcare. The study also investigates how structural and socioeconomic differences contribute to unequal health outcomes and considers policy interventions that can promote health equity.",
+      "link": "research/social-determinants-health-inequalities.html"
+    }
+  ],
+
     "Business and Management": [
-      "Strategic Innovation and Sustainable Competitive Advantage",
-      "Organizational Culture and Digital Transformation",
-      "Leadership Styles and Employee Innovation Behaviour",
-      "Corporate Governance and Organizational Performance",
-      "Sustainable Business Models and Long-Term Firm Performance"
+      {
+        "title": "Strategic Innovation and Sustainable Competitive Advantage",
+        "cover": "strategic-innovation-competitive-advantage.png",
+        "synopsis": "This research examines how strategic innovation contributes to sustainable competitive advantage. It explores product and process innovation, business strategy, organizational capabilities, market positioning and technological advancement. The study also investigates how organizations develop innovative capabilities to respond to competition, changing customer needs and evolving market conditions.",
+        "link": "research/strategic-innovation-competitive-advantage.html"
+      },
+      {
+        "title": "Organizational Culture and Digital Transformation",
+        "cover": "organizational-culture-digital-transformation.png",
+        "synopsis": "This research investigates the relationship between organizational culture and digital transformation. It examines leadership commitment, employee attitudes, organizational learning, resistance to change, digital skills and collaboration. The study also explores how organizational values and management practices influence the successful adoption of digital technologies and organizational change.",
+        "link": "research/organizational-culture-digital-transformation.html"
+      },
+      {
+        "title": "Leadership Styles and Employee Innovation Behaviour",
+        "cover": "leadership-styles-employee-innovation.png",
+        "synopsis": "This research examines how leadership styles influence employee innovation behaviour. It explores transformational, transactional and participative leadership, employee motivation, psychological safety, knowledge sharing and creative problem-solving. The study also investigates the organizational conditions that encourage employees to generate, communicate and implement innovative ideas.",
+        "link": "research/leadership-styles-employee-innovation.html"
+      },
+      {
+        "title": "Corporate Governance and Organizational Performance",
+        "cover": "corporate-governance-organizational-performance.png",
+        "synopsis": "This research investigates the relationship between corporate governance and organizational performance. It examines board effectiveness, transparency, accountability, risk management, stakeholder relationships and executive oversight. The study also evaluates how governance practices influence organizational efficiency, investor confidence, ethical conduct and long-term business sustainability.",
+        "link": "research/corporate-governance-organizational-performance.html"
+      },
+      {
+        "title": "Sustainable Business Models and Long-Term Firm Performance",
+        "cover": "sustainable-business-models-firm-performance.png",
+        "synopsis": "This research examines how sustainable business models influence long-term firm performance. It explores resource efficiency, circular business practices, environmental responsibility, social value creation and sustainable revenue strategies. The study also investigates how businesses balance profitability, environmental protection and social responsibility while maintaining competitiveness and resilience.",
+        "link": "research/sustainable-business-models-firm-performance.html"
+      }
     ],
+
     "Economics and Development Economics": [
-      "Fiscal Policy and Inclusive Economic Growth",
-      "Financial Inclusion and Household Economic Resilience",
-      "Labour Market Transformation and Youth Employment",
-      "Trade Policy and Domestic Industrial Development",
-      "Economic Inequality and Social Mobility"
+      {
+        "title": "Fiscal Policy and Inclusive Economic Growth",
+        "cover": "fiscal-policy-inclusive-economic-growth.png",
+        "synopsis": "This research examines the relationship between fiscal policy and inclusive economic growth. It explores government expenditure, taxation, public investment, income redistribution and social spending. The study also investigates how fiscal policy decisions influence employment, income distribution, access to public services and economic opportunities for different population groups.",
+        "link": "research/fiscal-policy-inclusive-economic-growth.html"
+      },
+      {
+        "title": "Financial Inclusion and Household Economic Resilience",
+        "cover": "financial-inclusion-household-resilience.png",
+        "synopsis": "This research investigates how financial inclusion contributes to household economic resilience. It examines access to savings accounts, credit, insurance, digital financial services and financial literacy. The study also explores how financial access influences household responses to economic shocks, income instability, unexpected expenses and changing livelihood conditions.",
+        "link": "research/financial-inclusion-household-resilience.html"
+      },
+      {
+        "title": "Labour Market Transformation and Youth Employment",
+        "cover": "labour-market-transformation-youth-employment.png",
+        "synopsis": "This research examines how labour market transformation influences youth employment opportunities. It explores technological change, automation, digital work, skills mismatches, informal employment and evolving employer requirements. The study also investigates the roles of education, vocational training and employment policies in improving young people's participation in changing labour markets.",
+        "link": "research/labour-market-transformation-youth-employment.html"
+      },
+      {
+        "title": "Trade Policy and Domestic Industrial Development",
+        "cover": "trade-policy-industrial-development.png",
+        "synopsis": "This research investigates the relationship between trade policy and domestic industrial development. It examines tariffs, import competition, export promotion, regional trade agreements, industrial incentives and local manufacturing capacity. The study also explores how trade policy influences industrial productivity, employment creation, investment and the competitiveness of domestic enterprises.",
+        "link": "research/trade-policy-industrial-development.html"
+      },
+      {
+        "title": "Economic Inequality and Social Mobility",
+        "cover": "economic-inequality-social-mobility.png",
+        "synopsis": "This research examines the relationship between economic inequality and social mobility. It explores income distribution, wealth accumulation, educational opportunities, employment access, intergenerational mobility and socioeconomic background. The study also investigates the structural factors that influence economic advancement and the effectiveness of policies designed to reduce inequality.",
+        "link": "research/economic-inequality-social-mobility.html"
+      }
     ],
+
     "Criminology and Criminal Justice": [
-      "Predictive Policing, Ethics and Criminal Justice Governance",
-      "Cybercrime Governance and Digital Evidence Challenges",
-      "Criminal Justice Reform and Recidivism Reduction",
-      "Community Safety Strategies and Crime Prevention",
-      "Police Legitimacy, Accountability and Public Trust"
+      {
+        "title": "Predictive Policing, Ethics and Criminal Justice Governance",
+        "cover": "predictive-policing-criminal-justice.png",
+        "synopsis": "This research examines the ethical and governance implications of predictive policing in criminal justice systems. It explores algorithmic decision-making, data quality, privacy, bias, transparency and accountability. The study also investigates how predictive policing technologies may influence law enforcement practices, public confidence and the protection of individual rights.",
+        "link": "research/predictive-policing-criminal-justice.html"
+      },
+      {
+        "title": "Cybercrime Governance and Digital Evidence Challenges",
+        "cover": "cybercrime-governance-digital-evidence.png",
+        "synopsis": "This research investigates cybercrime governance and the challenges associated with digital evidence. It examines legal frameworks, digital forensic procedures, evidence preservation, chain of custody, cross-border cooperation and institutional capacity. The study also explores how technological developments and regulatory gaps affect cybercrime investigations and the administration of justice.",
+        "link": "research/cybercrime-governance-digital-evidence.html"
+      },
+      {
+        "title": "Criminal Justice Reform and Recidivism Reduction",
+        "cover": "criminal-justice-reform-recidivism.png",
+        "synopsis": "This research examines how criminal justice reforms contribute to recidivism reduction. It explores rehabilitation programmes, reintegration services, restorative justice, educational opportunities, vocational training and post-release support. The study also investigates institutional and socioeconomic barriers that affect successful reintegration and the prevention of repeat offending.",
+        "link": "research/criminal-justice-reform-recidivism.html"
+      },
+      {
+        "title": "Community Safety Strategies and Crime Prevention",
+        "cover": "community-safety-crime-prevention.png",
+        "synopsis": "This research investigates the effectiveness of community safety strategies in preventing crime. It examines community policing, neighbourhood participation, environmental design, youth engagement, public awareness and collaboration between residents and law enforcement agencies. The study also evaluates factors that influence community trust, collective responsibility and perceptions of safety.",
+        "link": "research/community-safety-crime-prevention.html"
+      },
+      {
+        "title": "Police Legitimacy, Accountability and Public Trust",
+        "cover": "police-legitimacy-accountability-public-trust.png",
+        "synopsis": "This research examines the relationship between police legitimacy, accountability and public trust. It explores procedural fairness, transparency, professional conduct, complaint mechanisms, community engagement and perceptions of equal treatment. The study also investigates how police accountability measures and institutional reforms influence public cooperation and confidence in law enforcement.",
+        "link": "research/police-legitimacy-accountability-public-trust.html"
+      }
     ],
+
     "Community Development": [
-      "Community Resilience and Sustainable Livelihoods",
-      "Participatory Governance and Local Development Outcomes",
-      "Youth Entrepreneurship and Inclusive Community Development",
-      "Social Innovation and Poverty Reduction",
-      "Community-Based Organizations and Sustainable Development"
+      {
+        "title": "Community Resilience and Sustainable Livelihoods",
+        "cover": "community-resilience-sustainable-livelihoods.png",
+        "synopsis": "This research examines how community resilience contributes to sustainable livelihoods. It explores livelihood diversification, social networks, access to resources, local institutions, environmental adaptation and community participation. The study also investigates how communities respond to economic, environmental and social challenges while maintaining household wellbeing and long-term development.",
+        "link": "research/community-resilience-sustainable-livelihoods.html"
+      },
+      {
+        "title": "Participatory Governance and Local Development Outcomes",
+        "cover": "participatory-governance-local-development.png",
+        "synopsis": "This research investigates the relationship between participatory governance and local development outcomes. It examines community consultations, participatory budgeting, citizen representation, stakeholder collaboration and accountability mechanisms. The study also explores how meaningful public involvement influences project priorities, resource allocation, service delivery and the sustainability of local development initiatives.",
+        "link": "research/participatory-governance-local-development.html"
+      },
+      {
+        "title": "Youth Entrepreneurship and Inclusive Community Development",
+        "cover": "youth-entrepreneurship-community-development.png",
+        "synopsis": "This research examines the contribution of youth entrepreneurship to inclusive community development. It explores access to finance, entrepreneurial education, mentorship, business networks, digital opportunities and institutional support. The study also investigates how youth-led enterprises influence employment creation, household income, innovation and the economic participation of marginalized groups.",
+        "link": "research/youth-entrepreneurship-community-development.html"
+      },
+      {
+        "title": "Social Innovation and Poverty Reduction",
+        "cover": "social-innovation-poverty-reduction.png",
+        "synopsis": "This research investigates the role of social innovation in poverty reduction. It examines community-led solutions, social enterprises, collaborative partnerships, inclusive service delivery and innovative approaches to meeting essential needs. The study also explores the scalability, sustainability and effectiveness of social innovations in addressing persistent socioeconomic challenges.",
+        "link": "research/social-innovation-poverty-reduction.html"
+      },
+      {
+        "title": "Community-Based Organizations and Sustainable Development",
+        "cover": "community-organizations-sustainable-development.png",
+        "synopsis": "This research examines the contribution of community-based organizations to sustainable development. It explores local participation, institutional capacity, resource mobilization, project management, partnerships and accountability. The study also investigates how community organizations support service delivery, environmental initiatives, social inclusion and the long-term sustainability of local development programmes.",
+        "link": "research/community-organizations-sustainable-development.html"
+      }
     ],
+
     "Public Administration and Governance": [
-      "Public Sector Digital Transformation and Service Quality",
-      "Governance, Accountability and Public Sector Performance",
-      "Policy Implementation Gaps in Public Institutions",
-      "Citizen Participation and Democratic Local Governance",
-      "Public Financial Management and Service Delivery"
+      {
+        "title": "Public Sector Digital Transformation and Service Quality",
+        "cover": "public-sector-digital-transformation.png",
+        "synopsis": "This research examines how digital transformation influences service quality in the public sector. It explores online service platforms, process automation, digital records, citizen engagement, administrative efficiency and institutional readiness. The study also investigates barriers related to infrastructure, digital literacy, data security and organizational change that affect public service modernization.",
+        "link": "research/public-sector-digital-transformation.html"
+      },
+      {
+        "title": "Governance, Accountability and Public Sector Performance",
+        "cover": "governance-accountability-public-performance.png",
+        "synopsis": "This research investigates the relationship between governance, accountability and public sector performance. It examines transparency, oversight institutions, ethical leadership, performance monitoring, public reporting and citizen participation. The study also explores how governance arrangements influence institutional efficiency, responsible resource use, public confidence and the quality of government services.",
+        "link": "research/governance-accountability-public-performance.html"
+      },
+      {
+        "title": "Policy Implementation Gaps in Public Institutions",
+        "cover": "policy-implementation-public-institutions.png",
+        "synopsis": "This research examines the factors contributing to policy implementation gaps in public institutions. It explores resource constraints, institutional capacity, interdepartmental coordination, leadership commitment, stakeholder participation and monitoring systems. The study also investigates how implementation challenges affect policy outcomes and identifies approaches for strengthening public sector effectiveness.",
+        "link": "research/policy-implementation-public-institutions.html"
+      },
+      {
+        "title": "Citizen Participation and Democratic Local Governance",
+        "cover": "citizen-participation-local-governance.png",
+        "synopsis": "This research investigates how citizen participation influences democratic local governance. It examines public consultations, civic education, participatory budgeting, community representation, access to information and mechanisms for holding local authorities accountable. The study also explores barriers to participation and their implications for inclusive decision-making and public trust.",
+        "link": "research/citizen-participation-local-governance.html"
+      },
+      {
+        "title": "Public Financial Management and Service Delivery",
+        "cover": "public-financial-management-service-delivery.png",
+        "synopsis": "This research examines the relationship between public financial management and service delivery. It explores budget planning, expenditure control, revenue management, financial reporting, procurement oversight and audit systems. The study also investigates how financial management practices influence resource allocation, accountability, institutional efficiency and the delivery of essential public services.",
+        "link": "research/public-financial-management-service-delivery.html"
+      }
     ],
+
     "Commerce and Marketing": [
-      "Omnichannel Retailing and Consumer Purchase Behaviour",
-      "Digital Marketing Analytics and Customer Lifetime Value",
-      "Supply Chain Resilience and Firm Performance",
-      "Consumer Trust in AI-Enabled Commerce",
-      "Sustainable Consumption and Green Marketing"
+      {
+        "title": "Omnichannel Retailing and Consumer Purchase Behaviour",
+        "cover": "omnichannel-retailing-consumer-behaviour.png",
+        "synopsis": "This research examines how omnichannel retailing influences consumer purchase behaviour. It explores the integration of physical stores, websites and mobile applications, customer experience, convenience, channel consistency and purchasing decisions across multiple retail channels. The study also investigates how businesses can improve customer journeys and retail performance through coordinated sales channels.",
+        "link": "research/omnichannel-retailing-consumer-behaviour.html"
+      },
+      {
+        "title": "Digital Marketing Analytics and Customer Lifetime Value",
+        "cover": "digital-marketing-customer-lifetime-value.png",
+        "synopsis": "This research examines how digital marketing analytics contributes to customer lifetime value. It explores customer data analysis, campaign performance, personalization, customer acquisition costs, retention strategies and the use of marketing insights to strengthen long-term customer relationships. The study also considers how data-driven marketing can improve customer profitability and business performance.",
+        "link": "research/digital-marketing-customer-lifetime-value.html"
+      },
+      {
+        "title": "Supply Chain Resilience and Firm Performance",
+        "cover": "supply-chain-resilience-firm-performance.png",
+        "synopsis": "This research examines the relationship between supply chain resilience and firm performance. It explores supplier diversification, inventory strategies, risk management, logistics flexibility, digital supply chain systems and organizational responses to disruptions. The study also investigates how resilient supply chains support business continuity, operational efficiency and long-term competitiveness.",
+        "link": "research/supply-chain-resilience-firm-performance.html"
+      },
+      {
+        "title": "Consumer Trust in AI-Enabled Commerce",
+        "cover": "consumer-trust-ai-commerce.png",
+        "synopsis": "This research examines the factors influencing consumer trust in AI-enabled commerce. It explores personalized recommendations, automated customer service, data privacy, algorithmic transparency, perceived risk and the effects of AI-driven interactions on consumer confidence and purchase intentions. The study also considers responsible AI practices that can strengthen trust in digital marketplaces.",
+        "link": "research/consumer-trust-ai-commerce.html"
+      },
+      {
+        "title": "Sustainable Consumption and Green Marketing",
+        "cover": "sustainable-consumption-green-marketing.png",
+        "synopsis": "This research examines the relationship between green marketing and sustainable consumption. It explores environmental product claims, eco-labels, consumer awareness, purchasing intentions, price sensitivity and the role of responsible marketing practices in encouraging environmentally conscious consumer choices. The study also investigates how credible sustainability communication influences consumer trust and purchasing behaviour.",
+        "link": "research/sustainable-consumption-green-marketing.html"
+      }
     ]
   }
 };
-
 const level = document.getElementById("level");
 const programme = document.getElementById("programme");
 const results = document.getElementById("results");
@@ -1226,10 +1746,14 @@ header p {
 
 .preview-card .cover {
   display: block;
-  width: 100%;
-  max-width: 550px;
+
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 650px;
+
   object-fit: contain;
+
   margin: 24px auto;
   border: 1px solid #ddd;
   background: #f5f5f5;
@@ -1268,6 +1792,7 @@ header p {
   background: #c00000;
   color: #fff;
 }
+
 
 footer {
   width: 100%;
@@ -1331,12 +1856,17 @@ footer {
     line-height: 1.75;
   }
 
-  .preview-card .cover {
+    .preview-card .cover {
+    display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: none;
+    object-fit: contain;
     margin: 20px auto;
+    box-sizing: border-box;
   }
+
 
   .actions {
     flex-direction: column;
